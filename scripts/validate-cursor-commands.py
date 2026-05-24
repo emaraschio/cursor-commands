@@ -7,6 +7,15 @@ import re
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+from eval_lib import (
+    index_ship_gate_for,
+    normalize_ship_gate_list,
+    parse_cases_by_section,
+    parse_ship_gate,
+)
+
 ROOT = Path(__file__).resolve().parents[1]
 COMMANDS_DIR = ROOT / ".cursor" / "commands"
 SKILLS_DIR = ROOT / ".cursor" / "skills"
@@ -147,6 +156,35 @@ def main() -> int:
             errors.append(f"{eval_cases}: fewer than {MIN_EVAL_CASES} case headings (###)")
         if not eval_readme.exists():
             errors.append(f"{path}: missing {eval_readme}")
+
+        gate_ids = parse_ship_gate(text)
+        if not gate_ids:
+            errors.append(f"{path}: eval.ship_gate missing or empty")
+        elif eval_cases.exists():
+            cases_text = eval_cases.read_text(encoding="utf-8")
+            by_section = parse_cases_by_section(cases_text)
+            for sec in gate_ids:
+                if sec not in by_section:
+                    errors.append(
+                        f"{path}: missing_section — no ## Section {sec} in cases.md"
+                    )
+                elif not by_section[sec]:
+                    errors.append(
+                        f"{path}: missing_case — Section {sec} has no ### cases"
+                    )
+
+        index_gate = index_ship_gate_for(name)
+        if index_gate is not None and gate_ids:
+            index_ids = [
+                s.strip()
+                for s in re.split(r",\s*", index_gate.replace("—", "").strip())
+                if s.strip()
+            ]
+            if normalize_ship_gate_list(index_ids) != normalize_ship_gate_list(gate_ids):
+                errors.append(
+                    f"{path}: index_ship_gate_mismatch — index '{index_gate}' "
+                    f"!= frontmatter '{', '.join(gate_ids)}'"
+                )
 
     for skill_dir in skill_dirs:
         if not (skill_dir / "SKILL.md").exists():

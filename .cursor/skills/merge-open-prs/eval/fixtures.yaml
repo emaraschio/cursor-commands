@@ -1,0 +1,41 @@
+schema_version: 1
+command: merge-open-prs
+ship_gate: [A, D, E]
+cases:
+  A1:
+    rubric: "required"
+    skill_required:
+      - "Docker"
+      - "limit"
+      - "FIFO"
+      - "auto_if_green"
+    pass_must_reference_skill: true
+  A2:
+    rubric: "required"
+    skill_required:
+      - "--no-docker"
+      - "blocker"
+    pass_must_reference_skill: true
+  A3:
+    rubric: "required"
+    skill_required:
+      - "--limit"
+      - "deferred"
+    pass_must_reference_skill: true
+  A4:
+    rubric: "required"
+    skill_required:
+      - "--dry-run"
+      - "gh pr merge"
+    pass_must_reference_skill: true
+  A5:
+    rubric: "required"
+    skill_required:
+      - "FIFO"
+    pass_must_reference_skill: true
+  E3:
+    rubric: "required"
+    skill_required:
+      - "babysit"
+    pass_anchor: "babysit"
+    pass_must_reference_skill: true

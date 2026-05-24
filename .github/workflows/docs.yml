@@ -37,7 +37,7 @@ jobs:
       - name: Check required files
         run: |
           set -euo pipefail
-          for f in LICENSE CONTRIBUTING.md docs/VERIFICATION.md docs/ROADMAP.md docs/PUBLISHING.md CHANGELOG.md; do
+          for f in LICENSE CONTRIBUTING.md docs/VERIFICATION.md docs/ROADMAP.md docs/PUBLISHING.md docs/EVAL_CI.md docs/EVAL_INVENTORY.md CHANGELOG.md; do
             test -f "$f" || { echo "missing $f"; exit 1; }
           done
 
