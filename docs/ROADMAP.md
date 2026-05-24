@@ -11,6 +11,7 @@ Public OSS trajectory for **cursor-commands** (generic slash commands + skills +
 | `v0.1.2` | CI: submodule + link-check fixes |
 | `v0.1.3` | OSS-portable docs (no private host-repo URLs) |
 | `v0.2.0` | **Generic-only catalog** (27 commands, 28 skills); extension pack external |
+| `v0.2.1` | History rewrite: org-scoped paths purged from all commits; `docs/PUBLISHING.md` |
 
 ## v1.0.0 — public launch (next)
 
@@ -61,7 +62,7 @@ Today `scripts/install.sh` replaces the entire `commands/` and `skills/` directo
 | Cursor **rules**, **agents**, **memory-bank** | Host workspace (IDE root repo) |
 | `character.mdc` / `ai-engineer.mdc` | Consumer rules repos |
 
-**Planned org home (TBD):** [organization-specific/dev-tools](https://github.com/organization-specific/dev-tools) — org-scoped commands/skills will likely migrate out of private dotfiles into that repo.
+**Planned org home (TBD):** `organization-specific/dev-tools` on GitHub — org-scoped commands/skills will likely migrate out of private dotfiles into that repo (not created yet).
 
 ## Open decisions
 

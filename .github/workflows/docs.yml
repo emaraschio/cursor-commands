@@ -7,8 +7,7 @@ on:
       - "README.md"
       - "CONTRIBUTING.md"
       - ".cursor/docs/**"
-      - "docs/VERIFICATION.md"
-      - "docs/ROADMAP.md"
+      - "docs/**"
       - "CHANGELOG.md"
       - ".markdown-link-check.json"
   pull_request:
@@ -17,8 +16,7 @@ on:
       - "README.md"
       - "CONTRIBUTING.md"
       - ".cursor/docs/**"
-      - "docs/VERIFICATION.md"
-      - "docs/ROADMAP.md"
+      - "docs/**"
       - "CHANGELOG.md"
       - ".markdown-link-check.json"
   workflow_dispatch:
@@ -39,7 +37,7 @@ jobs:
       - name: Check required files
         run: |
           set -euo pipefail
-          for f in LICENSE CONTRIBUTING.md docs/VERIFICATION.md; do
+          for f in LICENSE CONTRIBUTING.md docs/VERIFICATION.md docs/ROADMAP.md docs/PUBLISHING.md CHANGELOG.md; do
             test -f "$f" || { echo "missing $f"; exit 1; }
           done
 
