@@ -7,7 +7,13 @@ CURSOR_HOME="${CURSOR_HOME:-$HOME/.cursor}"
 EXPECTED_COMMANDS=32
 EXPECTED_SKILLS=34
 
-mkdir -p "$CURSOR_HOME/commands" "$CURSOR_HOME/skills"
+for dir in commands skills; do
+  target="$CURSOR_HOME/$dir"
+  if [[ -e "$target" ]] || [[ -L "$target" ]]; then
+    rm -rf "$target"
+  fi
+  mkdir -p "$target"
+done
 
 command_count=0
 for src in "$REPO_ROOT/.cursor/commands/"*.md; do
