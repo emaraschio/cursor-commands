@@ -150,7 +150,7 @@ Evaluate gate and report **would approve** / **would merge** / **would skip**; *
 
 After gate passes (and not in `--dry-run`):
 
-1. `gh pr view <n> --json reviewDecision,author` — confirm you can act as reviewer (@emaraschio on GitHub per user rules)
+1. `gh pr view <n> --json reviewDecision,author` — confirm the authenticated `gh` user can act as reviewer on this repo
 2. If you have not already left an **APPROVE** review on this PR in this session:
    - `gh pr review <n> --approve` with an optional one-line body summarizing verify + CI status
 3. Re-fetch `reviewDecision` — if still blocked (e.g. requires another reviewer), **skip merge** with reason `approval-insufficient`; continue queue

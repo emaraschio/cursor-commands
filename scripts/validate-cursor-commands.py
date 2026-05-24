@@ -27,9 +27,15 @@ REQUIRED_SECTIONS = [
 
 FRONTMATTER_RE = re.compile(r"^---\s*\n(.*?)\n---\s*\n", re.DOTALL)
 FORBIDDEN_PATH_RE = re.compile(
-    r"file://|emaraschio/dotfiles|/Users/[^/\s]+/code/emaraschio/dotfiles",
+    r"file://[^\s\`'\"]+|"
+    r"emaraschio/dotfiles|github\.com/emaraschio/dotfiles|"
+    r"/Users/[^/\s]+/code/emaraschio/dotfiles",
     re.IGNORECASE,
 )
+
+PORTABLE_DOC_SUFFIXES = {".md", ".mdc", ".yaml", ".yml"}
+PORTABLE_DOC_FILES = ("README.md", "CONTRIBUTING.md")
+PORTABLE_DOC_DIRS = (".cursor", "docs")
 
 
 def parse_frontmatter(text: str) -> dict[str, str]:
@@ -52,16 +58,35 @@ def count_case_headings(path: Path) -> int:
 def scan_forbidden_paths(root: Path) -> list[str]:
     errors: list[str] = []
     for path in root.rglob("*"):
-        if not path.is_file() or path.suffix not in {".md", ".mdc", ".yaml", ".yml"}:
+        if not path.is_file() or path.suffix not in PORTABLE_DOC_SUFFIXES:
             continue
         if FORBIDDEN_PATH_RE.search(path.read_text(encoding="utf-8", errors="replace")):
-            errors.append(f"{path}: contains non-portable path (file:// or dotfiles absolute path)")
+            errors.append(
+                f"{path}: contains non-portable reference "
+                "(file://, private dotfiles URL, or absolute dotfiles path)"
+            )
+    return errors
+
+
+def scan_portable_docs() -> list[str]:
+    errors: list[str] = []
+    for dirname in PORTABLE_DOC_DIRS:
+        errors.extend(scan_forbidden_paths(ROOT / dirname))
+    for filename in PORTABLE_DOC_FILES:
+        path = ROOT / filename
+        if path.is_file() and FORBIDDEN_PATH_RE.search(
+            path.read_text(encoding="utf-8", errors="replace")
+        ):
+            errors.append(
+                f"{path}: contains non-portable reference "
+                "(file://, private dotfiles URL, or absolute dotfiles path)"
+            )
     return errors
 
 
 def main() -> int:
     errors: list[str] = []
-    errors.extend(scan_forbidden_paths(ROOT / ".cursor"))
+    errors.extend(scan_portable_docs())
 
     command_files = sorted(COMMANDS_DIR.glob("*.md"))
     if len(command_files) != EXPECTED_COMMANDS:
