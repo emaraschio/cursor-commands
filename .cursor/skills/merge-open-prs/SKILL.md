@@ -205,6 +205,6 @@ Before changing this contract materially, walk `eval/cases.md` sections **A, D, 
 
 ## Lessons (maintainers)
 
-- **Docker default** matches configured repos; `--no-docker` is explicit opt-out
+- **Docker default** matches repos with a merge profile; `--no-docker` is explicit opt-out
 - **Limit 10** prevents runaway merges; deferred PRs must appear in summary
 - **Babysit is source of truth** for per-PR triage — do not fork its rules here

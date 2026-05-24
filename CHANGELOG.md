@@ -4,25 +4,31 @@ All notable changes to this project are documented here. Format based on [Keep a
 
 ## [Unreleased]
 
+## [0.2.3] - 2026-05-24
+
+### Changed
+
+- Docs and git history scrubbed: no organization-specific trademarks or URLs in tree or commits.
+- Docs CI: forbidden-string check; link-check config simplified.
+
 ## [0.2.2] - 2026-05-24
 
 ### Fixed
 
-- Docs CI: `ROADMAP.md` dev-tools reference and link-check ignores for unpublished `organization-specific/*` repos.
-- `ROADMAP.md` Released table includes `v0.2.1`.
+- Docs CI and `ROADMAP.md` release table (`v0.2.1` entry).
 
 ## [0.2.1] - 2026-05-24
 
 ### Removed
 
-- Git history rewritten (`git filter-repo`): org-scoped commands/skills and `bootstrap_cursor_commands.py` no longer appear in any commit. **Force-reclone** or reset if you pinned an older SHA.
+- Git history rewritten (`git filter-repo`): org-scoped command paths and bootstrap script no longer appear in any commit. **Force-reclone** or reset if you pinned an older SHA.
 
 ## [0.2.0] - 2026-05-24
 
 ### Changed
 
-- **Breaking:** organization-specific commands and skills removed from this repo (27 generic commands, 28 skills). Host workspaces install an overlay (e.g. dotfiles `.cursor/commands/` + `.cursor/skills/`).
-- `security-review` moved with extension pack (HIPAA-specific; was misleadingly tagged `generic`).
+- **Breaking:** Org-scoped commands and skills removed from this repo (27 generic commands, 28 skills). Host workspaces install an overlay.
+- Domain-specific `security-review` moved to host extension pack.
 
 ### Added
 
@@ -32,7 +38,7 @@ All notable changes to this project are documented here. Format based on [Keep a
 
 ### Changed
 
-- Docs: no private dotfiles URLs; portable `VERIFICATION.md`
+- Docs: no private host-repo URLs; portable `VERIFICATION.md`
 - Validator scans `docs/`, `README.md`, `CONTRIBUTING.md`
 
 ## [0.1.2] - 2026-05-24

@@ -1,17 +1,18 @@
 # Roadmap
 
-Public OSS trajectory for **cursor-commands** (generic slash commands + skills + manual evals). organization-specific–specific commands were moved to host workspaces (e.g. private dotfiles overlay) as of **v0.2.0**.
+Public OSS trajectory for **cursor-commands** (generic slash commands + skills + manual evals). Organization-specific commands belong in the **host workspace** that installs this pack (overlay after `./scripts/install.sh`).
 
 ## Released
 
 | Tag | Milestone |
 |-----|-----------|
-| `v0.1` | Initial 32-command tree, validator, CI |
+| `v0.1` | Initial command tree, validator, CI |
 | `v0.1.1` | Install: fix broken `~/.cursor` symlinks before `mkdir` |
 | `v0.1.2` | CI: submodule + link-check fixes |
 | `v0.1.3` | OSS-portable docs (no private host-repo URLs) |
-| `v0.2.0` | **Generic-only catalog** (27 commands, 28 skills); extension pack external |
+| `v0.2.0` | **Generic-only catalog** (27 commands, 28 skills); org extensions external |
 | `v0.2.1` | History rewrite: org-scoped paths purged from all commits; `docs/PUBLISHING.md` |
+| `v0.2.2` | Docs CI and roadmap release-table fixes |
 
 ## v1.0.0 — public launch (next)
 
@@ -25,6 +26,7 @@ Exit criteria (all required):
 - [ ] Install **merge mode** (default): symlink only this repo’s files; do not `rm -rf` entire `~/.cursor/commands` or `skills` (see [Install UX](#install-ux))
 - [ ] `docs/DEPENDENCIES.md` for `gh`, babysit, optional Docker
 - [ ] Deprecated commands removed or moved to `archive/` (none in generic catalog today)
+- [ ] No organization trademarks or private org URLs in tree or git history ([PUBLISHING.md](PUBLISHING.md))
 
 Nice-to-have before or shortly after v1.0:
 
@@ -57,17 +59,15 @@ Today `scripts/install.sh` replaces the entire `commands/` and `skills/` directo
 
 | Item | Where it lives |
 |------|----------------|
-| organization-specific slash commands | Host workspace overlay (e.g. dotfiles `.cursor/commands/`) |
-| `benchmark-rules`, HIPAA `security-review` | Host workspace `.cursor/skills/` |
+| Org-scoped slash commands | Host workspace overlay (`.cursor/commands/` in the repo you open in Cursor) |
+| Org-scoped skills (benchmarks, domain security review, etc.) | Host workspace `.cursor/skills/` |
 | Cursor **rules**, **agents**, **memory-bank** | Host workspace (IDE root repo) |
-| `character.mdc` / `ai-engineer.mdc` | Consumer rules repos |
-
-**Planned org home (TBD):** `organization-specific/dev-tools` on GitHub — org-scoped commands/skills will likely migrate out of private dotfiles into that repo (not created yet).
+| Custom rule files (`*.mdc`) | Consumer rules repos |
 
 ## Open decisions
 
-1. **Public timing** — flip visibility when v1.0 checklist is complete; org-scoped paths must be absent from history ([PUBLISHING.md](PUBLISHING.md))
-2. **Org pack migration** — dotfiles overlay → `organization-specific/dev-tools` (timing TBD)
+1. **Public timing** — flip visibility when v1.0 checklist is complete ([PUBLISHING.md](PUBLISHING.md))
+2. **Org extension packaging** — host overlay vs. separate extension repository (timing TBD)
 3. **`requirement-to-implementation`** — add thin `/requirement-to-implementation` command or keep skill-only
 
 ## How to use this doc
