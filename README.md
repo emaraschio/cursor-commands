@@ -30,10 +30,12 @@ Commands and skills are symlinked into `~/.cursor/commands/` and `~/.cursor/skil
 ### Via dotfiles (submodule)
 
 ```bash
-cd ~/code/emaraschio/dotfiles   # or your fork
-git submodule update --init --recursive
+cd ~/dotfiles   # or your fork
+git submodule update --init vendor/cursor-commands
 ./scripts/install-cursor-commands.sh
 ```
+
+For a full dotfiles clone, also initialize `dotbot` and `.oh-my-zsh` — see [dotfiles installation](https://github.com/emaraschio/dotfiles#installation).
 
 ### Custom Cursor home
 
