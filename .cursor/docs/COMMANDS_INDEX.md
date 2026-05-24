@@ -25,6 +25,8 @@ Commands with extra sections in `cases.md` (e.g. **B**, **C**, **F** on `merge-o
 
 **Release bar:** 100% PASS on ship gate sections; optional full walk targets ≥90% adjusted pass across all cases. See each skill’s `eval/README.md`.
 
+**CI (planned):** Structural ship-gate enforcement is specified in [docs/EVAL_CI.md](../../docs/EVAL_CI.md). Per-case classification (S1–S5 vs H, `fixture_ready`) lives in [docs/EVAL_INVENTORY.md](../../docs/EVAL_INVENTORY.md). Phase 2 adds `run-eval-fixtures.py` — until then, manual walks remain the only behavioral gate.
+
 | Command | Scope | Skill | Eval cases | Ship gate | Last reviewed |
 |---------|-------|-------|------------|-----------|---------------|
 | `accessibility-audit` | generic | yes | [cases](../skills/accessibility-audit/eval/cases.md) | A, S | — |
