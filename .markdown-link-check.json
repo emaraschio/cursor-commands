@@ -2,6 +2,9 @@
   "ignorePatterns": [
     {
       "pattern": "^https://github\\.com/[^/]+/[^/]+/actions/"
+    },
+    {
+      "pattern": "^https://github\\.com/emaraschio/dotfiles"
     }
   ],
   "retryOn429": true,
