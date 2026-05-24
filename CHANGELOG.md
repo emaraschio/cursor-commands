@@ -4,6 +4,13 @@ All notable changes to this project are documented here. Format based on [Keep a
 
 ## [Unreleased]
 
+## [0.2.2] - 2026-05-24
+
+### Fixed
+
+- Docs CI: `ROADMAP.md` dev-tools reference and link-check ignores for unpublished `organization-specific/*` repos.
+- `ROADMAP.md` Released table includes `v0.2.1`.
+
 ## [0.2.1] - 2026-05-24
 
 ### Removed
