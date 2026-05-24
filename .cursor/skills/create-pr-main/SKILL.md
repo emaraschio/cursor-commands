@@ -1,0 +1,26 @@
+---
+name: create-pr-main
+description: Create a pull request targeting main
+---
+
+## Overview
+
+Create a well-structured pull request for the main branch of a GitHub repository with proper description, labels, and reviewers.
+
+## Steps
+
+1. **Prepare branch**
+   - Ensure all changes are committed to the correct branch using the conventional commit message convention
+   - Push branch to remote
+   - Verify branch is up to date with main or master
+
+2. **Write PR description**
+   - Must use the PR template to write the PR description. Refer to ./pull_request_template.md for the PR template.
+   - Summarize changes clearly
+   - Include context and motivation
+   - List any breaking changes
+   - Add screenshots if UI changes
+
+3. **Set up PR**
+    - Only use the GitHub UI to create the PR. Do not use the CLI.
+    - Create PR with descriptive title
