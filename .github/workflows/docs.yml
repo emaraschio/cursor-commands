@@ -1,0 +1,62 @@
+name: Docs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "README.md"
+      - "CONTRIBUTING.md"
+      - ".cursor/docs/**"
+      - "docs/VERIFICATION.md"
+      - ".markdown-link-check.json"
+  pull_request:
+    branches: [main]
+    paths:
+      - "README.md"
+      - "CONTRIBUTING.md"
+      - ".cursor/docs/**"
+      - "docs/VERIFICATION.md"
+      - ".markdown-link-check.json"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Check required files
+        run: |
+          set -euo pipefail
+          for f in LICENSE CONTRIBUTING.md docs/VERIFICATION.md; do
+            test -f "$f" || { echo "missing $f"; exit 1; }
+          done
+
+      - name: Check README sections
+        run: |
+          set -euo pipefail
+          for section in Installation Architecture Evaluations Contributing; do
+            grep -qiE "^##[[:space:]]+${section}" README.md || {
+              echo "README.md missing section: $section"
+              exit 1
+            }
+          done
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "20"
+
+      - name: Check markdown links
+        run: |
+          set -euo pipefail
+          npx --yes markdown-link-check@3.14.2 -c .markdown-link-check.json README.md CONTRIBUTING.md
+          for f in .cursor/docs/*.md docs/*.md; do
+            [[ -f "$f" ]] && npx --yes markdown-link-check@3.14.2 -c .markdown-link-check.json "$f"
+          done

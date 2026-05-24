@@ -1,0 +1,29 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".cursor/**"
+      - "scripts/validate-cursor-commands.py"
+  pull_request:
+    branches: [main]
+    paths:
+      - ".cursor/**"
+      - "scripts/validate-cursor-commands.py"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Validate commands, skills, and evals
+        run: python3 scripts/validate-cursor-commands.py
