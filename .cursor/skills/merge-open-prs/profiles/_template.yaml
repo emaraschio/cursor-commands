@@ -1,0 +1,23 @@
+# Copy to profiles/<repo-basename>.yaml (basename from git remote, e.g. admin.yaml)
+repo_id: org/repo
+default_branch: main
+merge: squash  # squash | merge | rebase
+
+skip_labels:
+  - do-not-merge
+  - wip
+
+verify:
+  mode: docker  # default; use mode: host only with --no-docker
+  steps:
+    - docker compose build
+    - docker compose run --rm web bundle exec rspec spec/smoke
+
+post_merge_smoke:
+  - docker compose run --rm web bundle exec rspec spec/smoke
+
+# Optional host-only steps when using --no-docker:
+# verify:
+#   mode: host
+#   steps:
+#     - bundle exec rspec spec/smoke
