@@ -4,6 +4,19 @@ All notable changes to this project are documented here. Format based on [Keep a
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-05-24
+
+### Added
+
+- **Eval CI (Phase 2):** `scripts/eval_lib.py`, `scripts/run-eval-fixtures.py`, `scripts/bootstrap-fixtures.py`, `scripts/test_eval_lib.py`.
+- `.github/workflows/eval-fixtures.yml` — structural ship-gate checks (`--strict`) on PRs touching commands/skills.
+- `eval/fixtures.yaml` for all 27 commands (86 automated ship-gate rows; 8 Setup/H cases manual-only on `merge-open-prs`).
+
+### Changed
+
+- `validate-cursor-commands.py` — ship gate section binding and COMMANDS_INDEX consistency.
+- `merge-open-prs` case A3 — added missing `**FAIL if:**` rubric line.
+
 ## [0.2.3] - 2026-05-24
 
 ### Changed

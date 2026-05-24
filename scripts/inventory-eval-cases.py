@@ -4,24 +4,24 @@
 from __future__ import annotations
 
 import argparse
-import re
 import sys
 from dataclasses import dataclass
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-COMMANDS_DIR = ROOT / ".cursor" / "commands"
-SKILLS_DIR = ROOT / ".cursor" / "skills"
-DEFAULT_OUT = ROOT / "docs" / "EVAL_INVENTORY.md"
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-FRONTMATTER_RE = re.compile(r"^---\s*\n(.*?)\n---\s*\n", re.DOTALL)
-SECTION_RE = re.compile(r"^## Section ([A-Z])\b[^\n]*", re.MULTILINE)
-CASE_RE = re.compile(r"^###\s+([A-Z]\d+b?)\s+—", re.MULTILINE)
+from eval_lib import (
+    COMMANDS_DIR,
+    SKILLS_DIR,
+    case_body,
+    has_setup,
+    parse_cases_by_section,
+    parse_frontmatter,
+    parse_ship_gate_from_fm,
+)
 
 # Deep-classified overrides (pilot + edge cases). Key: (command, case_id)
 CLASSIFICATION_OVERRIDES: dict[tuple[str, str], tuple[str, str, str]] = {
-    # command, case_id -> (class, fixture_ready, notes)
-    # merge-open-prs — gate A: structural skill anchors; D/E mostly Setup
     ("merge-open-prs", "A1"): ("S1-S5", "y", "S4/S5: docker-first, limit 10, FIFO, auto_if_green; agent flow partial H"),
     ("merge-open-prs", "A2"): ("S1-S5", "y", "S4: --no-docker blocker when docker info fails"),
     ("merge-open-prs", "A3"): ("S1-S5", "y", "S4: --limit defers excess PRs"),
@@ -36,7 +36,6 @@ CLASSIFICATION_OVERRIDES: dict[tuple[str, str], tuple[str, str, str]] = {
     ("merge-open-prs", "E2"): ("H", "n", "Setup: no --admin merge bypass"),
     ("merge-open-prs", "E3"): ("S1-S5+H", "y", "S5 pass_anchor: babysit; H: no conflicting inline fork"),
     ("merge-open-prs", "E4"): ("H", "n", "Setup: CI fail + workflow greenwash"),
-    # pilot git commands — bootstrap template
     ("commit", "A1"): ("S1-S5", "y", "PASS cites SKILL.md workflow"),
     ("commit", "A2"): ("S1-S5", "y", "Scoped request + guardrails"),
     ("commit", "S1"): ("S1-S5", "y", "S4: force-push forbidden; approval before destructive git"),
@@ -63,67 +62,22 @@ class CaseRow:
     notes: str
 
 
-def parse_frontmatter(text: str) -> dict[str, str]:
-    m = FRONTMATTER_RE.match(text)
-    if not m:
-        return {}
-    data: dict[str, str] = {}
-    for line in m.group(1).splitlines():
-        if ":" in line:
-            k, v = line.split(":", 1)
-            data[k.strip()] = v.strip()
-    return data
-
-
-def parse_ship_gate(fm: dict[str, str]) -> list[str]:
-    raw = fm.get("ship_gate", "")
-    if not raw:
-        return []
-    inner = raw.strip("[]")
-    return [s.strip() for s in inner.split(",") if s.strip()]
-
-
-def parse_cases_by_section(cases_text: str) -> dict[str, list[str]]:
-    """Map section letter -> list of case ids in file order."""
-    sections: dict[str, list[str]] = {}
-    current: str | None = None
-    for line in cases_text.splitlines():
-        sm = SECTION_RE.match(line)
-        if sm:
-            current = sm.group(1)
-            sections.setdefault(current, [])
-            continue
-        if current:
-            cm = CASE_RE.match(line)
-            if cm:
-                sections[current].append(cm.group(1))
-    return sections
-
-
-def case_body(cases_text: str, case_id: str) -> str:
-    pattern = rf"^###\s+{re.escape(case_id)}\s+—.*?(?=^###\s+|\Z)"
-    m = re.search(pattern, cases_text, re.MULTILINE | re.DOTALL)
-    return m.group(0) if m else ""
-
-
 def classify_case(command: str, case_id: str, body: str, section: str) -> tuple[str, str, str]:
     key = (command, case_id)
     if key in CLASSIFICATION_OVERRIDES:
         return CLASSIFICATION_OVERRIDES[key]
 
-    has_setup = "**Setup:**" in body
-    has_prompt = "**Prompt:**" in body
     has_pass = "**PASS if:**" in body
     has_fail = "**FAIL if:**" in body
+    has_prompt = "**Prompt:**" in body
 
     notes_parts: list[str] = []
     if not has_pass or not has_fail:
         notes_parts.append("incomplete rubric")
 
-    if has_setup:
+    if has_setup(body):
         return ("H", "n", "; ".join(notes_parts) or "Setup mock state — manual walk")
 
-    # Standard bootstrap A/S sections (no Setup)
     if section in ("A", "S") and has_prompt and has_pass and has_fail:
         if case_id == "A2" and section == "A":
             return ("S1-S5", "y", "Scoped request + skill guardrails")
@@ -146,7 +100,7 @@ def collect_rows() -> tuple[list[CaseRow], dict[str, dict[str, list[str]]]]:
     for cmd_path in sorted(COMMANDS_DIR.glob("*.md")):
         command = cmd_path.stem
         fm = parse_frontmatter(cmd_path.read_text(encoding="utf-8"))
-        gate_ids = parse_ship_gate(fm)
+        gate_ids = parse_ship_gate_from_fm(fm)
         if not gate_ids:
             continue
 
@@ -181,14 +135,13 @@ def collect_rows() -> tuple[list[CaseRow], dict[str, dict[str, list[str]]]]:
 
 
 def non_gate_notes(all_sections: dict[str, dict[str, list[str]]]) -> list[str]:
-    """Commands with Section S in cases.md but S not in ship_gate."""
     lines: list[str] = []
     a_only_with_s: list[str] = []
 
     for cmd_path in sorted(COMMANDS_DIR.glob("*.md")):
         command = cmd_path.stem
         fm = parse_frontmatter(cmd_path.read_text(encoding="utf-8"))
-        gate_ids = set(parse_ship_gate(fm))
+        gate_ids = set(parse_ship_gate_from_fm(fm))
         by_section = all_sections.get(command, {})
         if "S" in by_section and "S" not in gate_ids:
             a_only_with_s.append(command)
@@ -213,9 +166,7 @@ def merge_open_prs_non_gate(all_sections: dict[str, dict[str, list[str]]]) -> li
     for sec in ("B", "C", "F"):
         ids = by.get(sec, [])
         if ids:
-            lines.append(
-                f"- Section **{sec}**: {', '.join(ids)} ({len(ids)} cases)"
-            )
+            lines.append(f"- Section **{sec}**: {', '.join(ids)} ({len(ids)} cases)")
     return lines
 
 

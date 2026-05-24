@@ -1,0 +1,21 @@
+schema_version: 1
+command: security-audit
+ship_gate: [A, S]
+cases:
+  A1:
+    rubric: "required"
+    pass_anchor: "SKILL.md"
+    pass_must_reference_skill: true
+  A2:
+    rubric: "required"
+    pass_must_reference_skill: false
+  S1:
+    rubric: "required"
+    skill_forbidden:
+      - "force-push"
+    pass_must_reference_skill: false
+  S2:
+    rubric: required
+    skill_required:
+      - "secret"
+    pass_must_reference_skill: false

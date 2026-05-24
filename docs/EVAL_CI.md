@@ -1,6 +1,6 @@
 # Eval CI specification
 
-Authoritative design for **Phase 2** ship-gate enforcement in GitHub Actions. Phase 1 delivers this doc plus [EVAL_INVENTORY.md](EVAL_INVENTORY.md); no runner or workflow until sign-off.
+Authoritative spec for ship-gate enforcement in GitHub Actions. **Phase 2 implemented:** [run-eval-fixtures.py](../scripts/run-eval-fixtures.py), [eval-fixtures.yml](../.github/workflows/eval-fixtures.yml), `fixtures.yaml` on all 27 commands.
 
 Related: [EVAL_GUIDE.md](../.cursor/docs/EVAL_GUIDE.md) (manual walks), [COMMANDS_INDEX.md](../.cursor/docs/COMMANDS_INDEX.md) (ship gate column), [ROADMAP.md](ROADMAP.md) (priority track).
 
@@ -182,7 +182,9 @@ See [ROADMAP.md — Phase 1](ROADMAP.md#phase-1--plan-next). Complete when:
 - [x] v1.0 blocker confirmed (above)
 - [ ] Label `eval-ci-phase1-done` on the sign-off PR or close tracking issue
 
-Phase 2 must not start until the sign-off PR is merged.
+Phase 2 is live on `main` with `--strict` in CI.
+
+**Branch protection:** Mark the **Eval fixtures** workflow as a required check (Settings → Branches → `main`).
 
 ---
 

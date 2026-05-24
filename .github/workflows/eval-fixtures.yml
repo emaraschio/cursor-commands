@@ -1,0 +1,46 @@
+name: Eval fixtures
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".cursor/commands/**"
+      - ".cursor/skills/**"
+      - "scripts/run-eval-fixtures.py"
+      - "scripts/validate-cursor-commands.py"
+      - "scripts/eval_lib.py"
+      - "scripts/inventory-eval-cases.py"
+      - "scripts/bootstrap-fixtures.py"
+  pull_request:
+    branches: [main]
+    paths:
+      - ".cursor/commands/**"
+      - ".cursor/skills/**"
+      - "scripts/run-eval-fixtures.py"
+      - "scripts/validate-cursor-commands.py"
+      - "scripts/eval_lib.py"
+      - "scripts/inventory-eval-cases.py"
+      - "scripts/bootstrap-fixtures.py"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  eval-fixtures:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Forbidden org strings
+        run: python3 scripts/check_forbidden_org_strings.py
+
+      - name: Validate commands, skills, and evals
+        run: python3 scripts/validate-cursor-commands.py
+
+      - name: Ship-gate structural fixtures
+        run: python3 scripts/run-eval-fixtures.py --strict

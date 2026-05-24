@@ -1,0 +1,13 @@
+schema_version: 1
+command: seo-audit
+ship_gate: [A]
+cases:
+  A1:
+    rubric: "required"
+    pass_anchor: "SKILL.md"
+    pass_must_reference_skill: true
+    skill_required:
+      - "SEO"
+  A2:
+    rubric: "required"
+    pass_must_reference_skill: false

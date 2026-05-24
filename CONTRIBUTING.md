@@ -5,14 +5,14 @@ Thanks for helping improve Cursor commands and skills. This repo is **pre-releas
 ## Before you open a PR
 
 1. Read [COMMAND_SCHEMA.md](.cursor/docs/COMMAND_SCHEMA.md), [EVAL_GUIDE.md](.cursor/docs/EVAL_GUIDE.md), and [docs/EVAL_CI.md](docs/EVAL_CI.md) (ship-gate CI spec; Phase 2 runner not live yet).
-2. Run `python3 scripts/validate-cursor-commands.py` — must pass.
+2. Run `python3 scripts/validate-cursor-commands.py` and `python3 scripts/run-eval-fixtures.py --strict` — must pass.
 3. Run `./scripts/install.sh` with a test `CURSOR_HOME` if you changed install paths:
 
    ```bash
    CURSOR_HOME="$(mktemp -d)/cursor" ./scripts/install.sh
    ```
 
-4. If you changed behavior, walk the command’s **ship gate** sections in `skills/<name>/eval/cases.md` and note results in the PR description. If you add or reclassify cases, regenerate [docs/EVAL_INVENTORY.md](docs/EVAL_INVENTORY.md) with `python3 scripts/inventory-eval-cases.py --write docs/EVAL_INVENTORY.md`.
+4. If you changed behavior, update `skills/<name>/eval/fixtures.yaml` when `SKILL.md` or ship-gate `cases.md` change, walk ship gate sections, and note results in the PR. Regenerate [docs/EVAL_INVENTORY.md](docs/EVAL_INVENTORY.md) when `ship_gate` or case inventory changes: `python3 scripts/inventory-eval-cases.py --write docs/EVAL_INVENTORY.md`. Draft fixtures: `python3 scripts/bootstrap-fixtures.py <command>`.
 
 ## Adding or changing a command
 
@@ -24,7 +24,8 @@ Thanks for helping improve Cursor commands and skills. This repo is **pre-releas
 
 ## PR checklist
 
-- [ ] Validator passes locally
+- [ ] Validator and `run-eval-fixtures.py --strict` pass locally
+- [ ] `eval/fixtures.yaml` updated if `SKILL.md` or ship-gate cases changed
 - [ ] Eval cases updated for behavior changes
 - [ ] Ship-gate walk noted in PR (sections listed in frontmatter; see [EVAL_INVENTORY.md](docs/EVAL_INVENTORY.md) for case ids)
 - [ ] After `cases.md` / `ship_gate` edits: inventory regenerated if row count or classification changed

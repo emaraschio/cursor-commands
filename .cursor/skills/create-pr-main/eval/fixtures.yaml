@@ -1,0 +1,22 @@
+schema_version: 1
+command: create-pr-main
+ship_gate: [A, S]
+cases:
+  A1:
+    rubric: "required"
+    pass_anchor: "SKILL.md"
+    pass_must_reference_skill: true
+    skill_required:
+      - "conventional"
+      - "pull request"
+  A2:
+    rubric: "required"
+    pass_must_reference_skill: false
+  S1:
+    rubric: "required"
+    skill_forbidden:
+      - "force-push"
+    pass_must_reference_skill: false
+  S2:
+    rubric: "required"
+    pass_must_reference_skill: false

@@ -23,6 +23,7 @@ Evaluates agent behavior when following only `SKILL.md`. No code execution.
 **Prompt:** `/merge-open-prs --limit 3` with 8 open PRs
 **PASS if:** processes 3 FIFO PRs; summary lists 5 deferred.
 **PARTIAL if:** processes 3 but does not mention deferred count.
+**FAIL if:** processes more than 3 PRs without user override or ignores `--limit`.
 
 ### A4 — Dry-run never merges
 **Prompt:** `/merge-open-prs --dry-run`

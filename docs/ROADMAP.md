@@ -9,7 +9,7 @@ Public OSS trajectory for **cursor-commands** (generic slash commands + skills +
 | **Structure** | `validate-cursor-commands.py` in CI — command/skill/eval file layout, frontmatter, ship_gate present | Does not score behavior |
 | **Install** | `install-smoke.yml` — symlinks resolve | Does not exercise agents |
 | **Docs** | `docs.yml` — links, forbidden org strings | Does not read eval cases |
-| **Ship gate** | Documented in [COMMANDS_INDEX.md](../.cursor/docs/COMMANDS_INDEX.md) and [EVAL_GUIDE.md](../.cursor/docs/EVAL_GUIDE.md) | **Honored only if a human runs manual walks** — easy to ignore on PRs |
+| **Ship gate** | [eval-fixtures.yml](../.github/workflows/eval-fixtures.yml) + manual walks for non-gate sections | Structural S1–S5 enforced in CI when `fixtures.yaml` present |
 
 **Risk:** We can merge prompt changes with **0 FAIL** on ship gate sections and CI stays green. Until eval enforcement lands in CI, treat every `SKILL.md` / command change as **ship gate debt** unless the PR author records a manual walk.
 
@@ -34,16 +34,14 @@ Deliverables before writing the runner or workflow:
 
 **Plan sign-off:** Docs-only PR with `EVAL_CI.md` + `EVAL_INVENTORY.md` + inventory script. Label `eval-ci-phase1-done` when merged. **Do not** add `run-eval-fixtures.yml` until Phase 2.
 
-### Phase 2 — Execute (after plan sign-off)
+### Phase 2 — Execute (complete)
 
-Implementation order:
-
-1. [ ] `scripts/run-eval-fixtures.py` — structural checks for **ship gate sections only** (read `eval.ship_gate` from command frontmatter).
-2. [ ] Extend `validate-cursor-commands.py` — assert every `ship_gate` id exists as `## Section <id>` in `cases.md`; every ship-gate case has PASS/PARTIAL/FAIL rubric lines.
-3. [ ] `.github/workflows/eval-fixtures.yml` — run on PR + push to `main` when eval-related paths change; required check on PRs.
-4. [ ] Wire into contributor docs — [CONTRIBUTING.md](../CONTRIBUTING.md) PR checklist: CI runs ship-gate fixtures; manual full walk still recommended for non-gate sections.
-5. [ ] Backfill fixtures for **high-risk** commands first (`merge-open-prs`, `commit`, `commit-changes-main`, `create-pr-main`) then remainder.
-6. [ ] Tag release (e.g. `v0.3.0`) when all commands have ship-gate fixtures and workflow is required on PRs.
+1. [x] `scripts/run-eval-fixtures.py` — ship-gate structural checks (S1, S3–S5 via `fixtures.yaml`).
+2. [x] `scripts/eval_lib.py` — shared parsing; `scripts/test_eval_lib.py` unit tests.
+3. [x] Extended `validate-cursor-commands.py` — S2 section binding + COMMANDS_INDEX ship gate match.
+4. [x] `.github/workflows/eval-fixtures.yml` — `--strict` mode; add as **required check** in branch protection (manual).
+5. [x] `scripts/bootstrap-fixtures.py` — regenerate `eval/fixtures.yaml` for all 27 commands (86 fixture rows; 8 H/Setup waived).
+6. [x] Tag **`v0.3.0`** on merge.
 
 **Execute done when:** A PR that removes a ship-gate requirement from `SKILL.md` without updating fixtures **fails** CI.
 
@@ -62,12 +60,13 @@ Implementation order:
 | `v0.2.2` | Docs CI and roadmap release-table fixes |
 | `v0.2.3` | Org strings scrubbed from tree and history; trademark check in CI |
 | `v0.2.x` | [COMMANDS_INDEX.md](../.cursor/docs/COMMANDS_INDEX.md) ship gate legend |
+| `v0.3.0` | **Eval CI Phase 2:** `eval-fixtures.yml`, `fixtures.yaml` for 27 commands, `--strict` runner |
 
 ## v1.0.0 — public launch
 
 Exit criteria (all required):
 
-- [ ] **Eval CI track Phase 2 complete** (ship gate fixtures block PRs — see [Priority track](#priority-track--eval-enforcement-in-ci))
+- [x] **Eval CI track Phase 2 complete** (ship gate fixtures block PRs — see [Priority track](#priority-track--eval-enforcement-in-ci))
 - [ ] Repository visibility **public**
 - [ ] `CHANGELOG.md` kept from `v0.2.0` onward
 - [ ] README version banner matches latest tag
@@ -124,6 +123,6 @@ Today `scripts/install.sh` replaces the entire `commands/` and `skills/` directo
 
 ## How to use this doc
 
-1. **Phase 1** is complete — see `docs/EVAL_CI.md` and `docs/EVAL_INVENTORY.md`.
-2. Execute **Phase 2** (`run-eval-fixtures.py`, `eval-fixtures.yml`) after the Phase 1 sign-off PR merges.
+1. **Phase 1–2** complete — `docs/EVAL_CI.md`, `docs/EVAL_INVENTORY.md`, `eval-fixtures.yml`.
+2. Enable **Eval fixtures** as a required GitHub check; bump consumer submodule pins to `v0.3.0`.
 3. Bump [CHANGELOG.md](../CHANGELOG.md) and tag semver on each release (`v0.x` pre-1.0, `v1.0.0` when launch criteria are met).

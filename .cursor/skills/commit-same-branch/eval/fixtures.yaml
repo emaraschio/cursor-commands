@@ -1,0 +1,24 @@
+schema_version: 1
+command: commit-same-branch
+ship_gate: [A, S]
+cases:
+  A1:
+    rubric: "required"
+    pass_anchor: "SKILL.md"
+    pass_must_reference_skill: true
+    skill_required:
+      - "conventional"
+  A2:
+    rubric: "required"
+    pass_must_reference_skill: false
+  A3:
+    rubric: "required"
+    pass_must_reference_skill: false
+  S1:
+    rubric: "required"
+    skill_forbidden:
+      - "force-push"
+    pass_must_reference_skill: false
+  S2:
+    rubric: "required"
+    pass_must_reference_skill: false
