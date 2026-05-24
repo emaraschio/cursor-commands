@@ -61,12 +61,12 @@ Today `scripts/install.sh` replaces the entire `commands/` and `skills/` directo
 | Cursor **rules**, **agents**, **memory-bank** | Host workspace (IDE root repo) |
 | `character.mdc` / `ai-engineer.mdc` | Consumer rules repos |
 
-Future org packs may become a second repo (`cursor-commands-org-scoped`) or optional `--pack` — not decided.
+**Planned org home (TBD):** [organization-specific/dev-tools](https://github.com/organization-specific/dev-tools) — org-scoped commands/skills will likely migrate out of private dotfiles into that repo.
 
 ## Open decisions
 
-1. **Public timing** — flip visibility when v1.0 checklist is complete
-2. **Org packs** — stay in private dotfiles vs. publish a CM extension repo
+1. **Public timing** — flip visibility when v1.0 checklist is complete; org-scoped paths must be absent from history ([PUBLISHING.md](PUBLISHING.md))
+2. **Org pack migration** — dotfiles overlay → `organization-specific/dev-tools` (timing TBD)
 3. **`requirement-to-implementation`** — add thin `/requirement-to-implementation` command or keep skill-only
 
 ## How to use this doc
