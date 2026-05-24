@@ -17,6 +17,6 @@ The install script already verifies:
 2. Open the slash command palette — confirm entries such as `/code-review` and `/commit-same-branch`.
 3. Run **`/code-review`** on a small diff — the agent should read `~/.cursor/skills/code-review/SKILL.md`.
 4. In a git repo with `gh` authenticated, run **`/merge-open-prs --dry-run`** — agent should follow the merge-open-prs skill and reference **babysit** at `~/.cursor/skills-cursor/babysit/SKILL.md` (install babysit separately if missing).
-5. Optional: with [dotfiles](https://github.com/emaraschio/dotfiles) as workspace root, run **`/update-memory-bank`** — command and skill resolve via symlinks.
+5. Optional: open any workspace that has a `.cursor/memory-bank/` directory and run **`/update-memory-bank`** — command and skill should resolve via the install symlinks (memory-bank content lives in the host repo, not in cursor-commands).
 
 Record pass/fail in release notes when cutting a tag.

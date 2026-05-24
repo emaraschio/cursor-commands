@@ -27,15 +27,17 @@ chmod +x scripts/install.sh
 
 Commands and skills are symlinked into `~/.cursor/commands/` and `~/.cursor/skills/`. Existing `~/.cursor` content is merged, not replaced.
 
-### Via dotfiles (submodule)
+### As a Git submodule
+
+If a parent repo (for example dotfiles) vendors this tree:
 
 ```bash
-cd ~/dotfiles   # or your fork
-git submodule update --init vendor/cursor-commands
-./scripts/install-cursor-commands.sh
+cd path/to/parent-repo
+git submodule update --init path/to/cursor-commands
+./path/to/cursor-commands/scripts/install.sh
 ```
 
-For a full dotfiles clone, also initialize `dotbot` and `.oh-my-zsh` — see [dotfiles installation](https://github.com/emaraschio/dotfiles#installation).
+The parent repo owns workspace-specific Cursor **rules**, **agents**, and **memory-bank** files. This repo only ships shared slash commands and skills.
 
 ### Custom Cursor home
 
@@ -111,7 +113,6 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
 ## Related
 
 - [Cursor slash commands docs](https://cursor.com/docs/agent/chat/commands)
-- [emaraschio/dotfiles](https://github.com/emaraschio/dotfiles) — personal rules, agents, memory bank
 - [hamzafer/cursor-commands](https://github.com/hamzafer/cursor-commands) — minimal command-only collection
 
 ## License

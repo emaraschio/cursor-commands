@@ -4,9 +4,6 @@
       "pattern": "^https://github\\.com/[^/]+/[^/]+/actions/"
     },
     {
-      "pattern": "^https://github\\.com/emaraschio/dotfiles"
-    },
-    {
       "pattern": "^https://github\\.com/emaraschio/cursor-commands"
     }
   ],

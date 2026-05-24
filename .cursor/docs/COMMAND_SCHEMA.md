@@ -54,4 +54,4 @@ eval:
 
 ## Repository
 
-This tree is the source of truth in [emaraschio/cursor-commands](https://github.com/emaraschio/cursor-commands). Install into `~/.cursor` via `./scripts/install.sh`.
+This repository is the source of truth. Install into `~/.cursor` via `./scripts/install.sh`.
