@@ -4,6 +4,12 @@ All notable changes to this project are documented here. Format based on [Keep a
 
 ## [Unreleased]
 
+## [0.2.1] - 2026-05-24
+
+### Removed
+
+- Git history rewritten (`git filter-repo`): org-scoped commands/skills and `bootstrap_cursor_commands.py` no longer appear in any commit. **Force-reclone** or reset if you pinned an older SHA.
+
 ## [0.2.0] - 2026-05-24
 
 ### Changed
