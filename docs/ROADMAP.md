@@ -21,18 +21,18 @@ Public OSS trajectory for **cursor-commands** (generic slash commands + skills +
 
 Work in two explicit phases: **plan**, then **execute**. Do not skip planning.
 
-### Phase 1 — Plan (next)
+### Phase 1 — Plan (complete)
 
 Deliverables before writing the runner or workflow:
 
-- [ ] **Inventory** — For each of 27 commands: list ship gate section IDs from frontmatter, case count per section in `eval/cases.md`, and whether cases are checkable structurally (regex/AST) vs need human judgment.
-- [ ] **Fixture model** — Decide format for `scripts/run-eval-fixtures.py` inputs (e.g. expected bullets in `SKILL.md`, forbidden phrases, required step order, dry-run flags). Document in `docs/EVAL_CI.md` (new).
-- [ ] **CI scope** — Which events block merge: PRs touching `.cursor/commands/**` or `.cursor/skills/**` only; optional `workflow_dispatch` for full catalog.
-- [ ] **Failure contract** — Exit code 1 on any ship-gate fixture failure; PR comment or job summary lists command + section + case id (e.g. `merge-open-prs` / `D` / `D3`).
-- [ ] **Non-goals (v1)** — No LLM-as-judge in CI; no replacement for exploratory cases outside ship gate; no org-overlay commands in this repo.
-- [ ] **v1.0 gate** — Decide: is minimal eval CI **required** before public launch, or parallel with merge-mode install?
+- [x] **Inventory** — [docs/EVAL_INVENTORY.md](EVAL_INVENTORY.md): 27 commands, 94 ship-gate rows (S1–S5 vs H, `fixture_ready`). Regenerate via `scripts/inventory-eval-cases.py`.
+- [x] **Fixture model** — Full-structural v1 in [docs/EVAL_CI.md](EVAL_CI.md) (`fixtures.yaml`, S5 algorithm, global checks).
+- [x] **CI scope** — Documented: `eval-fixtures.yml` on PR/push when `.cursor/commands/**` or `.cursor/skills/**` change; `workflow_dispatch` for full catalog.
+- [x] **Failure contract** — `FAIL <command> <case_id> <check_id> <message>`; stable `check_id` enum in EVAL_CI.md.
+- [x] **Non-goals (v1)** — No LLM judge; non-gate sections manual; no org-overlay commands here.
+- [x] **v1.0 gate** — **Eval CI Phase 2 is a hard blocker** for public launch (soft exception for private submodule pins documented in EVAL_CI.md).
 
-**Plan sign-off:** Open a tracking issue (or PR with `docs/EVAL_CI.md` only) and mark this section complete when the checklist above is checked.
+**Plan sign-off:** Docs-only PR with `EVAL_CI.md` + `EVAL_INVENTORY.md` + inventory script. Label `eval-ci-phase1-done` when merged. **Do not** add `run-eval-fixtures.yml` until Phase 2.
 
 ### Phase 2 — Execute (after plan sign-off)
 
@@ -124,6 +124,6 @@ Today `scripts/install.sh` replaces the entire `commands/` and `skills/` directo
 
 ## How to use this doc
 
-1. Finish **Phase 1 (plan)** for eval CI; record outcomes in `docs/EVAL_CI.md`.
-2. Execute **Phase 2** only after plan checkboxes are done.
+1. **Phase 1** is complete — see `docs/EVAL_CI.md` and `docs/EVAL_INVENTORY.md`.
+2. Execute **Phase 2** (`run-eval-fixtures.py`, `eval-fixtures.yml`) after the Phase 1 sign-off PR merges.
 3. Bump [CHANGELOG.md](../CHANGELOG.md) and tag semver on each release (`v0.x` pre-1.0, `v1.0.0` when launch criteria are met).
