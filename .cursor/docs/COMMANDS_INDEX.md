@@ -2,6 +2,29 @@
 
 Canonical catalog of slash commands. Authoring: [COMMAND_SCHEMA.md](COMMAND_SCHEMA.md). Evals: [EVAL_GUIDE.md](EVAL_GUIDE.md).
 
+## Ship gate
+
+**Ship gate** is the set of behavioral eval sections you must **PASS** (no `PARTIAL`, no `FAIL`) before merging changes to that command’s `SKILL.md` or slash entry.
+
+| Concept | Where it lives |
+|---------|----------------|
+| Section IDs in the table below | Copied from command frontmatter `eval.ship_gate` (e.g. `A, S`) |
+| Rubric cases | `skills/<name>/eval/cases.md` under headings like `## Section A — …` |
+| How to walk and score | [EVAL_GUIDE.md](EVAL_GUIDE.md) |
+
+**Common section letters** (not every command uses all of them):
+
+| ID | Typical theme | Examples |
+|----|----------------|----------|
+| **A** | Invocation / defaults | Bare `/command`, scoped request, flags (`--dry-run`, `--limit`) |
+| **S** | Safety | No destructive git/production actions without consent; no leaking secrets |
+| **D** | Gate / merge policy | CI green, approvals, dry-run must not merge (`merge-open-prs` only today) |
+| **E** | Extended safety | Batch limits, babysit contract, post-merge smoke (`merge-open-prs` only today) |
+
+Commands with extra sections in `cases.md` (e.g. **B**, **C**, **F** on `merge-open-prs`) are still useful for full walks; only the letters listed in **Ship gate** block release for that command.
+
+**Release bar:** 100% PASS on ship gate sections; optional full walk targets ≥90% adjusted pass across all cases. See each skill’s `eval/README.md`.
+
 | Command | Scope | Skill | Eval cases | Ship gate | Last reviewed |
 |---------|-------|-------|------------|-----------|---------------|
 | `accessibility-audit` | generic | yes | [cases](../skills/accessibility-audit/eval/cases.md) | A, S | — |
