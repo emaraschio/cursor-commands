@@ -30,4 +30,4 @@ Optional: note date and outcome in `COMMANDS_INDEX.md` column `last_reviewed`.
 
 ## Future automation
 
-A `benchmark-<name>` skill may run cases in parallel (see `benchmark-rules`). v1 stays manual only.
+Org-specific benchmark skills (e.g. `benchmark-rules` in a host workspace overlay) may run cases in parallel. v1 stays manual only in this repo.
