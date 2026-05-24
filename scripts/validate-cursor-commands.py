@@ -32,10 +32,6 @@ FORBIDDEN_PATH_RE = re.compile(
     r"/Users/[^/\s]+/code/emaraschio/dotfiles",
     re.IGNORECASE,
 )
-FORBIDDEN_ORG_RE = re.compile(
-    r"circle\s*medical|organization-specific|org-scoped",
-    re.IGNORECASE,
-)
 
 PORTABLE_DOC_SUFFIXES = {".md", ".mdc", ".yaml", ".yml"}
 PORTABLE_DOC_FILES = ("README.md", "CONTRIBUTING.md")
@@ -70,8 +66,6 @@ def scan_forbidden_paths(root: Path) -> list[str]:
                 f"{path}: contains non-portable reference "
                 "(file://, private dotfiles URL, or absolute dotfiles path)"
             )
-        if FORBIDDEN_ORG_RE.search(text):
-            errors.append(f"{path}: contains forbidden organization-specific reference")
     return errors
 
 
@@ -88,13 +82,16 @@ def scan_portable_docs() -> list[str]:
                     f"{path}: contains non-portable reference "
                     "(file://, private dotfiles URL, or absolute dotfiles path)"
                 )
-            if FORBIDDEN_ORG_RE.search(text):
-                errors.append(f"{path}: contains forbidden organization-specific reference")
     return errors
 
 
 def main() -> int:
     errors: list[str] = []
+    check_script = ROOT / "scripts" / "check_forbidden_org_strings.py"
+    import subprocess
+
+    if subprocess.run([sys.executable, str(check_script)], check=False).returncode != 0:
+        return 1
     errors.extend(scan_portable_docs())
 
     command_files = sorted(COMMANDS_DIR.glob("*.md"))

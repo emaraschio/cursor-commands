@@ -37,15 +37,10 @@ git reset --hard origin/main
 ## 2. Verify
 
 ```bash
-# No forbidden org strings in any revision
-git log --all -S 'FORBIDDEN_ORG_STRING' --oneline   # should print nothing
-git rev-list --all | xargs git grep -i 'FORBIDDEN_ORG_STRING' 2>/dev/null && exit 1 || true
-
+python3 scripts/check_forbidden_org_strings.py
 python3 scripts/validate-cursor-commands.py
 ./scripts/install.sh
 ```
-
-Replace `FORBIDDEN_ORG_STRING` with the org identifier you are scrubbing before running.
 
 ## 3. Remaining v1.0 items
 

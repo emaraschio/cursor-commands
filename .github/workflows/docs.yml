@@ -56,15 +56,7 @@ jobs:
           node-version: "20"
 
       - name: Forbid organization-specific trademarks
-        run: |
-          set -euo pipefail
-          if git grep -iE 'circle[[:space:]-]*medical|organization-specific' -- . \
-            ':(exclude).github/workflows/docs.yml' \
-            ':(exclude)scripts/validate-cursor-commands.py'; then
-            echo "::error::Forbidden organization reference in repository"
-            exit 1
-          fi
-          echo "✓ no forbidden organization references"
+        run: python3 scripts/check_forbidden_org_strings.py
 
       - name: Check markdown links
         run: |
