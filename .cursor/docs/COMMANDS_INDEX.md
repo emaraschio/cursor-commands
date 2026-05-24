@@ -34,4 +34,4 @@ Canonical catalog of slash commands. Authoring: [COMMAND_SCHEMA.md](COMMAND_SCHE
 
 **Skill without a slash command:** `requirement-to-implementation` (under `.cursor/skills/`).
 
-**organization-specific commands** (Rails console scripts, onboarding, HIPAA security review, rules benchmark) live in the **host workspace** that installs this pack (`.cursor/commands/` + `.cursor/skills/` overlay after `./scripts/install.sh`). Not shipped here.
+**Organization-specific commands** live in the **host workspace** that installs this pack (`.cursor/commands/` + `.cursor/skills/` overlay after `./scripts/install.sh`). Not shipped here.

@@ -5,9 +5,6 @@
     },
     {
       "pattern": "^https://github\\.com/emaraschio/cursor-commands"
-    },
-    {
-      "pattern": "^https://github\\.com/organization-specific/"
     }
   ],
   "retryOn429": true,

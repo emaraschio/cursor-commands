@@ -4,7 +4,7 @@
 [![Install smoke](https://github.com/emaraschio/cursor-commands/actions/workflows/install-smoke.yml/badge.svg)](https://github.com/emaraschio/cursor-commands/actions/workflows/install-smoke.yml)
 [![Docs](https://github.com/emaraschio/cursor-commands/actions/workflows/docs.yml/badge.svg)](https://github.com/emaraschio/cursor-commands/actions/workflows/docs.yml)
 
-**Pre-release (`v0.2`)** — Generic Cursor slash commands, Agent Skills, and behavioral eval rubrics. Org-specific packs (e.g. organization-specific) install from the host workspace. See [docs/ROADMAP.md](docs/ROADMAP.md) for v1.0 launch criteria.
+**Pre-release (`v0.2`)** — Generic Cursor slash commands, Agent Skills, and behavioral eval rubrics. Organization-specific packs install from the **host workspace**. See [docs/ROADMAP.md](docs/ROADMAP.md) for v1.0 launch criteria.
 
 Inspired by install ergonomics from [hamzafer/cursor-commands](https://github.com/hamzafer/cursor-commands); this repo adds **skills**, **manual evals**, and **structural CI**.
 
@@ -29,7 +29,7 @@ Commands and skills are symlinked into `~/.cursor/commands/` and `~/.cursor/skil
 
 ### As a Git submodule
 
-If a parent repo (for example dotfiles) vendors this tree:
+If a parent repo (for example personal dotfiles) vendors this tree:
 
 ```bash
 cd path/to/parent-repo
@@ -76,7 +76,7 @@ Full table: [COMMANDS_INDEX.md](.cursor/docs/COMMANDS_INDEX.md)
 
 **External dependency:** `/merge-open-prs` expects the user-global **babysit** skill at `~/.cursor/skills-cursor/babysit/SKILL.md`.
 
-**Org-specific commands** (organization-specific Rails scripts, onboarding, HIPAA `security-review`, `benchmark-rules`) are **not** in this repo — install them from your host workspace (e.g. dotfiles overlay). See [docs/ROADMAP.md](docs/ROADMAP.md).
+**Org-specific commands** (domain scripts, onboarding, custom security review, rules benchmarks) are **not** in this repo — install them from your host workspace overlay. See [docs/ROADMAP.md](docs/ROADMAP.md).
 
 ## Evaluations
 

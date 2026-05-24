@@ -1,6 +1,6 @@
 # Merge-open-PRs profiles
 
-Optional per-repo YAML overrides for `/merge-open-prs`. Filename = **repository basename** from `git remote get-url origin` (e.g. `organization-specific/admin` → `admin.yaml`).
+Optional per-repo YAML overrides for `/merge-open-prs`. Filename = **repository basename** from `git remote get-url origin` (e.g. `myorg/admin` → `admin.yaml`).
 
 ## When to add a profile
 

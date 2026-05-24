@@ -32,6 +32,10 @@ FORBIDDEN_PATH_RE = re.compile(
     r"/Users/[^/\s]+/code/emaraschio/dotfiles",
     re.IGNORECASE,
 )
+FORBIDDEN_ORG_RE = re.compile(
+    r"circle\s*medical|organization-specific|org-scoped",
+    re.IGNORECASE,
+)
 
 PORTABLE_DOC_SUFFIXES = {".md", ".mdc", ".yaml", ".yml"}
 PORTABLE_DOC_FILES = ("README.md", "CONTRIBUTING.md")
@@ -60,11 +64,14 @@ def scan_forbidden_paths(root: Path) -> list[str]:
     for path in root.rglob("*"):
         if not path.is_file() or path.suffix not in PORTABLE_DOC_SUFFIXES:
             continue
-        if FORBIDDEN_PATH_RE.search(path.read_text(encoding="utf-8", errors="replace")):
+        text = path.read_text(encoding="utf-8", errors="replace")
+        if FORBIDDEN_PATH_RE.search(text):
             errors.append(
                 f"{path}: contains non-portable reference "
                 "(file://, private dotfiles URL, or absolute dotfiles path)"
             )
+        if FORBIDDEN_ORG_RE.search(text):
+            errors.append(f"{path}: contains forbidden organization-specific reference")
     return errors
 
 
@@ -74,13 +81,15 @@ def scan_portable_docs() -> list[str]:
         errors.extend(scan_forbidden_paths(ROOT / dirname))
     for filename in PORTABLE_DOC_FILES:
         path = ROOT / filename
-        if path.is_file() and FORBIDDEN_PATH_RE.search(
-            path.read_text(encoding="utf-8", errors="replace")
-        ):
-            errors.append(
-                f"{path}: contains non-portable reference "
-                "(file://, private dotfiles URL, or absolute dotfiles path)"
-            )
+        if path.is_file():
+            text = path.read_text(encoding="utf-8", errors="replace")
+            if FORBIDDEN_PATH_RE.search(text):
+                errors.append(
+                    f"{path}: contains non-portable reference "
+                    "(file://, private dotfiles URL, or absolute dotfiles path)"
+                )
+            if FORBIDDEN_ORG_RE.search(text):
+                errors.append(f"{path}: contains forbidden organization-specific reference")
     return errors
 
 
