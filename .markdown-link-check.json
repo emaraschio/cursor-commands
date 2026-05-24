@@ -5,6 +5,9 @@
     },
     {
       "pattern": "^https://github\\.com/emaraschio/dotfiles"
+    },
+    {
+      "pattern": "^https://github\\.com/emaraschio/cursor-commands"
     }
   ],
   "retryOn429": true,
