@@ -30,10 +30,9 @@ Thanks for helping improve Cursor commands and skills. This repo is **pre-releas
 - [ ] `COMMANDS_INDEX.md` updated if catalog changed
 - [ ] No `file://`, absolute user paths, or private host-repo URLs in `.cursor/`, `docs/`, `README.md`, or `CONTRIBUTING.md` (enforced by `validate-cursor-commands.py`)
 
-## Scope tags
+## Scope
 
-- `generic` — any project
-- `org-scoped` — CM stack (Rails console scripts, onboarding, etc.)
+All commands in this repository use `scope: generic`. Organization-specific commands belong in the **host workspace** that installs this pack (not here).
 
 ## Host workspace
 

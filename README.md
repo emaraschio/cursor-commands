@@ -4,14 +4,14 @@
 [![Install smoke](https://github.com/emaraschio/cursor-commands/actions/workflows/install-smoke.yml/badge.svg)](https://github.com/emaraschio/cursor-commands/actions/workflows/install-smoke.yml)
 [![Docs](https://github.com/emaraschio/cursor-commands/actions/workflows/docs.yml/badge.svg)](https://github.com/emaraschio/cursor-commands/actions/workflows/docs.yml)
 
-**Pre-release (`v0.1`)** — Cursor slash commands, Agent Skills, and behavioral eval rubrics for safe prompt iteration. Stable v1.0 is planned separately (eval automation, packaging, broader generic coverage).
+**Pre-release (`v0.2`)** — Generic Cursor slash commands, Agent Skills, and behavioral eval rubrics. Org-specific packs (e.g. organization-specific) install from the host workspace. See [docs/ROADMAP.md](docs/ROADMAP.md) for v1.0 launch criteria.
 
 Inspired by install ergonomics from [hamzafer/cursor-commands](https://github.com/hamzafer/cursor-commands); this repo adds **skills**, **manual evals**, and **structural CI**.
 
 ## What you get
 
-- **32** slash commands (git, review, security, Rails scripts, etc.)
-- **34** skill directories (every command + `benchmark-rules` + `requirement-to-implementation`)
+- **27** generic slash commands (git, review, security audits, PR workflows, etc.)
+- **28** skill directories (every command + `requirement-to-implementation`)
 - **Behavioral evals** (`PASS` / `PARTIAL` / `FAIL`) per command — regression guardrails when editing prompts
 
 ## Installation
@@ -72,12 +72,11 @@ Full table: [COMMANDS_INDEX.md](.cursor/docs/COMMANDS_INDEX.md)
 | Highlight | Description |
 |-----------|-------------|
 | `/merge-open-prs` | Batch review, Docker verify, merge when green (limit 10) |
-| `/script-requester-v2` | Production-safe Rails console scripts |
-| `/script-requester` | Legacy — prefer v2 (`deprecated: true`) |
+| `/code-review` | Thorough PR review before approval |
 
 **External dependency:** `/merge-open-prs` expects the user-global **babysit** skill at `~/.cursor/skills-cursor/babysit/SKILL.md`.
 
-**organization-specific:** commands tagged `scope: org-scoped` in frontmatter. `benchmark-rules` requires CM rule files in the target workspace (not shipped here).
+**Org-specific commands** (organization-specific Rails scripts, onboarding, HIPAA `security-review`, `benchmark-rules`) are **not** in this repo — install them from your host workspace (e.g. dotfiles overlay). See [docs/ROADMAP.md](docs/ROADMAP.md).
 
 ## Evaluations
 

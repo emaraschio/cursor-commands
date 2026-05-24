@@ -6,7 +6,7 @@ Run after `./scripts/install.sh`. Automated checks run in CI via `install-smoke.
 
 The install script already verifies:
 
-- 32 command symlinks and 34 skill symlinks
+- 27 command symlinks and 28 skill symlinks
 - Each symlink target resolves
 - `validate-cursor-commands.py` passes
 - `merge-open-prs` skill is reachable under `$CURSOR_HOME`

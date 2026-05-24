@@ -9,7 +9,7 @@ All slash commands in `.cursor/commands/` follow this contract. The workflow bod
 name: <kebab-case>              # must match filename without .md
 version: 1
 description: <one line>
-scope: generic | org-scoped
+scope: generic
 requires_skill: true
 deprecated: false               # optional; true for legacy commands
 eval:
@@ -47,10 +47,7 @@ eval:
 
 ## Scope
 
-| `scope` | Use for |
-|---------|---------|
-| `generic` | Any repo |
-| `org-scoped` | CM stack, Rails console scripts, CM onboarding |
+Use `scope: generic` for every command in this repository. Organization-specific commands belong in the host workspace overlay, not in cursor-commands.
 
 ## Repository
 

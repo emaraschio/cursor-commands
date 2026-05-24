@@ -8,6 +8,8 @@ on:
       - "CONTRIBUTING.md"
       - ".cursor/docs/**"
       - "docs/VERIFICATION.md"
+      - "docs/ROADMAP.md"
+      - "CHANGELOG.md"
       - ".markdown-link-check.json"
   pull_request:
     branches: [main]
@@ -16,6 +18,8 @@ on:
       - "CONTRIBUTING.md"
       - ".cursor/docs/**"
       - "docs/VERIFICATION.md"
+      - "docs/ROADMAP.md"
+      - "CHANGELOG.md"
       - ".markdown-link-check.json"
   workflow_dispatch:
 
