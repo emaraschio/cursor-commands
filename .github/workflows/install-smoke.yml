@@ -1,0 +1,39 @@
+name: Install smoke
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".cursor/commands/**"
+      - ".cursor/skills/**"
+      - "scripts/install.sh"
+      - "scripts/validate-cursor-commands.py"
+  pull_request:
+    branches: [main]
+    paths:
+      - ".cursor/commands/**"
+      - ".cursor/skills/**"
+      - "scripts/install.sh"
+      - "scripts/validate-cursor-commands.py"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  install-smoke:
+    runs-on: ubuntu-latest
+    env:
+      CURSOR_HOME: ${{ runner.temp }}/cursor-home
+    steps:
+      - uses: actions/checkout@v5
+      - name: Run install script
+        run: chmod +x scripts/install.sh && ./scripts/install.sh
+      - name: Assert symlinks resolve
+        run: |
+          test -f "$CURSOR_HOME/commands/code-review.md"
+          test -f "$CURSOR_HOME/skills/merge-open-prs/SKILL.md"
