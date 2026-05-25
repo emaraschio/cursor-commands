@@ -26,7 +26,7 @@ jobs:
   eval-fixtures:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: Forbidden org strings
         run: python3 scripts/check_forbidden_org_strings.py
