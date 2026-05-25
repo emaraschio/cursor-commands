@@ -5,7 +5,7 @@
 [![Docs](https://github.com/emaraschio/cursor-commands/actions/workflows/docs.yml/badge.svg)](https://github.com/emaraschio/cursor-commands/actions/workflows/docs.yml)
 [![Eval fixtures](https://github.com/emaraschio/cursor-commands/actions/workflows/eval-fixtures.yml/badge.svg)](https://github.com/emaraschio/cursor-commands/actions/workflows/eval-fixtures.yml)
 
-**Stable release: [`v1.0.0`](https://github.com/emaraschio/cursor-commands/releases)** (tag `v1.0.0`; notes in [CHANGELOG](CHANGELOG.md#100---2026-05-25)) — Generic Cursor slash commands, Agent Skills, and behavioral eval rubrics. Ship-gate sections are enforced in CI via [docs/EVAL_CI.md](docs/EVAL_CI.md). Organization-specific packs install from the **host workspace**.
+**Stable release: [`v1.0.0`](CHANGELOG.md#100---2026-05-25)** — Generic Cursor slash commands, Agent Skills, and behavioral eval rubrics. Install from `main` or `git checkout v1.0.0` (the only published release tag). Ship-gate sections are enforced in CI via [docs/EVAL_CI.md](docs/EVAL_CI.md). Organization-specific packs install from the **host workspace**.
 
 Inspired by install ergonomics from [hamzafer/cursor-commands](https://github.com/hamzafer/cursor-commands); this repo adds **skills**, **eval rubrics**, and **structural ship-gate CI** (`run-eval-fixtures.py --strict`).
 
@@ -85,7 +85,7 @@ Full table: [COMMANDS_INDEX.md](.cursor/docs/COMMANDS_INDEX.md)
 
 We treat prompts like code: editable contracts need reviewable tests.
 
-- **Manual walks only in v0.1** — no LLM-in-CI (flaky, expensive).
+- **Structural checks in CI** — no LLM judge on every PR (flaky, expensive); ship-gate rows use `fixtures.yaml`.
 - Each command defines **ship gate** sections in frontmatter (e.g. `A`, `S`; merge-open-prs uses `A`, `D`, `E`).
 - Scoring: `PARTIAL` counts as fail; target 0 `FAIL` on ship gate before merge.
 
@@ -107,7 +107,7 @@ python3 scripts/validate-cursor-commands.py
 python3 scripts/run-eval-fixtures.py --strict
 ```
 
-CI runs **validate**, **install-smoke**, and **docs** workflows on every relevant change.
+CI on `main` and PRs: **validate**, **docs**, **install-smoke**, **eval-fixtures** (see branch protection). New releases: push tag `v*` to run [release.yml](.github/workflows/release.yml).
 
 ## Contributing
 
