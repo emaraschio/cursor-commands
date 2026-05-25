@@ -86,7 +86,9 @@ Nice-to-have before or shortly after v1.0:
 
 ## v1.x — after launch
 
-### Install UX (shipped in `v0.3.1`)
+### Install UX {#install-ux}
+
+Shipped in `v0.3.1`.
 
 - **Default:** merge — `mkdir -p` and symlink catalog entries only; foreign files and non-repo symlinks preserved
 - **`--replace`:** remove `commands/` and `skills/` trees first (legacy full reset)
