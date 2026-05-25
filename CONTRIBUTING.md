@@ -13,7 +13,9 @@ Thanks for helping improve Cursor commands and skills. This catalog is **stable*
    CURSOR_HOME="$(mktemp -d)/cursor" ./scripts/install.sh
    ```
 
-4. If you changed behavior, update `skills/<name>/eval/fixtures.yaml` when `SKILL.md` or ship-gate `cases.md` change, walk ship gate sections, and note results in the PR. Regenerate [docs/EVAL_INVENTORY.md](docs/EVAL_INVENTORY.md) when `ship_gate` or case inventory changes: `python3 scripts/inventory-eval-cases.py --write docs/EVAL_INVENTORY.md`. Draft fixtures: `python3 scripts/bootstrap-fixtures.py <command>`. For releases, record manual IDE smoke per [docs/VERIFICATION.md](docs/VERIFICATION.md).
+4. **Dependabot** may open grouped PRs for `github-actions` (see [.github/dependabot.yml](.github/dependabot.yml)); merge when CI is green.
+
+5. If you changed behavior, update `skills/<name>/eval/fixtures.yaml` when `SKILL.md` or ship-gate `cases.md` change, walk ship gate sections, and note results in the PR. Regenerate [docs/EVAL_INVENTORY.md](docs/EVAL_INVENTORY.md) when `ship_gate` or case inventory changes: `python3 scripts/inventory-eval-cases.py --write docs/EVAL_INVENTORY.md`. Draft fixtures: `python3 scripts/bootstrap-fixtures.py <command>`. For releases, record manual IDE smoke per [docs/VERIFICATION.md](docs/VERIFICATION.md).
 
 ## Adding or changing a command
 
