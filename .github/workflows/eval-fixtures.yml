@@ -3,14 +3,6 @@ name: Eval fixtures
 on:
   push:
     branches: [main]
-    paths:
-      - ".cursor/commands/**"
-      - ".cursor/skills/**"
-      - "scripts/run-eval-fixtures.py"
-      - "scripts/validate-cursor-commands.py"
-      - "scripts/eval_lib.py"
-      - "scripts/inventory-eval-cases.py"
-      - "scripts/bootstrap-fixtures.py"
   pull_request:
     branches: [main]
     paths:

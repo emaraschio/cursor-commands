@@ -1,10 +1,10 @@
 # Contributing
 
-Thanks for helping improve Cursor commands and skills. This repo is **pre-release** (`v0.1`); stable `v1.0.0` criteria will be defined in a later milestone.
+Thanks for helping improve Cursor commands and skills. This catalog is **stable** at `v1.0.0` and public on GitHub.
 
 ## Before you open a PR
 
-1. Read [COMMAND_SCHEMA.md](.cursor/docs/COMMAND_SCHEMA.md), [EVAL_GUIDE.md](.cursor/docs/EVAL_GUIDE.md), and [docs/EVAL_CI.md](docs/EVAL_CI.md) (ship-gate CI spec; Phase 2 runner not live yet).
+1. Read [COMMAND_SCHEMA.md](.cursor/docs/COMMAND_SCHEMA.md), [EVAL_GUIDE.md](.cursor/docs/EVAL_GUIDE.md), and [docs/EVAL_CI.md](docs/EVAL_CI.md) (ship-gate CI; `run-eval-fixtures.py --strict` runs in CI).
 2. Run `python3 scripts/validate-cursor-commands.py` and `python3 scripts/run-eval-fixtures.py --strict` — must pass.
 3. Run install tests if you changed `scripts/install.sh`:
 
@@ -13,7 +13,7 @@ Thanks for helping improve Cursor commands and skills. This repo is **pre-releas
    CURSOR_HOME="$(mktemp -d)/cursor" ./scripts/install.sh
    ```
 
-4. If you changed behavior, update `skills/<name>/eval/fixtures.yaml` when `SKILL.md` or ship-gate `cases.md` change, walk ship gate sections, and note results in the PR. Regenerate [docs/EVAL_INVENTORY.md](docs/EVAL_INVENTORY.md) when `ship_gate` or case inventory changes: `python3 scripts/inventory-eval-cases.py --write docs/EVAL_INVENTORY.md`. Draft fixtures: `python3 scripts/bootstrap-fixtures.py <command>`.
+4. If you changed behavior, update `skills/<name>/eval/fixtures.yaml` when `SKILL.md` or ship-gate `cases.md` change, walk ship gate sections, and note results in the PR. Regenerate [docs/EVAL_INVENTORY.md](docs/EVAL_INVENTORY.md) when `ship_gate` or case inventory changes: `python3 scripts/inventory-eval-cases.py --write docs/EVAL_INVENTORY.md`. Draft fixtures: `python3 scripts/bootstrap-fixtures.py <command>`. For releases, record manual IDE smoke per [docs/VERIFICATION.md](docs/VERIFICATION.md).
 
 ## Adding or changing a command
 

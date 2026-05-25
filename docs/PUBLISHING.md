@@ -4,6 +4,8 @@ Steps before making **cursor-commands** public on GitHub.
 
 ## 1. Purge org-specific content from git history
 
+**Status:** Completed in `v0.2.1` / `v0.2.3` (filter-repo + forbidden-string CI). Re-verified before `v1.0.0` on **2026-05-25** via `python3 scripts/check_forbidden_org_strings.py`. Re-run §1 only if new org-scoped paths are discovered.
+
 Org-scoped commands and skills must not appear in any commit (required for a generic public catalog).
 
 From a clean clone of this repo:
@@ -84,9 +86,9 @@ EOF
 
 Or: GitHub → **Settings → Branches → `main` → Add rule** → require the four checks above.
 
-## 5. Remaining v1.0 items
+## 5. Post-launch (v1.0.0+)
 
-See [ROADMAP.md](ROADMAP.md) (public visibility, merge-mode install, CHANGELOG discipline, link-check without private-repo ignores).
+v1.0.0 exit criteria are complete — see [ROADMAP.md — v1.0.0](ROADMAP.md#v100--public-launch-complete). For new releases: tag `v*`, let [release.yml](../.github/workflows/release.yml) publish notes from [CHANGELOG.md](../CHANGELOG.md), and add a row to [VERIFICATION.md](VERIFICATION.md).
 
 ## Org extensions today
 

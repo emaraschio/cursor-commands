@@ -3,13 +3,6 @@ name: Docs
 on:
   push:
     branches: [main]
-    paths:
-      - "README.md"
-      - "CONTRIBUTING.md"
-      - ".cursor/docs/**"
-      - "docs/**"
-      - "CHANGELOG.md"
-      - ".markdown-link-check.json"
   pull_request:
     branches: [main]
     paths:
