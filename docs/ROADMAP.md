@@ -69,13 +69,13 @@ Deliverables before writing the runner or workflow:
 Exit criteria (all required):
 
 - [x] **Eval CI track Phase 2 complete** (ship gate fixtures block PRs — see [Priority track](#priority-track--eval-enforcement-in-ci))
-- [ ] Repository visibility **public** (run [PUBLISHING.md §3](PUBLISHING.md#3-make-the-repository-public))
+- [x] Repository visibility **public** ([PUBLISHING.md §3](PUBLISHING.md#3-make-the-repository-public))
 - [x] `CHANGELOG.md` kept from `v0.2.0` onward
-- [ ] README version banner matches latest tag (updated for `v0.3.2` in launch PR)
-- [ ] All CI workflows green without private-repo link-check ignores (drop self-repo ignore when public — launch PR)
+- [x] README version banner matches latest tag (`v0.3.2`)
+- [x] All CI workflows green without private-repo link-check ignores
 - [ ] `docs/VERIFICATION.md` manual smoke test documented and run once per release
 - [x] Install **merge mode** (default): symlink only this repo’s files; do not `rm -rf` entire `~/.cursor/commands` or `skills` (see [Install UX](#install-ux))
-- [ ] `docs/DEPENDENCIES.md` for `gh`, babysit, optional Docker (added in launch PR)
+- [x] `docs/DEPENDENCIES.md` for `gh`, babysit, optional Docker
 - [ ] Deprecated commands removed or moved to `archive/` (none in generic catalog today)
 - [ ] No organization trademarks or private org URLs in tree or git history ([PUBLISHING.md](PUBLISHING.md))
 
