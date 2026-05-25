@@ -86,7 +86,7 @@ Nice-to-have before or shortly after v1.0:
 
 ## v1.x — after launch
 
-### Install UX {#install-ux}
+### Install UX
 
 Shipped in `v0.3.1`.
 
