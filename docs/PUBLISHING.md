@@ -43,18 +43,48 @@ python3 scripts/run-eval-fixtures.py --strict
 ./scripts/install.sh
 ```
 
-## 3. Branch protection (private repo)
+## 3. Make the repository public
 
-On GitHub → **Settings → Branches → `main`**, require these checks on pull requests:
+```bash
+gh repo edit emaraschio/cursor-commands --visibility public --accept-visibility-change-consequences
+```
 
-- **Validate**
-- **Docs**
-- **Install smoke**
-- **Eval fixtures**
+After public visibility:
 
-(Branch protection API may require GitHub Pro while the repo is private.)
+- Drop the self-repo ignore in [`.markdown-link-check.json`](../.markdown-link-check.json) (private-repo 403 workaround).
+- Confirm [README.md](../README.md) release banner matches the latest tag.
+- Re-run docs CI (link check against public URLs).
 
-## 4. Remaining v1.0 items
+## 4. Branch protection (`main`)
+
+Requires **public** repo (or GitHub Pro on a private repo). Set required status checks:
+
+- `validate`
+- `docs`
+- `install-smoke`
+- `eval-fixtures`
+
+```bash
+gh api repos/emaraschio/cursor-commands/branches/main/protection -X PUT \
+  --input - <<'EOF'
+{
+  "required_status_checks": {
+    "strict": true,
+    "contexts": ["validate", "docs", "install-smoke", "eval-fixtures"]
+  },
+  "enforce_admins": false,
+  "required_pull_request_reviews": null,
+  "restrictions": null,
+  "required_linear_history": false,
+  "allow_force_pushes": false,
+  "allow_deletions": false
+}
+EOF
+```
+
+Or: GitHub → **Settings → Branches → `main` → Add rule** → require the four checks above.
+
+## 5. Remaining v1.0 items
 
 See [ROADMAP.md](ROADMAP.md) (public visibility, merge-mode install, CHANGELOG discipline, link-check without private-repo ignores).
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Symlink commands and skills into ~/.cursor (or $CURSOR_HOME).
-# Default: merge (preserve foreign files and host overlays). Use --replace to wipe trees.
+# Default: merge (preserve foreign files and host overlays). Use --replace to wipe trees first.
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"

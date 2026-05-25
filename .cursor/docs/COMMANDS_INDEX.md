@@ -59,3 +59,4 @@ Commands with extra sections in `cases.md` (e.g. **B**, **C**, **F** on `merge-o
 | `write-unit-tests` | generic | yes | [cases](../skills/write-unit-tests/eval/cases.md) | A, S | — |
 
 **Organization-specific commands** live in the **host workspace** that installs this pack (`.cursor/commands/` + `.cursor/skills/` overlay after `./scripts/install.sh`). Not shipped here.
+
