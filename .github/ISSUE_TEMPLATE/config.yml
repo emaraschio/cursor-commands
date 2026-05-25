@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Contributing guide
+    url: https://github.com/emaraschio/cursor-commands/blob/main/CONTRIBUTING.md
+    about: PR checklist, validator, and ship-gate workflow
+  - name: Security policy
+    url: https://github.com/emaraschio/cursor-commands/blob/main/SECURITY.md
+    about: How to report vulnerabilities in this catalog

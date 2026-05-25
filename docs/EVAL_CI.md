@@ -1,6 +1,6 @@
 # Eval CI specification
 
-Authoritative spec for ship-gate enforcement in GitHub Actions. **Phase 2 implemented:** [run-eval-fixtures.py](../scripts/run-eval-fixtures.py), [eval-fixtures.yml](../.github/workflows/eval-fixtures.yml), `fixtures.yaml` on all 27 commands.
+Authoritative spec for ship-gate enforcement in GitHub Actions. **Phase 2 implemented:** [run-eval-fixtures.py](../scripts/run-eval-fixtures.py), [eval-fixtures.yml](../.github/workflows/eval-fixtures.yml), `fixtures.yaml` on all 28 commands.
 
 Related: [EVAL_GUIDE.md](../.cursor/docs/EVAL_GUIDE.md) (manual walks), [COMMANDS_INDEX.md](../.cursor/docs/COMMANDS_INDEX.md) (ship gate column), [ROADMAP.md](ROADMAP.md) (priority track).
 
@@ -155,7 +155,7 @@ FAIL merge-open-prs D3 pass_alignment_failed PASS line has no SKILL.md anchor
 
 Rationale: ship gate is the only enforced quality contract for prompts; without CI, the catalog is documentation-only.
 
-**Soft exception:** private consumers (e.g. dotfiles submodule pins) may use tags before all 27 commands have complete `fixtures.yaml`, but **public** launch requires:
+**Soft exception:** private consumers (e.g. dotfiles submodule pins) may use tags before all 28 commands have complete `fixtures.yaml`, but **public** launch requires:
 
 - Every ship-gate row in [EVAL_INVENTORY.md](EVAL_INVENTORY.md) is either `fixture_ready: y` with a `fixtures.yaml` entry, or `fixture_ready: n` with `class: H` and documented waiver in inventory notes.
 
@@ -167,7 +167,6 @@ Rationale: ship gate is the only enforced quality contract for prompts; without 
 - Running `gh`, Docker, git, or live PR merges
 - Scoring PARTIAL vs PASS (structural only)
 - Org-overlay commands (host workspace, not this repo)
-- `requirement-to-implementation` until it has a command + eval tree
 - Full-catalog manual walks (release checklist only)
 
 ---

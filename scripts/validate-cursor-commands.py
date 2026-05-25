@@ -21,7 +21,7 @@ COMMANDS_DIR = ROOT / ".cursor" / "commands"
 SKILLS_DIR = ROOT / ".cursor" / "skills"
 INDEX_PATH = ROOT / ".cursor" / "docs" / "COMMANDS_INDEX.md"
 
-EXPECTED_COMMANDS = 27
+EXPECTED_COMMANDS = 28
 EXPECTED_SKILLS = 28
 MIN_EVAL_CASES = 3
 

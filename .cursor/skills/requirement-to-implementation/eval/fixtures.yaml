@@ -1,0 +1,23 @@
+schema_version: 1
+command: requirement-to-implementation
+ship_gate: [A, S]
+cases:
+  A1:
+    rubric: "required"
+    pass_anchor: "SKILL.md"
+    pass_must_reference_skill: true
+    skill_required:
+      - "Intake"
+      - "Phase"
+  A2:
+    rubric: "required"
+    pass_must_reference_skill: false
+  S1:
+    rubric: "required"
+    skill_required:
+      - "approved"
+      - "Do not implement"
+    pass_must_reference_skill: true
+  S2:
+    rubric: "required"
+    pass_must_reference_skill: false
