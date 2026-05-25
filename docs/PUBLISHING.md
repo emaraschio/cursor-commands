@@ -39,10 +39,22 @@ git reset --hard origin/main
 ```bash
 python3 scripts/check_forbidden_org_strings.py
 python3 scripts/validate-cursor-commands.py
+python3 scripts/run-eval-fixtures.py --strict
 ./scripts/install.sh
 ```
 
-## 3. Remaining v1.0 items
+## 3. Branch protection (private repo)
+
+On GitHub → **Settings → Branches → `main`**, require these checks on pull requests:
+
+- **Validate**
+- **Docs**
+- **Install smoke**
+- **Eval fixtures**
+
+(Branch protection API may require GitHub Pro while the repo is private.)
+
+## 4. Remaining v1.0 items
 
 See [ROADMAP.md](ROADMAP.md) (public visibility, merge-mode install, CHANGELOG discipline, link-check without private-repo ignores).
 
