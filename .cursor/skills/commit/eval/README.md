@@ -9,3 +9,4 @@ Walk sections **A, S** before committing changes to `SKILL.md` or the slash comm
 ## Scoring
 
 PASS | PARTIAL | FAIL. PARTIAL = fail. Target: 0 FAIL, ≥90% adjusted on full walk.
+
