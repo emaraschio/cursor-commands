@@ -3,10 +3,11 @@
 [![Validate](https://github.com/emaraschio/cursor-commands/actions/workflows/validate.yml/badge.svg)](https://github.com/emaraschio/cursor-commands/actions/workflows/validate.yml)
 [![Install smoke](https://github.com/emaraschio/cursor-commands/actions/workflows/install-smoke.yml/badge.svg)](https://github.com/emaraschio/cursor-commands/actions/workflows/install-smoke.yml)
 [![Docs](https://github.com/emaraschio/cursor-commands/actions/workflows/docs.yml/badge.svg)](https://github.com/emaraschio/cursor-commands/actions/workflows/docs.yml)
+[![Eval fixtures](https://github.com/emaraschio/cursor-commands/actions/workflows/eval-fixtures.yml/badge.svg)](https://github.com/emaraschio/cursor-commands/actions/workflows/eval-fixtures.yml)
 
-**Pre-release (`v0.2`)** — Generic Cursor slash commands, Agent Skills, and behavioral eval rubrics. Organization-specific packs install from the **host workspace**. See [docs/ROADMAP.md](docs/ROADMAP.md) for v1.0 launch criteria.
+**Pre-release (`v0.3`)** — Generic Cursor slash commands, Agent Skills, and behavioral eval rubrics. Ship-gate sections are enforced in CI via [docs/EVAL_CI.md](docs/EVAL_CI.md). Organization-specific packs install from the **host workspace**. See [docs/ROADMAP.md](docs/ROADMAP.md) for v1.0 launch criteria.
 
-Inspired by install ergonomics from [hamzafer/cursor-commands](https://github.com/hamzafer/cursor-commands); this repo adds **skills**, **manual evals**, and **structural CI**.
+Inspired by install ergonomics from [hamzafer/cursor-commands](https://github.com/hamzafer/cursor-commands); this repo adds **skills**, **eval rubrics**, and **structural ship-gate CI** (`run-eval-fixtures.py --strict`).
 
 ## What you get
 
@@ -101,6 +102,7 @@ After install, optional IDE check: [docs/VERIFICATION.md](docs/VERIFICATION.md)
 
 ```bash
 python3 scripts/validate-cursor-commands.py
+python3 scripts/run-eval-fixtures.py --strict
 ```
 
 CI runs **validate**, **install-smoke**, and **docs** workflows on every relevant change.
