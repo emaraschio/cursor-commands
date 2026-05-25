@@ -49,6 +49,7 @@ Commands with extra sections in `cases.md` (e.g. **B**, **C**, **F** on `merge-o
 | `merge-open-prs` | generic | yes | [cases](../skills/merge-open-prs/eval/cases.md) | A, D, E | — |
 | `optimize-performance` | generic | yes | [cases](../skills/optimize-performance/eval/cases.md) | A, S | — |
 | `refactor-code` | generic | yes | [cases](../skills/refactor-code/eval/cases.md) | A, S | — |
+| `requirement-to-implementation` | generic | yes | [cases](../skills/requirement-to-implementation/eval/cases.md) | A, S | — |
 | `run-all-tests-and-fix` | generic | yes | [cases](../skills/run-all-tests-and-fix/eval/cases.md) | A | — |
 | `security-audit` | generic | yes | [cases](../skills/security-audit/eval/cases.md) | A, S | — |
 | `seo-audit` | generic | yes | [cases](../skills/seo-audit/eval/cases.md) | A | — |
@@ -56,7 +57,5 @@ Commands with extra sections in `cases.md` (e.g. **B**, **C**, **F** on `merge-o
 | `update-memory-bank` | generic | yes | [cases](../skills/update-memory-bank/eval/cases.md) | A | — |
 | `update-readme` | generic | yes | [cases](../skills/update-readme/eval/cases.md) | A | — |
 | `write-unit-tests` | generic | yes | [cases](../skills/write-unit-tests/eval/cases.md) | A, S | — |
-
-**Skill without a slash command:** `requirement-to-implementation` (under `.cursor/skills/`).
 
 **Organization-specific commands** live in the **host workspace** that installs this pack (`.cursor/commands/` + `.cursor/skills/` overlay after `./scripts/install.sh`). Not shipped here.

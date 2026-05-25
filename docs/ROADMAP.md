@@ -25,7 +25,7 @@ Work in two explicit phases: **plan**, then **execute**. Do not skip planning.
 
 Deliverables before writing the runner or workflow:
 
-- [x] **Inventory** — [docs/EVAL_INVENTORY.md](EVAL_INVENTORY.md): 27 commands, 94 ship-gate rows (S1–S5 vs H, `fixture_ready`). Regenerate via `scripts/inventory-eval-cases.py`.
+- [x] **Inventory** — [docs/EVAL_INVENTORY.md](EVAL_INVENTORY.md): 28 commands, 98 ship-gate rows (S1–S5 vs H, `fixture_ready`). Regenerate via `scripts/inventory-eval-cases.py`.
 - [x] **Fixture model** — Full-structural v1 in [docs/EVAL_CI.md](EVAL_CI.md) (`fixtures.yaml`, S5 algorithm, global checks).
 - [x] **CI scope** — Documented: `eval-fixtures.yml` on PR/push when `.cursor/commands/**` or `.cursor/skills/**` change; `workflow_dispatch` for full catalog.
 - [x] **Failure contract** — `FAIL <command> <case_id> <check_id> <message>`; stable `check_id` enum in EVAL_CI.md.
@@ -40,7 +40,7 @@ Deliverables before writing the runner or workflow:
 2. [x] `scripts/eval_lib.py` — shared parsing; `scripts/test_eval_lib.py` unit tests.
 3. [x] Extended `validate-cursor-commands.py` — S2 section binding + COMMANDS_INDEX ship gate match.
 4. [x] `.github/workflows/eval-fixtures.yml` — `--strict` mode; add as **required check** in branch protection (manual).
-5. [x] `scripts/bootstrap-fixtures.py` — regenerate `eval/fixtures.yaml` for all 27 commands (86 fixture rows; 8 H/Setup waived).
+5. [x] `scripts/bootstrap-fixtures.py` — regenerate `eval/fixtures.yaml` for all 28 commands (90 fixture rows; 8 H/Setup waived).
 6. [x] Tag **`v0.3.0`** on merge.
 
 **Execute done when:** A PR that removes a ship-gate requirement from `SKILL.md` without updating fixtures **fails** CI.
@@ -62,6 +62,7 @@ Deliverables before writing the runner or workflow:
 | `v0.2.x` | [COMMANDS_INDEX.md](../.cursor/docs/COMMANDS_INDEX.md) ship gate legend |
 | `v0.3.0` | **Eval CI Phase 2:** `eval-fixtures.yml`, `fixtures.yaml` for 27 commands, `--strict` runner |
 | `v0.3.1` | **Install merge mode** (default); `--replace`, `--prune`; `test_install.sh` in CI |
+| `v0.3.2` | **`/requirement-to-implementation`** command + eval tree; `SECURITY.md`; issue/PR templates |
 
 ## v1.0.0 — public launch
 
@@ -80,7 +81,7 @@ Exit criteria (all required):
 
 Nice-to-have before or shortly after v1.0:
 
-- [ ] GitHub issue + PR templates, `SECURITY.md`
+- [x] GitHub issue + PR templates, `SECURITY.md`
 - [ ] Release workflow on tag (validate + install-smoke + eval-fixtures + notes from `CHANGELOG.md`)
 - [ ] Validate workflow on every push to `main` (not only `.cursor/**` path filters)
 
@@ -121,7 +122,7 @@ Shipped in `v0.3.1`.
 1. **Eval CI before public?** — Default in this roadmap: **yes** (v1.0 blocked until Phase 2). Override only with explicit sign-off.
 2. **Public timing** — after v1.0 checklist ([PUBLISHING.md](PUBLISHING.md))
 3. **Org extension packaging** — host overlay vs. separate extension repository (timing TBD)
-4. **`requirement-to-implementation`** — add thin `/requirement-to-implementation` command or keep skill-only
+4. ~~**`requirement-to-implementation`**~~ — resolved in `v0.3.2` (thin command + eval tree)
 
 ## How to use this doc
 
