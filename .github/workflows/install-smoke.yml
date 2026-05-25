@@ -7,6 +7,7 @@ on:
       - ".cursor/commands/**"
       - ".cursor/skills/**"
       - "scripts/install.sh"
+      - "scripts/test_install.sh"
       - "scripts/validate-cursor-commands.py"
       - ".github/workflows/install-smoke.yml"
   pull_request:
@@ -15,6 +16,7 @@ on:
       - ".cursor/commands/**"
       - ".cursor/skills/**"
       - "scripts/install.sh"
+      - "scripts/test_install.sh"
       - "scripts/validate-cursor-commands.py"
       - ".github/workflows/install-smoke.yml"
   workflow_dispatch:
@@ -47,3 +49,9 @@ jobs:
           set -euo pipefail
           test -f "$CURSOR_HOME/commands/code-review.md"
           test -f "$CURSOR_HOME/skills/merge-open-prs/SKILL.md"
+
+      - name: Install merge mode tests
+        run: |
+          set -euo pipefail
+          chmod +x scripts/test_install.sh
+          ./scripts/test_install.sh

@@ -1,6 +1,6 @@
 # Cursor IDE verification
 
-Run after `./scripts/install.sh`. Automated checks run in CI via `install-smoke.yml`; this doc covers manual IDE validation.
+Run after `./scripts/install.sh` (merge mode by default). Automated checks run in CI via `install-smoke.yml` and `scripts/test_install.sh`; this doc covers manual IDE validation.
 
 ## Automated (install script)
 
@@ -20,3 +20,11 @@ The install script already verifies:
 5. Optional: open any workspace that has a `.cursor/memory-bank/` directory and run **`/update-memory-bank`** — command and skill should resolve via the install symlinks (memory-bank content lives in the host repo, not in cursor-commands).
 
 Record pass/fail in release notes when cutting a tag.
+
+## Merge mode (host overlay)
+
+If you use a host overlay (e.g. org commands in dotfiles after generic install):
+
+1. Run `./scripts/install.sh` (or your wrapper that calls it).
+2. Confirm overlay commands still exist under `~/.cursor/commands/` alongside catalog entries.
+3. Re-run install after a submodule bump — overlay symlinks must survive without `--replace`.

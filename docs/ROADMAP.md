@@ -61,6 +61,7 @@ Deliverables before writing the runner or workflow:
 | `v0.2.3` | Org strings scrubbed from tree and history; trademark check in CI |
 | `v0.2.x` | [COMMANDS_INDEX.md](../.cursor/docs/COMMANDS_INDEX.md) ship gate legend |
 | `v0.3.0` | **Eval CI Phase 2:** `eval-fixtures.yml`, `fixtures.yaml` for 27 commands, `--strict` runner |
+| `v0.3.1` | **Install merge mode** (default); `--replace`, `--prune`; `test_install.sh` in CI |
 
 ## v1.0.0 — public launch
 
@@ -72,7 +73,7 @@ Exit criteria (all required):
 - [ ] README version banner matches latest tag
 - [ ] All CI workflows green without private-repo link-check ignores (drop self-repo ignore in `.markdown-link-check.json` when public)
 - [ ] `docs/VERIFICATION.md` manual smoke test documented and run once per release
-- [ ] Install **merge mode** (default): symlink only this repo’s files; do not `rm -rf` entire `~/.cursor/commands` or `skills` (see [Install UX](#install-ux))
+- [x] Install **merge mode** (default): symlink only this repo’s files; do not `rm -rf` entire `~/.cursor/commands` or `skills` (see [Install UX](#install-ux))
 - [ ] `docs/DEPENDENCIES.md` for `gh`, babysit, optional Docker
 - [ ] Deprecated commands removed or moved to `archive/` (none in generic catalog today)
 - [ ] No organization trademarks or private org URLs in tree or git history ([PUBLISHING.md](PUBLISHING.md))
@@ -85,13 +86,12 @@ Nice-to-have before or shortly after v1.0:
 
 ## v1.x — after launch
 
-### Install UX
+### Install UX (shipped in `v0.3.1`)
 
-Today `scripts/install.sh` replaces the entire `commands/` and `skills/` directories. Planned:
-
-- **Default:** merge — symlink only files from this repo
-- **`--replace`:** current behavior for users who own the whole tree
-- Document host **overlay** pattern (install generic, then org-specific symlinks)
+- **Default:** merge — `mkdir -p` and symlink catalog entries only; foreign files and non-repo symlinks preserved
+- **`--replace`:** remove `commands/` and `skills/` trees first (legacy full reset)
+- **`--prune`:** drop stale symlinks that still point into this repo but left the catalog
+- Host **overlay:** install generic (`install.sh`), then org-specific symlinks from the host workspace (see dotfiles `install-cursor-commands.sh`)
 
 ### Evaluations (later)
 

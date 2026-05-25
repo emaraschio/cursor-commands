@@ -4,6 +4,18 @@ All notable changes to this project are documented here. Format based on [Keep a
 
 ## [Unreleased]
 
+## [0.3.1] - 2026-05-24
+
+### Changed
+
+- **Breaking (install default):** `scripts/install.sh` now uses **merge mode** by default — it no longer `rm -rf` entire `~/.cursor/commands` or `skills` trees. Host overlays and user files are preserved. Use `./scripts/install.sh --replace` for the previous wipe-then-install behavior.
+- Catalog symlink validation checks only managed entries (broken host overlay symlinks no longer fail install).
+
+### Added
+
+- `scripts/install.sh --prune` — remove stale symlinks that point into this repo but left the catalog.
+- `scripts/test_install.sh` — merge/replace/prune tests; run in `install-smoke` CI.
+
 ## [0.3.0] - 2026-05-24
 
 ### Added
