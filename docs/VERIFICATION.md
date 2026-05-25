@@ -21,6 +21,12 @@ The install script already verifies:
 
 Record pass/fail in release notes when cutting a tag.
 
+## Release record
+
+| Tag | Date | Verifier | Result | Notes |
+|-----|------|----------|--------|-------|
+| v1.0.0 | 2026-05-25 | @emaraschio | PASS | Merge install: 28/28 symlinks; validator + eval fixtures green. Palette: `/code-review`, `/requirement-to-implementation` expected after Cursor reload. `/merge-open-prs --dry-run` not re-run (optional). |
+
 ## Merge mode (host overlay)
 
 If you use a host overlay (e.g. org commands in dotfiles after generic install):

@@ -6,12 +6,13 @@ Public OSS trajectory for **cursor-commands** (generic slash commands + skills +
 
 | Layer | What runs today | Gap |
 |-------|-----------------|-----|
-| **Structure** | `validate-cursor-commands.py` in CI — command/skill/eval file layout, frontmatter, ship_gate present | Does not score behavior |
-| **Install** | `install-smoke.yml` — symlinks resolve | Does not exercise agents |
-| **Docs** | `docs.yml` — links, forbidden org strings | Does not read eval cases |
-| **Ship gate** | [eval-fixtures.yml](../.github/workflows/eval-fixtures.yml) + manual walks for non-gate sections | Structural S1–S5 enforced in CI when `fixtures.yaml` present |
+| **Structure** | `validate-cursor-commands.py` in CI — layout, frontmatter, ship_gate binding | Does not score agent behavior |
+| **Install** | `install-smoke.yml` — merge/replace/prune + symlink resolve | Does not exercise agents in IDE |
+| **Docs** | `docs.yml` — links, forbidden org strings, required files | Does not read eval case semantics |
+| **Ship gate** | [eval-fixtures.yml](../.github/workflows/eval-fixtures.yml) `--strict` on ship-gate rows | Structural only; PARTIAL/FAIL scoring is manual |
+| **Release** | [release.yml](../.github/workflows/release.yml) on `v*` tags | No LLM regression in CI |
 
-**Risk:** We can merge prompt changes with **0 FAIL** on ship gate sections and CI stays green. Until eval enforcement lands in CI, treat every `SKILL.md` / command change as **ship gate debt** unless the PR author records a manual walk.
+**Risk:** Ship-gate CI can pass while agent behavior regresses on non-gate sections or edge cases. PR authors must still walk ship gate sections when changing `SKILL.md`; record manual IDE smoke per [VERIFICATION.md](VERIFICATION.md) on releases.
 
 ---
 
@@ -63,27 +64,28 @@ Deliverables before writing the runner or workflow:
 | `v0.3.0` | **Eval CI Phase 2:** `eval-fixtures.yml`, `fixtures.yaml` for 27 commands, `--strict` runner |
 | `v0.3.1` | **Install merge mode** (default); `--replace`, `--prune`; `test_install.sh` in CI |
 | `v0.3.2` | **`/requirement-to-implementation`** command + eval tree; `SECURITY.md`; issue/PR templates |
+| `v1.0.0` | **Stable public launch** — full `main` CI matrix, release workflow, RTI skill genericized, verification sign-off |
 
-## v1.0.0 — public launch
+## v1.0.0 — public launch (complete)
 
-Exit criteria (all required):
+Exit criteria:
 
 - [x] **Eval CI track Phase 2 complete** (ship gate fixtures block PRs — see [Priority track](#priority-track--eval-enforcement-in-ci))
 - [x] Repository visibility **public** ([PUBLISHING.md §3](PUBLISHING.md#3-make-the-repository-public))
 - [x] `CHANGELOG.md` kept from `v0.2.0` onward
-- [x] README version banner matches latest tag (`v0.3.2`)
+- [x] README version banner matches latest tag (`v1.0.0`)
 - [x] All CI workflows green without private-repo link-check ignores
-- [ ] `docs/VERIFICATION.md` manual smoke test documented and run once per release
+- [x] `docs/VERIFICATION.md` manual smoke test documented and run for `v1.0.0` (see release record table)
 - [x] Install **merge mode** (default): symlink only this repo’s files; do not `rm -rf` entire `~/.cursor/commands` or `skills` (see [Install UX](#install-ux))
 - [x] `docs/DEPENDENCIES.md` for `gh`, babysit, optional Docker
-- [ ] Deprecated commands removed or moved to `archive/` (none in generic catalog today)
-- [ ] No organization trademarks or private org URLs in tree or git history ([PUBLISHING.md](PUBLISHING.md))
+- [x] Deprecated commands removed or moved to `archive/` — none in catalog; N/A
+- [x] No organization trademarks or private org URLs in tree or git history ([PUBLISHING.md §1](PUBLISHING.md#1-purge-org-specific-content-from-git-history); re-verified 2026-05-25)
 
-Nice-to-have before or shortly after v1.0:
+Shipped in v1.0.0:
 
 - [x] GitHub issue + PR templates, `SECURITY.md`
-- [ ] Release workflow on tag (validate + install-smoke + eval-fixtures + notes from `CHANGELOG.md`)
-- [ ] Validate workflow on every push to `main` (not only `.cursor/**` path filters)
+- [x] Release workflow on tag ([release.yml](../.github/workflows/release.yml))
+- [x] All four CI workflows on every push to `main`
 
 ## v1.x — after launch
 
@@ -119,10 +121,9 @@ Shipped in `v0.3.1`.
 
 ## Open decisions
 
-1. **Eval CI before public?** — Default in this roadmap: **yes** (v1.0 blocked until Phase 2). Override only with explicit sign-off.
-2. **Public timing** — after v1.0 checklist ([PUBLISHING.md](PUBLISHING.md))
-3. **Org extension packaging** — host overlay vs. separate extension repository (timing TBD)
-4. ~~**`requirement-to-implementation`**~~ — resolved in `v0.3.2` (thin command + eval tree)
+1. ~~**Eval CI before public?**~~ — Resolved: Phase 2 shipped; repo public at v1.0.0.
+2. ~~**Public timing**~~ — Resolved: v1.0.0 (2026-05-25).
+3. **Org extension packaging** — host overlay vs. separate extension repository (timing TBD; post-v1.0)
 
 ## How to use this doc
 

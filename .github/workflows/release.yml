@@ -1,0 +1,58 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Forbidden org strings
+        run: python3 scripts/check_forbidden_org_strings.py
+
+      - name: Validate catalog
+        run: python3 scripts/validate-cursor-commands.py
+
+      - name: Eval fixtures (strict)
+        run: python3 scripts/run-eval-fixtures.py --strict
+
+      - name: Install smoke
+        run: ./scripts/test_install.sh
+
+  publish:
+    needs: verify
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Extract release notes from CHANGELOG
+        run: |
+          set -euo pipefail
+          TAG="${GITHUB_REF_NAME#v}"
+          awk -v ver="$TAG" '
+            /^## \[/ {
+              if ($0 ~ "^## \\[" ver "\\]") { emit=1; next }
+              if (emit) exit
+            }
+            emit { print }
+          ' CHANGELOG.md > release-notes.md
+          test -s release-notes.md || { echo "No CHANGELOG section for ${TAG}"; exit 1; }
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${GITHUB_REF_NAME}" \
+            --title "${GITHUB_REF_NAME}" \
+            --notes-file release-notes.md

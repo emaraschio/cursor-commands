@@ -5,7 +5,7 @@
 [![Docs](https://github.com/emaraschio/cursor-commands/actions/workflows/docs.yml/badge.svg)](https://github.com/emaraschio/cursor-commands/actions/workflows/docs.yml)
 [![Eval fixtures](https://github.com/emaraschio/cursor-commands/actions/workflows/eval-fixtures.yml/badge.svg)](https://github.com/emaraschio/cursor-commands/actions/workflows/eval-fixtures.yml)
 
-**Latest release: [`v0.3.2`](https://github.com/emaraschio/cursor-commands/releases/tag/v0.3.2)** — Generic Cursor slash commands, Agent Skills, and behavioral eval rubrics. Ship-gate sections are enforced in CI via [docs/EVAL_CI.md](docs/EVAL_CI.md). Organization-specific packs install from the **host workspace**. See [docs/ROADMAP.md](docs/ROADMAP.md) for v1.0 launch criteria.
+**Stable release: [`v1.0.0`](https://github.com/emaraschio/cursor-commands/releases)** (tag `v1.0.0`; notes in [CHANGELOG](CHANGELOG.md#100---2026-05-25)) — Generic Cursor slash commands, Agent Skills, and behavioral eval rubrics. Ship-gate sections are enforced in CI via [docs/EVAL_CI.md](docs/EVAL_CI.md). Organization-specific packs install from the **host workspace**.
 
 Inspired by install ergonomics from [hamzafer/cursor-commands](https://github.com/hamzafer/cursor-commands); this repo adds **skills**, **eval rubrics**, and **structural ship-gate CI** (`run-eval-fixtures.py --strict`).
 
