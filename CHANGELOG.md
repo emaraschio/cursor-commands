@@ -4,6 +4,19 @@ All notable changes to this project are documented here. Format based on [Keep a
 
 ## [Unreleased]
 
+## [0.3.2] - 2026-05-24
+
+### Added
+
+- **`/requirement-to-implementation`** thin slash command and eval tree (`eval/cases.md`, `fixtures.yaml`); closes skill-only gap (28 commands, 28 skills, 1:1 catalog).
+- **`SECURITY.md`** — vulnerability reporting scope for this prompt catalog.
+- **GitHub templates** — `ISSUE_TEMPLATE/bug_report.yml`, `feature_request.yml`, `config.yml`, `pull_request_template.md`.
+
+### Changed
+
+- `EXPECTED_COMMANDS` 27 → 28 in validator and install script.
+- `scripts/bootstrap-fixtures.py` — `REQUIREMENT_TO_IMPLEMENTATION_CASES` overrides for plan-before-implement ship gate.
+
 ## [0.3.1] - 2026-05-24
 
 ### Changed

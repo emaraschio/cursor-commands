@@ -11,8 +11,8 @@ Inspired by install ergonomics from [hamzafer/cursor-commands](https://github.co
 
 ## What you get
 
-- **27** generic slash commands (git, review, security audits, PR workflows, etc.)
-- **28** skill directories (every command + `requirement-to-implementation`)
+- **28** generic slash commands (git, review, security audits, PR workflows, requirement-to-implementation, etc.)
+- **28** skill directories (one per command)
 - **Behavioral evals** (`PASS` / `PARTIAL` / `FAIL`) per command — regression guardrails when editing prompts
 
 ## Installation
@@ -111,7 +111,7 @@ CI runs **validate**, **install-smoke**, and **docs** workflows on every relevan
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md).
+See [CONTRIBUTING.md](CONTRIBUTING.md). Security reports: [SECURITY.md](SECURITY.md).
 
 ## Related
 

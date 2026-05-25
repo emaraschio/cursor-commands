@@ -5,7 +5,7 @@ set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 CURSOR_HOME="${CURSOR_HOME:-$HOME/.cursor}"
-EXPECTED_COMMANDS=27
+EXPECTED_COMMANDS=28
 EXPECTED_SKILLS=28
 
 MODE_MERGE=1

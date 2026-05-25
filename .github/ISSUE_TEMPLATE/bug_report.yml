@@ -1,0 +1,53 @@
+name: Bug report
+description: Agent behavior, eval rubric, or CI failure for a command or skill
+title: "[bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Report incorrect agent behavior when following a catalog command/skill, or structural failures in validator/eval CI.
+  - type: input
+    id: command
+    attributes:
+      label: Command or skill name
+      description: Kebab-case name (e.g. `commit`, `requirement-to-implementation`)
+      placeholder: commit
+    validations:
+      required: true
+  - type: textarea
+    id: prompt
+    attributes:
+      label: Reproduction prompt
+      description: Exact slash command and user message that triggered the issue
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What SKILL.md or eval/cases.md requires
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What the agent did instead
+    validations:
+      required: true
+  - type: textarea
+    id: ci
+    attributes:
+      label: CI / validator output (if applicable)
+      description: Paste `validate-cursor-commands.py` or `run-eval-fixtures.py --strict` failures
+  - type: dropdown
+    id: cursor_version
+    attributes:
+      label: Cursor version (optional)
+      options:
+        - unknown
+        - latest stable
+        - other
+    validations:
+      required: false

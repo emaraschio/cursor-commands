@@ -6,7 +6,7 @@ Run after `./scripts/install.sh` (merge mode by default). Automated checks run i
 
 The install script already verifies:
 
-- 27 command symlinks and 28 skill symlinks
+- 28 command symlinks and 28 skill symlinks
 - Each symlink target resolves
 - `validate-cursor-commands.py` passes
 - `merge-open-prs` skill is reachable under `$CURSOR_HOME`

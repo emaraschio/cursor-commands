@@ -1,0 +1,41 @@
+name: Feature request
+description: Propose a new command, skill improvement, or eval rubric change
+title: "[feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        New commands must be `scope: generic` per [COMMAND_SCHEMA.md](.cursor/docs/COMMAND_SCHEMA.md). Organization-specific workflows belong in the host workspace overlay.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Request type
+      options:
+        - New slash command + skill
+        - Improve existing SKILL.md
+        - Eval / ship-gate rubric change
+        - Install or CI tooling
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or use case
+      description: What workflow gap does this address?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: High-level behavior; link prior art if any
+    validations:
+      required: true
+  - type: checkboxes
+    id: contribute
+    attributes:
+      label: Contribution
+      options:
+        - label: I am willing to open a PR for this change
+          required: false
