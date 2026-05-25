@@ -23,10 +23,10 @@ Inspired by install ergonomics from [hamzafer/cursor-commands](https://github.co
 git clone https://github.com/emaraschio/cursor-commands.git
 cd cursor-commands
 chmod +x scripts/install.sh
-./scripts/install.sh
+./scripts/install.sh          # merge mode (default)
 ```
 
-Commands and skills are symlinked into `~/.cursor/commands/` and `~/.cursor/skills/`. Existing `~/.cursor` content is merged, not replaced.
+Commands and skills from this catalog are symlinked into `~/.cursor/commands/` and `~/.cursor/skills/`. **Merge mode (default)** keeps your own files and host overlays (org-specific commands installed afterward). Use `./scripts/install.sh --replace` only if you want to wipe those directories first. Use `--prune` to remove stale symlinks that still point into this repo after a catalog rename.
 
 ### As a Git submodule
 
@@ -44,6 +44,8 @@ The parent repo owns workspace-specific Cursor **rules**, **agents**, and **memo
 
 ```bash
 CURSOR_HOME="$HOME/.cursor" ./scripts/install.sh
+
+# Host overlay: install generic, then org-specific symlinks from your dotfiles (merge-safe).
 ```
 
 ## Architecture

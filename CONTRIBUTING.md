@@ -6,9 +6,10 @@ Thanks for helping improve Cursor commands and skills. This repo is **pre-releas
 
 1. Read [COMMAND_SCHEMA.md](.cursor/docs/COMMAND_SCHEMA.md), [EVAL_GUIDE.md](.cursor/docs/EVAL_GUIDE.md), and [docs/EVAL_CI.md](docs/EVAL_CI.md) (ship-gate CI spec; Phase 2 runner not live yet).
 2. Run `python3 scripts/validate-cursor-commands.py` and `python3 scripts/run-eval-fixtures.py --strict` — must pass.
-3. Run `./scripts/install.sh` with a test `CURSOR_HOME` if you changed install paths:
+3. Run install tests if you changed `scripts/install.sh`:
 
    ```bash
+   ./scripts/test_install.sh
    CURSOR_HOME="$(mktemp -d)/cursor" ./scripts/install.sh
    ```
 
