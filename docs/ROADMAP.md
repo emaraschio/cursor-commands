@@ -128,5 +128,5 @@ Shipped in `v0.3.1`.
 ## How to use this doc
 
 1. **Phase 1–2** complete — `docs/EVAL_CI.md`, `docs/EVAL_INVENTORY.md`, `eval-fixtures.yml`.
-2. Enable **Eval fixtures** as a required GitHub check; bump consumer submodule pins to `v0.3.0`.
-3. Bump [CHANGELOG.md](../CHANGELOG.md) and tag semver on each release (`v0.x` pre-1.0, `v1.0.0` when launch criteria are met).
+2. Enable **Eval fixtures** as a required GitHub check on `main`.
+3. Bump [CHANGELOG.md](../CHANGELOG.md) and tag semver on each release (`v*`; only **`v1.0.0`** published today — older pre-release tags removed from remote).
