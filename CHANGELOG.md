@@ -4,6 +4,27 @@ All notable changes to this project are documented here. Format based on [Keep a
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-05-25
+
+First stable public release of the generic cursor-commands catalog.
+
+### Added
+
+- **Release CI** — `.github/workflows/release.yml` runs full verification and publishes GitHub Releases from `CHANGELOG.md` on `v*` tags.
+- **v1.0 sign-off** — manual verification record in [docs/VERIFICATION.md](docs/VERIFICATION.md).
+
+### Changed
+
+- **Public launch** — repository visibility public; `main` branch protection requires `validate`, `docs`, `install-smoke`, `eval-fixtures`.
+- **`requirement-to-implementation` SKILL** — host-agnostic verification wording (no Rails-specific test commands); generic exploration risk examples.
+- **CI on `main`** — all four workflows run on every push to `main` (PRs keep path filters for speed).
+- **Docs** — README/CONTRIBUTING/ROADMAP/PUBLISHING/EVAL_CI reflect stable v1.0; org-string attestation for launch.
+
+### Notes
+
+- Consumers on pre-`v0.2.x` clones: re-fetch after history rewrite; pin **`v1.0.0`** for merge-mode install and full eval fixture coverage.
+- `merge-open-prs` sections **B–F** remain **manual-only** eval (8 Setup/H rows waived in CI); ship gate **A, D, E** are structural in CI.
+
 ## [0.3.2] - 2026-05-24
 
 ### Added

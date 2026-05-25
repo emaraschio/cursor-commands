@@ -155,9 +155,7 @@ FAIL merge-open-prs D3 pass_alignment_failed PASS line has no SKILL.md anchor
 
 Rationale: ship gate is the only enforced quality contract for prompts; without CI, the catalog is documentation-only.
 
-**Soft exception:** private consumers (e.g. dotfiles submodule pins) may use tags before all 28 commands have complete `fixtures.yaml`, but **public** launch requires:
-
-- Every ship-gate row in [EVAL_INVENTORY.md](EVAL_INVENTORY.md) is either `fixture_ready: y` with a `fixtures.yaml` entry, or `fixture_ready: n` with `class: H` and documented waiver in inventory notes.
+**Public catalog (v1.0.0+):** All 28 commands have ship-gate `fixtures.yaml` where applicable. Every ship-gate row in [EVAL_INVENTORY.md](EVAL_INVENTORY.md) is either `fixture_ready: y` with a `fixtures.yaml` entry, or `fixture_ready: n` with `class: H` and documented waiver (e.g. `merge-open-prs` Setup/H cases).
 
 ---
 

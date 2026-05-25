@@ -3,13 +3,6 @@ name: Install smoke
 on:
   push:
     branches: [main]
-    paths:
-      - ".cursor/commands/**"
-      - ".cursor/skills/**"
-      - "scripts/install.sh"
-      - "scripts/test_install.sh"
-      - "scripts/validate-cursor-commands.py"
-      - ".github/workflows/install-smoke.yml"
   pull_request:
     branches: [main]
     paths:

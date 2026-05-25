@@ -3,9 +3,6 @@ name: Validate
 on:
   push:
     branches: [main]
-    paths:
-      - ".cursor/**"
-      - "scripts/validate-cursor-commands.py"
   pull_request:
     branches: [main]
     paths:

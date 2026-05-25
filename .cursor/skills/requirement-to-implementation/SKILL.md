@@ -37,10 +37,10 @@ If any file is missing or stale, note it—you'll update them in Phase 5.
 
 Explore the codebase to map the blast radius of the change:
 
-1. **Identify affected files** — models, services, workers, GraphQL types, controllers, specs
+1. **Identify affected files** — entry points, services, APIs, jobs, UI, tests
 2. **Read existing patterns** — find similar implementations to follow
-3. **Spot risks** — PHI exposure, authorization gaps, integration side effects, migration needs
-4. **Note test coverage** — existing specs that need updating, gaps that need filling
+3. **Spot risks** — PII/sensitive data exposure, authorization gaps, integration side effects, migration needs
+4. **Note test coverage** — existing tests that need updating, gaps that need filling
 
 Use exploratory subagents for broad investigations. Use targeted searches for specific lookups.
 
@@ -95,7 +95,7 @@ Choose the verification approach that fits:
 | **Performance** | Benchmark before/after, verify no regression in specs |
 | **Chore** | Verify with linter, specs, or manual confirmation as appropriate |
 
-Run `make rspec-file spec/path_spec.rb` after each meaningful change. Fix failures before moving on.
+After each meaningful change, run the project's test command for affected paths (for example `npm test`, `pytest`, `go test ./...`, `bundle exec rspec` — use what the host repo documents). Fix failures before moving on.
 
 ### Implementation Principles
 
