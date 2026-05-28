@@ -4,6 +4,10 @@ All notable changes to this project are documented here. Format based on [Keep a
 
 ## [Unreleased]
 
+### Added
+
+- **`/agent-risk-review`** — slash command and skill for one-page agent permission briefs (allowed, approval-required, forbidden, limits, logging, rollback, first-week test plan); eval ship gate **A, S**; catalog 28 → 29 commands/skills.
+
 ## [1.0.0] - 2026-05-25
 
 First stable public release of the generic cursor-commands catalog.

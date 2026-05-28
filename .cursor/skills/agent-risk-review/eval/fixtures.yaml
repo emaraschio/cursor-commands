@@ -1,0 +1,22 @@
+schema_version: 1
+command: agent-risk-review
+ship_gate: [A, S]
+cases:
+  A1:
+    rubric: "required"
+    pass_anchor: "SKILL.md"
+    pass_must_reference_skill: true
+  A2:
+    rubric: "required"
+    pass_must_reference_skill: false
+  S1:
+    rubric: "required"
+    skill_required:
+      - "Clarify gate"
+      - "ambiguous"
+    pass_must_reference_skill: false
+  S2:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "secret"

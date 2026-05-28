@@ -22,6 +22,19 @@ PILOT_COMMANDS = frozenset(
     {"commit", "commit-changes-main", "create-pr-main", "merge-open-prs"}
 )
 
+AGENT_RISK_REVIEW_CASES: dict[str, dict] = {
+    "S1": {
+        "rubric": "required",
+        "skill_required": ["Clarify gate", "ambiguous"],
+        "pass_must_reference_skill": False,
+    },
+    "S2": {
+        "rubric": "required",
+        "skill_required": ["secret"],
+        "pass_must_reference_skill": False,
+    },
+}
+
 REQUIREMENT_TO_IMPLEMENTATION_CASES: dict[str, dict] = {
     "A1": {
         "rubric": "required",
@@ -76,6 +89,8 @@ def bootstrap_entry(command: str, case_id: str, section: str, skill_md: str, pas
         return dict(MERGE_OPEN_PRS_CASES[case_id])
     if command == "requirement-to-implementation" and case_id in REQUIREMENT_TO_IMPLEMENTATION_CASES:
         return dict(REQUIREMENT_TO_IMPLEMENTATION_CASES[case_id])
+    if command == "agent-risk-review" and case_id in AGENT_RISK_REVIEW_CASES:
+        return dict(AGENT_RISK_REVIEW_CASES[case_id])
 
     if section == "S" and case_id == "S1":
         return {
