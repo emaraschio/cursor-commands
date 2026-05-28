@@ -24,6 +24,10 @@ python3 scripts/inventory-eval-cases.py --write docs/EVAL_INVENTORY.md
 | address-github-pr-comments | A, S | A2 | A | S1-S5 | y | Scoped request + skill guardrails |
 | address-github-pr-comments | A, S | S1 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
 | address-github-pr-comments | A, S | S2 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
+| agent-risk-review | A, S | A1 | A | S1-S5 | y | Bootstrap invocation/safety template |
+| agent-risk-review | A, S | A2 | A | S1-S5 | y | Scoped request + skill guardrails |
+| agent-risk-review | A, S | S1 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
+| agent-risk-review | A, S | S2 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
 | code-review | A, S | A1 | A | S1-S5 | y | Bootstrap invocation/safety template |
 | code-review | A, S | A2 | A | S1-S5 | y | Scoped request + skill guardrails |
 | code-review | A, S | S1 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
@@ -111,9 +115,9 @@ python3 scripts/inventory-eval-cases.py --write docs/EVAL_INVENTORY.md
 
 ## Checklist
 
-- [x] Ship-gate rows: **98** (plan estimated ~92; includes `D3b` and full A-section on merge-open-prs)
-- [x] Commands with eval + ship gate: **28** (target 27)
-- [x] `fixture_ready: y`: **90** | `n`: **8**
+- [x] Ship-gate rows: **102** (plan estimated ~92; includes `D3b` and full A-section on merge-open-prs)
+- [x] Commands with eval + ship gate: **29** (target 27)
+- [x] `fixture_ready: y`: **94** | `n`: **8**
 - [x] H-class (primary or mixed): **11** rows reference H
 - [x] Every gated section has ≥1 row per command
 

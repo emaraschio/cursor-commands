@@ -33,6 +33,7 @@ Commands with extra sections in `cases.md` (e.g. **B**, **C**, **F** on `merge-o
 | `add-documentation` | generic | yes | [cases](../skills/add-documentation/eval/cases.md) | A | — |
 | `add-error-handling` | generic | yes | [cases](../skills/add-error-handling/eval/cases.md) | A, S | — |
 | `address-github-pr-comments` | generic | yes | [cases](../skills/address-github-pr-comments/eval/cases.md) | A, S | — |
+| `agent-risk-review` | generic | yes | [cases](../skills/agent-risk-review/eval/cases.md) | A, S | — |
 | `code-review` | generic | yes | [cases](../skills/code-review/eval/cases.md) | A, S | — |
 | `commit` | generic | yes | [cases](../skills/commit/eval/cases.md) | A, S | — |
 | `commit-changes-main` | generic | yes | [cases](../skills/commit-changes-main/eval/cases.md) | A, S | — |
