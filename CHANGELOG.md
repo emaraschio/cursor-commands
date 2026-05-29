@@ -6,6 +6,7 @@ All notable changes to this project are documented here. Format based on [Keep a
 
 ### Added
 
+- **`/scoped-audit`** — slash command and skill for scoped, plan-first parallel audits of large surfaces (capped subagent fan-out, verify-before-report, approval gate before any change); eval ship gate **A, S**; catalog 29 → 30 commands/skills.
 - **`/agent-risk-review`** — slash command and skill for one-page agent permission briefs (allowed, approval-required, forbidden, limits, logging, rollback, first-week test plan); eval ship gate **A, S**; catalog 28 → 29 commands/skills.
 
 ## [1.0.0] - 2026-05-25
