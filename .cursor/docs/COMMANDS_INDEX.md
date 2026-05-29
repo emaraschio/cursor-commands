@@ -52,6 +52,7 @@ Commands with extra sections in `cases.md` (e.g. **B**, **C**, **F** on `merge-o
 | `refactor-code` | generic | yes | [cases](../skills/refactor-code/eval/cases.md) | A, S | — |
 | `requirement-to-implementation` | generic | yes | [cases](../skills/requirement-to-implementation/eval/cases.md) | A, S | — |
 | `run-all-tests-and-fix` | generic | yes | [cases](../skills/run-all-tests-and-fix/eval/cases.md) | A | — |
+| `scoped-audit` | generic | yes | [cases](../skills/scoped-audit/eval/cases.md) | A, S | — |
 | `security-audit` | generic | yes | [cases](../skills/security-audit/eval/cases.md) | A, S | — |
 | `seo-audit` | generic | yes | [cases](../skills/seo-audit/eval/cases.md) | A | — |
 | `setup-new-feature` | generic | yes | [cases](../skills/setup-new-feature/eval/cases.md) | A | — |
