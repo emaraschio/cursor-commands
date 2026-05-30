@@ -44,6 +44,7 @@ Commands with extra sections in `cases.md` (e.g. **B**, **C**, **F** on `merge-o
 | `fix-git-issues` | generic | yes | [cases](../skills/fix-git-issues/eval/cases.md) | A, S | — |
 | `generate-api-docs` | generic | yes | [cases](../skills/generate-api-docs/eval/cases.md) | A | — |
 | `generate-pr-description` | generic | yes | [cases](../skills/generate-pr-description/eval/cases.md) | A | — |
+| `git-sync-workspace` | generic | yes | [cases](../skills/git-sync-workspace/eval/cases.md) | A, S | — |
 | `light-review-existing-diffs` | generic | yes | [cases](../skills/light-review-existing-diffs/eval/cases.md) | A | — |
 | `lint-fix` | generic | yes | [cases](../skills/lint-fix/eval/cases.md) | A | — |
 | `lint-suite` | generic | yes | [cases](../skills/lint-suite/eval/cases.md) | A | — |
