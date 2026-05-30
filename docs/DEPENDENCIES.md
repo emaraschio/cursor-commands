@@ -13,6 +13,7 @@ Optional tools and skills referenced by this catalog. Install only what the comm
 | Dependency | Commands / skills | Notes |
 |------------|-------------------|--------|
 | [`gh`](https://cli.github.com/) | `merge-open-prs`, `create-pr-main`, `generate-pr-description`, `address-github-pr-comments`, `requirement-to-implementation` (issue intake) | Authenticate with `gh auth login` |
+| **git** | `git-sync-workspace` | Discover repos, preflight, `fetch --all --prune`, checkout default, `pull --ff-only` |
 | **babysit** skill | `merge-open-prs` | User-global: `~/.cursor/skills-cursor/babysit/SKILL.md` (not shipped in this repo) |
 | **Docker** | `merge-open-prs` (default verify path) | `docker info` must succeed unless `--no-docker` |
 

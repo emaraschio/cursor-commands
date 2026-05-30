@@ -1,0 +1,22 @@
+schema_version: 1
+command: git-sync-workspace
+ship_gate: [A, S]
+cases:
+  A1:
+    rubric: "required"
+    pass_anchor: "SKILL.md"
+    pass_must_reference_skill: true
+  A2:
+    rubric: "required"
+    pass_must_reference_skill: false
+  S1:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "dirty"
+      - "ff-only"
+  S2:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "force-push"

@@ -4,6 +4,10 @@ All notable changes to this project are documented here. Format based on [Keep a
 
 ## [Unreleased]
 
+### Added
+
+- **`/git-sync-workspace`** — slash command and skill to sync git repos in a Cursor multi-root workspace to remote default (`fetch --all --prune`, checkout default, `pull --ff-only`); skips dirty or unsafe repos; eval ship gate **A, S**; catalog 30 → 31 commands/skills.
+
 ## [1.1.0] - 2026-05-29
 
 ### Added
