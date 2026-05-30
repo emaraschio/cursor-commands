@@ -1,6 +1,18 @@
 # Contributing
 
-Thanks for helping improve Cursor commands and skills. This catalog is **stable** at `v1.0.0` and public on GitHub.
+Thanks for helping improve Cursor commands and skills. This catalog is **public OSS** on GitHub — see [CHANGELOG.md](CHANGELOG.md) for the latest release tag.
+
+## Open source catalog
+
+Everything in this repository ships to strangers who install from GitHub. Write for that audience.
+
+| Do | Don't |
+|----|--------|
+| Use `scope: generic` and portable examples (`repo1`, `project-a`, `example-org/service`) | Real employer, product, or internal repo names in commands, skills, evals, or docs |
+| Keep optional `skills/<name>/profiles/` templates generic (e.g. `../repo1`, `../repo2`) | Org workflows, ticket IDs, or stack-specific runbooks in this repo |
+| Put org-only commands and skills in the **host workspace** overlay after `./scripts/install.sh` | Assume the reader's monorepo layout or private tooling |
+
+**Portable references:** no `file://` URLs, home-directory paths, or private repository URLs in `.cursor/`, `docs/`, `README.md`, or this file. CI runs `validate-cursor-commands.py` and `scripts/check_forbidden_org_strings.py` to catch many violations. History and publication policy: [docs/PUBLISHING.md](docs/PUBLISHING.md).
 
 ## Before you open a PR
 
@@ -34,10 +46,11 @@ Thanks for helping improve Cursor commands and skills. This catalog is **stable*
 - [ ] After `cases.md` / `ship_gate` edits: inventory regenerated if row count or classification changed
 - [ ] `COMMANDS_INDEX.md` updated if catalog changed
 - [ ] No `file://`, absolute user paths, or private host-repo URLs in `.cursor/`, `docs/`, `README.md`, or `CONTRIBUTING.md` (enforced by `validate-cursor-commands.py`)
+- [ ] Examples and profile templates use generic names only (no employer, product, or internal repo names)
 
 ## Scope
 
-All commands in this repository use `scope: generic`. Organization-specific commands belong in the **host workspace** that installs this pack (not here).
+All commands in this repository use `scope: generic`. Organization-specific commands belong in the **host workspace** that installs this pack (not here). See [Open source catalog](#open-source-catalog) above.
 
 ## Host workspace
 
