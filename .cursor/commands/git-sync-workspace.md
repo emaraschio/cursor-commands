@@ -38,7 +38,7 @@ Discover git repos in a Cursor multi-root workspace, preflight each one, and syn
 ## Examples
 
 - `/git-sync-workspace`
-- `/git-sync-workspace` with "only sync helix and admin"
+- `/git-sync-workspace` with "only sync repo1 and repo2"
 
 ## Maintainers
 

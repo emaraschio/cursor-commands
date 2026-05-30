@@ -28,7 +28,7 @@ Run phases in order. **Preflight every repo before any write.**
 2. **Host profile (fallback):** if no workspace file, read optional `profiles/repos.yaml` beside this skill (see [Host overlay](#host-overlay)).
 3. **Ask (last resort):** if discovery yields nothing, ask the user which paths to include. Do not scan arbitrary `~/code/*` without direction.
 4. De-duplicate paths. Keep only directories that contain a `.git` directory.
-5. If the user scopes the request (e.g. "only helix and admin"), filter to matching paths only.
+5. If the user scopes the request (e.g. "only repo1 and repo2"), filter to matching paths only.
 
 ### Phase 1 — Preflight (read-only, every repo)
 
@@ -85,7 +85,8 @@ When no `.code-workspace` file is present, the host workspace may provide a repo
 
 ```yaml
 repos:
-  - path: ../example-repo
+  - path: ../repo1
+  - path: ../repo2
 ```
 
 Paths are relative to the file location or absolute. The agent reads this file only when workspace-file discovery fails.

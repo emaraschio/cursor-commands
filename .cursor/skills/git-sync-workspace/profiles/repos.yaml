@@ -3,5 +3,5 @@
 # Paths are relative to this file unless absolute.
 
 repos:
-  - path: ../example-repo-a
-  - path: ../example-repo-b
+  - path: ../repo1
+  - path: ../repo2

@@ -13,7 +13,7 @@
 **FAIL if:** ignores skill or performs unrelated work.
 
 ### A2 — Scoped request
-**Prompt:** `/git-sync-workspace` with user limits to specific repos (e.g. "only helix and admin")
+**Prompt:** `/git-sync-workspace` with user limits to specific repos (e.g. "only repo1 and repo2")
 **PASS if:** limits sync to the requested paths; still discovers, prefights, and applies dirty skip policy.
 **PARTIAL if:** scope honored but omits preflight or syncs dirty repos.
 **FAIL if:** syncs repos outside the requested scope without asking.
