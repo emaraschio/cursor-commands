@@ -40,6 +40,7 @@ Commands with extra sections in `cases.md` (e.g. **B**, **C**, **F** on `merge-o
 | `commit-same-branch` | generic | yes | [cases](../skills/commit-same-branch/eval/cases.md) | A, S | — |
 | `create-pr-main` | generic | yes | [cases](../skills/create-pr-main/eval/cases.md) | A, S | — |
 | `debug-issue` | generic | yes | [cases](../skills/debug-issue/eval/cases.md) | A | — |
+| `define-agent-goal` | generic | yes | [cases](../skills/define-agent-goal/eval/cases.md) | A, S | — |
 | `fix-compile-errors` | generic | yes | [cases](../skills/fix-compile-errors/eval/cases.md) | A | — |
 | `fix-git-issues` | generic | yes | [cases](../skills/fix-git-issues/eval/cases.md) | A, S | — |
 | `generate-api-docs` | generic | yes | [cases](../skills/generate-api-docs/eval/cases.md) | A | — |
