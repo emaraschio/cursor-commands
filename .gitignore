@@ -3,3 +3,11 @@
 .idea/
 .vscode/
 __pycache__/
+
+# Local Cursor plans (not part of the catalog)
+.cursor/plans/
+
+# Host-specific merge-open-prs profiles (keep _template.yaml + README in repo)
+.cursor/skills/merge-open-prs/profiles/*
+!.cursor/skills/merge-open-prs/profiles/_template.yaml
+!.cursor/skills/merge-open-prs/profiles/README.md

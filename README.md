@@ -118,6 +118,8 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). Security reports: [SECURITY.md](SECURITY
 - [Cursor slash commands docs](https://cursor.com/docs/agent/chat/commands)
 - [hamzafer/cursor-commands](https://github.com/hamzafer/cursor-commands) — minimal command-only collection
 
+**Topics:** `cursor`, `cursor-ide`, `agent-skills`, `ai-agents`, `prompts`, `developer-tools`, `dotfiles`, `github-actions` (see GitHub **About** on [emaraschio/cursor-commands](https://github.com/emaraschio/cursor-commands)).
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
