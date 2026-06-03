@@ -6,6 +6,7 @@ All notable changes to this project are documented here. Format based on [Keep a
 
 ### Added
 
+- **`/prompt-eval-debug`** — slash command and skill to debug any prompt via a tiny eval suite (control, edge, capability-boundary), failure diagnosis (prompt vs missing tool vs harness), and smallest next change without blind rewrite; eval ship gate **A, S**; catalog 32 → 33 commands/skills.
 - **`/define-agent-goal`** — slash command and skill to draft a six-part agent Goal (outcome, verification, constraints, boundaries, iteration policy, stopping condition); plan-only, no same-turn execution; eval ship gate **A, S**; catalog 31 → 32 commands/skills.
 - **`/git-sync-workspace`** — slash command and skill to sync git repos in a Cursor multi-root workspace to remote default (`fetch --all --prune`, checkout default, `pull --ff-only`); skips dirty or unsafe repos; eval ship gate **A, S**; catalog 30 → 31 commands/skills.
 

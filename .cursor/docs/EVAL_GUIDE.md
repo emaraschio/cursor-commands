@@ -8,6 +8,10 @@ Manual rubric walks for Cursor commands. No automated agent runner in v1.
 - When bumping `version` in command frontmatter
 - After adding or editing eval cases
 
+## Ad-hoc prompt debugging
+
+Catalog evals are **regression guardrails** for shipped commands. When you are still iterating on wording, use [`/prompt-eval-debug`](../commands/prompt-eval-debug.md) ([`skills/prompt-eval-debug/SKILL.md`](../skills/prompt-eval-debug/SKILL.md)) to draft a tiny suite (control, edge, capability-boundary) before rewriting a prompt or adding rows to `eval/cases.md`. That command does not run in CI and does not replace ship-gate walks.
+
 ## How to score
 
 1. Read `skills/<name>/SKILL.md` only (pretend you have not seen the command file).
