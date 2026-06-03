@@ -4,6 +4,10 @@ All notable changes to this project are documented here. Format based on [Keep a
 
 ## [Unreleased]
 
+### Added
+
+- **`/tdd`** — slash command and skill for Canon test-driven development (specify, encode, fulfill): clarify specifications, one failing test per cycle, minimal code to green, approval gates, kitchen-cleaning refactor rule, inline light review; RSpec examples in skill appendix; eval ship gate **A, S**; catalog 33 → 34 commands/skills.
+
 ## [1.2.0] - 2026-06-03
 
 ### Added
