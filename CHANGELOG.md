@@ -4,6 +4,8 @@ All notable changes to this project are documented here. Format based on [Keep a
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-06-03
+
 ### Added
 
 - **`/prompt-eval-debug`** — slash command and skill to debug any prompt via a tiny eval suite (control, edge, capability-boundary), failure diagnosis (prompt vs missing tool vs harness), and smallest next change without blind rewrite; eval ship gate **A, S**; catalog 32 → 33 commands/skills.
@@ -13,6 +15,7 @@ All notable changes to this project are documented here. Format based on [Keep a
 ### Changed
 
 - **CONTRIBUTING.md** — open source catalog section (generic examples, portable references, PR checklist).
+- **EVAL_GUIDE.md** — ad-hoc prompt debugging section linking `/prompt-eval-debug` to catalog eval maintenance.
 
 ## [1.1.0] - 2026-05-29
 
