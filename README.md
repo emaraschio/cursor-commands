@@ -11,8 +11,8 @@ Inspired by install ergonomics from [hamzafer/cursor-commands](https://github.co
 
 ## What you get
 
-- **32** generic slash commands (git, review, security audits, agent goals, agent risk review, scoped parallel audits, workspace git sync, PR workflows, requirement-to-implementation, etc.)
-- **32** skill directories (one per command)
+- **33** generic slash commands (git, review, security audits, agent goals, prompt eval debug, agent risk review, scoped parallel audits, workspace git sync, PR workflows, requirement-to-implementation, etc.)
+- **33** skill directories (one per command)
 - **Behavioral evals** (`PASS` / `PARTIAL` / `FAIL`) per command — regression guardrails when editing prompts
 
 ## Installation
