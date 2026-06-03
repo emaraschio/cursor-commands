@@ -59,6 +59,7 @@ Commands with extra sections in `cases.md` (e.g. **B**, **C**, **F** on `merge-o
 | `security-audit` | generic | yes | [cases](../skills/security-audit/eval/cases.md) | A, S | — |
 | `seo-audit` | generic | yes | [cases](../skills/seo-audit/eval/cases.md) | A | — |
 | `setup-new-feature` | generic | yes | [cases](../skills/setup-new-feature/eval/cases.md) | A | — |
+| `tdd` | generic | yes | [cases](../skills/tdd/eval/cases.md) | A, S | — |
 | `update-memory-bank` | generic | yes | [cases](../skills/update-memory-bank/eval/cases.md) | A | — |
 | `update-readme` | generic | yes | [cases](../skills/update-readme/eval/cases.md) | A | — |
 | `write-unit-tests` | generic | yes | [cases](../skills/write-unit-tests/eval/cases.md) | A, S | — |
