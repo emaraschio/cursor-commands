@@ -1,0 +1,25 @@
+schema_version: 1
+command: structure-prompt
+ship_gate: [A, S]
+cases:
+  A1:
+    rubric: "required"
+    pass_anchor: "SKILL.md"
+    pass_must_reference_skill: true
+  A2:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "search priority"
+      - "omitted"
+  S1:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "proportional"
+  S2:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "verify"
+      - "redact"
