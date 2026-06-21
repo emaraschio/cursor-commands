@@ -6,7 +6,7 @@ This repository ships Cursor slash commands, Agent Skills, and behavioral eval r
 
 ## Supported versions
 
-Security fixes apply to the latest release tag on `main` (currently `v1.0.0`). Patch releases use new `v*` tags; consumers should pin the latest tag or track `main`.
+Security fixes apply to the latest release tag on `main` (currently `v1.3.0`). Patch releases use new `v*` tags; consumers should pin the latest tag or track `main`.
 
 ## Reporting a vulnerability
 

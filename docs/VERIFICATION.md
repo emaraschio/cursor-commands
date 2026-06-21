@@ -25,6 +25,7 @@ Record pass/fail in release notes when cutting a tag.
 
 | Tag | Date | Verifier | Result | Notes |
 |-----|------|----------|--------|-------|
+| v1.3.0 | 2026-06-21 | @emaraschio | PASS | Validator + eval fixtures green; 36/36 commands/skills. Palette: `/tdd`, `/structure-prompt`, `/agent-work-receipt` expected after Cursor reload. Manual IDE smoke not re-run. |
 | v1.0.0 | 2026-05-25 | @emaraschio | PASS | Merge install: 28/28 symlinks; validator + eval fixtures green. Palette: `/code-review`, `/requirement-to-implementation` expected after Cursor reload. `/merge-open-prs --dry-run` not re-run (optional). |
 
 ## Merge mode (host overlay)
