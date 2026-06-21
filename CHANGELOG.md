@@ -4,9 +4,18 @@ All notable changes to this project are documented here. Format based on [Keep a
 
 ## [Unreleased]
 
+## [1.3.0] - 2026-06-21
+
 ### Added
 
 - **`/tdd`** — slash command and skill for Canon test-driven development (specify, encode, fulfill): clarify specifications, one failing test per cycle, minimal code to green, approval gates, kitchen-cleaning refactor rule, inline light review; RSpec examples in skill appendix; eval ship gate **A, S**; catalog 33 → 34 commands/skills.
+- **`/agent-work-receipt`** — slash command and skill for a conservative six-section receipt of completed agent-assisted work (output, time, review, risk, value); eval ship gate **A, S**; catalog 34 → 35 commands/skills.
+- **`/structure-prompt`** — slash command and skill to turn a rough request into a structured, production-grade prompt (verification, structured detail, constraints, structure, search priority, internal-first); eval ship gate **A, S**; catalog 35 → 36 commands/skills.
+
+### Changed
+
+- **README.md** — document GitHub repository topics for discoverability.
+- **`.gitignore`** — ignore local `.cursor/plans/` and `merge-open-prs/profiles/` overlays.
 
 ## [1.2.0] - 2026-06-03
 
