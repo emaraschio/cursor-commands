@@ -1,6 +1,6 @@
 ---
 name: agent-risk-review
-version: 1
+version: 2
 description: One-page agent permission brief before granting access to a system, tool, or account
 scope: generic
 requires_skill: true
@@ -25,10 +25,9 @@ _None — see skill for workflow defaults._
 
 ## Anti-patterns
 
-- Do not recommend blanket admin or full write access without explicit limits
-- Do not finalize the brief while any permission tier is ambiguous
-- Do not confuse this with codebase `security-audit`
-- Do not instruct logging of secrets, tokens, PII, or PHI
+- **Default to least privilege, never blanket access.** Trigger: drafting the allowed-actions tier. Wrong: granting full admin or broad write access without explicit limits. Correct: scope each grant to least privilege and require documented limits for anything destructive. Reason: an over-permissioned agent turns a small mistake into a production-wide one.
+- **Resolve ambiguity before finalizing.** Trigger: a permission tier, limit, or log destination is unclear. Wrong: publishing the final brief on guessed or maximal defaults. Correct: stop at the clarify gate and ask before finalizing. Reason: a brief shipped on assumptions authorizes access no one actually reviewed.
+- **Never route secrets into logs.** Trigger: specifying the required-logs section. Wrong: logging tokens, credentials, PII, or PHI in plain text. Correct: place them under must-not-log and never-allowed. Reason: logs are retained and broadly readable, so a logged secret is a leaked secret.
 
 ## Examples
 

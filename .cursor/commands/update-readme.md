@@ -1,6 +1,6 @@
 ---
 name: update-readme
-version: 1
+version: 2
 description: Update project README for current state
 scope: generic
 requires_skill: true
@@ -25,8 +25,8 @@ _None — see skill for workflow defaults._
 
 ## Anti-patterns
 
-- Do not remove required README sections
-- Keep links valid
+- **Preserve required README sections.** Trigger: updating the README. Wrong: deleting required sections such as Installation, Usage, Configuration, or Troubleshooting. Correct: update drifted content while keeping required sections intact. Reason: removing required sections strips setup steps users depend on.
+- **Keep internal links valid.** Trigger: editing or moving content. Wrong: leaving broken or stale internal links. Correct: validate internal links and fix broken paths. Reason: broken links send readers to dead ends.
 
 ## Examples
 

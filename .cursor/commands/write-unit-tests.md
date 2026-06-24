@@ -1,6 +1,6 @@
 ---
 name: write-unit-tests
-version: 1
+version: 2
 description: Write meaningful unit tests for target code
 scope: generic
 requires_skill: true
@@ -25,8 +25,8 @@ _None — see skill for workflow defaults._
 
 ## Anti-patterns
 
-- Do not test implementation trivia
-- Do not mock everything
+- **Test behavior, not implementation trivia.** Trigger: choosing what a unit test should assert. Wrong: asserting private internals, call counts, or getters that restate the code. Correct: assert observable behavior and public contracts. Reason: trivia tests break on harmless refactors and prove nothing about correctness.
+- **Mock only what you must.** Trigger: the unit under test touches collaborators. Wrong: mocking every dependency, including pure logic you could call directly. Correct: mock external boundaries (network, clock, filesystem) and use real objects for the rest. Reason: over-mocking tests the mocks instead of the code and hides real integration breaks.
 
 ## Examples
 

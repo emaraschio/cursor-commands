@@ -1,6 +1,6 @@
 ---
 name: address-github-pr-comments
-version: 1
+version: 2
 description: Address review comments on the current GitHub PR
 scope: generic
 requires_skill: true
@@ -25,8 +25,8 @@ _None — see skill for workflow defaults._
 
 ## Anti-patterns
 
-- Do not push without user request
-- Do not dismiss valid security feedback
+- **Push only when asked.** Trigger: fixes for review comments are committed. Wrong: pushing to the PR branch without being asked. Correct: push only on an explicit request from the user. Reason: an unrequested push can trigger CI and notify reviewers before the work is ready.
+- **Do not dismiss valid security feedback.** Trigger: a reviewer raises a security concern. Wrong: marking the thread resolved without addressing it. Correct: address the concern or justify with evidence before resolving. Reason: dismissing valid security feedback can ship a real vulnerability.
 
 ## Examples
 

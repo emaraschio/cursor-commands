@@ -34,3 +34,9 @@ responses for each GitHub pull-request comment.
 - [ ] Clarifying explanations prepared for nuanced threads
 - [ ] Follow-up items documented or escalated
 - [ ] PR status updated for reviewers
+
+## Guardrails
+
+- Push only when the user asks; do not push review fixes unrequested.
+- Do not dismiss valid security feedback; address it or justify with evidence first.
+- Address one comment thread at a time and run tests after impactful changes.

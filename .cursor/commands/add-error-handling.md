@@ -1,6 +1,6 @@
 ---
 name: add-error-handling
-version: 1
+version: 2
 description: Add consistent error handling to the targeted code
 scope: generic
 requires_skill: true
@@ -25,8 +25,8 @@ _None — see skill for workflow defaults._
 
 ## Anti-patterns
 
-- Do not swallow errors silently
-- Do not add excessive try/catch layers
+- **Never swallow an error silently.** Trigger: catching an exception you cannot fully handle. Wrong: an empty catch block, or one that hides the failure with no log or rethrow. Correct: handle it meaningfully, or log and rethrow so the failure stays visible. Reason: swallowed errors turn real failures into silent data loss and undebuggable behavior.
+- **Do not wrap everything in try/catch.** Trigger: deciding where to add error handling. Wrong: blanket try/catch on every call and layer regardless of risk. Correct: handle errors at meaningful boundaries where you can recover or report. Reason: excessive handling buries the happy path and masks where failures truly originate.
 
 ## Examples
 

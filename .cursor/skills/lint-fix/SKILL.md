@@ -36,3 +36,9 @@ Analyze the current file for linting issues and automatically fix them according
 - [ ] Applied best practice corrections
 - [ ] Fixed type safety issues
 - [ ] Explained what changes were made
+
+## Guardrails
+
+- Limit edits to formatting and style; do not change behavior while fixing lint.
+- Use the project linter config rather than personal or ad hoc rules.
+- Do not commit, push, merge, or run production scripts without consent.

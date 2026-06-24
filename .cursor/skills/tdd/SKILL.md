@@ -119,3 +119,10 @@ Replace separate design-review commands in v1.
 - **`requirement-to-implementation`**: plan and implement a requirement end-to-end — not per-test approval TDD.
 - **`run-all-tests-and-fix`**: restore a green suite — not specify-encode-fulfill for new behavior.
 - **`refactor-code`**: behavior-preserving refactor — in TDD, refactor only after a behavior commit.
+
+## Guardrails
+
+- Encode one test per cycle and write only enough code to pass it; never batch tests or add speculative code.
+- Assert concrete expected outcomes, never "works correctly" or "handles properly".
+- Keep behavior commits clean: do not commit with unrelated pre-existing failures, and do not mix refactoring into a behavior commit.
+- Commit and push only with the user's approval; no force-push to protected branches unless the user explicitly requests it.

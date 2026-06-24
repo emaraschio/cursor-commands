@@ -1,6 +1,6 @@
 ---
 name: generate-pr-description
-version: 1
+version: 2
 description: Generate PR title and description from branch diff
 scope: generic
 requires_skill: true
@@ -25,8 +25,8 @@ _None — see skill for workflow defaults._
 
 ## Anti-patterns
 
-- Do not omit test plan
-- Use conventional commit style for title when appropriate
+- **Always include a test plan.** Trigger: writing the PR description. Wrong: omitting how the change was tested. Correct: include a test plan describing how the changes were verified. Reason: reviewers cannot judge risk without knowing what was tested.
+- **Use a Conventional Commits title.** Trigger: writing the PR title. Wrong: a vague title that ignores the convention. Correct: use Conventional Commits style for the title when appropriate. Reason: the title feeds the squash-merge commit and the changelog.
 
 ## Examples
 

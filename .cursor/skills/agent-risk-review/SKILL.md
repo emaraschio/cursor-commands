@@ -108,3 +108,9 @@ Populate every section with concrete rows. Use "TBD" only when the user explicit
 
 - **`security-audit`**: codebase and dependency vulnerabilities—not agent access policy.
 - This skill **documents** permission policy; it does not provision IAM, MCP, or credentials unless the user separately asks for implementation.
+
+## Guardrails
+
+- Default to least privilege; never grant blanket admin or broad write access without documented limits.
+- Resolve ambiguity at the clarify gate: do not finalize the brief while any tier, limit, or log destination is ambiguous.
+- Keep secrets out of logs; place tokens, credentials, PII, and PHI under must-not-log and never-allowed.

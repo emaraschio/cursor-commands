@@ -110,3 +110,9 @@ Negative example (what to avoid): ...
 
 - **`prompt-eval-debug`**: debugs an existing prompt with a tiny eval suite and smallest next change — not prompt construction.
 - **`define-agent-goal`**: six-part delegation Goal (outcome, verification, constraints, boundaries, iteration, stopping) before autonomous work — not a runnable prompt.
+
+## Guardrails
+
+- Match effort to stakes: keep simple asks proportional and do not bolt on all six dimensions.
+- Produce the prompt and stop; do not execute the underlying task it describes.
+- Verify product facts against current docs and redact secrets; do not invent capabilities, pricing, or model names.

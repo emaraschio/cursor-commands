@@ -104,3 +104,9 @@ Populate every section with concrete content. Use "TBD" only when the user expli
 - **`requirement-to-implementation`**: approved requirement → codebase plan → implement → document. This skill defines **how** an agent may run; RTI **builds** software after a separate approval.
 - **`agent-risk-review`**: permission brief for tools/accounts (allowed / forbidden). This skill defines **task** outcome and verification, not IAM policy.
 - **`scoped-audit`**: large read-heavy cataloging with verify-before-report. This skill is task-agnostic delegation design, not a repo-wide audit orchestrator.
+
+## Guardrails
+
+- Clarify a vague task before finalizing, fill all six Goal sections, and keep boundaries narrow instead of granting vague autonomy.
+- Define the Goal without executing it: do not edit code or run destructive commands in the same turn without explicit consent to skip Goal definition.
+- Do not claim a native Goals product feature; this is a portable Goal document.

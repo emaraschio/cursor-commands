@@ -9,6 +9,7 @@ cases:
       - "limit"
       - "FIFO"
       - "auto_if_green"
+      - "merge only when the gate passes"
     pass_must_reference_skill: true
   A2:
     rubric: "required"

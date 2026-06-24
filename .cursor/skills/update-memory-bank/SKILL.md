@@ -40,3 +40,8 @@ Each file has a distinct responsibility — update only what changed:
    - Use format: `docs(memory-bank): update memory bank with latest changes`
    - Stage only memory bank files: `git add .cursor/memory-bank/`
    - Push to remote after commit
+
+## Guardrails
+
+- Record only verified state; do not invent commits, files, or statistics.
+- Update only the files whose domain changed; leave unchanged files alone.

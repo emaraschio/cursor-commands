@@ -1,6 +1,6 @@
 ---
 name: fix-compile-errors
-version: 1
+version: 2
 description: Fix compilation/type errors with minimal diff
 scope: generic
 requires_skill: true
@@ -25,8 +25,8 @@ _None — see skill for workflow defaults._
 
 ## Anti-patterns
 
-- Do not disable checks to green-build
-- Do not refactor while fixing compile errors
+- **Fix the error, do not disable the check.** Trigger: a type or compile check is failing. Wrong: suppressing the error, loosening types to any, or turning the check off to force a green build. Correct: address the real type or compile mismatch with the smallest correct change. Reason: silencing the check ships the broken code it was built to catch.
+- **Stay minimal; do not refactor while fixing.** Trigger: noticing messy code near the compile error. Wrong: refactoring or reorganizing in the same pass as the fix. Correct: make the minimal diff that compiles and note refactors separately. Reason: mixing refactors with the fix bloats the diff and hides what actually resolved the error.
 
 ## Examples
 

@@ -1,6 +1,6 @@
 ---
 name: agent-work-receipt
-version: 1
+version: 2
 description: Conservative six-section receipt of completed agent-assisted work (output, time, review, risk, value)
 scope: generic
 requires_skill: true
@@ -31,11 +31,9 @@ Produce a conservative agent work receipt after completed work — finished outp
 
 ## Anti-patterns
 
-- Do not count drafts, ideas, or unused output as finished work
-- Do not default to "major time saver" without evidence
-- Do not start new implementation, commits, or destructive commands in the same turn
-- Do not invent elapsed time as fact — estimates only
-- Do not use employer, product, or internal repo names in examples (OSS catalog)
+- **Count only landed work, not drafts.** Trigger: tallying finished output. Wrong: counting drafts, ideas, or abandoned attempts as completed work. Correct: list only artifacts that actually landed and stay conservative. Reason: a receipt that counts unused output overstates value and misleads the decision it informs.
+- **Stay retrospective; start no new work.** Trigger: writing the receipt for a finished session. Wrong: starting new implementation, commits, or destructive commands in the same turn. Correct: account for completed work only and defer new work to a separate turn. Reason: a receipt that mutates the repo it is measuring corrupts its own evidence.
+- **Label time as estimates, never measured fact.** Trigger: reporting human baseline and agent-assisted time. Wrong: presenting invented durations as measured elapsed time, or inflating savings to match a request. Correct: give estimates labeled as estimates and backed by evidence. Reason: fabricated time figures turn the receipt into marketing rather than accounting.
 
 ## Examples
 

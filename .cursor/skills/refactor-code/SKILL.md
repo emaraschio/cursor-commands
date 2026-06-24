@@ -36,3 +36,9 @@ Refactor the selected code to improve its quality while maintaining the same fun
 - [ ] Made code more readable and self-documenting
 - [ ] Followed SOLID principles and design patterns
 - [ ] Improved error handling and edge case coverage
+
+## Guardrails
+
+- Preserve existing behavior; a refactor must not change observable output.
+- Keep changes within the refactor target; do not touch unrelated code.
+- Do not commit, push, merge, or run production scripts without consent; wait for an explicit request before any destructive git action.

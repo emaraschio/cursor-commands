@@ -97,3 +97,9 @@ Paths are relative to the file location or absolute. The agent reads this file o
 - **`commit`** / **`commit-same-branch`**: start new work on a branch — this ends on default at remote HEAD.
 - **`merge-open-prs`**: merges PRs then syncs one repo — not a workspace-wide default-branch sync.
 - **`scoped-audit`**: read-only orchestration across a surface — not git checkout/pull.
+
+## Guardrails
+
+- Preflight every repo and skip any dirty working tree (record `skipped_dirty`); never checkout or pull over uncommitted changes.
+- Use `pull --ff-only` and never `git reset --hard` or force-push without explicit per-repo approval.
+- Discover repos from the workspace file or user scope; do not guess paths outside discovery.

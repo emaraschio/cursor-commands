@@ -24,3 +24,9 @@ Create a well-structured pull request for the main branch of a GitHub repository
 3. **Set up PR**
     - Only use the GitHub UI to create the PR. Do not use the CLI.
     - Create PR with descriptive title
+
+## Guardrails
+
+- Push only when the user asks; do not push unrequested changes before opening the PR.
+- Do not open empty PRs; confirm the branch has real changes to review first.
+- Use the PR template and the Conventional Commits convention for the title.

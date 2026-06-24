@@ -28,3 +28,9 @@ refactor(script): standardize script error handling
 test(script): add comprehensive script tests
 docs(script): update script documentation
 ```
+
+## Guardrails
+
+- Commit only when the user asks; do not commit unrequested work.
+- Do not push unless asked; keep commits local until the user requests a push.
+- Use the Conventional Commits convention for every message.

@@ -107,3 +107,9 @@ Present the plan to the user and wait. The plan must show, explicitly:
 - **`requirement-to-implementation`**: one requirement → build it. This skill is many repeated checks across a large surface, audit-first.
 - **`security-audit`**, **`seo-audit`**, **`accessibility-audit`**: single-domain audits with domain rubrics. This skill is domain-agnostic orchestration — use it to drive a large cataloging pass, and lean on the domain skill for what counts as a finding when relevant.
 - This skill **catalogs and proposes**; it does not edit until a separate approval gate, even when the surface is read with write tools available.
+
+## Guardrails
+
+- Run a scoped sample first; never sweep the full surface before the approach is validated.
+- Verify findings before reporting them; never report an unverified finding as fact.
+- Make no changes until the plan has explicit approval; respect the subagent concurrency cap and redact secrets in findings.

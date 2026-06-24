@@ -1,6 +1,6 @@
 ---
 name: fix-git-issues
-version: 1
+version: 2
 description: Diagnose and fix git state problems
 scope: generic
 requires_skill: true
@@ -25,8 +25,8 @@ _None — see skill for workflow defaults._
 
 ## Anti-patterns
 
-- Do not run destructive git without consent
-- Do not force-push main
+- **Get consent before destructive git commands.** Trigger: a fix needs reset, rebase, or a history rewrite. Wrong: running the destructive command without asking. Correct: explain the effect and get explicit consent first. Reason: reset and rebase can discard committed work that cannot be recovered.
+- **Never force-push a shared branch.** Trigger: a rebase or amend leaves the local branch behind the remote. Wrong: force-pushing main to make it line up. Correct: prefer a safe reconcile, and never force-push a shared branch without an explicit request. Reason: a force-push to main rewrites history others have pulled and can erase their work.
 
 ## Examples
 

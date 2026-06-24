@@ -1,6 +1,6 @@
 ---
 name: generate-api-docs
-version: 1
+version: 2
 description: Generate API documentation from code
 scope: generic
 requires_skill: true
@@ -25,8 +25,8 @@ _None — see skill for workflow defaults._
 
 ## Anti-patterns
 
-- Do not invent endpoints not in code
-- Do not expose secrets in examples
+- **Document only endpoints that exist in code.** Trigger: writing the API reference. Wrong: inventing endpoints, parameters, or responses not present in the source. Correct: document only endpoints found in the code and verify each against the implementation. Reason: invented endpoints mislead consumers and break integrations.
+- **Never expose secrets in examples.** Trigger: writing example requests and responses. Wrong: pasting real tokens, keys, or credentials into samples. Correct: use placeholder values for any secret in examples. Reason: committed secrets leak credentials and force rotation.
 
 ## Examples
 

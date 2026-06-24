@@ -1,6 +1,6 @@
 ---
 name: refactor-code
-version: 1
+version: 2
 description: Refactor for clarity without behavior change
 scope: generic
 requires_skill: true
@@ -25,8 +25,8 @@ _None — see skill for workflow defaults._
 
 ## Anti-patterns
 
-- Do not change behavior
-- Do not expand scope beyond refactor target
+- **Preserve behavior.** Trigger: restructuring a unit of code. Wrong: altering observable behavior or output while refactoring. Correct: keep behavior identical and lean on existing tests to confirm. Reason: a refactor that changes behavior is a hidden functional change reviewers will not expect.
+- **Stay within the refactor target.** Trigger: noticing other improvable code nearby. Wrong: expanding the refactor into unrelated files or features. Correct: limit changes to the agreed target and note the rest separately. Reason: scope creep makes the diff hard to review and risks unrelated regressions.
 
 ## Examples
 

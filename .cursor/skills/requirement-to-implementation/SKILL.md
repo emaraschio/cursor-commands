@@ -122,3 +122,9 @@ Intake → Context → Explore → Plan → [Approve] → Implement → Document
 ```
 
 **Cardinal rule**: No implementation without an approved plan. Plans are cheap; rework is expensive.
+
+## Guardrails
+
+- No implementation without an approved plan: present the plan and wait for explicit approval before writing production code.
+- Do not skip intake or exploration on an ambiguous requirement; map the blast radius first.
+- Commit or push only on explicit user request; never print or commit secrets.

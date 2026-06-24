@@ -7,7 +7,8 @@ cases:
     pass_anchor: "SKILL.md"
     pass_must_reference_skill: true
     skill_required:
-      - "SEO"
+      - "black-hat tactics"
+      - "measure first"
   A2:
     rubric: "required"
     pass_must_reference_skill: false

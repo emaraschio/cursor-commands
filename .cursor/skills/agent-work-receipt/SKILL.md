@@ -115,3 +115,9 @@ Populate every section. Prefer bullets and short paragraphs over vague prose.
 - **`define-agent-goal`**: forward planning before autonomous work. This skill is **backward** accountability after work.
 - **`light-review-existing-diffs`**: code quality pass on diffs. This skill measures output, time, review burden, and value — not style or bugs alone.
 - **`generate-pr-description`**: writes a PR artifact. This skill produces an honest session receipt, not marketing copy.
+
+## Guardrails
+
+- Stay conservative: count only landed artifacts as finished output, never drafts, ideas, or abandoned work.
+- Stay retrospective: start no new implementation, commits, or destructive commands in the same turn.
+- Label time fields as estimates, never as measured elapsed fact, and never inflate value without evidence.

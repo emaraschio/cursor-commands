@@ -30,3 +30,9 @@ style requirements before merging changes.
 - [ ] Manual issues resolved
 - [ ] Final lint run passes cleanly
 - [ ] Changes staged or ready for PR
+
+## Guardrails
+
+- Fix the underlying issue; do not disable rules to pass.
+- Re-run the linter to verify a zero-issue result before finishing.
+- Do not commit, push, merge, or run production scripts without consent.

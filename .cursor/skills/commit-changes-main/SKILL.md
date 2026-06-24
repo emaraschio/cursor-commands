@@ -33,3 +33,9 @@ refactor: refactor code
 test: add tests
 docs: update documentation
 ```
+
+## Guardrails
+
+- Commit to main only with explicit consent; otherwise move the work to a separate branch.
+- Never force-push main or any shared branch; reconcile with a normal pull or merge instead.
+- Use the Conventional Commits convention for every message.

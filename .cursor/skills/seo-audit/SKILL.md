@@ -200,3 +200,8 @@ The audit covers foundational technical requirements, content optimization, user
 - [ ] Social sharing meta tags implemented
 - [ ] Social verification links added (rel="me")
 - [ ] Brand signal tracking configured
+
+## Guardrails
+
+- Recommend only white-hat tactics; do not recommend black-hat tactics.
+- Ground every finding in a measurable check or observed metric; measure first.

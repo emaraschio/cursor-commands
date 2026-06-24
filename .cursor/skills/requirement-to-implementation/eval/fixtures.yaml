@@ -17,6 +17,7 @@ cases:
     skill_required:
       - "approved"
       - "Do not implement"
+      - "No implementation without an approved plan"
     pass_must_reference_skill: true
   S2:
     rubric: "required"

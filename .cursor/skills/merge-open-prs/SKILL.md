@@ -208,3 +208,9 @@ Before changing this contract materially, walk `eval/cases.md` sections **A, D, 
 - **Docker default** matches repos with a merge profile; `--no-docker` is explicit opt-out
 - **Limit 10** prevents runaway merges; deferred PRs must appear in summary
 - **Babysit is source of truth** for per-PR triage — do not fork its rules here
+
+## Guardrails
+
+- Merge only when the gate passes: require local verification, CI success, no CHANGES_REQUESTED, and resolved human threads before merging.
+- Do not silently skip Docker; if `docker info` fails without `--no-docker`, stop with a blocker.
+- Keep the batch bounded: process up to `--limit` (default 10) FIFO and report deferred PRs.

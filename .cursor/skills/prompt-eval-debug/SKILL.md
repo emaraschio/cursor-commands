@@ -87,3 +87,9 @@ Note optional follow-up: re-run the suite after the change; for catalog commands
 - **`define-agent-goal`**: six-part delegation Goal before autonomous work — not prompt rubric design.
 - **`debug-issue`**: application/runtime debugging — not prompt evaluation.
 - **Catalog `eval/` trees**: regression contract for **shipped** commands; this skill designs **ad-hoc** cases for any prompt.
+
+## Guardrails
+
+- Do not rewrite blindly: surface the tiny eval suite and the smallest next change before any full rewrite, and rewrite fully only on explicit request.
+- Keep the capability-boundary case; diagnose missing tool or capability instead of assuming instructions are capabilities.
+- Do not claim catalog CI scored an ad-hoc suite; the user runs these cases manually.

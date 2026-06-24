@@ -1,6 +1,6 @@
 ---
 name: accessibility-audit
-version: 1
+version: 2
 description: Audit UI for WCAG accessibility issues and fixes
 scope: generic
 requires_skill: true
@@ -25,8 +25,8 @@ _None — see skill for workflow defaults._
 
 ## Anti-patterns
 
-- Fix only a11y issues; do not refactor unrelated code
-- Do not skip keyboard/screen reader checks
+- **Fix only accessibility issues.** Trigger: spotting unrelated code smells during the audit. Wrong: refactoring unrelated code in the same pass. Correct: change only accessibility issues and note unrelated findings separately. Reason: mixed diffs hide the a11y fix and are hard to review.
+- **Do not skip keyboard and screen reader checks.** Trigger: running the audit. Wrong: relying only on automated tooling and skipping manual checks. Correct: verify keyboard navigation and screen reader behavior, not just automated scans. Reason: automated tools miss many real accessibility barriers.
 
 ## Examples
 
