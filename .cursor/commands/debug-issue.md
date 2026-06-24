@@ -1,6 +1,6 @@
 ---
 name: debug-issue
-version: 1
+version: 2
 description: Systematically debug a reported issue
 scope: generic
 requires_skill: true
@@ -25,8 +25,8 @@ _None — see skill for workflow defaults._
 
 ## Anti-patterns
 
-- Do not guess without evidence
-- Do not change unrelated code
+- **Diagnose from evidence, not guesses.** Trigger: an error with no obvious cause. Wrong: patching a likely-looking line before reproducing. Correct: reproduce, trace the failing path, then change the smallest thing. Reason: speculative fixes mask the real fault and add churn.
+- **Stay inside the reported fault.** Trigger: spotting unrelated smells mid-debug. Wrong: refactoring adjacent code in the same pass. Correct: note it separately and fix only the bug. Reason: mixed diffs hide the regression and are unreviewable.
 
 ## Examples
 

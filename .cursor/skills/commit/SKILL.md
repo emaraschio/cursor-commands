@@ -32,3 +32,9 @@ refactor(script): standardize script error handling
 test(script): add comprehensive script tests
 docs(script): update script documentation
 ```
+
+## Guardrails
+
+- Use the Conventional Commits convention for every message.
+- Commit only when the user asks; do not push or amend without an explicit request.
+- Never skip hooks; if a hook fails, fix the issue and make a new commit.
