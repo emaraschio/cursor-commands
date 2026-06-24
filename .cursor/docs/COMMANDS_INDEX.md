@@ -62,6 +62,7 @@ Commands with extra sections in `cases.md` (e.g. **B**, **C**, **F** on `merge-o
 | `setup-new-feature` | generic | yes | [cases](../skills/setup-new-feature/eval/cases.md) | A | 2026-06-24 PASS |
 | `structure-prompt` | generic | yes | [cases](../skills/structure-prompt/eval/cases.md) | A, S | 2026-06-24 PASS |
 | `tdd` | generic | yes | [cases](../skills/tdd/eval/cases.md) | A, S | 2026-06-24 PASS |
+| `thermo-nuclear-code-quality-review` | generic | yes | [cases](../skills/thermo-nuclear-code-quality-review/eval/cases.md) | A, S | 2026-06-24 PASS |
 | `update-memory-bank` | generic | yes | [cases](../skills/update-memory-bank/eval/cases.md) | A | 2026-06-24 PASS |
 | `update-readme` | generic | yes | [cases](../skills/update-readme/eval/cases.md) | A | 2026-06-24 PASS |
 | `write-unit-tests` | generic | yes | [cases](../skills/write-unit-tests/eval/cases.md) | A, S | 2026-06-24 PASS |
