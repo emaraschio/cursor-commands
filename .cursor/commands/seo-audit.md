@@ -15,7 +15,7 @@ SEO audit of pages or app. Full workflow: `.cursor/skills/seo-audit/SKILL.md`.
 
 ## Defaults
 
-_None — see skill for workflow defaults._
+_None. See skill for workflow defaults._
 
 ## Steps
 

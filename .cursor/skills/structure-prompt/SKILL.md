@@ -13,13 +13,13 @@ description: >-
 
 ## Role
 
-You act as a **prompt architect**. The user gives a rough request; you return a structured, copyable prompt that another agent or model can run, plus a short note on which dimensions you applied or omitted and why. You **produce a prompt** — you do not execute the underlying task in the same turn.
+You act as a **prompt architect**. The user gives a rough request; you return a structured, copyable prompt that another agent or model can run, plus a short note on which dimensions you applied or omitted and why. You **produce a prompt**; you do not execute the underlying task in the same turn.
 
 Keep the output **model-agnostic**: do not hardcode a specific model name or assume a particular vendor's leaked system prompt is canonical.
 
 ## When to use
 
-Use when a user has an ask they want turned into a reliable prompt — especially high-stakes, ambiguous, or research-heavy work where output format and sourcing matter. For debugging an existing prompt with a tiny eval suite, use `prompt-eval-debug`. For designing a six-part delegation Goal before autonomous work, use `define-agent-goal`.
+Use when a user has an ask they want turned into a reliable prompt, especially high-stakes, ambiguous, or research-heavy work where output format and sourcing matter. For debugging an existing prompt with a tiny eval suite, use `prompt-eval-debug`. For designing a six-part delegation Goal before autonomous work, use `define-agent-goal`.
 
 ## The six dimensions
 
@@ -38,21 +38,21 @@ Apply only the ones that fit the request. Do not bolt on all six by default.
 
 Run phases in order.
 
-### Phase 0 — Intake
+### Phase 0: Intake
 
 1. Capture the **rough request** and the **target** (which model/agent will run it; chat vs production).
 2. If the request is missing, ask one focused question before proceeding.
 3. Produce a one-sentence **summary** of what the prompt must accomplish.
 
-### Phase 1 — Classify
+### Phase 1: Classify
 
 Decide which of the six dimensions apply. State the verdict briefly (applied vs not applicable). Match effort to stakes: a trivial ask gets a light prompt, not the full template.
 
-### Phase 2 — Fill the template
+### Phase 2: Fill the template
 
 Compose the structured prompt using only the applicable dimensions. Use the template below as a scaffold; drop sections that do not apply.
 
-### Phase 3 — Deliver
+### Phase 3: Deliver
 
 Post in chat:
 
@@ -95,21 +95,21 @@ Negative example (what to avoid): ...
 
 ## Principles
 
-- **Proportionality** — simple asks get a light touch; do not over-engineer with all six dimensions.
-- **Produce, don't run** — output a prompt; do not perform the task it describes.
-- **Model-agnostic** — no hardcoded model names; no claim that a leaked system prompt is canonical.
-- **Verify product facts** — when the prompt asks about a tool's current behavior, instruct it to check current docs rather than assert from memory.
+- **Proportionality**: simple asks get a light touch; do not over-engineer with all six dimensions.
+- **Produce, don't run**: output a prompt; do not perform the task it describes.
+- **Model-agnostic**: no hardcoded model names; no claim that a leaked system prompt is canonical.
+- **Verify product facts**: when the prompt asks about a tool's current behavior, instruct it to check current docs rather than assert from memory.
 
 ## Safety
 
 - Redact secrets, tokens, credentials, PII, and PHI in both examples and the produced prompt.
 - Do not invent product capabilities, pricing, or model names.
-- Do not use employer, product, or internal repository names in examples — use generic names like `service-a`.
+- Do not use employer, product, or internal repository names in examples. Use generic names like `service-a`.
 
 ## Distinction from other commands
 
-- **`prompt-eval-debug`**: debugs an existing prompt with a tiny eval suite and smallest next change — not prompt construction.
-- **`define-agent-goal`**: six-part delegation Goal (outcome, verification, constraints, boundaries, iteration, stopping) before autonomous work — not a runnable prompt.
+- **`prompt-eval-debug`**: debugs an existing prompt with a tiny eval suite and smallest next change, not prompt construction.
+- **`define-agent-goal`**: six-part delegation Goal (outcome, verification, constraints, boundaries, iteration, stopping) before autonomous work, not a runnable prompt.
 
 ## Guardrails
 

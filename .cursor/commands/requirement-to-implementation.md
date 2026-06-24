@@ -15,7 +15,7 @@ Take a requirement (feature, bug, refactor, chore, or performance task) from any
 
 ## Defaults
 
-_None — see skill for workflow defaults._
+_None. See skill for workflow defaults._
 
 ## Steps
 

@@ -8,7 +8,7 @@ Related: [EVAL_GUIDE.md](../.cursor/docs/EVAL_GUIDE.md) (manual walks), [COMMAND
 
 `validate-cursor-commands.py` confirms files and frontmatter exist. It does **not** verify that `SKILL.md` still satisfies ship-gate cases in `eval/cases.md`. Ship gate is the merge contract; CI must enforce it structurally before v1.0.
 
-## Enforcement model (v1 — full structural)
+## Enforcement model (v1, full structural)
 
 No LLM in CI. Five automated check layers plus one manual-only class:
 
@@ -19,7 +19,7 @@ No LLM in CI. Five automated check layers plus one manual-only class:
 | **S3** | Command `## Steps` references `SKILL.md` (step 1) | `run-eval-fixtures.py` |
 | **S4** | `SKILL.md` contains `skill_required` / omits `skill_forbidden` from `fixtures.yaml` | `run-eval-fixtures.py` |
 | **S5** | `**PASS if:**` aligns with text in `SKILL.md` (phrase match or `pass_anchor`) | `run-eval-fixtures.py` |
-| **H** | Agent behavior under `**Setup:**` or mock state — human walk only | Not in CI |
+| **H** | Agent behavior under `**Setup:**` or mock state, human walk only | Not in CI |
 
 Inventory column `fixture_ready`: **y** only when S4+S5 can block bad `SKILL.md` edits without an agent run.
 
@@ -63,7 +63,7 @@ cases:
 
 | Field | Required | Meaning |
 |-------|----------|---------|
-| `rubric` | When `fixture_ready` | Must be `required` — runner validates PASS/FAIL lines |
+| `rubric` | When `fixture_ready` | Must be `required`; runner validates PASS/FAIL lines |
 | `skill_required` | Optional | Substrings that must appear in `SKILL.md` (case-insensitive) |
 | `skill_forbidden` | Optional | Substrings that must not appear in `SKILL.md` |
 | `pass_must_reference_skill` | Optional | If true, run S5 alignment on `**PASS if:**` |
@@ -75,9 +75,9 @@ Phase 2 rollout: require `fixtures.yaml` for every inventory row with `fixture_r
 
 ### Pilot examples (Phase 2 backfill order)
 
-See [EVAL_INVENTORY.md — Pilot commands](EVAL_INVENTORY.md#pilot-commands-phase-2-fixture-backfill-first).
+See [EVAL_INVENTORY.md: Pilot commands](EVAL_INVENTORY.md#pilot-commands-phase-2-fixture-backfill-first).
 
-`commit` / `create-pr-main` / `commit-changes-main` share the bootstrap A+S template (four `fixture_ready: y` rows each). `merge-open-prs` mixes six structural rows (A1–A5, E3) with eight **H** rows (D\\*, E1/E2/E4) that stay manual-only in v1.
+`commit` / `create-pr-main` / `commit-changes-main` share the bootstrap A+S template (four `fixture_ready: y` rows each). `merge-open-prs` mixes six structural rows (A1 to A5, E3) with eight **H** rows (D\\*, E1/E2/E4) that stay manual-only in v1.
 
 ---
 
@@ -171,7 +171,7 @@ Rationale: ship gate is the only enforced quality contract for prompts; without 
 
 ## Phase 1 sign-off
 
-See [ROADMAP.md — Phase 1](ROADMAP.md#phase-1--plan-next). Complete when:
+See [ROADMAP.md: Phase 1](ROADMAP.md#phase-1-plan-complete). Complete when:
 
 - [x] [EVAL_INVENTORY.md](EVAL_INVENTORY.md) merged
 - [x] This document merged

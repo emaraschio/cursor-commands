@@ -15,7 +15,7 @@ Run full test suite and fix failures. Full workflow: `.cursor/skills/run-all-tes
 
 ## Defaults
 
-_None — see skill for workflow defaults._
+_None. See skill for workflow defaults._
 
 ## Steps
 

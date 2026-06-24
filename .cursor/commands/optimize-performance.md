@@ -15,7 +15,7 @@ Profile and optimize performance bottlenecks. Full workflow: `.cursor/skills/opt
 
 ## Defaults
 
-_None — see skill for workflow defaults._
+_None. See skill for workflow defaults._
 
 ## Steps
 

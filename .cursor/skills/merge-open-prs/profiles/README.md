@@ -12,7 +12,7 @@ Optional per-repo YAML overrides for `/merge-open-prs`. Filename = **repository 
 ## When to skip
 
 - Standard `docker compose build` + README-documented test service is enough
-- Repo has no Docker — user must pass `--no-docker` and you may still add `verify.mode: host` steps
+- Repo has no Docker; user must pass `--no-docker` and you may still add `verify.mode: host` steps
 
 ## Template
 

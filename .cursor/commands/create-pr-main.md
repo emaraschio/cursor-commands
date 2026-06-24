@@ -15,7 +15,7 @@ Create a pull request targeting main. Full workflow: `.cursor/skills/create-pr-m
 
 ## Defaults
 
-_None — see skill for workflow defaults._
+_None. See skill for workflow defaults._
 
 ## Steps
 

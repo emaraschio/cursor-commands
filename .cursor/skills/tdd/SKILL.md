@@ -25,15 +25,15 @@ Take the **initial specification** from the user's message (draft scenarios, exa
 
 At session level:
 
-1. **Specify** — agree what to build as concrete scenarios.
-2. **Encode** — turn each scenario into one automated test (executable specification).
-3. **Fulfill** — write production code so the current test passes.
+1. **Specify**: agree what to build as concrete scenarios.
+2. **Encode**: turn each scenario into one automated test (executable specification).
+3. **Fulfill**: write production code so the current test passes.
 
 At fine grain (repeat until the specification list is empty):
 
 1. Maintain a numbered **specification list** for this session.
-2. **Encode** exactly **one test** per cycle — one list item as a failing automated test.
-3. **Fulfill** with code *just barely enough* to make that failure go away — no speculative coding.
+2. **Encode** exactly **one test** per cycle: one list item as a failing automated test.
+3. **Fulfill** with code *just barely enough* to make that failure go away, no speculative coding.
 4. **Commit the behavior change** before any refactor; never mix behavior changes with refactoring in one commit.
 5. Optionally refactor after the behavior commit, with user approval.
 6. Return to step 2 for the next list item.
@@ -51,7 +51,7 @@ Before writing tests:
 ## Encoding tests (framework-agnostic)
 
 - Map each scenario to a named example or case in the host project's test framework (e.g. nested group + single case).
-- Assert **what** the correct behavior is — never "works correctly", "works properly", or vague "handles" without stating expected outcomes.
+- Assert **what** the correct behavior is, never "works correctly", "works properly", or vague "handles" without stating expected outcomes.
 - One behavior per test case where possible.
 - Use the host repo's test style (imports, factories, matchers). Detect from existing tests or project docs.
 - For **RSpec** hosts, see [appendix-rspec-examples.md](appendix-rspec-examples.md).
@@ -115,10 +115,10 @@ Replace separate design-review commands in v1.
 
 ## Distinction from other commands
 
-- **`write-unit-tests`**: add tests for existing code — not the one-test Canon loop.
-- **`requirement-to-implementation`**: plan and implement a requirement end-to-end — not per-test approval TDD.
-- **`run-all-tests-and-fix`**: restore a green suite — not specify-encode-fulfill for new behavior.
-- **`refactor-code`**: behavior-preserving refactor — in TDD, refactor only after a behavior commit.
+- **`write-unit-tests`**: add tests for existing code, not the one-test Canon loop.
+- **`requirement-to-implementation`**: plan and implement a requirement end-to-end, not per-test approval TDD.
+- **`run-all-tests-and-fix`**: restore a green suite, not specify-encode-fulfill for new behavior.
+- **`refactor-code`**: behavior-preserving refactor; in TDD, refactor only after a behavior commit.
 
 ## Guardrails
 

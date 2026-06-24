@@ -15,7 +15,7 @@ Commit directly on main/master when explicitly allowed. Full workflow: `.cursor/
 
 ## Defaults
 
-_None — see skill for workflow defaults._
+_None. See skill for workflow defaults._
 
 ## Steps
 

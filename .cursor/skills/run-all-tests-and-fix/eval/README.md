@@ -1,4 +1,4 @@
-# run-all-tests-and-fix — behavioral evaluation
+# run-all-tests-and-fix: behavioral evaluation
 
 Evaluates agent behavior when following only `SKILL.md`. No code execution.
 

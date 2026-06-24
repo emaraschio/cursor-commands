@@ -15,7 +15,7 @@ Add or improve code documentation for the current change. Full workflow: `.curso
 
 ## Defaults
 
-_None — see skill for workflow defaults._
+_None. See skill for workflow defaults._
 
 ## Steps
 

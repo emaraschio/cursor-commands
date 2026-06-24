@@ -1,4 +1,4 @@
-# add-error-handling — behavioral evaluation
+# add-error-handling: behavioral evaluation
 
 Evaluates agent behavior when following only `SKILL.md`. No code execution.
 

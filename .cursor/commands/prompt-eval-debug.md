@@ -1,7 +1,7 @@
 ---
 name: prompt-eval-debug
 version: 2
-description: Debug any prompt with a tiny eval suite (control, edge, boundary), failure diagnosis, and smallest next change—no blind rewrite
+description: Debug any prompt with a tiny eval suite (control, edge, boundary), failure diagnosis, and smallest next change, no blind rewrite
 scope: generic
 requires_skill: true
 eval:
@@ -11,13 +11,13 @@ eval:
 
 ## Overview
 
-Improve a pasted prompt by designing a tiny eval suite, diagnosing failures, and proposing the smallest next change — without rewriting blindly. Full workflow: `.cursor/skills/prompt-eval-debug/SKILL.md`.
+Improve a pasted prompt by designing a tiny eval suite, diagnosing failures, and proposing the smallest next change, without rewriting blindly. Full workflow: `.cursor/skills/prompt-eval-debug/SKILL.md`.
 
 ## Defaults
 
 | Setting | Default |
 |---------|---------|
-| Eval suite | 1 control (C0) + 3 edge (E1–E3) + 1 capability-boundary (B1) |
+| Eval suite | 1 control (C0) + 3 edge (E1 to E3) + 1 capability-boundary (B1) |
 | Prompt change | Smallest next change only (no full rewrite in v1) |
 | Scoring | User runs cases manually; skill does not claim CI or automated scores |
 | Examples | Generic names only (`service-a`, `task-handler`) |

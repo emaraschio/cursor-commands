@@ -15,7 +15,7 @@ Produce a one-page agent permission brief before granting an AI agent access to 
 
 ## Defaults
 
-_None — see skill for workflow defaults._
+_None. See skill for workflow defaults._
 
 ## Steps
 

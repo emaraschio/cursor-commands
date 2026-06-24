@@ -25,7 +25,7 @@ Review, verify, approve, and merge open pull requests in the **current repo**. D
 
 1. **Read** `.cursor/skills/merge-open-prs/SKILL.md` for the full contract (preflight, inventory, babysit, review, verify, gate, merge, post-smoke).
 2. **Parse flags:** `--dry-run`, `--no-docker`, `--limit N`, optional PR number.
-3. **Execute** phases 0–5 in order. Per PR, follow **babysit** at `~/.cursor/skills-cursor/babysit/SKILL.md`.
+3. **Execute** phases 0 to 5 in order. Per PR, follow **babysit** at `~/.cursor/skills-cursor/babysit/SKILL.md`.
 4. **Emit** plan table before processing and summary table after post-batch smoke.
 
 ## Anti-patterns

@@ -15,7 +15,7 @@ Generate API documentation from code. Full workflow: `.cursor/skills/generate-ap
 
 ## Defaults
 
-_None — see skill for workflow defaults._
+_None. See skill for workflow defaults._
 
 ## Steps
 

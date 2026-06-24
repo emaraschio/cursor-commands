@@ -15,7 +15,7 @@ Diagnose and fix git state problems. Full workflow: `.cursor/skills/fix-git-issu
 
 ## Defaults
 
-_None — see skill for workflow defaults._
+_None. See skill for workflow defaults._
 
 ## Steps
 

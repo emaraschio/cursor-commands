@@ -1,4 +1,4 @@
-# write-unit-tests — behavioral evaluation
+# write-unit-tests: behavioral evaluation
 
 Evaluates agent behavior when following only `SKILL.md`. No code execution.
 

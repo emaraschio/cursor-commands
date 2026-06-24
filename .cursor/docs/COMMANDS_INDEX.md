@@ -9,7 +9,7 @@ Canonical catalog of slash commands. Authoring: [COMMAND_SCHEMA.md](COMMAND_SCHE
 | Concept | Where it lives |
 |---------|----------------|
 | Section IDs in the table below | Copied from command frontmatter `eval.ship_gate` (e.g. `A, S`) |
-| Rubric cases | `skills/<name>/eval/cases.md` under headings like `## Section A — …` |
+| Rubric cases | `skills/<name>/eval/cases.md` under headings like `## Section A: …` |
 | How to walk and score | [EVAL_GUIDE.md](EVAL_GUIDE.md) |
 
 **Common section letters** (not every command uses all of them):

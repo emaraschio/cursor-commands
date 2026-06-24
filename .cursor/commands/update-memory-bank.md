@@ -15,7 +15,7 @@ Sync memory bank with repository state. Full workflow: `.cursor/skills/update-me
 
 ## Defaults
 
-_None — see skill for workflow defaults._
+_None. See skill for workflow defaults._
 
 ## Steps
 

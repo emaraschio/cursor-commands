@@ -1,4 +1,4 @@
-# generate-api-docs — behavioral evaluation
+# generate-api-docs: behavioral evaluation
 
 Evaluates agent behavior when following only `SKILL.md`. No code execution.
 

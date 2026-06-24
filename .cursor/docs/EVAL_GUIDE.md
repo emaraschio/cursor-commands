@@ -12,7 +12,7 @@ Manual rubric walks for Cursor commands. No automated agent runner in v1.
 
 Catalog evals are **regression guardrails** for shipped commands. When you are still iterating on wording, use [`/prompt-eval-debug`](../commands/prompt-eval-debug.md) ([`skills/prompt-eval-debug/SKILL.md`](../skills/prompt-eval-debug/SKILL.md)) to draft a tiny suite (control, edge, capability-boundary) before rewriting a prompt or adding rows to `eval/cases.md`. That command does not run in CI and does not replace ship-gate walks.
 
-For **Canon TDD sessions** (one test at a time, specify-encode-fulfill), use [`/tdd`](../commands/tdd.md) ([`skills/tdd/SKILL.md`](../skills/tdd/SKILL.md)) — a workflow skill, not a substitute for `eval/cases.md`.
+For **Canon TDD sessions** (one test at a time, specify-encode-fulfill), use [`/tdd`](../commands/tdd.md) ([`skills/tdd/SKILL.md`](../skills/tdd/SKILL.md)): a workflow skill, not a substitute for `eval/cases.md`.
 
 ## How to score
 

@@ -9,7 +9,7 @@ Sync the memory bank with the current state of the repository and recent agent i
 
 ## Memory Bank Files
 
-Each file has a distinct responsibility — update only what changed:
+Each file has a distinct responsibility. Update only what changed:
 
 | File | Purpose | Update when... |
 |------|---------|----------------|

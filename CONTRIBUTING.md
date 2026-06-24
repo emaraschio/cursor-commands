@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for helping improve Cursor commands and skills. This catalog is **public OSS** on GitHub — see [CHANGELOG.md](CHANGELOG.md) for the latest release tag.
+Thanks for helping improve Cursor commands and skills. This catalog is **public OSS** on GitHub; see [CHANGELOG.md](CHANGELOG.md) for the latest release tag.
 
 ## Open source catalog
 
@@ -17,7 +17,7 @@ Everything in this repository ships to strangers who install from GitHub. Write 
 ## Before you open a PR
 
 1. Read [COMMAND_SCHEMA.md](.cursor/docs/COMMAND_SCHEMA.md), [EVAL_GUIDE.md](.cursor/docs/EVAL_GUIDE.md), and [docs/EVAL_CI.md](docs/EVAL_CI.md) (ship-gate CI; `run-eval-fixtures.py --strict` runs in CI).
-2. Run `python3 scripts/validate-cursor-commands.py` and `python3 scripts/run-eval-fixtures.py --strict` — must pass.
+2. Run `python3 scripts/validate-cursor-commands.py` and `python3 scripts/run-eval-fixtures.py --strict`; both must pass.
 3. Run install tests if you changed `scripts/install.sh`:
 
    ```bash
@@ -66,4 +66,4 @@ All commands in this repository use `scope: generic`. Organization-specific comm
 
 ## Host workspace
 
-Cursor **rules**, **agents**, and **memory-bank** content belong in the repository you open in the IDE — not in cursor-commands. Consumers install only commands and skills from this repo.
+Cursor **rules**, **agents**, and **memory-bank** content belong in the repository you open in the IDE, not in cursor-commands. Consumers install only commands and skills from this repo.

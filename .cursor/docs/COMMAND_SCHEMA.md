@@ -21,11 +21,11 @@ eval:
 ## Body sections (required, in order)
 
 1. `## Overview`
-2. `## Defaults` — table or `_None._`
-3. `## Steps` — numbered; step 1 must reference `SKILL.md`
+2. `## Defaults`: table or `_None._`
+3. `## Steps`: numbered; step 1 must reference `SKILL.md`
 4. `## Anti-patterns`
 5. `## Examples`
-6. `## Maintainers` — link to eval path and ship gate
+6. `## Maintainers`: link to eval path and ship gate
 
 ## Anti-patterns format
 

@@ -15,7 +15,7 @@ Fix compilation/type errors with minimal diff. Full workflow: `.cursor/skills/fi
 
 ## Defaults
 
-_None — see skill for workflow defaults._
+_None. See skill for workflow defaults._
 
 ## Steps
 

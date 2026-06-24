@@ -15,7 +15,7 @@ Quick review of existing diffs without full PR context. Full workflow: `.cursor/
 
 ## Defaults
 
-_None — see skill for workflow defaults._
+_None. See skill for workflow defaults._
 
 ## Steps
 

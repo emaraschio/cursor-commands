@@ -11,7 +11,7 @@ eval:
 
 ## Overview
 
-Produce a conservative agent work receipt after completed work — finished output, time estimates, review burden, risks, and value judgment. Retrospective only; no new implementation in the same turn. Full workflow: `.cursor/skills/agent-work-receipt/SKILL.md`.
+Produce a conservative agent work receipt after completed work: finished output, time estimates, review burden, risks, and value judgment. Retrospective only; no new implementation in the same turn. Full workflow: `.cursor/skills/agent-work-receipt/SKILL.md`.
 
 ## Defaults
 
@@ -20,7 +20,7 @@ Produce a conservative agent work receipt after completed work — finished outp
 | Scope | Full session unless user narrows in the message |
 | Time fields | Agent estimates, labeled as estimates |
 | Evidence | Conversation + read-only git (`status`, `diff`, `log`) when repo present |
-| Execution | Retrospective only — no new implementation in same turn |
+| Execution | Retrospective only, no new implementation in same turn |
 | Examples | Generic names only (`service-a`, `repo1`) |
 
 ## Steps
@@ -38,7 +38,7 @@ Produce a conservative agent work receipt after completed work — finished outp
 ## Examples
 
 - `/agent-work-receipt` after a coding session with landed changes
-- `/agent-work-receipt` for "the refactor in service-a" — scoped receipt
+- `/agent-work-receipt` for "the refactor in service-a" (scoped receipt)
 
 ## Maintainers
 

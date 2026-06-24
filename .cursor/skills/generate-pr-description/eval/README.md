@@ -1,4 +1,4 @@
-# generate-pr-description — behavioral evaluation
+# generate-pr-description: behavioral evaluation
 
 Evaluates agent behavior when following only `SKILL.md`. No code execution.
 

@@ -15,7 +15,7 @@ Write meaningful unit tests for target code. Full workflow: `.cursor/skills/writ
 
 ## Defaults
 
-_None — see skill for workflow defaults._
+_None. See skill for workflow defaults._
 
 ## Steps
 

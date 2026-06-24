@@ -5,7 +5,7 @@ description: Structured workflow for taking a requirement (feature, bug, refacto
 
 # Requirement to Implementation
 
-Structured workflow that turns a requirement into verified, documented code. Every task—feature, bug fix, refactor, chore, or performance improvement—flows through the same phases.
+Structured workflow that turns a requirement into verified, documented code. Every task (feature, bug fix, refactor, chore, or performance improvement) flows through the same phases.
 
 ## Phase 0: Intake
 
@@ -24,23 +24,23 @@ Produce a one-paragraph **requirement summary** confirming your understanding. A
 
 Read the Memory Bank to ground yourself in project state:
 
-1. `.cursor/memory-bank/projectbrief.md` — scope and goals
-2. `.cursor/memory-bank/productContext.md` — product context
-3. `.cursor/memory-bank/techContext.md` — tech stack and constraints
-4. `.cursor/memory-bank/systemPatterns.md` — architecture and patterns
-5. `.cursor/user-memory-bank/activeContext.md` — current focus
-6. `.cursor/user-memory-bank/progress.md` — what's done, what's pending
+1. `.cursor/memory-bank/projectbrief.md`: scope and goals
+2. `.cursor/memory-bank/productContext.md`: product context
+3. `.cursor/memory-bank/techContext.md`: tech stack and constraints
+4. `.cursor/memory-bank/systemPatterns.md`: architecture and patterns
+5. `.cursor/user-memory-bank/activeContext.md`: current focus
+6. `.cursor/user-memory-bank/progress.md`: what's done, what's pending
 
-If any file is missing or stale, note it—you'll update them in Phase 5.
+If any file is missing or stale, note it; you'll update them in Phase 5.
 
 ## Phase 2: Exploration & Analysis
 
 Explore the codebase to map the blast radius of the change:
 
-1. **Identify affected files** — entry points, services, APIs, jobs, UI, tests
-2. **Read existing patterns** — find similar implementations to follow
-3. **Spot risks** — PII/sensitive data exposure, authorization gaps, integration side effects, migration needs
-4. **Note test coverage** — existing tests that need updating, gaps that need filling
+1. **Identify affected files**: entry points, services, APIs, jobs, UI, tests
+2. **Read existing patterns**: find similar implementations to follow
+3. **Spot risks**: PII/sensitive data exposure, authorization gaps, integration side effects, migration needs
+4. **Note test coverage**: existing tests that need updating, gaps that need filling
 
 Use exploratory subagents for broad investigations. Use targeted searches for specific lookups.
 
@@ -58,12 +58,12 @@ Present a structured plan to the user. **Do not implement until approved.**
 [High-level description of the solution]
 
 ## Changes
-1. [File/area] — [what changes and why]
-2. [File/area] — [what changes and why]
+1. [File/area]: [what changes and why]
+2. [File/area]: [what changes and why]
 ...
 
 ## Verification Strategy
-- [ ] [How you'll verify correctness — tests, manual checks, etc.]
+- [ ] [How you'll verify correctness (tests, manual checks, etc.)]
 - [ ] [Specific test files to create or update]
 
 ## Risks & Considerations
@@ -81,7 +81,7 @@ Once the user approves, proceed to implementation.
 
 1. **Create a TodoWrite task list** mirroring the approved plan's changes
 2. **Mark each todo `in_progress`** as you begin it, `completed` when done
-3. **Work step by step** — one todo at a time, verifying as you go
+3. **Work step by step**: one todo at a time, verifying as you go
 
 ### Verification (flexible per task)
 
@@ -95,12 +95,12 @@ Choose the verification approach that fits:
 | **Performance** | Benchmark before/after, verify no regression in specs |
 | **Chore** | Verify with linter, specs, or manual confirmation as appropriate |
 
-After each meaningful change, run the project's test command for affected paths (for example `npm test`, `pytest`, `go test ./...`, `bundle exec rspec` — use what the host repo documents). Fix failures before moving on.
+After each meaningful change, run the project's test command for affected paths (for example `npm test`, `pytest`, `go test ./...`, `bundle exec rspec`; use what the host repo documents). Fix failures before moving on.
 
 ### Implementation Principles
 
 - Follow existing patterns found in Phase 2
-- One concern per change — don't mix unrelated modifications
+- One concern per change: don't mix unrelated modifications
 - Check lints after substantive edits
 - If a step reveals the plan was wrong, **stop and re-plan** with the user
 
@@ -108,10 +108,10 @@ After each meaningful change, run the project's test command for affected paths 
 
 After implementation is complete and verified:
 
-1. **Update `.cursor/user-memory-bank/activeContext.md`** — reflect current focus and recent changes
-2. **Update `.cursor/user-memory-bank/progress.md`** — mark what's done, note what's next
-3. **Update `.cursor/memory-bank/systemPatterns.md`** — if new patterns were introduced
-4. **Update `.cursor/memory-bank/techContext.md`** — if tech stack or constraints changed
+1. **Update `.cursor/user-memory-bank/activeContext.md`**: reflect current focus and recent changes
+2. **Update `.cursor/user-memory-bank/progress.md`**: mark what's done, note what's next
+3. **Update `.cursor/memory-bank/systemPatterns.md`**: if new patterns were introduced
+4. **Update `.cursor/memory-bank/techContext.md`**: if tech stack or constraints changed
 
 ## Quick Reference: Phase Flow
 

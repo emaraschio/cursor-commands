@@ -15,7 +15,7 @@ Scaffold a new feature across layers. Full workflow: `.cursor/skills/setup-new-f
 
 ## Defaults
 
-_None — see skill for workflow defaults._
+_None. See skill for workflow defaults._
 
 ## Steps
 

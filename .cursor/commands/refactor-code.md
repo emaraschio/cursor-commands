@@ -15,7 +15,7 @@ Refactor for clarity without behavior change. Full workflow: `.cursor/skills/ref
 
 ## Defaults
 
-_None — see skill for workflow defaults._
+_None. See skill for workflow defaults._
 
 ## Steps
 

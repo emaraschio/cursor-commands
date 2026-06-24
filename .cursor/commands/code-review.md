@@ -15,7 +15,7 @@ Thorough PR code review before approval. Full workflow: `.cursor/skills/code-rev
 
 ## Defaults
 
-_None — see skill for workflow defaults._
+_None. See skill for workflow defaults._
 
 ## Steps
 

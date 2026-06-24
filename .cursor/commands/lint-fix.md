@@ -15,7 +15,7 @@ Fix lint issues in the current file. Full workflow: `.cursor/skills/lint-fix/SKI
 
 ## Defaults
 
-_None — see skill for workflow defaults._
+_None. See skill for workflow defaults._
 
 ## Steps
 

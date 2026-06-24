@@ -11,7 +11,7 @@ disable-model-invocation: true
 
 Orchestrate a **batch** of open pull requests in the **current repo**: babysit each PR, code-review, verify locally (Docker-first), auto-merge when green, then post-batch smoke on the default branch.
 
-**Do not** duplicate the babysit contract inline — read and follow the **babysit** skill at `~/.cursor/skills-cursor/babysit/SKILL.md` for every PR in the batch.
+**Do not** duplicate the babysit contract inline. Read and follow the **babysit** skill at `~/.cursor/skills-cursor/babysit/SKILL.md` for every PR in the batch.
 
 **Entry point:** `.cursor/commands/merge-open-prs.md` (slash `/merge-open-prs`). When this file disagrees with the command file, **this file wins**.
 
@@ -42,18 +42,18 @@ Parse flags from the user message: `--dry-run`, `--no-docker`, `--limit N`. A ba
 
 ---
 
-## Phase 0 — Preflight
+## Phase 0: Preflight
 
-1. `gh auth status` — blocker if not authenticated
+1. `gh auth status`: blocker if not authenticated
 2. Confirm git repo root: `git remote get-url origin`
 3. `git fetch --all --prune`
 4. If working tree dirty → warn; do not stash without asking
-5. **Docker (default path):** `docker info` — if it fails and user did **not** pass `--no-docker`, **stop** with a blocker (suggest `--no-docker` only when they accept non-Docker verification)
+5. **Docker (default path):** `docker info`. If it fails and user did **not** pass `--no-docker`, **stop** with a blocker (suggest `--no-docker` only when they accept non-Docker verification)
 6. Resolve profile path: `profiles/<repo-basename>.yaml` relative to this skill directory (`basename` from `git remote get-url origin`, strip `.git`, last path segment). See `profiles/README.md`.
 
 ---
 
-## Phase 1 — Inventory
+## Phase 1: Inventory
 
 ```bash
 gh pr list --state open --limit <LIMIT> --json number,title,isDraft,mergeable,reviewDecision,statusCheckRollup,headRefName,author,labels,createdAt,updatedAt
@@ -69,11 +69,11 @@ gh pr list --state open --limit <LIMIT> --json number,title,isDraft,mergeable,re
 
 ---
 
-## Phase 2 — Per-PR loop
+## Phase 2: Per-PR loop
 
 For each PR in batch (in order):
 
-### 2a — Babysit
+### 2a: Babysit
 
 Read and execute `~/.cursor/skills-cursor/babysit/SKILL.md`:
 
@@ -83,7 +83,7 @@ Read and execute `~/.cursor/skills-cursor/babysit/SKILL.md`:
 
 Checkout the PR branch: `gh pr checkout <n>`.
 
-### 2b — Code review
+### 2b: Code review
 
 Apply the checklist in `~/.cursor/skills/code-review/SKILL.md` (or slash `/code-review`). Surface blockers in chat. Hard stops (entire batch):
 
@@ -91,7 +91,7 @@ Apply the checklist in `~/.cursor/skills/code-review/SKILL.md` (or slash `/code-
 - DB migration without rollback note in PR description
 - Breaking change (`feat!`, `BREAKING`) without explicit user approval in this session
 
-### 2c — Local verification
+### 2c: Local verification
 
 #### Docker-first (default; unless `--no-docker`)
 
@@ -111,7 +111,7 @@ Apply the checklist in `~/.cursor/skills/code-review/SKILL.md` (or slash `/code-
 
 Record pass/fail output in the session summary.
 
-### 2d — Re-fetch GitHub state
+### 2d: Re-fetch GitHub state
 
 ```bash
 gh pr view <n> --json mergeable,mergeStateStatus,reviewDecision,isDraft
@@ -122,7 +122,7 @@ Unresolved review threads: use `gh api` GraphQL or review threads; follow babysi
 
 ---
 
-## Phase 3 — auto_if_green gate
+## Phase 3: auto_if_green gate
 
 Merge **only if all** are true:
 
@@ -135,7 +135,7 @@ Merge **only if all** are true:
 | Local verify | Passed in 2c |
 | Draft | `isDraft` == false |
 
-- **Pass** → Phase 4a–4b (unless `--dry-run`)
+- **Pass** → Phase 4a to 4b (unless `--dry-run`)
 - **Fail** → log reason, **continue** to next PR (do not stop batch unless auth/rate-limit/hard-stop)
 
 **Do not approve before the gate passes.** Approval is a pre-merge step, not a substitute for local verify or CI.
@@ -146,21 +146,21 @@ Evaluate gate and report **would approve** / **would merge** / **would skip**; *
 
 ---
 
-## Phase 4a — Approve (always before merge)
+## Phase 4a: Approve (always before merge)
 
 After gate passes (and not in `--dry-run`):
 
-1. `gh pr view <n> --json reviewDecision,author` — confirm the authenticated `gh` user can act as reviewer on this repo
+1. `gh pr view <n> --json reviewDecision,author`: confirm the authenticated `gh` user can act as reviewer on this repo
 2. If you have not already left an **APPROVE** review on this PR in this session:
    - `gh pr review <n> --approve` with an optional one-line body summarizing verify + CI status
-3. Re-fetch `reviewDecision` — if still blocked (e.g. requires another reviewer), **skip merge** with reason `approval-insufficient`; continue queue
+3. Re-fetch `reviewDecision`. If still blocked (e.g. requires another reviewer), **skip merge** with reason `approval-insufficient`; continue queue
 4. Log approval in the per-PR summary before proceeding
 
 **Never** approve when gate failed, local verify failed, or hard-stop conditions apply.
 
 ---
 
-## Phase 4b — Merge (only after 4a)
+## Phase 4b: Merge (only after 4a)
 
 Merge **only after** Phase 4a succeeded (approve recorded or already approved by you):
 
@@ -180,11 +180,11 @@ Use profile `merge` (`squash` | `merge` | `rebase`) or repo default.
 
 ---
 
-## Phase 5 — Post-batch smoke
+## Phase 5: Post-batch smoke
 
 After all PRs processed:
 
-1. `git checkout <default_branch>` — from profile or `gh repo view --json defaultBranchRef`
+1. `git checkout <default_branch>`: from profile or `gh repo view --json defaultBranchRef`
 2. `git pull`
 3. Run `post_merge_smoke` from profile, or repeat a **lighter** Docker smoke (e.g. same as verify step 1 only) when Docker-default
 4. **Summary table:** merged | skipped (reason) | failed | deferred (beyond limit) | smoke pass/fail
@@ -207,7 +207,7 @@ Before changing this contract materially, walk `eval/cases.md` sections **A, D, 
 
 - **Docker default** matches repos with a merge profile; `--no-docker` is explicit opt-out
 - **Limit 10** prevents runaway merges; deferred PRs must appear in summary
-- **Babysit is source of truth** for per-PR triage — do not fork its rules here
+- **Babysit is source of truth** for per-PR triage; do not fork its rules here
 
 ## Guardrails
 

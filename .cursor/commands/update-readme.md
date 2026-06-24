@@ -15,7 +15,7 @@ Update project README for current state. Full workflow: `.cursor/skills/update-r
 
 ## Defaults
 
-_None — see skill for workflow defaults._
+_None. See skill for workflow defaults._
 
 ## Steps
 

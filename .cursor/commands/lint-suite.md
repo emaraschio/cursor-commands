@@ -15,7 +15,7 @@ Run project linters and fix findings repo-wide. Full workflow: `.cursor/skills/l
 
 ## Defaults
 
-_None — see skill for workflow defaults._
+_None. See skill for workflow defaults._
 
 ## Steps
 

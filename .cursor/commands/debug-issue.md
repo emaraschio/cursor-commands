@@ -15,7 +15,7 @@ Systematically debug a reported issue. Full workflow: `.cursor/skills/debug-issu
 
 ## Defaults
 
-_None — see skill for workflow defaults._
+_None. See skill for workflow defaults._
 
 ## Steps
 

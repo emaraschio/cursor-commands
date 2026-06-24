@@ -15,7 +15,7 @@ Security audit of codebase or change. Full workflow: `.cursor/skills/security-au
 
 ## Defaults
 
-_None — see skill for workflow defaults._
+_None. See skill for workflow defaults._
 
 ## Steps
 

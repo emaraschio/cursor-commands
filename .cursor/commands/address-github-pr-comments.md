@@ -15,7 +15,7 @@ Address review comments on the current GitHub PR. Full workflow: `.cursor/skills
 
 ## Defaults
 
-_None — see skill for workflow defaults._
+_None. See skill for workflow defaults._
 
 ## Steps
 

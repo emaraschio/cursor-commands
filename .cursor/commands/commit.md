@@ -15,7 +15,7 @@ Commit on a new branch with conventional message. Full workflow: `.cursor/skills
 
 ## Defaults
 
-_None — see skill for workflow defaults._
+_None. See skill for workflow defaults._
 
 ## Steps
 
