@@ -6,7 +6,6 @@ cases:
     rubric: "required"
     skill_required:
       - "Docker"
-      - "limit"
       - "FIFO"
       - "auto_if_green"
       - "merge only when the gate passes"

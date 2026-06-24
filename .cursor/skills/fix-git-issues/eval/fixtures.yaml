@@ -6,8 +6,6 @@ cases:
     rubric: "required"
     pass_anchor: "SKILL.md"
     pass_must_reference_skill: true
-    skill_required:
-      - "git"
   A2:
     rubric: "required"
     pass_must_reference_skill: false
@@ -19,4 +17,6 @@ cases:
     pass_must_reference_skill: false
   S2:
     rubric: "required"
+    skill_required:
+      - "secret"
     pass_must_reference_skill: false

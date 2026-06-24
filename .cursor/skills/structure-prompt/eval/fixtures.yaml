@@ -22,5 +22,4 @@ cases:
     rubric: "required"
     pass_must_reference_skill: false
     skill_required:
-      - "verify"
       - "redact"

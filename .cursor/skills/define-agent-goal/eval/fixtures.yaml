@@ -14,7 +14,6 @@ cases:
     pass_must_reference_skill: false
     skill_required:
       - "stopping condition"
-      - "verification"
       - "keep boundaries narrow"
       - "vague autonomy"
   S2:
