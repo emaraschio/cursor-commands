@@ -49,3 +49,4 @@ Create comprehensive unit tests for the current code and generate the test file 
 - Test observable behavior and public contracts, not implementation trivia.
 - Mock only external boundaries (network, clock, filesystem); use real objects for the rest.
 - Do not commit, push, merge, or run destructive commands without explicit user consent.
+- Do not print, log, or commit secrets or credentials found in the code or test fixtures; flag any exposure instead.

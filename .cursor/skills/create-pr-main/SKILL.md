@@ -30,3 +30,4 @@ Create a well-structured pull request for the main branch of a GitHub repository
 - Push only when the user asks; do not push unrequested changes before opening the PR.
 - Do not open empty PRs; confirm the branch has real changes to review first.
 - Use the PR template and the Conventional Commits convention for the title.
+- Never print, stage, or commit secrets or credential files (.env, .env.*, keys); exclude them and warn instead.

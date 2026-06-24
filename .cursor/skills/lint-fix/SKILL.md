@@ -41,4 +41,5 @@ Analyze the current file for linting issues and automatically fix them according
 
 - Limit edits to formatting and style; do not change behavior while fixing lint.
 - Use the project linter config rather than personal or ad hoc rules.
+- Scope is the current file; if asked to fix lint across the whole repo, point to the repo-wide lint workflow (`/lint-suite`) instead of silently linting one file.
 - Do not commit, push, merge, or run production scripts without consent.

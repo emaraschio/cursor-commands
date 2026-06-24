@@ -34,3 +34,5 @@ docs(script): update script documentation
 - Commit only when the user asks; do not commit unrequested work.
 - Do not push unless asked; keep commits local until the user requests a push.
 - Use the Conventional Commits convention for every message.
+- Before staging, review `git status`, `git diff`, and recent `git log`; write the commit message with a HEREDOC and stay on the current branch (do not create a new branch).
+- Never print, stage, or commit secrets or credential files (.env, .env.*, keys); exclude them and warn instead.

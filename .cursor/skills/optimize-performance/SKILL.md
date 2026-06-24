@@ -43,3 +43,4 @@ Analyze the current code for performance bottlenecks and provide optimization re
 - Measure first: profile to find the real bottleneck before changing code.
 - Do not trade readability for unmeasured micro-gains.
 - Do not commit, push, merge, or run production scripts without consent; wait for an explicit request before any destructive git action.
+- Do not print, log, or commit secrets or credentials encountered while profiling or optimizing; flag any exposed secret instead.

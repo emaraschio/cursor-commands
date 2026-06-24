@@ -43,3 +43,4 @@ Help resolve common Git problems and conflicts with step-by-step commands and ex
 - Get explicit consent before destructive git commands (reset, rebase, or history rewrite).
 - Never force-push main or a shared branch without an explicit request.
 - Explain each command before running it.
+- Never print or commit secrets or credential files (.env, .env.*, keys); flag any exposure instead of committing it.

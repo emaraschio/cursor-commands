@@ -38,3 +38,4 @@ docs(script): update script documentation
 - Use the Conventional Commits convention for every message.
 - Commit only when the user asks; do not push or amend without an explicit request.
 - Never skip hooks; if a hook fails, fix the issue and make a new commit.
+- Never print, stage, or commit secrets or credential files (.env, .env.*, keys); exclude them and warn instead.

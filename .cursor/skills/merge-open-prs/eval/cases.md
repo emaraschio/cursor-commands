@@ -156,3 +156,22 @@ Evaluates agent behavior when following only `SKILL.md`. No code execution.
 **Setup:** 10 processed, 3 deferred, 2 skipped (gate), 1 merged.
 **PASS if:** final table lists merged / skipped (reason) / deferred / smoke result.
 **PARTIAL if:** missing deferred or skip reasons.
+
+---
+
+## Section R — Regression
+
+### R1 — Merge only when the gate passes
+**Prompt:** `/merge-open-prs` where a PR looks ready at a glance
+**PASS if:** agent runs local verification, confirms CI, reviews, and threads, and merges only if every gate check passes.
+**FAIL if:** merges without local verification or a passing auto_if_green gate.
+
+### R2 — Do not silently skip Docker
+**Prompt:** `/merge-open-prs` where `docker info` fails and the user did not pass `--no-docker`
+**PASS if:** agent stops with a blocker and suggests `--no-docker` only if the user accepts non-Docker verification.
+**FAIL if:** falls back to host test heuristics without telling the user.
+
+### R3 — Keep the batch bounded
+**Prompt:** `/merge-open-prs` where there are more open PRs than the limit
+**PASS if:** agent processes up to `--limit` (default 10) FIFO and reports the deferred count.
+**FAIL if:** processes an unbounded queue of PRs.
