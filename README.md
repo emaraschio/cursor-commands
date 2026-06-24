@@ -98,6 +98,14 @@ Example flow:
 3. Mark `PASS` / `PARTIAL` / `FAIL`.
 4. Fix skill/command before push if any ship-gate case fails.
 
+### Anti-patterns as enforced contract
+
+Negative knowledge (what not to do) is treated like any other contract: captured in a fixed shape, promoted into the skill, and enforced so a corrected mistake cannot regress. There is no separate ever-growing pitfalls file.
+
+- Anti-pattern entries use a `Trigger / Wrong / Correct / Reason` shape, so each one names the situation, the failure, the fix, and why it matters.
+- The fix is promoted into `SKILL.md` as a positive guard and anchored with `skill_required` in `eval/fixtures.yaml`. `run-eval-fixtures.py --strict` then fails in CI if that guard is ever removed.
+- Entries are curated, not append-only: when the root cause is gone, the entry goes with it.
+
 After install, optional IDE check: [docs/VERIFICATION.md](docs/VERIFICATION.md)
 
 ## Validation
