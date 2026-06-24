@@ -4,6 +4,10 @@ All notable changes to this project are documented here. Format based on [Keep a
 
 ## [Unreleased]
 
+### Added
+
+- **`/thermo-nuclear-code-quality-review`**: slash command and skill for an extremely strict maintainability review that hunts for code-judo simplifications, guards the 1000-line file threshold, and blocks spaghetti-condition growth without changing behavior; explicit invocation only; eval ship gate **A, S**; catalog 36 → 37 commands/skills.
+
 ## [1.3.0] - 2026-06-21
 
 ### Added
