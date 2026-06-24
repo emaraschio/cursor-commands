@@ -30,3 +30,9 @@ codebase.
 - [ ] Input validation implemented
 - [ ] Authentication secure
 - [ ] Authorization properly configured
+
+## Guardrails
+
+- Triage dependency CVEs by severity and reachability; never ignore a known CVE.
+- Redact live secrets in findings and cite only their location; never paste the value.
+- Keep the audit read-first: do not commit, merge, push, or run production scripts without explicit consent.

@@ -5,7 +5,7 @@
 [![Docs](https://github.com/emaraschio/cursor-commands/actions/workflows/docs.yml/badge.svg)](https://github.com/emaraschio/cursor-commands/actions/workflows/docs.yml)
 [![Eval fixtures](https://github.com/emaraschio/cursor-commands/actions/workflows/eval-fixtures.yml/badge.svg)](https://github.com/emaraschio/cursor-commands/actions/workflows/eval-fixtures.yml)
 
-**Stable release: [`v1.3.0`](CHANGELOG.md#130---2026-06-21)** — Generic Cursor slash commands, Agent Skills, and behavioral eval rubrics. Install from `main` or `git checkout v1.3.0`. Ship-gate sections are enforced in CI via [docs/EVAL_CI.md](docs/EVAL_CI.md). Organization-specific packs install from the **host workspace**.
+**Stable release: [`v1.3.0`](CHANGELOG.md#130---2026-06-21)**. Generic Cursor slash commands, Agent Skills, and behavioral eval rubrics. Install from `main` or `git checkout v1.3.0`. Ship-gate sections are enforced in CI via [docs/EVAL_CI.md](docs/EVAL_CI.md). Organization-specific packs install from the **host workspace**.
 
 Inspired by install ergonomics from [hamzafer/cursor-commands](https://github.com/hamzafer/cursor-commands); this repo adds **skills**, **eval rubrics**, and **structural ship-gate CI** (`run-eval-fixtures.py --strict`).
 
@@ -13,7 +13,7 @@ Inspired by install ergonomics from [hamzafer/cursor-commands](https://github.co
 
 - **36** generic slash commands (git, review, TDD, structure-prompt, agent work receipt, security audits, agent goals, prompt eval debug, agent risk review, scoped parallel audits, workspace git sync, PR workflows, requirement-to-implementation, etc.)
 - **36** skill directories (one per command)
-- **Behavioral evals** (`PASS` / `PARTIAL` / `FAIL`) per command — regression guardrails when editing prompts
+- **Behavioral evals** (`PASS` / `PARTIAL` / `FAIL`) per command: regression guardrails when editing prompts
 
 ## Installation
 
@@ -79,13 +79,13 @@ Full table: [COMMANDS_INDEX.md](.cursor/docs/COMMANDS_INDEX.md)
 
 **External dependency:** `/merge-open-prs` expects the user-global **babysit** skill at `~/.cursor/skills-cursor/babysit/SKILL.md`.
 
-**Org-specific commands** (domain scripts, onboarding, custom security review, rules benchmarks) are **not** in this repo — install them from your host workspace overlay. See [docs/ROADMAP.md](docs/ROADMAP.md).
+**Org-specific commands** (domain scripts, onboarding, custom security review, rules benchmarks) are **not** in this repo; install them from your host workspace overlay. See [docs/ROADMAP.md](docs/ROADMAP.md).
 
 ## Evaluations
 
 We treat prompts like code: editable contracts need reviewable tests.
 
-- **Structural checks in CI** — no LLM judge on every PR (flaky, expensive); ship-gate rows use `fixtures.yaml`.
+- **Structural checks in CI**: no LLM judge on every PR (flaky, expensive); ship-gate rows use `fixtures.yaml`.
 - Each command defines **ship gate** sections in frontmatter (e.g. `A`, `S`; merge-open-prs uses `A`, `D`, `E`).
 - Scoring: `PARTIAL` counts as fail; target 0 `FAIL` on ship gate before merge.
 
@@ -124,10 +124,10 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). Security reports: [SECURITY.md](SECURITY
 ## Related
 
 - [Cursor slash commands docs](https://cursor.com/docs/agent/chat/commands)
-- [hamzafer/cursor-commands](https://github.com/hamzafer/cursor-commands) — minimal command-only collection
+- [hamzafer/cursor-commands](https://github.com/hamzafer/cursor-commands): minimal command-only collection
 
 **Topics:** `cursor`, `cursor-ide`, `agent-skills`, `ai-agents`, `prompts`, `developer-tools`, `dotfiles`, `github-actions` (see GitHub **About** on [emaraschio/cursor-commands](https://github.com/emaraschio/cursor-commands)).
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT. See [LICENSE](LICENSE).

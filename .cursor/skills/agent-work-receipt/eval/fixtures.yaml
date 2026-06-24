@@ -19,7 +19,7 @@ cases:
     rubric: "required"
     pass_must_reference_skill: false
     skill_required:
-      - "partial"
+      - "hallucinate completion"
   S3:
     rubric: "required"
     pass_must_reference_skill: false

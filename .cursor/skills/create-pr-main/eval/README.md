@@ -1,4 +1,4 @@
-# create-pr-main — behavioral evaluation
+# create-pr-main: behavioral evaluation
 
 Evaluates agent behavior when following only `SKILL.md`. No code execution.
 

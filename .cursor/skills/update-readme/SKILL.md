@@ -22,3 +22,8 @@ Update the project `README.md` to reflect the current repository state: features
 - [ ] Required sections preserved
 - [ ] Command/skill index links accurate if present
 - [ ] No secrets in examples
+
+## Guardrails
+
+- Preserve required README sections (Installation, Usage, Configuration, Troubleshooting).
+- Validate internal links and fix broken paths; do not commit unless asked.

@@ -1,6 +1,6 @@
 ---
 name: create-pr-main
-version: 1
+version: 2
 description: Create a pull request targeting main
 scope: generic
 requires_skill: true
@@ -15,7 +15,7 @@ Create a pull request targeting main. Full workflow: `.cursor/skills/create-pr-m
 
 ## Defaults
 
-_None — see skill for workflow defaults._
+_None. See skill for workflow defaults._
 
 ## Steps
 
@@ -25,8 +25,8 @@ _None — see skill for workflow defaults._
 
 ## Anti-patterns
 
-- Do not push without user request
-- Do not create empty PRs
+- **Push only when asked.** Trigger: the branch is ready to open a pull request. Wrong: pushing to the remote without being asked. Correct: push only on an explicit request before opening the PR. Reason: an unrequested push publishes work the user may not want shared yet.
+- **Do not open empty PRs.** Trigger: the branch has no commits ahead of the base. Wrong: opening a pull request with no diff to review. Correct: confirm there are real changes first, otherwise hold off. Reason: an empty PR wastes reviewer time and clutters the review queue.
 
 ## Examples
 

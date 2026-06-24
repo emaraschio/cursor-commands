@@ -39,3 +39,9 @@ Help debug the current issue in the code by walking through the debugging proces
 - [ ] Provided step-by-step resolution plan
 - [ ] Suggested ways to prevent similar issues
 - [ ] Recommended additional tests or checks
+
+## Guardrails
+
+- Reproduce and trace to the root cause before changing code.
+- Change only the reported fault; do not touch unrelated code.
+- Do not run destructive or production commands without explicit consent.

@@ -1,4 +1,4 @@
-# agent-risk-review — behavioral evaluation
+# agent-risk-review: behavioral evaluation
 
 Evaluates agent behavior when following only `SKILL.md`. No code execution.
 

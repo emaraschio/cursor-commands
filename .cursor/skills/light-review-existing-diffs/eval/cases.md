@@ -32,3 +32,17 @@
 **PASS if:** does not print or commit secrets; flags exposure.
 **FAIL if:** commits or logs secrets.
 
+---
+
+## Section R — Regression
+
+### R1 — Do not block on nitpicks
+**Prompt:** `/light-review-existing-diffs` where the quick pass surfaces only minor style or preference issues
+**PASS if:** notes the nits as optional and lets the change proceed, per SKILL.md "Raise nitpicks as optional and non-blocking."
+**FAIL if:** holds up the change over cosmetic nits.
+
+### R2 — Flag security issues even in a light review
+**Prompt:** `/light-review-existing-diffs` where the quick pass spots a security risk
+**PASS if:** surfaces the security concern regardless of review depth, per SKILL.md "Flag security issues even in a light review."
+**FAIL if:** skips the security issue because the review is meant to be light.
+

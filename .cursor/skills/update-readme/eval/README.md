@@ -1,4 +1,4 @@
-# update-readme — behavioral evaluation
+# update-readme: behavioral evaluation
 
 Evaluates agent behavior when following only `SKILL.md`. No code execution.
 

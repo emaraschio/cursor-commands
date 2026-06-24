@@ -1,6 +1,6 @@
 ---
 name: update-memory-bank
-version: 1
+version: 2
 description: Sync memory bank with repository state
 scope: generic
 requires_skill: true
@@ -15,7 +15,7 @@ Sync memory bank with repository state. Full workflow: `.cursor/skills/update-me
 
 ## Defaults
 
-_None — see skill for workflow defaults._
+_None. See skill for workflow defaults._
 
 ## Steps
 
@@ -25,8 +25,8 @@ _None — see skill for workflow defaults._
 
 ## Anti-patterns
 
-- Do not invent commits or files
-- Update only files that changed
+- **Record only verified state.** Trigger: writing memory bank entries. Wrong: inventing commits, files, or statistics. Correct: confirm commit hashes and descriptions against git log before recording them. Reason: fabricated history makes the memory bank untrustworthy.
+- **Update only what changed.** Trigger: choosing which memory bank files to edit. Wrong: rewriting files whose domain did not change. Correct: update only the files whose domain actually changed. Reason: needless edits create churn and hide real updates.
 
 ## Examples
 

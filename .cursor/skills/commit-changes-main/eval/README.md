@@ -1,4 +1,4 @@
-# commit-changes-main — behavioral evaluation
+# commit-changes-main: behavioral evaluation
 
 Evaluates agent behavior when following only `SKILL.md`. No code execution.
 

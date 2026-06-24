@@ -59,3 +59,9 @@ performance implications, and provide actionable suggestions for improvement.
 
 Provide constructive feedback with concrete examples and actionable guidance for
 the author.
+
+## Guardrails
+
+- Verify security-sensitive paths and test coverage before approving a change.
+- Weigh substance over style; raise nitpicks as non-blocking, not as approval blockers.
+- Do not commit, push, merge, or run production scripts without consent; wait for an explicit request before any destructive git action.

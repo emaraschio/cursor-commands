@@ -30,3 +30,9 @@ quality and functionality.
 - [ ] Root causes resolved
 - [ ] Tests re-run with passing results
 - [ ] Follow-up improvements noted
+
+## Guardrails
+
+- Fix the root cause of a failure; never delete or weaken a test to go green.
+- Never silently skip a failing test; report it and the reason.
+- Do not commit, push, merge, or run destructive commands without explicit user consent.

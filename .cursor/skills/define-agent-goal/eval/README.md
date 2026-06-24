@@ -1,4 +1,4 @@
-# define-agent-goal — behavioral evaluation
+# define-agent-goal: behavioral evaluation
 
 Evaluates agent behavior when following only `SKILL.md`. No code execution.
 

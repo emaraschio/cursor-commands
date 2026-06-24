@@ -1,6 +1,6 @@
 ---
 name: commit-same-branch
-version: 1
+version: 2
 description: Commit on the current branch with conventional message
 scope: generic
 requires_skill: true
@@ -15,7 +15,7 @@ Commit on the current branch with conventional message. Full workflow: `.cursor/
 
 ## Defaults
 
-_None — see skill for workflow defaults._
+_None. See skill for workflow defaults._
 
 ## Steps
 
@@ -25,8 +25,8 @@ _None — see skill for workflow defaults._
 
 ## Anti-patterns
 
-- Do not commit without user request
-- Do not push unless asked
+- **Commit only when asked.** Trigger: a chunk of work is finished on the current branch. Wrong: committing automatically without being asked. Correct: commit only on an explicit request from the user. Reason: unrequested commits clutter history and surprise the user.
+- **Push only when asked.** Trigger: a commit has just been made on the branch. Wrong: pushing to the remote without being asked. Correct: keep the commit local until the user requests a push. Reason: an unrequested push publishes work the user may not be ready to share.
 
 ## Examples
 

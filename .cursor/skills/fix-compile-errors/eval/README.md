@@ -1,4 +1,4 @@
-# fix-compile-errors — behavioral evaluation
+# fix-compile-errors: behavioral evaluation
 
 Evaluates agent behavior when following only `SKILL.md`. No code execution.
 

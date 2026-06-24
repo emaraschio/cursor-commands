@@ -1,6 +1,6 @@
 ---
 name: lint-suite
-version: 1
+version: 2
 description: Run project linters and fix findings repo-wide
 scope: generic
 requires_skill: true
@@ -15,7 +15,7 @@ Run project linters and fix findings repo-wide. Full workflow: `.cursor/skills/l
 
 ## Defaults
 
-_None — see skill for workflow defaults._
+_None. See skill for workflow defaults._
 
 ## Steps
 
@@ -25,8 +25,8 @@ _None — see skill for workflow defaults._
 
 ## Anti-patterns
 
-- Do not disable rules to pass
-- Re-run linter to verify zero issues
+- **Do not disable rules to pass.** Trigger: a lint rule that is hard to satisfy. Wrong: disabling or suppressing the rule to get a green run. Correct: fix the underlying issue, suppressing only with a documented justification. Reason: silencing rules hides real problems and erodes the value of the linter.
+- **Re-run the linter to verify zero issues.** Trigger: finishing a batch of lint fixes. Wrong: assuming the fixes worked without re-running. Correct: re-run the linter and confirm a clean, zero-issue result. Reason: unverified fixes can leave or introduce violations that reach the main branch.
 
 ## Examples
 

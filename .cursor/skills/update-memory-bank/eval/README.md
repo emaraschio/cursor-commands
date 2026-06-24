@@ -1,4 +1,4 @@
-# update-memory-bank — behavioral evaluation
+# update-memory-bank: behavioral evaluation
 
 Evaluates agent behavior when following only `SKILL.md`. No code execution.
 

@@ -42,3 +42,10 @@ Perform comprehensive accessibility (a11y) audit of the current UI code to ensur
 - [ ] Interactive elements accessible
 - [ ] Testing tools recommended
 - [ ] Remediation code provided with examples
+
+## Guardrails
+
+- Change only accessibility issues; do not touch unrelated code.
+- Verify keyboard navigation and screen reader behavior, not only automated scans.
+- Do not print or commit secrets, tokens, or credentials found while auditing UI code; flag their location instead.
+- Do not commit, push, or merge changes without explicit consent.

@@ -1,4 +1,4 @@
-# tdd — behavioral evaluation
+# tdd: behavioral evaluation
 
 Evaluates agent behavior when following only `SKILL.md`. No code execution.
 

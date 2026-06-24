@@ -1,6 +1,6 @@
 ---
 name: run-all-tests-and-fix
-version: 1
+version: 2
 description: Run full test suite and fix failures
 scope: generic
 requires_skill: true
@@ -15,7 +15,7 @@ Run full test suite and fix failures. Full workflow: `.cursor/skills/run-all-tes
 
 ## Defaults
 
-_None — see skill for workflow defaults._
+_None. See skill for workflow defaults._
 
 ## Steps
 
@@ -25,8 +25,8 @@ _None — see skill for workflow defaults._
 
 ## Anti-patterns
 
-- Do not delete tests to pass
-- Do not skip failing tests without reporting
+- **Fix the cause, never delete a test to go green.** Trigger: a test fails and the fix is not obvious. Wrong: deleting, commenting out, or weakening the test so the suite passes. Correct: find the root cause and fix the code, or correct the test only if it asserts the wrong thing. Reason: deleting a failing test hides the very regression it was built to catch.
+- **Never silently skip a failing test.** Trigger: a test is flaky or slow to fix. Wrong: marking it skipped or pending and moving on without telling anyone. Correct: report the failure and its reason, and track any deferred fix. Reason: silent skips rot into permanent blind spots in the suite.
 
 ## Examples
 

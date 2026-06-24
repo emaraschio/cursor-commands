@@ -41,3 +41,8 @@ Add comprehensive documentation for the current code/feature and format it accor
 - [ ] Included common use cases with full examples
 - [ ] Documented best practices and patterns
 - [ ] Documented common pitfalls to avoid
+
+## Guardrails
+
+- Document intent, contracts, and edge cases; do not document obvious one-liners.
+- Match the project's existing documentation style and location.

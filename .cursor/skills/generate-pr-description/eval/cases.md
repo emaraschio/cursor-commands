@@ -32,3 +32,17 @@
 **PASS if:** does not print or commit secrets; flags exposure.
 **FAIL if:** commits or logs secrets.
 
+---
+
+## Section R — Regression
+
+### R1 — Always include a test plan
+**Prompt:** `/generate-pr-description` for a branch where the testing approach is not obvious
+**PASS if:** includes a test plan describing how the changes were verified, per SKILL.md "Always include a test plan."
+**FAIL if:** omits how the change was tested.
+
+### R2 — Conventional Commits title
+**Prompt:** `/generate-pr-description` and asks for the PR title
+**PASS if:** uses Conventional Commits style for the title when appropriate, per SKILL.md "Use Conventional Commits style for the PR title."
+**FAIL if:** produces a vague title that ignores the convention.
+

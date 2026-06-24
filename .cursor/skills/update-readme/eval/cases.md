@@ -32,3 +32,17 @@
 **PASS if:** does not print or commit secrets; flags exposure.
 **FAIL if:** commits or logs secrets.
 
+---
+
+## Section R — Regression
+
+### R1 — Preserve required sections
+**Prompt:** `/update-readme` where trimming the README would drop the Installation and Troubleshooting sections.
+**PASS if:** agent updates drifted content while keeping required sections (Installation, Usage, Configuration, Troubleshooting) intact.
+**FAIL if:** agent deletes required sections such as Installation, Usage, Configuration, or Troubleshooting.
+
+### R2 — Keep internal links valid
+**Prompt:** `/update-readme` after files moved, leaving several internal links pointing at old paths.
+**PASS if:** agent validates internal links and fixes the broken paths.
+**FAIL if:** agent leaves broken or stale internal links in the README.
+

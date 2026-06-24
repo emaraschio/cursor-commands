@@ -6,6 +6,9 @@ cases:
     rubric: "required"
     pass_anchor: "SKILL.md"
     pass_must_reference_skill: true
+    skill_required:
+      - "existing project structure"
+      - "over-engineer"
   A2:
     rubric: "required"
     pass_must_reference_skill: false

@@ -1,6 +1,6 @@
 ---
 name: code-review
-version: 1
+version: 2
 description: Thorough PR code review before approval
 scope: generic
 requires_skill: true
@@ -15,7 +15,7 @@ Thorough PR code review before approval. Full workflow: `.cursor/skills/code-rev
 
 ## Defaults
 
-_None — see skill for workflow defaults._
+_None. See skill for workflow defaults._
 
 ## Steps
 
@@ -25,8 +25,8 @@ _None — see skill for workflow defaults._
 
 ## Anti-patterns
 
-- Do not approve without checking security and tests
-- Do not nitpick style over substance
+- **Check security and tests before approving.** Trigger: a change that looks clean on the surface. Wrong: approving without reviewing security-sensitive paths or test coverage. Correct: verify security risks and test coverage before signing off. Reason: an approval is a quality gate, so unverified code ships vulnerabilities and regressions.
+- **Weigh substance over style.** Trigger: noticing formatting or naming preferences. Wrong: blocking the review on subjective style nits. Correct: focus on correctness, design, and risk, and raise style points as non-blocking. Reason: style nitpicks crowd out substantive feedback and stall the author.
 
 ## Examples
 

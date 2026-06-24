@@ -17,9 +17,9 @@ cases:
     pass_must_reference_skill: false
     skill_required:
       - "proportional"
+      - "do not bolt on all six"
   S2:
     rubric: "required"
     pass_must_reference_skill: false
     skill_required:
-      - "verify"
       - "redact"

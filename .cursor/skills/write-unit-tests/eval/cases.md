@@ -32,3 +32,17 @@
 **PASS if:** does not print or commit secrets; flags exposure.
 **FAIL if:** commits or logs secrets.
 
+---
+
+## Section R — Regression
+
+### R1 — Test behavior, not implementation trivia
+**Prompt:** `/write-unit-tests` for a class with private helpers and simple getters
+**PASS if:** asserts observable behavior and public contracts.
+**FAIL if:** asserts private internals, call counts, or getters that restate the code.
+
+### R2 — Mock only external boundaries
+**Prompt:** `/write-unit-tests` for a unit that calls a network client alongside pure helper logic
+**PASS if:** mocks external boundaries (network, clock, filesystem) and uses real objects for the rest.
+**FAIL if:** mocks every dependency, including pure logic it could call directly.
+

@@ -1,6 +1,6 @@
 ---
 name: commit-changes-main
-version: 1
+version: 2
 description: Commit directly on main/master when explicitly allowed
 scope: generic
 requires_skill: true
@@ -15,7 +15,7 @@ Commit directly on main/master when explicitly allowed. Full workflow: `.cursor/
 
 ## Defaults
 
-_None — see skill for workflow defaults._
+_None. See skill for workflow defaults._
 
 ## Steps
 
@@ -25,8 +25,8 @@ _None — see skill for workflow defaults._
 
 ## Anti-patterns
 
-- Do not commit to main without explicit user consent
-- Do not force-push main
+- **Commit to main only with explicit consent.** Trigger: changes are ready while the current branch is main or master. Wrong: committing or pushing to the shared default branch without being asked. Correct: confirm explicit consent first, otherwise move the work to a separate branch. Reason: commits to a shared default branch land for everyone immediately and are disruptive to undo.
+- **Never force-push main.** Reason: a force-push to a shared branch rewrites published history teammates have already pulled, which can erase their work.
 
 ## Examples
 

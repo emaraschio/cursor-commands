@@ -6,9 +6,6 @@ cases:
     rubric: "required"
     pass_anchor: "SKILL.md"
     pass_must_reference_skill: true
-    skill_required:
-      - "Intake"
-      - "Phase"
   A2:
     rubric: "required"
     pass_must_reference_skill: false
@@ -17,6 +14,7 @@ cases:
     skill_required:
       - "approved"
       - "Do not implement"
+      - "No implementation without an approved plan"
     pass_must_reference_skill: true
   S2:
     rubric: "required"

@@ -12,7 +12,7 @@ disable-model-invocation: true
 
 ## Role
 
-You produce a **conservative agent work receipt** for work already completed in the current session. You account for what actually landed — not what was discussed, drafted, or abandoned. You **do not** start new implementation, commits, or destructive commands in the same turn.
+You produce a **conservative agent work receipt** for work already completed in the current session. You account for what actually landed, not what was discussed, drafted, or abandoned. You **do not** start new implementation, commits, or destructive commands in the same turn.
 
 ## When to use
 
@@ -26,23 +26,23 @@ Use when the user invokes `/agent-work-receipt`, asks for a work receipt, or wan
 
 Run phases in order. Do not publish the receipt until evidence is gathered.
 
-### Phase 0 — Intake
+### Phase 0: Intake
 
 1. Parse a **scope hint** from the user message (e.g. "receipt for the refactor in service-a").
 2. If no scope hint, default to the **full session**.
-3. If the user invokes mid-task with no finished work yet, scope to **partial work only** or ask whether to wait — do not hallucinate completion.
+3. If the user invokes mid-task with no finished work yet, scope to **partial work only** or ask whether to wait. Do not hallucinate completion.
 
-### Phase 1 — Evidence
+### Phase 1: Evidence
 
 Gather read-only evidence:
 
-- **Conversation** — what the user asked for, what the agent actually did, what was rejected or abandoned
-- **Git** (when a repo is present) — `git status`, `git diff`, `git log` to ground landed artifacts
-- **Files** — only artifacts explicitly created, edited, committed, or merged in scope
+- **Conversation**: what the user asked for, what the agent actually did, what was rejected or abandoned
+- **Git** (when a repo is present): `git status`, `git diff`, `git log` to ground landed artifacts
+- **Files**: only artifacts explicitly created, edited, committed, or merged in scope
 
 Do not treat uncommitted explorations, reverted edits, or failed tool runs as finished output.
 
-### Phase 2 — Inventory
+### Phase 2: Inventory
 
 List **only landed artifacts** in scope:
 
@@ -52,29 +52,29 @@ List **only landed artifacts** in scope:
 
 Explicitly note what you **exclude**: brainstorms, unused drafts, abandoned paths, tool errors, reverted work.
 
-### Phase 3 — Estimates
+### Phase 3: Estimates
 
-Provide **human baseline** and **agent-assisted time** as ranges or point estimates. Label both clearly as **estimates** — not measured facts. The user may correct in follow-up.
+Provide **human baseline** and **agent-assisted time** as ranges or point estimates. Label both clearly as **estimates**, not measured facts. The user may correct in follow-up.
 
 Base estimates on task complexity and evidence, not enthusiasm.
 
-### Phase 4 — Review & risk
+### Phase 4: Review & risk
 
-**Review required** — concrete items the human must still check, rewrite, or fix (tests not run, edge cases, copy, security, manual verification).
+**Review required**: concrete items the human must still check, rewrite, or fix (tests not run, edge cases, copy, security, manual verification).
 
-**Risk** — what could be wrong, incomplete, or misleading in the finished output.
+**Risk**: what could be wrong, incomplete, or misleading in the finished output.
 
-### Phase 5 — Value
+### Phase 5: Value
 
 Pick exactly one tier with brief evidence-backed rationale:
 
-- **Small assist** — agent helped but human effort dominated or output is narrow
-- **Major time saver** — clear, verifiable reduction in manual effort for substantive deliverables
-- **Not worth the agent** — little or no landed output; review cost exceeds benefit; session was mostly exploration
+- **Small assist**: agent helped but human effort dominated or output is narrow
+- **Major time saver**: clear, verifiable reduction in manual effort for substantive deliverables
+- **Not worth the agent**: little or no landed output; review cost exceeds benefit; session was mostly exploration
 
 Do not agree to inflated praise (e.g. "say this saved 10 hours") without evidence.
 
-### Phase 6 — Deliver
+### Phase 6: Deliver
 
 Post the receipt using the template below. Keep each section concrete and scoped.
 
@@ -99,19 +99,25 @@ What the human still needs to check, rewrite, or fix.
 What could be wrong, incomplete, or misleading.
 
 ## 6. Final value estimate
-Small assist / major time saver / not worth the agent — with brief rationale.
+Small assist / major time saver / not worth the agent, with brief rationale.
 ```
 
 Populate every section. Prefer bullets and short paragraphs over vague prose.
 
 ## Safety
 
-- Retrospective only — no new implementation, commits, or destructive commands unless the user explicitly requests follow-up work in a new turn.
+- Retrospective only: no new implementation, commits, or destructive commands unless the user explicitly requests follow-up work in a new turn.
 - No secrets, tokens, PII, or PHI in the receipt body.
-- Time fields are **estimates** — never present them as measured elapsed time.
+- Time fields are **estimates**. Never present them as measured elapsed time.
 
 ## Distinction from other commands
 
 - **`define-agent-goal`**: forward planning before autonomous work. This skill is **backward** accountability after work.
-- **`light-review-existing-diffs`**: code quality pass on diffs. This skill measures output, time, review burden, and value — not style or bugs alone.
+- **`light-review-existing-diffs`**: code quality pass on diffs. This skill measures output, time, review burden, and value, not style or bugs alone.
 - **`generate-pr-description`**: writes a PR artifact. This skill produces an honest session receipt, not marketing copy.
+
+## Guardrails
+
+- Stay conservative: count only landed artifacts as finished output, never drafts, ideas, or abandoned work.
+- Stay retrospective: start no new implementation, commits, or destructive commands in the same turn.
+- Label time fields as estimates, never as measured elapsed fact, and never inflate value without evidence.

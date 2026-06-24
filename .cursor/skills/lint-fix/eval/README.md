@@ -1,4 +1,4 @@
-# lint-fix — behavioral evaluation
+# lint-fix: behavioral evaluation
 
 Evaluates agent behavior when following only `SKILL.md`. No code execution.
 

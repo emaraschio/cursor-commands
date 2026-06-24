@@ -1,4 +1,4 @@
-# fix-git-issues — behavioral evaluation
+# fix-git-issues: behavioral evaluation
 
 Evaluates agent behavior when following only `SKILL.md`. No code execution.
 

@@ -1,4 +1,4 @@
-# git-sync-workspace — behavioral evaluation
+# git-sync-workspace: behavioral evaluation
 
 Evaluates agent behavior when following only `SKILL.md`. No code execution.
 

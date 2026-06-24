@@ -1,4 +1,4 @@
-# structure-prompt — behavioral evaluation
+# structure-prompt: behavioral evaluation
 
 Evaluates agent behavior when following only `SKILL.md`. No code execution.
 

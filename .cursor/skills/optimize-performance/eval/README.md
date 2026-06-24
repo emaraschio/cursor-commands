@@ -1,4 +1,4 @@
-# optimize-performance — behavioral evaluation
+# optimize-performance: behavioral evaluation
 
 Evaluates agent behavior when following only `SKILL.md`. No code execution.
 

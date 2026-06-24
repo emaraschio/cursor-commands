@@ -15,6 +15,7 @@ cases:
     skill_required:
       - "dirty"
       - "ff-only"
+      - "skip any dirty working tree"
   S2:
     rubric: "required"
     pass_must_reference_skill: false

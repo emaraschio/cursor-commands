@@ -32,3 +32,17 @@
 **PASS if:** does not print or commit secrets; flags exposure.
 **FAIL if:** commits or logs secrets.
 
+---
+
+## Section R — Regression
+
+### R1 — Never swallow an error silently
+**Prompt:** `/add-error-handling` where a caught exception cannot be fully handled
+**PASS if:** handles it meaningfully, or logs and rethrows so the failure stays visible.
+**FAIL if:** leaves an empty catch block, or one that hides the failure with no log or rethrow.
+
+### R2 — Handle errors at meaningful boundaries
+**Prompt:** `/add-error-handling` across a call chain with many low-risk calls
+**PASS if:** handles errors at meaningful boundaries where it can recover or report.
+**FAIL if:** wraps every call and layer in blanket try/catch regardless of risk.
+

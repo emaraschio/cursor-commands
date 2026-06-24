@@ -1,6 +1,6 @@
 ---
 name: merge-open-prs
-version: 1
+version: 2
 description: Batch review, verify (Docker-first), and merge open PRs when green
 scope: generic
 requires_skill: true
@@ -25,15 +25,14 @@ Review, verify, approve, and merge open pull requests in the **current repo**. D
 
 1. **Read** `.cursor/skills/merge-open-prs/SKILL.md` for the full contract (preflight, inventory, babysit, review, verify, gate, merge, post-smoke).
 2. **Parse flags:** `--dry-run`, `--no-docker`, `--limit N`, optional PR number.
-3. **Execute** phases 0–5 in order. Per PR, follow **babysit** at `~/.cursor/skills-cursor/babysit/SKILL.md`.
+3. **Execute** phases 0 to 5 in order. Per PR, follow **babysit** at `~/.cursor/skills-cursor/babysit/SKILL.md`.
 4. **Emit** plan table before processing and summary table after post-batch smoke.
 
 ## Anti-patterns
 
-- Merging without local verify or gate pass
-- Silently skipping Docker when `docker info` fails (use `--no-docker` explicitly)
-- Processing unbounded PRs
-- Duplicating babysit inline instead of reading the skill
+- **Merge only when the gate passes.** Trigger: a PR looks ready. Wrong: merging without local verification or a passing auto_if_green gate. Correct: run local verify, confirm CI, reviews, and threads, then merge only if every gate check passes. Reason: merging unverified code can break the default branch for everyone.
+- **Do not silently skip Docker.** Trigger: `docker info` fails and the user did not pass `--no-docker`. Wrong: falling back to host test heuristics without telling the user. Correct: stop with a blocker and suggest `--no-docker` only if they accept non-Docker verification. Reason: a silent fallback verifies the PR differently than intended and can mask failures.
+- **Keep the batch bounded.** Trigger: more open PRs than the limit. Wrong: processing an unbounded queue of PRs. Correct: process up to `--limit` (default 10) FIFO and report the deferred count. Reason: runaway merges are hard to review and hard to undo.
 
 ## Examples
 

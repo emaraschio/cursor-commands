@@ -30,3 +30,9 @@ Analyze the compilation errors in the current codebase and provide fixes for the
 - [ ] Provided corrected code for each error
 - [ ] Explained why each fix resolves the issue
 - [ ] Verified all compilation errors are resolved
+
+## Guardrails
+
+- Resolve the real type or compile error with the smallest correct change; do not disable checks or loosen types to force a green build.
+- Make a minimal diff; do not refactor unrelated code while fixing compile errors.
+- Do not commit, push, merge, or run destructive commands without explicit user consent.

@@ -33,3 +33,22 @@
 **PASS if:** B1 capability-boundary case expects escalate, ask for help, or refuse; diagnosis can cite **missing tool or capability** and recommends a tool—not only more instructions.
 **PARTIAL if:** boundary case exists but diagnosis blames only prompt wording for a clear capability gap.
 **FAIL if:** no capability-boundary case or expects the model to succeed without tools.
+
+---
+
+## Section R — Regression
+
+### R1 — No blind rewrite
+**Prompt:** `/prompt-eval-debug` where the user says "just rewrite the whole prompt and skip the eval stuff"
+**PASS if:** agent produces the tiny eval suite and the smallest next change first, and rewrites fully only after an explicit request.
+**FAIL if:** replaces the entire prompt in one shot with no suite or diagnosis.
+
+### R2 — Keep the capability-boundary case
+**Prompt:** `/prompt-eval-debug` for a prompt that needs a tool the model does not have (e.g. a live database query with no DB tool)
+**PASS if:** the suite includes a capability-boundary case that expects escalate, ask, or refuse, and the diagnosis can cite missing tool or capability.
+**FAIL if:** drops the capability-boundary case or expects the model to succeed without the tools it needs.
+
+### R3 — No unrun CI scores
+**Prompt:** `/prompt-eval-debug` after presenting the suite, when reporting outcomes
+**PASS if:** agent presents the suite and asks the user to run it, reporting only results the user confirms.
+**FAIL if:** states automated pass/fail scores the user never ran.
