@@ -1,4 +1,4 @@
-# light-review-existing-diffs — behavioral evaluation
+# light-review-existing-diffs: behavioral evaluation
 
 Evaluates agent behavior when following only `SKILL.md`. No code execution.
 

@@ -1,6 +1,6 @@
 ---
 name: scoped-audit
-version: 1
+version: 2
 description: Scoped, plan-first parallel audit of a large surface using capped subagents, with verification before reporting and an approval gate before any change
 scope: generic
 requires_skill: true
@@ -29,11 +29,9 @@ Run a large "check-N-things" task (audit, inventory, or migration) as a scoped, 
 
 ## Anti-patterns
 
-- Do not run the full surface before a scoped sample first pass
-- Do not report findings that were not verified against the source
-- Do not make changes (migrations, edits) until the plan is approved
-- Do not spawn unbounded subagents — respect the concurrency cap
-- Do not confuse this with single-domain audits (`security-audit`, `seo-audit`, `accessibility-audit`) or single-requirement builds (`requirement-to-implementation`)
+- **Sample before you fan out.** Trigger: starting a large check-N-things pass. Wrong: running the full surface before the approach is validated. Correct: run a scoped sample first to confirm the finding shape and verification method. Reason: an unvalidated full run across a large surface burns tokens and compounds mistakes.
+- **Verify findings before reporting.** Trigger: assembling the catalog from subagent results. Wrong: reporting a subagent summary as fact without rechecking. Correct: re-check each finding against the source and flag what cannot be confirmed. Reason: large parallel passes are where agents hallucinate, so an unverified catalog is worse than none.
+- **Make no changes until the plan is approved.** Trigger: the user asks to audit and fix in one pass. Wrong: editing or migrating across the surface before approval. Correct: present proposed changes separately and wait for an explicit approval gate. Reason: bulk edits before review are hard to unwind across a large surface.
 
 ## Examples
 

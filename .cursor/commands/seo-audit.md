@@ -1,6 +1,6 @@
 ---
 name: seo-audit
-version: 1
+version: 2
 description: SEO audit of pages or app
 scope: generic
 requires_skill: true
@@ -15,7 +15,7 @@ SEO audit of pages or app. Full workflow: `.cursor/skills/seo-audit/SKILL.md`.
 
 ## Defaults
 
-_None — see skill for workflow defaults._
+_None. See skill for workflow defaults._
 
 ## Steps
 
@@ -25,8 +25,8 @@ _None — see skill for workflow defaults._
 
 ## Anti-patterns
 
-- Do not recommend black-hat tactics
-- Ground recommendations in measurable checks
+- **Recommend only legitimate tactics.** Trigger: proposing SEO improvements. Wrong: suggesting black-hat tactics such as cloaking, link schemes, or keyword stuffing. Correct: recommend only white-hat, guideline-compliant tactics. Reason: black-hat tactics risk search penalties that drop the site from results.
+- **Ground findings in measurable checks.** Trigger: reporting audit findings. Wrong: asserting issues from intuition without evidence. Correct: base each finding on a measurable check or observed metric; measure first. Reason: unmeasured claims send teams chasing non-issues.
 
 ## Examples
 

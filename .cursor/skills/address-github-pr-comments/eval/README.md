@@ -1,4 +1,4 @@
-# address-github-pr-comments — behavioral evaluation
+# address-github-pr-comments: behavioral evaluation
 
 Evaluates agent behavior when following only `SKILL.md`. No code execution.
 

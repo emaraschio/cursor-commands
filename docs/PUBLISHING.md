@@ -88,7 +88,7 @@ Or: GitHub → **Settings → Branches → `main` → Add rule** → require the
 
 ## 5. Post-launch (v1.0.0+)
 
-v1.0.0 exit criteria are complete — see [ROADMAP.md — v1.0.0](ROADMAP.md#v100--public-launch-complete). For new releases: tag `v*`, let [release.yml](../.github/workflows/release.yml) publish notes from [CHANGELOG.md](../CHANGELOG.md), and add a row to [VERIFICATION.md](VERIFICATION.md).
+v1.0.0 exit criteria are complete; see [ROADMAP.md: v1.0.0](ROADMAP.md#v100-public-launch-complete). For new releases: tag `v*`, let [release.yml](../.github/workflows/release.yml) publish notes from [CHANGELOG.md](../CHANGELOG.md), and add a row to [VERIFICATION.md](VERIFICATION.md).
 
 ## Org extensions today
 

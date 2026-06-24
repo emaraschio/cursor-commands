@@ -1,6 +1,6 @@
 ---
 name: lint-fix
-version: 1
+version: 2
 description: Fix lint issues in the current file
 scope: generic
 requires_skill: true
@@ -15,7 +15,7 @@ Fix lint issues in the current file. Full workflow: `.cursor/skills/lint-fix/SKI
 
 ## Defaults
 
-_None — see skill for workflow defaults._
+_None. See skill for workflow defaults._
 
 ## Steps
 
@@ -25,8 +25,8 @@ _None — see skill for workflow defaults._
 
 ## Anti-patterns
 
-- Do not change behavior while fixing style
-- Use project linter config
+- **Do not change behavior while fixing style.** Trigger: a lint fix that tempts a logic tweak. Wrong: altering runtime behavior under cover of a style fix. Correct: limit edits to formatting and style, leaving behavior unchanged. Reason: behavior changes hidden in a lint pass bypass review and can introduce regressions.
+- **Use the project linter config.** Trigger: the repo ships its own linter configuration. Wrong: applying personal rules or a different formatter. Correct: run the project's configured linter and follow its rules. Reason: ad hoc rules create churn and conflict with the agreed project style.
 
 ## Examples
 

@@ -1,6 +1,6 @@
 ---
 name: commit
-version: 1
+version: 2
 description: Commit on a new branch with conventional message
 scope: generic
 requires_skill: true
@@ -15,7 +15,7 @@ Commit on a new branch with conventional message. Full workflow: `.cursor/skills
 
 ## Defaults
 
-_None — see skill for workflow defaults._
+_None. See skill for workflow defaults._
 
 ## Steps
 
@@ -25,9 +25,9 @@ _None — see skill for workflow defaults._
 
 ## Anti-patterns
 
-- Do not commit without user request
-- Do not skip hooks unless asked
-- Do not amend after failed hook
+- **Commit only when asked.** Trigger: finishing a chunk of work. Wrong: committing or pushing without being asked. Correct: commit only on explicit request, then push the branch. Reason: surprise commits and pushes are hard to undo and disrupt the user's flow.
+- **Use Conventional Commits.** Trigger: writing the commit message. Wrong: a vague or non-conventional subject. Correct: a Conventional Commits subject within the length limit. Reason: the squashed message becomes the PR title.
+- **Never skip hooks or amend a failed commit.** Trigger: a pre-commit hook fails. Wrong: re-running with hooks skipped or amending the failed commit. Correct: fix the issue and make a new commit. Reason: skipped hooks hide failures and amending a failed commit loses the trail.
 
 ## Examples
 

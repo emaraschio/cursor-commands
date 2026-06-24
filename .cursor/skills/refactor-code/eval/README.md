@@ -1,4 +1,4 @@
-# refactor-code — behavioral evaluation
+# refactor-code: behavioral evaluation
 
 Evaluates agent behavior when following only `SKILL.md`. No code execution.
 

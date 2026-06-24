@@ -39,3 +39,8 @@ Create a comprehensive pull request description based on the changes in this bra
 - [ ] Included any deployment considerations
 - [ ] Noted any follow-up work required
 - [ ] Formatted as proper markdown for GitHub PR
+
+## Guardrails
+
+- Always include a test plan describing how the changes were verified.
+- Use Conventional Commits style for the PR title when appropriate.

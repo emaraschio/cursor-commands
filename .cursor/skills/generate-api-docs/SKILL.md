@@ -38,3 +38,8 @@ Create comprehensive API documentation for the current endpoints formatted as Op
 - [ ] Data models defined
 - [ ] Usage examples provided
 - [ ] Documentation formatted per project standards
+
+## Guardrails
+
+- Document only endpoints that exist in code; do not invent endpoints, parameters, or responses.
+- Use placeholder values in examples; never expose real secrets or credentials.

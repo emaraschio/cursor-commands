@@ -1,6 +1,6 @@
 ---
 name: structure-prompt
-version: 1
+version: 2
 description: Turn a rough request into a structured, production-grade prompt using applicable prompting dimensions (verification, structured detail, constraints, structure, search priority, internal-first)
 scope: generic
 requires_skill: true
@@ -31,11 +31,9 @@ Compose a copyable, structured prompt from a rough ask by applying only the prom
 
 ## Anti-patterns
 
-- Do not bolt on all six dimensions when the request is simple
-- Do not execute the task the prompt describes; only produce the prompt
-- Do not invent product capabilities, pricing, or model names
-- Do not claim a leaked system prompt is canonical
-- Do not use employer, product, or internal repo names in examples (OSS catalog)
+- **Match effort to stakes.** Trigger: a simple or one-line request. Wrong: bolting on all six dimensions and dumping the full template. Correct: produce a light prompt proportional to the ask and note which dimensions are not applicable. Reason: over-engineering a trivial ask wastes the user's time and buries the actual request.
+- **Produce the prompt, do not run it.** Trigger: finishing the structured prompt. Wrong: executing the underlying task the prompt describes. Correct: return the copyable prompt and stop. Reason: this skill builds prompts, and running the task skips the user's review of the prompt.
+- **Do not invent product facts.** Trigger: the prompt asks about a tool's current capabilities. Wrong: asserting pricing, APIs, or a model name from memory. Correct: add a clause to verify against current docs and flag that product knowledge may be stale. Reason: stale or invented product claims propagate into every downstream answer.
 
 ## Examples
 

@@ -1,7 +1,7 @@
 ---
 name: prompt-eval-debug
-version: 1
-description: Debug any prompt with a tiny eval suite (control, edge, boundary), failure diagnosis, and smallest next change—no blind rewrite
+version: 2
+description: Debug any prompt with a tiny eval suite (control, edge, boundary), failure diagnosis, and smallest next change, no blind rewrite
 scope: generic
 requires_skill: true
 eval:
@@ -11,13 +11,13 @@ eval:
 
 ## Overview
 
-Improve a pasted prompt by designing a tiny eval suite, diagnosing failures, and proposing the smallest next change — without rewriting blindly. Full workflow: `.cursor/skills/prompt-eval-debug/SKILL.md`.
+Improve a pasted prompt by designing a tiny eval suite, diagnosing failures, and proposing the smallest next change, without rewriting blindly. Full workflow: `.cursor/skills/prompt-eval-debug/SKILL.md`.
 
 ## Defaults
 
 | Setting | Default |
 |---------|---------|
-| Eval suite | 1 control (C0) + 3 edge (E1–E3) + 1 capability-boundary (B1) |
+| Eval suite | 1 control (C0) + 3 edge (E1 to E3) + 1 capability-boundary (B1) |
 | Prompt change | Smallest next change only (no full rewrite in v1) |
 | Scoring | User runs cases manually; skill does not claim CI or automated scores |
 | Examples | Generic names only (`service-a`, `task-handler`) |
@@ -30,10 +30,9 @@ Improve a pasted prompt by designing a tiny eval suite, diagnosing failures, and
 
 ## Anti-patterns
 
-- Do not rewrite the whole prompt without an eval suite and diagnosis
-- Do not skip the capability-boundary case (B1)
-- Do not claim catalog CI ran the user's ad-hoc suite
-- Do not use employer, product, or internal repo names in examples (OSS catalog)
+- **Do not rewrite blindly.** Trigger: the user asks to rewrite the whole prompt and skip the eval work. Wrong: replacing the entire prompt in one shot with no suite or diagnosis. Correct: produce the tiny eval suite and the smallest next change first, and rewrite fully only after explicit request. Reason: a blind rewrite discards what worked and hides why the prompt failed.
+- **Keep the capability-boundary case.** Trigger: building the five-case suite. Wrong: dropping B1 or expecting the model to succeed without the tools it needs. Correct: include a capability-boundary case that expects escalate, ask, or refuse, and diagnose missing tool or capability when relevant. Reason: instructions are not capabilities, and skipping B1 hides hallucinated success.
+- **Do not claim catalog CI scored the suite.** Trigger: reporting suite outcomes. Wrong: stating automated pass/fail scores the user never ran. Correct: present the suite and ask the user to run it, reporting only results they confirm. Reason: this skill does not execute the catalog CI, so asserting scores would misrepresent what was verified.
 
 ## Examples
 

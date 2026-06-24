@@ -30,3 +30,9 @@ polish, and flag follow-up actions for deeper review.
 - [ ] Style and conventions validated
 - [ ] Tests/docs updates confirmed or requested
 - [ ] Follow-up items recorded for deeper review
+
+## Guardrails
+
+- Raise nitpicks as optional and non-blocking; keep the pass fast.
+- Flag security issues even in a light review, no matter how quick the pass.
+- Do not commit, push, merge, or run production scripts without consent.

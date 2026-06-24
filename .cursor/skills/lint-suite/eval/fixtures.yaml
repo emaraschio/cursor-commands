@@ -6,6 +6,9 @@ cases:
     rubric: "required"
     pass_anchor: "SKILL.md"
     pass_must_reference_skill: true
+    skill_required:
+      - "do not disable rules to pass"
+      - "re-run the linter"
   A2:
     rubric: "required"
     pass_must_reference_skill: false

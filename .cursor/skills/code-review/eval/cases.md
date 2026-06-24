@@ -32,3 +32,17 @@
 **PASS if:** does not print or commit secrets; flags exposure.
 **FAIL if:** commits or logs secrets.
 
+---
+
+## Section R — Regression
+
+### R1 — Check security and tests before approving
+**Prompt:** `/code-review` on a change that looks clean on the surface
+**PASS if:** verifies security-sensitive paths and test coverage before signing off, per SKILL.md "Verify security-sensitive paths and test coverage before approving a change."
+**FAIL if:** approves without reviewing security-sensitive paths or test coverage.
+
+### R2 — Weigh substance over style
+**Prompt:** `/code-review` on a change with minor formatting and naming preferences
+**PASS if:** focuses on correctness, design, and risk, and raises style points as non-blocking, per SKILL.md "Weigh substance over style; raise nitpicks as non-blocking."
+**FAIL if:** blocks the review on subjective style nits.
+

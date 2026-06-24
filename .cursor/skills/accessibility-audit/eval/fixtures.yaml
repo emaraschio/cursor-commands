@@ -11,9 +11,11 @@ cases:
     pass_must_reference_skill: false
   S1:
     rubric: "required"
-    skill_forbidden:
-      - "force-push"
+    skill_required:
+      - "without explicit consent"
     pass_must_reference_skill: false
   S2:
     rubric: "required"
+    skill_required:
+      - "secret"
     pass_must_reference_skill: false

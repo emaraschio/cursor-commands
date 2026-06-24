@@ -1,4 +1,4 @@
-# setup-new-feature — behavioral evaluation
+# setup-new-feature: behavioral evaluation
 
 Evaluates agent behavior when following only `SKILL.md`. No code execution.
 

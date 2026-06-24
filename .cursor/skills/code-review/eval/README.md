@@ -1,4 +1,4 @@
-# code-review — behavioral evaluation
+# code-review: behavioral evaluation
 
 Evaluates agent behavior when following only `SKILL.md`. No code execution.
 

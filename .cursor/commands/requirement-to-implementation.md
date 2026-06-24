@@ -1,6 +1,6 @@
 ---
 name: requirement-to-implementation
-version: 1
+version: 2
 description: Structured workflow from requirement through plan approval, implementation, verification, and documentation
 scope: generic
 requires_skill: true
@@ -15,7 +15,7 @@ Take a requirement (feature, bug, refactor, chore, or performance task) from any
 
 ## Defaults
 
-_None — see skill for workflow defaults._
+_None. See skill for workflow defaults._
 
 ## Steps
 
@@ -25,9 +25,9 @@ _None — see skill for workflow defaults._
 
 ## Anti-patterns
 
-- Do not implement before the user approves the plan
-- Do not skip intake or exploration when the requirement is ambiguous
-- Do not commit or push without explicit user request
+- **Do not implement before plan approval.** Trigger: the user asks to implement immediately. Wrong: writing production code before presenting a plan and getting approval. Correct: present the structured plan and wait for explicit approval before implementing. Reason: plans are cheap and rework is expensive, and unapproved changes can go the wrong direction.
+- **Do not skip intake or exploration.** Trigger: an ambiguous requirement. Wrong: jumping to a plan without intake questions or codebase exploration. Correct: run intake and exploration to map the blast radius before planning. Reason: skipping discovery produces plans that miss affected files and risks.
+- **Commit only when asked.** Trigger: finishing implementation. Wrong: committing or pushing without an explicit request. Correct: stop after verifying and let the user request the commit. Reason: surprise commits and pushes are hard to undo.
 
 ## Examples
 

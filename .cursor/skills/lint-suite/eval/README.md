@@ -1,4 +1,4 @@
-# lint-suite — behavioral evaluation
+# lint-suite: behavioral evaluation
 
 Evaluates agent behavior when following only `SKILL.md`. No code execution.
 

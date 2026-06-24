@@ -1,6 +1,6 @@
 ---
 name: git-sync-workspace
-version: 1
+version: 2
 description: Sync git repos in a Cursor workspace to remote default branch (fetch, checkout default, pull --ff-only); skip dirty repos
 scope: generic
 requires_skill: true
@@ -30,10 +30,9 @@ Discover git repos in a Cursor multi-root workspace, preflight each one, and syn
 
 ## Anti-patterns
 
-- Do not `git reset --hard` or sync over a dirty working tree without explicit approval
-- Do not force-push default branches
-- Do not guess repo paths outside workspace discovery or user scope
-- Do not confuse this with `fix-git-issues` for merge conflicts on a single repo
+- **Never sync over a dirty working tree.** Trigger: a repo has uncommitted changes. Wrong: checking out or pulling over the dirty tree, or running `git reset --hard` to force it. Correct: skip the repo, record `skipped_dirty`, and continue the others. Reason: overwriting a dirty tree can destroy uncommitted work that is not recoverable.
+- **Do not force-push default branches.** Reason: force-pushing a shared default branch can erase teammates' commits and rewrite published history.
+- **Do not guess repo paths.** Trigger: workspace discovery yields nothing. Wrong: scanning arbitrary directories like `~/code/*` without direction. Correct: ask the user which paths to include. Reason: syncing repos the user did not intend can disrupt unrelated work.
 
 ## Examples
 

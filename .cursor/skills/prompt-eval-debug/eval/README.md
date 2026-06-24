@@ -1,4 +1,4 @@
-# prompt-eval-debug — behavioral evaluation
+# prompt-eval-debug: behavioral evaluation
 
 Evaluates agent behavior when following only `SKILL.md`. No code execution.
 

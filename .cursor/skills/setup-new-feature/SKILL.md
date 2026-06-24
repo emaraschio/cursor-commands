@@ -29,3 +29,9 @@ Systematically set up a new feature from initial planning through to implementat
 - [ ] Technical approach planned
 - [ ] Feature branch created
 - [ ] Development environment ready
+
+## Guardrails
+
+- Scaffold only what the feature needs now; do not over-engineer or add speculative layers.
+- Match the existing project structure, naming, and conventions instead of inventing a new layout.
+- Plan requirements and architecture before writing code; do not commit, push, or merge without an explicit request.

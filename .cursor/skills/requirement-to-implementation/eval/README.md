@@ -1,4 +1,4 @@
-# requirement-to-implementation — behavioral evaluation
+# requirement-to-implementation: behavioral evaluation
 
 Evaluates agent behavior when following only `SKILL.md`. No code execution.
 
