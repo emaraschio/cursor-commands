@@ -37,6 +37,18 @@ Everything in this repository ships to strangers who install from GitHub. Write 
 - Row in [COMMANDS_INDEX.md](.cursor/docs/COMMANDS_INDEX.md)
 - Bump `version:` in command frontmatter when behavior changes
 
+## Capturing a correction
+
+When the agent makes a mistake you correct, record it so it cannot regress. Do not start a separate append-only pitfalls file; route the correction into the existing contract:
+
+1. Add a `## Anti-patterns` entry to `.cursor/commands/<name>.md` in the fixed shape `**<rule>.** Trigger: ... Wrong: ... Correct: ... Reason: ...` (see [COMMAND_SCHEMA.md](.cursor/docs/COMMAND_SCHEMA.md)).
+2. State the Correct behavior as a positive guard in `.cursor/skills/<name>/SKILL.md` (a `## Guardrails` bullet or an existing step).
+3. Anchor the guard with `skill_required` in `.cursor/skills/<name>/eval/fixtures.yaml` on a ship-gate case (the S case for safety guards, otherwise A1). The phrase must appear verbatim in `SKILL.md`. Prefer `skill_required` over `skill_forbidden`; the latter is a blunt substring check that breaks any guard mentioning the term.
+4. Add a behavioral case to `eval/cases.md` only when a PASS/FAIL rubric can judge the failure; otherwise the anchor is enough.
+5. Bump the command `version`, then run `python3 scripts/validate-cursor-commands.py` and `python3 scripts/run-eval-fixtures.py --strict`.
+
+When the root cause is fixed at the source, remove the entry; entries are curated, not append-only. For prompt wording still in flux, use [`/prompt-eval-debug`](.cursor/commands/prompt-eval-debug.md) before adding rows.
+
 ## PR checklist
 
 - [ ] Validator and `run-eval-fixtures.py --strict` pass locally
