@@ -5,7 +5,7 @@
 [![Docs](https://github.com/emaraschio/cursor-commands/actions/workflows/docs.yml/badge.svg)](https://github.com/emaraschio/cursor-commands/actions/workflows/docs.yml)
 [![Eval fixtures](https://github.com/emaraschio/cursor-commands/actions/workflows/eval-fixtures.yml/badge.svg)](https://github.com/emaraschio/cursor-commands/actions/workflows/eval-fixtures.yml)
 
-**Stable release: [`v1.3.0`](CHANGELOG.md#130---2026-06-21)**. Generic Cursor slash commands, Agent Skills, and behavioral eval rubrics. Install from `main` or `git checkout v1.3.0`. Ship-gate sections are enforced in CI via [docs/EVAL_CI.md](docs/EVAL_CI.md). Organization-specific packs install from the **host workspace**.
+**Stable release: [`v1.3.0`](CHANGELOG.md#130---2026-06-21)**; **user plugin install** ships on `main` (see [docs/PLUGIN.md](docs/PLUGIN.md)). Generic Cursor slash commands, Agent Skills, and behavioral eval rubrics. Install from `main` or `git checkout v1.3.0`. Ship-gate sections are enforced in CI via [docs/EVAL_CI.md](docs/EVAL_CI.md). Organization-specific packs install from the **host workspace**.
 
 Inspired by install ergonomics from [hamzafer/cursor-commands](https://github.com/hamzafer/cursor-commands); this repo adds **skills**, **eval rubrics**, and **structural ship-gate CI** (`run-eval-fixtures.py --strict`).
 
@@ -13,6 +13,7 @@ Inspired by install ergonomics from [hamzafer/cursor-commands](https://github.co
 
 - **37** generic slash commands (git, review, TDD, structure-prompt, agent work receipt, security audits, agent goals, prompt eval debug, agent risk review, scoped parallel audits, workspace git sync, PR workflows, requirement-to-implementation, thermo-nuclear code quality review, etc.)
 - **37** skill directories (one per command)
+- **User plugin package** (`.cursor-plugin/` manifests + materialized `plugin/` tree) for **Customize → Plugins** install and account sync (desktop, web, CLI, iOS)
 - **Behavioral evals** (`PASS` / `PARTIAL` / `FAIL`) per command: regression guardrails when editing prompts
 
 ## Installation
@@ -26,7 +27,7 @@ Inspired by install ergonomics from [hamzafer/cursor-commands](https://github.co
 3. **Plugins** tab → **+ Add** → repository URL `https://github.com/emaraschio/cursor-commands`.
 4. Reload the window if `/` autocomplete does not list catalog commands yet.
 
-Details, mobile smoke checks, and local dev symlink: [docs/PLUGIN.md](docs/PLUGIN.md).
+Details, mobile smoke checks, folder-picker troubleshooting, and local dev symlink: [docs/PLUGIN.md](docs/PLUGIN.md).
 
 ### Standalone clone (symlink install)
 
@@ -63,6 +64,8 @@ CURSOR_HOME="$HOME/.cursor" ./scripts/install.sh
 
 ## Architecture
 
+Catalog source of truth:
+
 ```text
 .cursor/commands/<name>.md   # thin slash entry (YAML frontmatter)
 .cursor/skills/<name>/
@@ -71,6 +74,8 @@ CURSOR_HOME="$HOME/.cursor" ./scripts/install.sh
     cases.md                 # behavioral rubric
     README.md                # ship gate + how to score
 ```
+
+Plugin install copies a materialized `plugin/` tree (no `.git`) referenced by `.cursor-plugin/marketplace.json`. After catalog edits, run `./scripts/sync-plugin-package.sh`.
 
 Details: [COMMAND_SCHEMA.md](.cursor/docs/COMMAND_SCHEMA.md)
 
@@ -124,8 +129,9 @@ After install, optional IDE check: [docs/VERIFICATION.md](docs/VERIFICATION.md)
 ## Validation
 
 ```bash
-python3 scripts/validate-cursor-commands.py
+python3 scripts/validate-cursor-commands.py   # includes plugin manifest + plugin/ sync check
 python3 scripts/run-eval-fixtures.py --strict
+./scripts/sync-plugin-package.sh              # after editing commands/skills (contributors)
 ```
 
 CI on `main` and PRs: **validate**, **docs**, **install-smoke**, **eval-fixtures** (see branch protection). New releases: push tag `v*` to run [release.yml](.github/workflows/release.yml).
