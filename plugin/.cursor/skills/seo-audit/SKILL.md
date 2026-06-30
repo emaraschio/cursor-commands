@@ -1,8 +1,8 @@
 ---
 name: seo-audit
 description: SEO audit of pages or app
+user-invocable: false
 ---
-
 ## Overview
 
 Conduct a comprehensive SEO audit to identify optimization opportunities, technical issues, and content gaps that impact search engine visibility and rankings. This audit evaluates technical infrastructure, on-page elements, content quality, off-page signals, and user experience factors to create an actionable roadmap for improving organic search performance.

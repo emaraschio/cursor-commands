@@ -1,8 +1,8 @@
 ---
 name: write-unit-tests
 description: Write meaningful unit tests for target code
+user-invocable: false
 ---
-
 ## Overview
 
 Create comprehensive unit tests for the current code and generate the test file with proper imports and setup according to the project's testing conventions.

@@ -1,8 +1,8 @@
 ---
 name: fix-git-issues
 description: Diagnose and fix git state problems
+user-invocable: false
 ---
-
 ## Overview
 
 Help resolve common Git problems and conflicts with step-by-step commands and explanations for each situation.

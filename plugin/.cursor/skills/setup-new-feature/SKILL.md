@@ -1,8 +1,8 @@
 ---
 name: setup-new-feature
 description: Scaffold a new feature across layers
+user-invocable: false
 ---
-
 ## Overview
 
 Systematically set up a new feature from initial planning through to implementation structure.

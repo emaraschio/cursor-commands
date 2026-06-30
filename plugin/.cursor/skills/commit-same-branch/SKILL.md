@@ -1,8 +1,8 @@
 ---
 name: commit-same-branch
 description: Commit on the current branch with conventional message
+user-invocable: false
 ---
-
 ## Overview
 
 Commit changes to the same branch with proper commit message.

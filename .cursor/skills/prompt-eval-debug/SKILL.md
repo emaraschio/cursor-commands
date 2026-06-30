@@ -6,8 +6,8 @@ description: >-
   prompt issue, missing tool or capability, or harness/workflow issue, and
   proposes the smallest next change. Use for prompt debugger, eval suite, improve
   prompt, or before editing catalog eval/cases.md.
+user-invocable: false
 ---
-
 # Prompt eval debug
 
 ## Role

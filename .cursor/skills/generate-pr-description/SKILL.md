@@ -1,8 +1,8 @@
 ---
 name: generate-pr-description
 description: Generate PR title and description from branch diff
+user-invocable: false
 ---
-
 ## Overview
 
 Create a comprehensive pull request description based on the changes in this branch and format it as proper markdown for use in a GitHub PR description.
