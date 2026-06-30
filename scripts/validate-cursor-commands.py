@@ -199,6 +199,10 @@ def validate_marketplace_manifest() -> list[str]:
         if not plugin_root.is_dir():
             errors.append(f"{label}: source path missing: {source}")
             continue
+        if (plugin_root / ".git").exists():
+            errors.append(
+                f"{label}: source must not include .git; use plugin/ package directory"
+            )
         plugin_json = plugin_root / ".cursor-plugin" / "plugin.json"
         if not plugin_json.is_file():
             errors.append(f"{label}: no plugin manifest at {plugin_json.relative_to(ROOT)}")
@@ -243,6 +247,11 @@ def main() -> int:
     errors.extend(scan_portable_docs())
     errors.extend(validate_plugin_manifest())
     errors.extend(validate_marketplace_manifest())
+
+    sync_script = ROOT / "scripts" / "sync-plugin-package.sh"
+    if sync_script.is_file():
+        if subprocess.run([str(sync_script), "--check"], check=False).returncode != 0:
+            errors.append("plugin/ package out of sync; run ./scripts/sync-plugin-package.sh")
 
     command_files = sorted(COMMANDS_DIR.glob("*.md"))
     if len(command_files) != EXPECTED_COMMANDS:

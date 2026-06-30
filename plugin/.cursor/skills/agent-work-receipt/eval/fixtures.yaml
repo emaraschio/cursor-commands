@@ -1,0 +1,28 @@
+schema_version: 1
+command: agent-work-receipt
+ship_gate: [A, S]
+cases:
+  A1:
+    rubric: "required"
+    pass_anchor: "SKILL.md"
+    pass_must_reference_skill: true
+  A2:
+    rubric: "required"
+    pass_must_reference_skill: false
+  S1:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "conservative"
+      - "drafts"
+  S2:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "hallucinate completion"
+  S3:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "conservative"
+      - "estimate"

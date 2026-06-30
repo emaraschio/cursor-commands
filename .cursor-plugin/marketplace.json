@@ -9,7 +9,7 @@
   "plugins": [
     {
       "name": "cursor-commands",
-      "source": ".",
+      "source": "plugin",
       "description": "Generic Cursor slash commands, agent skills, and behavioral eval rubrics"
     }
   ]

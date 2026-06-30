@@ -17,14 +17,25 @@ This repo ships **commands and skills only**. Rules, MCP servers, hooks, and org
 
 ### From a local clone (folder picker)
 
-Cursor requires a marketplace manifest when you add a plugin from a folder. This repo ships [`.cursor-plugin/marketplace.json`](../.cursor-plugin/marketplace.json) alongside [`.cursor-plugin/plugin.json`](../.cursor-plugin/plugin.json).
+Cursor copies the selected marketplace entry into a local cache. Do **not** point the entry at the repository root: that includes `.git`, and Git's fsmonitor socket (`.git/fsmonitor--daemon.ipc`) makes Cursor's copy step fail with `Cannot copy a socket file`.
+
+This repo ships a materialized package at `plugin/` (no `.git`). The root [`.cursor-plugin/marketplace.json`](../.cursor-plugin/marketplace.json) sets `"source": "plugin"`.
 
 1. Clone or open this repository locally.
-2. **Customize → Plugins → + Add** and select the repository root folder.
-3. Install the `cursor-commands` entry at **user** scope.
-4. Reload the window if needed.
+2. If you changed commands/skills, run `./scripts/sync-plugin-package.sh`.
+3. **Customize → Plugins → + Add** and select the **repository root** folder (the directory that contains `.cursor-plugin/marketplace.json`).
+4. Install the `cursor-commands` entry at **user** scope.
+5. Reload the window if needed.
 
-Do not point the folder picker at a parent directory; select the repo root that contains `.cursor-plugin/marketplace.json`.
+**If install still fails:** remove stale cache, disable fsmonitor for this clone, retry:
+
+```bash
+rm -rf ~/.cursor/plugins/cache/cursor-commands
+rm -rf ~/.cursor/plugins/marketplaces/_/users/"$(whoami)"/*
+git -C /path/to/cursor-commands config core.fsmonitor false
+```
+
+Prefer **GitHub URL** install when you want account sync without managing a local clone.
 
 After install, type `/` in agent chat on desktop or iOS and confirm catalog entries such as `/code-review` and `/define-agent-goal`.
 
@@ -40,12 +51,15 @@ Mobile is cache-first; allow a moment for sync after first install.
 
 ## Local plugin development
 
-Before opening a pull request, load the repo as a local plugin:
+For fast iteration without the folder picker cache, symlink the materialized package:
 
 ```bash
+./scripts/sync-plugin-package.sh
 mkdir -p ~/.cursor/plugins/local
-ln -sfn "$(pwd)" ~/.cursor/plugins/local/cursor-commands
+ln -sfn "$(pwd)/plugin" ~/.cursor/plugins/local/cursor-commands
 ```
+
+Do not symlink the repository root into `~/.cursor/plugins/local/`; that pulls in `.git` and breaks the same way as the folder picker.
 
 Restart Cursor or run **Developer: Reload Window**. Verify components under **Customize → Plugins**.
 
@@ -65,9 +79,10 @@ Installing both is supported. Plugin-managed entries and symlinked entries shoul
 Manifests live at:
 
 - [`.cursor-plugin/plugin.json`](../.cursor-plugin/plugin.json): commands and skills paths
-- [`.cursor-plugin/marketplace.json`](../.cursor-plugin/marketplace.json): required for **Add from folder** in Customize
+- [`.cursor-plugin/marketplace.json`](../.cursor-plugin/marketplace.json): required for **Add from folder** in Customize (`"source": "plugin"`)
+- [`plugin/`](../plugin/): materialized package copied by Cursor (no `.git`)
 
-CI validates both files and that marketplace entries resolve to the plugin manifest.
+CI validates manifests and runs `./scripts/sync-plugin-package.sh --check` so `plugin/` stays in sync with `.cursor/commands` and `.cursor/skills`.
 
 ## External dependency
 

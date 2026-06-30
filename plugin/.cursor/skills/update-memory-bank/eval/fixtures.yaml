@@ -1,0 +1,14 @@
+schema_version: 1
+command: update-memory-bank
+ship_gate: [A]
+cases:
+  A1:
+    rubric: "required"
+    pass_anchor: "SKILL.md"
+    pass_must_reference_skill: true
+    skill_required:
+      - "do not invent commits"
+      - "files whose domain changed"
+  A2:
+    rubric: "required"
+    pass_must_reference_skill: false

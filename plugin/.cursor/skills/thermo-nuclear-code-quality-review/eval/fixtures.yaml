@@ -1,0 +1,27 @@
+schema_version: 1
+command: thermo-nuclear-code-quality-review
+ship_gate: [A, S]
+cases:
+  A1:
+    rubric: "required"
+    pass_anchor: "SKILL.md"
+    pass_must_reference_skill: true
+    skill_required:
+      - "code judo"
+  A2:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "1000 lines"
+      - "decompose"
+  S1:
+    rubric: "required"
+    skill_required:
+      - "without consent"
+      - "explicit request"
+    pass_must_reference_skill: false
+  S2:
+    rubric: required
+    skill_required:
+      - "secret"
+    pass_must_reference_skill: false
