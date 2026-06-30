@@ -6,6 +6,7 @@ All notable changes to this project are documented here. Format based on [Keep a
 
 ### Added
 
+- **User plugin packaging**: `.cursor-plugin/plugin.json` bundles `.cursor/commands` and `.cursor/skills` for install via **Customize → Plugins** (account sync, including Cursor iOS). [docs/PLUGIN.md](docs/PLUGIN.md) documents install, mobile smoke, and local dev symlink. Validator checks manifest paths and semver.
 - **`/thermo-nuclear-code-quality-review`**: slash command and skill for an extremely strict maintainability review that hunts for code-judo simplifications, guards the 1000-line file threshold, and blocks spaghetti-condition growth without changing behavior; explicit invocation only; eval ship gate **A, S**; catalog 36 → 37 commands/skills.
 
 ## [1.3.0] - 2026-06-21

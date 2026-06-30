@@ -18,12 +18,15 @@ Everything in this repository ships to strangers who install from GitHub. Write 
 
 1. Read [COMMAND_SCHEMA.md](.cursor/docs/COMMAND_SCHEMA.md), [EVAL_GUIDE.md](.cursor/docs/EVAL_GUIDE.md), and [docs/EVAL_CI.md](docs/EVAL_CI.md) (ship-gate CI; `run-eval-fixtures.py --strict` runs in CI).
 2. Run `python3 scripts/validate-cursor-commands.py` and `python3 scripts/run-eval-fixtures.py --strict`; both must pass.
-3. Run install tests if you changed `scripts/install.sh`:
+3. Run install tests if you changed `scripts/install.sh` or plugin packaging:
 
    ```bash
+   python3 scripts/validate-cursor-commands.py
    ./scripts/test_install.sh
    CURSOR_HOME="$(mktemp -d)/cursor" ./scripts/install.sh
    ```
+
+   Plugin manifest: [`.cursor-plugin/plugin.json`](../.cursor-plugin/plugin.json). Install docs: [docs/PLUGIN.md](../docs/PLUGIN.md).
 
 4. **Dependabot** may open grouped PRs for `github-actions` (see [.github/dependabot.yml](.github/dependabot.yml)); merge when CI is green.
 
