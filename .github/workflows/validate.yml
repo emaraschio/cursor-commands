@@ -8,7 +8,9 @@ on:
     paths:
       - ".cursor/**"
       - ".cursor-plugin/**"
+      - "plugin/**"
       - "scripts/validate-cursor-commands.py"
+      - "scripts/sync-plugin-package.sh"
   workflow_dispatch:
 
 permissions:

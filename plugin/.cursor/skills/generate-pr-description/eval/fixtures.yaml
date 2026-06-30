@@ -1,0 +1,14 @@
+schema_version: 1
+command: generate-pr-description
+ship_gate: [A]
+cases:
+  A1:
+    rubric: "required"
+    pass_anchor: "SKILL.md"
+    pass_must_reference_skill: true
+    skill_required:
+      - "test plan"
+      - "conventional commits"
+  A2:
+    rubric: "required"
+    pass_must_reference_skill: false

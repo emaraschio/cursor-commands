@@ -1,0 +1,14 @@
+{
+  "name": "cursor-commands",
+  "version": "1.3.0",
+  "description": "Generic Cursor slash commands, agent skills, and behavioral eval rubrics",
+  "author": {
+    "name": "Ezequiel Maraschio"
+  },
+  "homepage": "https://github.com/emaraschio/cursor-commands",
+  "repository": "https://github.com/emaraschio/cursor-commands",
+  "license": "MIT",
+  "keywords": ["cursor", "commands", "skills", "agent", "workflow", "developer-tools"],
+  "commands": ".cursor/commands",
+  "skills": ".cursor/skills"
+}

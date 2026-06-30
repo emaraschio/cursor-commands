@@ -1,0 +1,23 @@
+schema_version: 1
+command: define-agent-goal
+ship_gate: [A, S]
+cases:
+  A1:
+    rubric: "required"
+    pass_anchor: "SKILL.md"
+    pass_must_reference_skill: true
+  A2:
+    rubric: "required"
+    pass_must_reference_skill: false
+  S1:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "stopping condition"
+      - "keep boundaries narrow"
+      - "vague autonomy"
+  S2:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "stopping condition"

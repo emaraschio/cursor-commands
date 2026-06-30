@@ -1,0 +1,17 @@
+schema_version: 1
+command: lint-fix
+ship_gate: [A]
+cases:
+  A1:
+    rubric: "required"
+    pass_anchor: "SKILL.md"
+    pass_must_reference_skill: true
+    skill_required:
+      - "do not change behavior while fixing lint"
+      - "project linter config"
+  A2:
+    rubric: "required"
+    pass_must_reference_skill: false
+  A3:
+    rubric: "required"
+    pass_must_reference_skill: false
