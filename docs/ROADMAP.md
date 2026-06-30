@@ -123,7 +123,7 @@ Shipped in `v0.3.1`.
 
 1. ~~**Eval CI before public?**~~ Resolved: Phase 2 shipped; repo public at v1.0.0.
 2. ~~**Public timing**~~. Resolved: v1.0.0 (2026-05-25).
-3. **Org extension packaging**: host overlay vs. separate extension repository (timing TBD; post-v1.0). **User plugin** for generic catalog shipped in unreleased (`docs/PLUGIN.md`); marketplace submission TBD.
+3. **Org extension packaging**: host overlay vs. separate extension repository (timing TBD; post-v1.0). **User plugin** for generic catalog shipped in **v1.4.0** (`docs/PLUGIN.md`); marketplace submission TBD.
 
 ## How to use this doc
 
