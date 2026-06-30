@@ -40,7 +40,14 @@ mkdir -p "$PLUGIN_ROOT/.cursor-plugin"
 if [[ "$CHECK_ONLY" -eq 1 ]]; then
   failed=0
   sync_tree "$REPO_ROOT/.cursor/commands/" "$PLUGIN_ROOT/.cursor/commands/" || failed=1
-  sync_tree "$REPO_ROOT/.cursor/skills/" "$PLUGIN_ROOT/.cursor/skills/" || failed=1
+  if rsync -a --delete --dry-run --itemize-changes \
+    --exclude 'profiles/*' \
+    --include 'profiles/_template.yaml' \
+    --include 'profiles/README.md' \
+    --include 'profiles/' \
+    "$REPO_ROOT/.cursor/skills/" "$PLUGIN_ROOT/.cursor/skills/" | grep -q '^[<>ch]'; then
+    failed=1
+  fi
   if ! cmp -s "$REPO_ROOT/.cursor-plugin/plugin.json" "$PLUGIN_ROOT/.cursor-plugin/plugin.json" 2>/dev/null; then
     failed=1
   fi
@@ -53,6 +60,11 @@ if [[ "$CHECK_ONLY" -eq 1 ]]; then
 fi
 
 sync_tree "$REPO_ROOT/.cursor/commands/" "$PLUGIN_ROOT/.cursor/commands/"
-sync_tree "$REPO_ROOT/.cursor/skills/" "$PLUGIN_ROOT/.cursor/skills/"
+rsync -a --delete \
+  --exclude 'profiles/*' \
+  --include 'profiles/_template.yaml' \
+  --include 'profiles/README.md' \
+  --include 'profiles/' \
+  "$REPO_ROOT/.cursor/skills/" "$PLUGIN_ROOT/.cursor/skills/"
 cp "$REPO_ROOT/.cursor-plugin/plugin.json" "$PLUGIN_ROOT/.cursor-plugin/plugin.json"
 echo "Synced plugin package to $PLUGIN_ROOT"
