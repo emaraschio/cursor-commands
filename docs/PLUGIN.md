@@ -6,12 +6,25 @@ This repo ships **commands and skills only**. Rules, MCP servers, hooks, and org
 
 ## Recommended: user plugin (account sync)
 
+### From GitHub (account sync, iPhone)
+
 1. Open **Customize** in the Cursor sidebar (or **Cursor Settings → Plugins**).
 2. Select your user scope (for example **Ezequiel Maraschio**).
 3. Open the **Plugins** tab and click **+ Add**.
 4. Enter the repository URL: `https://github.com/emaraschio/cursor-commands`
 5. Install at **user** scope (not project-only) so commands follow your account to mobile.
 6. Reload the window if slash commands do not appear immediately.
+
+### From a local clone (folder picker)
+
+Cursor requires a marketplace manifest when you add a plugin from a folder. This repo ships [`.cursor-plugin/marketplace.json`](../.cursor-plugin/marketplace.json) alongside [`.cursor-plugin/plugin.json`](../.cursor-plugin/plugin.json).
+
+1. Clone or open this repository locally.
+2. **Customize → Plugins → + Add** and select the repository root folder.
+3. Install the `cursor-commands` entry at **user** scope.
+4. Reload the window if needed.
+
+Do not point the folder picker at a parent directory; select the repo root that contains `.cursor-plugin/marketplace.json`.
 
 After install, type `/` in agent chat on desktop or iOS and confirm catalog entries such as `/code-review` and `/define-agent-goal`.
 
@@ -49,7 +62,12 @@ Installing both is supported. Plugin-managed entries and symlinked entries shoul
 
 ## Manifest
 
-The plugin manifest lives at [`.cursor-plugin/plugin.json`](../.cursor-plugin/plugin.json). CI validates required fields and that `commands` / `skills` paths resolve inside the repo.
+Manifests live at:
+
+- [`.cursor-plugin/plugin.json`](../.cursor-plugin/plugin.json): commands and skills paths
+- [`.cursor-plugin/marketplace.json`](../.cursor-plugin/marketplace.json): required for **Add from folder** in Customize
+
+CI validates both files and that marketplace entries resolve to the plugin manifest.
 
 ## External dependency
 

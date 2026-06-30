@@ -1,0 +1,16 @@
+{
+  "name": "cursor-commands",
+  "owner": {
+    "name": "Ezequiel Maraschio"
+  },
+  "metadata": {
+    "description": "Generic Cursor slash commands, agent skills, and behavioral eval rubrics"
+  },
+  "plugins": [
+    {
+      "name": "cursor-commands",
+      "source": ".",
+      "description": "Generic Cursor slash commands, agent skills, and behavioral eval rubrics"
+    }
+  ]
+}

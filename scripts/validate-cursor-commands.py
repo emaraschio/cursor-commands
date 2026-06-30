@@ -22,6 +22,7 @@ COMMANDS_DIR = ROOT / ".cursor" / "commands"
 SKILLS_DIR = ROOT / ".cursor" / "skills"
 INDEX_PATH = ROOT / ".cursor" / "docs" / "COMMANDS_INDEX.md"
 PLUGIN_MANIFEST = ROOT / ".cursor-plugin" / "plugin.json"
+MARKETPLACE_MANIFEST = ROOT / ".cursor-plugin" / "marketplace.json"
 
 PLUGIN_NAME_RE = re.compile(r"^[a-z0-9](?:[a-z0-9.-]*[a-z0-9])?$")
 SEMVER_RE = re.compile(r"^\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?(?:\+[0-9A-Za-z.-]+)?$")
@@ -138,6 +139,84 @@ def validate_plugin_manifest() -> list[str]:
     return errors
 
 
+def resolve_plugin_source(source: str) -> Path:
+    normalized = source.strip()
+    if normalized in (".", "./"):
+        return ROOT
+    return (ROOT / normalized).resolve()
+
+
+def validate_marketplace_manifest() -> list[str]:
+    errors: list[str] = []
+    if not MARKETPLACE_MANIFEST.is_file():
+        errors.append(f"{MARKETPLACE_MANIFEST}: missing marketplace manifest")
+        return errors
+
+    try:
+        data = json.loads(MARKETPLACE_MANIFEST.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        errors.append(f"{MARKETPLACE_MANIFEST}: invalid JSON ({exc})")
+        return errors
+
+    if not isinstance(data, dict):
+        errors.append(f"{MARKETPLACE_MANIFEST}: root must be a JSON object")
+        return errors
+
+    name = data.get("name")
+    if not isinstance(name, str) or not name:
+        errors.append(f"{MARKETPLACE_MANIFEST}: missing required field 'name'")
+    elif not PLUGIN_NAME_RE.match(name):
+        errors.append(
+            f"{MARKETPLACE_MANIFEST}: name '{name}' must be lowercase kebab-case"
+        )
+
+    owner = data.get("owner")
+    if not isinstance(owner, dict) or not isinstance(owner.get("name"), str) or not owner.get("name"):
+        errors.append(f"{MARKETPLACE_MANIFEST}: missing owner.name")
+
+    plugins = data.get("plugins")
+    if not isinstance(plugins, list) or not plugins:
+        errors.append(f"{MARKETPLACE_MANIFEST}: plugins must be a non-empty array")
+        return errors
+
+    for index, entry in enumerate(plugins):
+        label = f"{MARKETPLACE_MANIFEST}: plugins[{index}]"
+        if not isinstance(entry, dict):
+            errors.append(f"{label}: must be an object")
+            continue
+        plugin_name = entry.get("name")
+        source = entry.get("source")
+        if not isinstance(plugin_name, str) or not plugin_name:
+            errors.append(f"{label}: missing name")
+            continue
+        if not isinstance(source, str) or not source.strip():
+            errors.append(f"{label}: missing source")
+            continue
+        if source.startswith("/") or ".." in Path(source).parts:
+            errors.append(f"{label}: source must be relative: {source}")
+            continue
+        plugin_root = resolve_plugin_source(source)
+        if not plugin_root.is_dir():
+            errors.append(f"{label}: source path missing: {source}")
+            continue
+        plugin_json = plugin_root / ".cursor-plugin" / "plugin.json"
+        if not plugin_json.is_file():
+            errors.append(f"{label}: no plugin manifest at {plugin_json.relative_to(ROOT)}")
+            continue
+        try:
+            plugin_data = json.loads(plugin_json.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as exc:
+            errors.append(f"{label}: plugin manifest invalid JSON ({exc})")
+            continue
+        manifest_name = plugin_data.get("name")
+        if manifest_name != plugin_name:
+            errors.append(
+                f"{label}: name '{plugin_name}' does not match plugin.json name '{manifest_name}'"
+            )
+
+    return errors
+
+
 def scan_portable_docs() -> list[str]:
     errors: list[str] = []
     for dirname in PORTABLE_DOC_DIRS:
@@ -163,6 +242,7 @@ def main() -> int:
         return 1
     errors.extend(scan_portable_docs())
     errors.extend(validate_plugin_manifest())
+    errors.extend(validate_marketplace_manifest())
 
     command_files = sorted(COMMANDS_DIR.glob("*.md"))
     if len(command_files) != EXPECTED_COMMANDS:
@@ -266,7 +346,7 @@ def main() -> int:
 
     print(
         f"OK: validated {len(command_files)} commands, "
-        f"{len(skill_dirs)} skills, plugin manifest"
+        f"{len(skill_dirs)} skills, plugin and marketplace manifests"
     )
     return 0
 

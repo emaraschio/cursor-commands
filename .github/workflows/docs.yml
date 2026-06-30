@@ -30,7 +30,7 @@ jobs:
       - name: Check required files
         run: |
           set -euo pipefail
-          for f in LICENSE CONTRIBUTING.md docs/VERIFICATION.md docs/PLUGIN.md docs/ROADMAP.md docs/PUBLISHING.md docs/DEPENDENCIES.md docs/EVAL_CI.md docs/EVAL_INVENTORY.md CHANGELOG.md .cursor-plugin/plugin.json; do
+          for f in LICENSE CONTRIBUTING.md docs/VERIFICATION.md docs/PLUGIN.md docs/ROADMAP.md docs/PUBLISHING.md docs/DEPENDENCIES.md docs/EVAL_CI.md docs/EVAL_INVENTORY.md CHANGELOG.md .cursor-plugin/plugin.json .cursor-plugin/marketplace.json; do
             test -f "$f" || { echo "missing $f"; exit 1; }
           done
 
