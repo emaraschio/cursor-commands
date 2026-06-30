@@ -26,7 +26,7 @@ Everything in this repository ships to strangers who install from GitHub. Write 
    CURSOR_HOME="$(mktemp -d)/cursor" ./scripts/install.sh
    ```
 
-   Plugin manifest: [`.cursor-plugin/plugin.json`](../.cursor-plugin/plugin.json). Install docs: [docs/PLUGIN.md](../docs/PLUGIN.md).
+   Plugin manifest: [`.cursor-plugin/plugin.json`](.cursor-plugin/plugin.json). Install docs: [docs/PLUGIN.md](docs/PLUGIN.md).
 
 4. **Dependabot** may open grouped PRs for `github-actions` (see [.github/dependabot.yml](.github/dependabot.yml)); merge when CI is green.
 
