@@ -1,8 +1,8 @@
 ---
 name: code-review
 description: Thorough PR code review before approval
+user-invocable: false
 ---
-
 ## Overview
 
 Perform a thorough code review that verifies functionality, maintainability, and

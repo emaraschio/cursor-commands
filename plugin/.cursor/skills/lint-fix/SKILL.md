@@ -1,8 +1,8 @@
 ---
 name: lint-fix
 description: Fix lint issues in the current file
+user-invocable: false
 ---
-
 ## Overview
 
 Analyze the current file for linting issues and automatically fix them according to the project's coding standards, then apply the fixes directly to the code and explain what changes were made.

@@ -1,8 +1,8 @@
 ---
 name: lint-suite
 description: Run project linters and fix findings repo-wide
+user-invocable: false
 ---
-
 ## Overview
 
 Run project linters, apply fixes, and ensure the codebase meets formatting and

@@ -1,8 +1,8 @@
 ---
 name: debug-issue
 description: Systematically debug a reported issue
+user-invocable: false
 ---
-
 ## Overview
 
 Help debug the current issue in the code by walking through the debugging process systematically and providing clear, actionable solutions.

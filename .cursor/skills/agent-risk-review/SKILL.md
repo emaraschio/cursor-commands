@@ -6,8 +6,8 @@ description: >-
   an AI agent access to a system, tool, or account. Use for agent risk review,
   permission design, MCP/tool access planning, or "what should the agent be
   allowed to do?"
+user-invocable: false
 ---
-
 # Agent risk review
 
 ## Role

@@ -1,8 +1,8 @@
 ---
 name: generate-api-docs
 description: Generate API documentation from code
+user-invocable: false
 ---
-
 ## Overview
 
 Create comprehensive API documentation for the current endpoints formatted as OpenAPI/Swagger specification or following the project's documentation standards.

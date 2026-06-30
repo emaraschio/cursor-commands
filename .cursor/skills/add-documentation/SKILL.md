@@ -1,8 +1,8 @@
 ---
 name: add-documentation
 description: Add or improve code documentation for the current change
+user-invocable: false
 ---
-
 ## Overview
 
 Add comprehensive documentation for the current code/feature and format it according to the project's documentation standards, including it in the appropriate location (README, docs folder, or inline comments).

@@ -1,8 +1,8 @@
 ---
 name: accessibility-audit
 description: Audit UI for WCAG accessibility issues and fixes
+user-invocable: false
 ---
-
 ## Overview
 
 Perform comprehensive accessibility (a11y) audit of the current UI code to ensure compliance with WCAG guidelines and provide an inclusive user experience.

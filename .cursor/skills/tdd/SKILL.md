@@ -5,8 +5,8 @@ description: >-
   test framework. Clarify specifications, one failing test at a time, minimal
   code to green, approval gates, kitchen-cleaning refactor when needed. Use for
   TDD, specify-encode-fulfill, or red-green-refactor sessions.
+user-invocable: false
 ---
-
 # Test-driven development
 
 ## Role

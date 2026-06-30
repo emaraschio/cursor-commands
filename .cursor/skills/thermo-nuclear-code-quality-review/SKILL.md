@@ -1,8 +1,8 @@
 ---
 name: thermo-nuclear-code-quality-review
 description: Extremely strict maintainability review for abstraction quality, giant files, and spaghetti-condition growth. Use only when explicitly asked for a thermo-nuclear or thermonuclear code quality review, a deep code quality audit, or an especially harsh maintainability review.
+user-invocable: false
 ---
-
 ## Overview
 
 An unusually strict review of implementation quality, maintainability, abstraction quality, and codebase health. Above all, be ambitious about structure: do not stop at local cleanup. Actively hunt for the code judo move, a restructuring that preserves behavior while making the implementation dramatically simpler, smaller, more direct, and more elegant. Prefer deleting complexity over rearranging it.

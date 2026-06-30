@@ -1,8 +1,8 @@
 ---
 name: security-audit
 description: Security audit of codebase or change
+user-invocable: false
 ---
-
 ## Overview
 
 Comprehensive security review to identify and fix vulnerabilities in the

@@ -1,8 +1,8 @@
 ---
 name: fix-compile-errors
 description: Fix compilation/type errors with minimal diff
+user-invocable: false
 ---
-
 ## Overview
 
 Analyze the compilation errors in the current codebase and provide fixes for them, making the necessary changes to resolve all compilation errors.

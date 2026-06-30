@@ -51,6 +51,20 @@ Each `## Anti-patterns` entry is one bullet that captures negative knowledge in 
     cases.md        # PASS / PARTIAL / FAIL rubric
 ```
 
+### Skill frontmatter (required)
+
+Every catalog skill pairs with a slash command. Set `user-invocable: false` so only the command appears in the `/` menu; the agent still loads `SKILL.md` when the command or description routes to it.
+
+```yaml
+---
+name: <kebab-case>              # must match parent directory
+description: <when to use>
+user-invocable: false
+---
+```
+
+Optional: `disable-model-invocation: true` when the skill must not auto-apply from description alone (slash command is the only entry point).
+
 ## Migration checklist
 
 - [ ] `name` matches filename

@@ -1,8 +1,8 @@
 ---
 name: light-review-existing-diffs
 description: Quick review of existing diffs without full PR context
+user-invocable: false
 ---
-
 ## Overview
 
 Perform a quick quality pass on current diffs to surface risky areas, ensure

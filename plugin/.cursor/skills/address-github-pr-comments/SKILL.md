@@ -1,8 +1,8 @@
 ---
 name: address-github-pr-comments
 description: Address review comments on the current GitHub PR
+user-invocable: false
 ---
-
 ## Overview
 
 Process outstanding reviewer feedback, apply required fixes, and draft clear

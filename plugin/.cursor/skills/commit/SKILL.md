@@ -1,8 +1,8 @@
 ---
 name: commit
 description: Commit on a new branch with conventional message
+user-invocable: false
 ---
-
 ## Overview
 
 Commit changes to the repository in a new branch with proper commit message.

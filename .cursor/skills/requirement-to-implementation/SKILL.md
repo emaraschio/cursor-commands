@@ -1,8 +1,8 @@
 ---
 name: requirement-to-implementation
 description: Structured workflow for taking a requirement (feature, bug, refactor, chore, or performance task) from any source (Notion, GitHub, conversation) through planning, approval, implementation, verification, and documentation. Use when the user provides a requirement, task, ticket, or asks to implement something.
+user-invocable: false
 ---
-
 # Requirement to Implementation
 
 Structured workflow that turns a requirement into verified, documented code. Every task (feature, bug fix, refactor, chore, or performance improvement) flows through the same phases.

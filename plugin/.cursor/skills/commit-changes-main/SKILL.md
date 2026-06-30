@@ -1,8 +1,8 @@
 ---
 name: commit-changes-main
 description: Commit directly on main/master when explicitly allowed
+user-invocable: false
 ---
-
 ## Overview
 
 Commit changes to the main branch of a GitHub repository with proper commit message.

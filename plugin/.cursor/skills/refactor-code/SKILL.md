@@ -1,8 +1,8 @@
 ---
 name: refactor-code
 description: Refactor for clarity without behavior change
+user-invocable: false
 ---
-
 ## Overview
 
 Refactor the selected code to improve its quality while maintaining the same functionality, providing the refactored code with explanations of the improvements made.

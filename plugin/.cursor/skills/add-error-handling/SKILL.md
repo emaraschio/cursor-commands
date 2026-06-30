@@ -1,8 +1,8 @@
 ---
 name: add-error-handling
 description: Add consistent error handling to the targeted code
+user-invocable: false
 ---
-
 ## Overview
 
 Implement comprehensive error handling for the current code to make it robust and resilient to failures while maintaining good user experience.

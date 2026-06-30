@@ -1,8 +1,8 @@
 ---
 name: update-readme
 description: Update project README for current state
+user-invocable: false
 ---
-
 # Update README
 
 ## Overview

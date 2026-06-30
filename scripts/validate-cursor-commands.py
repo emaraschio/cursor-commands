@@ -337,8 +337,15 @@ def main() -> int:
                 )
 
     for skill_dir in skill_dirs:
-        if not (skill_dir / "SKILL.md").exists():
+        skill_md = skill_dir / "SKILL.md"
+        if not skill_md.exists():
             errors.append(f"{skill_dir}: missing SKILL.md")
+            continue
+        skill_fm = parse_frontmatter(skill_md.read_text(encoding="utf-8"))
+        if skill_fm.get("user-invocable") != "false":
+            errors.append(
+                f"{skill_md}: user-invocable must be false (paired slash command owns / menu entry)"
+            )
 
     if INDEX_PATH.exists():
         index_text = INDEX_PATH.read_text(encoding="utf-8")

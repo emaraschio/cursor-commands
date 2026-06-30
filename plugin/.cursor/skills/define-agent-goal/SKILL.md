@@ -6,8 +6,8 @@ description: >-
   can run with minimal babysitting. Plan-only, no execution in the same turn.
   Use for Goal, delegate, run without babysitting, or before long autonomous
   work. Pair with requirement-to-implementation for code delivery afterward.
+user-invocable: false
 ---
-
 # Define agent goal
 
 ## Role

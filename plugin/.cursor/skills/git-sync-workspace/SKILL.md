@@ -6,8 +6,8 @@ description: >-
   default, pull --ff-only. Skips dirty or unsafe repos with a clear report.
   Use for "sync workspace", "update all repos", "back to main", or reset
   workspace repos to remote HEAD without losing uncommitted work.
+user-invocable: false
 ---
-
 # Git sync workspace
 
 ## Role

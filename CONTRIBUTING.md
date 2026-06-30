@@ -26,7 +26,7 @@ Everything in this repository ships to strangers who install from GitHub. Write 
    CURSOR_HOME="$(mktemp -d)/cursor" ./scripts/install.sh
    ```
 
-   Plugin manifests: [`.cursor-plugin/plugin.json`](.cursor-plugin/plugin.json), [`.cursor-plugin/marketplace.json`](.cursor-plugin/marketplace.json). After catalog edits, run `./scripts/sync-plugin-package.sh`. Install docs: [docs/PLUGIN.md](docs/PLUGIN.md).
+   Plugin manifests: [`.cursor-plugin/plugin.json`](.cursor-plugin/plugin.json), [`.cursor-plugin/marketplace.json`](.cursor-plugin/marketplace.json). After catalog edits, run `./scripts/sync-plugin-package.sh`. Paired skills require `user-invocable: false` in `SKILL.md`. Install docs: [docs/PLUGIN.md](docs/PLUGIN.md).
 
 4. **Dependabot** may open grouped PRs for `github-actions` (see [.github/dependabot.yml](.github/dependabot.yml)); merge when CI is green.
 
