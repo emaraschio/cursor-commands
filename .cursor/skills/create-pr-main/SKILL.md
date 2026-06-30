@@ -1,8 +1,8 @@
 ---
 name: create-pr-main
 description: Create a pull request targeting main
+user-invocable: false
 ---
-
 ## Overview
 
 Create a well-structured pull request for the main branch of a GitHub repository with proper description, labels, and reviewers.

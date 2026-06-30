@@ -7,8 +7,8 @@ description: >-
   reporting, and gates any change behind explicit approval. Use for "audit
   X for Y", "find all", "catalog every", "inventory", "migrate across", or
   any repeatable workflow that has quietly become "check 400 things".
+user-invocable: false
 ---
-
 # Scoped audit
 
 ## Role

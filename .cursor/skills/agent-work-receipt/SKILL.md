@@ -6,8 +6,8 @@ description: >-
   the user invokes /agent-work-receipt, asks for a work receipt, or wants to
   measure agent productivity honestly after a session.
 disable-model-invocation: true
+user-invocable: false
 ---
-
 # Agent work receipt
 
 ## Role

@@ -1,8 +1,8 @@
 ---
 name: update-memory-bank
 description: Sync memory bank with repository state
+user-invocable: false
 ---
-
 ## Overview
 
 Sync the memory bank with the current state of the repository and recent agent interactions. Run after significant work sessions, feature completions, or when context has drifted from reality.

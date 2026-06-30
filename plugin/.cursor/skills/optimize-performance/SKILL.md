@@ -1,8 +1,8 @@
 ---
 name: optimize-performance
 description: Profile and optimize performance bottlenecks
+user-invocable: false
 ---
-
 ## Overview
 
 Analyze the current code for performance bottlenecks and provide optimization recommendations, focusing on measurable improvements while maintaining code quality and readability.

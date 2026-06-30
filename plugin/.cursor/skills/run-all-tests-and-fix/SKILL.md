@@ -1,8 +1,8 @@
 ---
 name: run-all-tests-and-fix
 description: Run full test suite and fix failures
+user-invocable: false
 ---
-
 ## Overview
 
 Execute the full test suite and systematically fix any failures, ensuring code

@@ -4,6 +4,10 @@ All notable changes to this project are documented here. Format based on [Keep a
 
 ## [Unreleased]
 
+### Changed
+
+- **Skills**: set `user-invocable: false` on all 37 paired `SKILL.md` files so slash commands (⚡) are the only `/` menu entries; skills (✨) stay agent-loadable via commands. Validator enforces the field.
+
 ## [1.4.0] - 2026-06-30
 
 ### Added

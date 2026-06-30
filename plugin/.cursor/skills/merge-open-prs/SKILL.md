@@ -5,8 +5,8 @@ description: >-
   and local verification pass. Batch up to 10 PRs per run. Use when the user
   wants to merge all open PRs, clear the PR queue, or run /merge-open-prs.
 disable-model-invocation: true
+user-invocable: false
 ---
-
 # Merge open PRs
 
 Orchestrate a **batch** of open pull requests in the **current repo**: babysit each PR, code-review, verify locally (Docker-first), auto-merge when green, then post-batch smoke on the default branch.

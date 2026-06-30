@@ -7,8 +7,8 @@ description: >-
   sourcing), fills a prompt template, and returns a copyable prompt plus a note on
   what was applied or omitted. Use for prompt architect, structure a prompt, harden
   a prompt, or turn an ask into a production prompt.
+user-invocable: false
 ---
-
 # Structure prompt
 
 ## Role
