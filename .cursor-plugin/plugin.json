@@ -1,6 +1,6 @@
 {
   "name": "cursor-commands",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Generic Cursor slash commands, agent skills, and behavioral eval rubrics",
   "author": {
     "name": "Ezequiel Maraschio"
