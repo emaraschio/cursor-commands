@@ -17,7 +17,18 @@ Inspired by install ergonomics from [hamzafer/cursor-commands](https://github.co
 
 ## Installation
 
-### Standalone clone
+**Recommended for account and mobile sync:** install as a [user plugin](docs/PLUGIN.md) from GitHub (`https://github.com/emaraschio/cursor-commands`) via **Customize → Plugins → + Add**. Slash commands and skills then follow your Cursor account to desktop, web, CLI, and the [iOS app](https://cursor.com/docs/cloud-agent/mobile).
+
+### Plugin (recommended)
+
+1. Open **Customize** in the Cursor sidebar (or **Settings → Plugins**).
+2. Select your **user** scope.
+3. **Plugins** tab → **+ Add** → repository URL `https://github.com/emaraschio/cursor-commands`.
+4. Reload the window if `/` autocomplete does not list catalog commands yet.
+
+Details, mobile smoke checks, and local dev symlink: [docs/PLUGIN.md](docs/PLUGIN.md).
+
+### Standalone clone (symlink install)
 
 ```bash
 git clone https://github.com/emaraschio/cursor-commands.git
@@ -26,7 +37,9 @@ chmod +x scripts/install.sh
 ./scripts/install.sh          # merge mode (default)
 ```
 
-Commands and skills from this catalog are symlinked into `~/.cursor/commands/` and `~/.cursor/skills/`. **Merge mode (default)** keeps your own files and host overlays (org-specific commands installed afterward). Use `./scripts/install.sh --replace` only if you want to wipe those directories first. Use `--prune` to remove stale symlinks that still point into this repo after a catalog rename.
+Commands and skills from this catalog are symlinked into `~/.cursor/commands/` and `~/.cursor/skills/`. Use this path for submodule/dotfiles workflows or host overlays after the generic catalog. **Merge mode (default)** keeps your own files and org-specific commands installed afterward. Use `./scripts/install.sh --replace` only if you want to wipe those directories first. Use `--prune` to remove stale symlinks that still point into this repo after a catalog rename.
+
+Plugin install and symlink install can coexist; avoid duplicate command names outside this catalog.
 
 ### As a Git submodule
 
@@ -124,9 +137,10 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). Security reports: [SECURITY.md](SECURITY
 ## Related
 
 - [Cursor slash commands docs](https://cursor.com/docs/agent/chat/commands)
+- [Cursor plugins docs](https://cursor.com/docs/plugins)
 - [hamzafer/cursor-commands](https://github.com/hamzafer/cursor-commands): minimal command-only collection
 
-**Topics:** `cursor`, `cursor-ide`, `agent-skills`, `ai-agents`, `prompts`, `developer-tools`, `dotfiles`, `github-actions` (see GitHub **About** on [emaraschio/cursor-commands](https://github.com/emaraschio/cursor-commands)).
+**Topics:** `cursor`, `cursor-ide`, `agent-skills`, `ai-agents`, `prompts`, `developer-tools`, `dotfiles`, `github-actions`, `cursor-plugins` (see GitHub **About** on [emaraschio/cursor-commands](https://github.com/emaraschio/cursor-commands)).
 
 ## License
 
