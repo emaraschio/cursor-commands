@@ -4,10 +4,24 @@ All notable changes to this project are documented here. Format based on [Keep a
 
 ## [Unreleased]
 
+## [1.4.0] - 2026-06-30
+
 ### Added
 
-- **User plugin packaging**: `.cursor-plugin/plugin.json` and `.cursor-plugin/marketplace.json` bundle `.cursor/commands` and `.cursor/skills` via materialized `plugin/` (no `.git`; avoids fsmonitor socket copy failures on folder install). [docs/PLUGIN.md](docs/PLUGIN.md) documents install, mobile smoke, cache cleanup, and `scripts/sync-plugin-package.sh`. Validator checks manifest paths, semver, and package sync.
+- **User plugin packaging**: `.cursor-plugin/plugin.json` and `.cursor-plugin/marketplace.json` bundle `.cursor/commands` and `.cursor/skills` via materialized `plugin/` (no `.git`; avoids fsmonitor socket copy failures on folder install). [docs/PLUGIN.md](docs/PLUGIN.md) documents GitHub URL and folder install, mobile smoke, cache cleanup, and `scripts/sync-plugin-package.sh`. Validator checks manifest paths, semver, and package sync.
 - **`/thermo-nuclear-code-quality-review`**: slash command and skill for an extremely strict maintainability review that hunts for code-judo simplifications, guards the 1000-line file threshold, and blocks spaghetti-condition growth without changing behavior; explicit invocation only; eval ship gate **A, S**; catalog 36 → 37 commands/skills.
+
+### Changed
+
+- **Anti-patterns as enforced contract**: catalog-wide `Trigger / Wrong / Correct / Reason` shape in skills; `skill_required` anchors in `eval/fixtures.yaml`; CI fails if guards regress ([#22](https://github.com/emaraschio/cursor-commands/pull/22)).
+- **README.md**: user plugin package, `sync-plugin-package.sh`, and anti-patterns contract ([#21](https://github.com/emaraschio/cursor-commands/pull/21), [#24](https://github.com/emaraschio/cursor-commands/pull/24)).
+- **CONTRIBUTING.md**: plugin manifest and sync workflow for contributors.
+- **CI**: `actions/checkout` v6 → v7 ([#20](https://github.com/emaraschio/cursor-commands/pull/20)).
+
+### Fixed
+
+- **Plugin folder install**: marketplace `"source": "plugin"` and materialized `plugin/` tree so Customize folder picker does not copy `.git/fsmonitor--daemon.ipc`.
+- **Plugin package**: exclude host `merge-open-prs` profiles from synced `plugin/` tree.
 
 ## [1.3.0] - 2026-06-21
 
