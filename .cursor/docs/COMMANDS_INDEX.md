@@ -52,6 +52,7 @@ Commands with extra sections in `cases.md` (e.g. **B**, **C**, **F** on `merge-o
 | `lint-suite` | generic | yes | [cases](../skills/lint-suite/eval/cases.md) | A | 2026-06-24 PASS |
 | `merge-open-prs` | generic | yes | [cases](../skills/merge-open-prs/eval/cases.md) | A, D, E | 2026-06-24 PASS |
 | `optimize-performance` | generic | yes | [cases](../skills/optimize-performance/eval/cases.md) | A, S | 2026-06-24 PASS |
+| `pathfinder` | generic | yes | [cases](../skills/pathfinder/eval/cases.md) | A, S | 2026-07-02 PASS |
 | `prompt-eval-debug` | generic | yes | [cases](../skills/prompt-eval-debug/eval/cases.md) | A, S | 2026-06-24 PASS |
 | `refactor-code` | generic | yes | [cases](../skills/refactor-code/eval/cases.md) | A, S | 2026-06-24 PASS |
 | `requirement-to-implementation` | generic | yes | [cases](../skills/requirement-to-implementation/eval/cases.md) | A, S | 2026-06-24 PASS |

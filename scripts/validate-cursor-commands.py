@@ -27,8 +27,8 @@ MARKETPLACE_MANIFEST = ROOT / ".cursor-plugin" / "marketplace.json"
 PLUGIN_NAME_RE = re.compile(r"^[a-z0-9](?:[a-z0-9.-]*[a-z0-9])?$")
 SEMVER_RE = re.compile(r"^\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?(?:\+[0-9A-Za-z.-]+)?$")
 
-EXPECTED_COMMANDS = 37
-EXPECTED_SKILLS = 37
+EXPECTED_COMMANDS = 38
+EXPECTED_SKILLS = 38
 MIN_EVAL_CASES = 3
 
 REQUIRED_SECTIONS = [
