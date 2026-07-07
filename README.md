@@ -11,8 +11,8 @@ Inspired by install ergonomics from [hamzafer/cursor-commands](https://github.co
 
 ## What you get
 
-- **37** generic slash commands (git, review, TDD, structure-prompt, agent work receipt, security audits, agent goals, prompt eval debug, agent risk review, scoped parallel audits, workspace git sync, PR workflows, requirement-to-implementation, thermo-nuclear code quality review, etc.)
-- **37** skill directories (one per command)
+- **39** generic slash commands (git, review, TDD, structure-prompt, blind spot pass, agent work receipt, security audits, agent goals, prompt eval debug, agent risk review, scoped parallel audits, workspace git sync, PR workflows, requirement-to-implementation, thermo-nuclear code quality review, pathfinder, etc.)
+- **39** skill directories (one per command)
 - **User plugin package** (`.cursor-plugin/` manifests + materialized `plugin/` tree) for **Customize → Plugins** install and account sync (desktop, web, CLI, iOS)
 - **Behavioral evals** (`PASS` / `PARTIAL` / `FAIL`) per command: regression guardrails when editing prompts
 
@@ -40,7 +40,7 @@ chmod +x scripts/install.sh
 
 Commands and skills from this catalog are symlinked into `~/.cursor/commands/` and `~/.cursor/skills/`. Use this path for submodule/dotfiles workflows or host overlays after the generic catalog. **Merge mode (default)** keeps your own files and org-specific commands installed afterward. Use `./scripts/install.sh --replace` only if you want to wipe those directories first. Use `--prune` to remove stale symlinks that still point into this repo after a catalog rename.
 
-Plugin install and symlink install can coexist; avoid duplicate command names outside this catalog.
+Plugin install and symlink install can coexist but **should not**: you get duplicate `/` menu entries (⚡ command + ✨ skill per catalog name). Use the **user plugin** alone, or run `./scripts/install.sh --uninstall` before relying on the plugin. See [docs/PLUGIN.md](docs/PLUGIN.md#duplicate-entries-in-the--menu).
 
 ### As a Git submodule
 

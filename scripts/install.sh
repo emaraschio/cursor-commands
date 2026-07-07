@@ -5,12 +5,13 @@ set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 CURSOR_HOME="${CURSOR_HOME:-$HOME/.cursor}"
-EXPECTED_COMMANDS=38
-EXPECTED_SKILLS=38
+EXPECTED_COMMANDS=39
+EXPECTED_SKILLS=39
 
 MODE_MERGE=1
 MODE_REPLACE=0
 DO_PRUNE=0
+DO_UNINSTALL=0
 VERBOSE=0
 
 usage() {
@@ -23,11 +24,15 @@ Options:
   (default)     Merge mode — mkdir -p and link catalog entries only; keep other files
   --replace     Remove commands/ and skills/ trees first (legacy full reset)
   --prune       Remove stale symlinks that point into this repo but left the catalog
-  -v, --verbose List pruned entry names
+  --uninstall   Remove catalog symlinks only; keep foreign files and overlay symlinks
+  -v, --verbose List pruned or uninstalled entry names
   -h, --help    Show this help
 
 Host overlays (e.g. org-specific commands) should install after generic merge, or
 re-run the host install script; merge mode does not delete non-catalog symlinks.
+
+If you use the user plugin (Customize → Plugins), prefer --uninstall instead of
+symlink install. Running both shows every catalog entry twice in the / menu.
 EOF
 }
 
@@ -90,7 +95,7 @@ catalog_has_skill() {
 }
 
 is_repo_managed_symlink() {
-  local link="$1"
+  local link="${1%/}"
   local kind="$2"
   local repo_base="$REPO_ROOT/.cursor/$kind"
   local resolved
@@ -122,8 +127,9 @@ prune_stale() {
   done
 
   for link in "$CURSOR_HOME/skills/"*/; do
+    link="${link%/}"
     [[ -e "$link" || -L "$link" ]] || continue
-    name="$(basename "${link%/}")"
+    name="$(basename "$link")"
     if is_repo_managed_symlink "$link" skills && ! catalog_has_skill "$name"; then
       rm -f "$link"
       pruned=$((pruned + 1))
@@ -137,6 +143,51 @@ prune_stale() {
   echo "$pruned"
 }
 
+uninstall_catalog() {
+  local removed=0
+  local name
+  local link
+
+  shopt -s nullglob
+  for link in "$CURSOR_HOME/commands/"*.md; do
+    [[ -e "$link" || -L "$link" ]] || continue
+    name="$(basename "$link")"
+    if is_repo_managed_symlink "$link" commands; then
+      rm -f "$link"
+      removed=$((removed + 1))
+      if [[ "$VERBOSE" -eq 1 ]]; then
+        echo "  uninstalled command: $name" >&2
+      fi
+    fi
+  done
+
+  for link in "$CURSOR_HOME/skills/"*/; do
+    link="${link%/}"
+    [[ -e "$link" || -L "$link" ]] || continue
+    name="$(basename "$link")"
+    if is_repo_managed_symlink "$link" skills; then
+      rm -f "$link"
+      removed=$((removed + 1))
+      if [[ "$VERBOSE" -eq 1 ]]; then
+        echo "  uninstalled skill: $name" >&2
+      fi
+    fi
+  done
+  shopt -u nullglob
+
+  echo "$removed"
+}
+
+warn_if_plugin_installed() {
+  local plugin_home="$CURSOR_HOME/plugins"
+  if [[ -d "$plugin_home/cache/cursor-commands" ]] \
+    || [[ -d "$plugin_home/cache/emaraschio-cursor-commands" ]] \
+    || compgen -G "$plugin_home/marketplaces/github.com/emaraschio/cursor-commands/*" >/dev/null; then
+    echo "WARN: cursor-commands user plugin detected under $plugin_home." >&2
+    echo "WARN: symlink install duplicates every / menu entry. Run ./scripts/install.sh --uninstall instead." >&2
+  fi
+}
+
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --replace)
@@ -146,6 +197,10 @@ while [[ $# -gt 0 ]]; do
       ;;
     --prune)
       DO_PRUNE=1
+      shift
+      ;;
+    --uninstall)
+      DO_UNINSTALL=1
       shift
       ;;
     -v | --verbose)
@@ -163,6 +218,15 @@ while [[ $# -gt 0 ]]; do
       ;;
   esac
 done
+
+if [[ "$DO_UNINSTALL" -eq 1 ]]; then
+  removed="$(uninstall_catalog)"
+  echo "Uninstalled $removed catalog symlink(s) from $CURSOR_HOME"
+  echo "Reload Cursor. If duplicates remain, refresh the user plugin (see docs/PLUGIN.md)."
+  exit 0
+fi
+
+warn_if_plugin_installed
 
 prepare_target_dir "$CURSOR_HOME/commands" "$MODE_REPLACE"
 prepare_target_dir "$CURSOR_HOME/skills" "$MODE_REPLACE"

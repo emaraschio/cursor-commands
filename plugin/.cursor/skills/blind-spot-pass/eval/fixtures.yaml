@@ -1,0 +1,26 @@
+schema_version: 1
+command: blind-spot-pass
+ship_gate: [A, S]
+cases:
+  A1:
+    rubric: "required"
+    pass_anchor: "SKILL.md"
+    pass_must_reference_skill: true
+  A2:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "known knowns"
+      - "unknown unknowns"
+      - "high-leverage"
+  S1:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "plan-only"
+      - "skip the pass"
+  S2:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "redact"

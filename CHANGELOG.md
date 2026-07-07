@@ -4,9 +4,15 @@ All notable changes to this project are documented here. Format based on [Keep a
 
 ## [Unreleased]
 
+### Added
+
+- **`/blind-spot-pass`**: slash command and skill for a pre-build blind spot pass (four knowledge quadrants, 5 to 10 high-leverage interview questions, implementation-notes log on follow-up builds); plan-only; eval ship gate **A, S**; catalog 38 → 39 commands/skills.
+
 ### Changed
 
 - **Skills**: set `user-invocable: false` on all 37 paired `SKILL.md` files so slash commands (⚡) are the only `/` menu entries; skills (✨) stay agent-loadable via commands. Validator enforces the field.
+- **`install.sh --uninstall`**: remove catalog symlinks from `~/.cursor` when using the user plugin instead of symlink install. Warns when both are detected.
+- **docs/PLUGIN.md**: troubleshooting for duplicate `/` menu entries (plugin + symlink, stale v1.4.0 cache).
 
 ## [1.4.0] - 2026-06-30
 
