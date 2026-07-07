@@ -72,7 +72,42 @@ Restart Cursor or run **Developer: Reload Window**. Verify components under **Cu
 | **User plugin** | Account-wide sync, iPhone, web agents |
 | **`install.sh`** | Submodule/dotfiles, merge overlays, offline clone |
 
-Installing both is supported. Plugin-managed entries and symlinked entries should not use conflicting names; the catalog uses unique command names under `.cursor/commands/`.
+Installing both is supported but causes duplicate `/` menu entries. Pick one path; if you use the plugin, run `./scripts/install.sh --uninstall` to drop catalog symlinks from `~/.cursor`.
+
+## Duplicate entries in the `/` menu
+
+Each catalog name should appear **once** (⚡ slash command). If you see **two** rows per name (⚡ and ✨), fix both causes below.
+
+### 1. Plugin + symlink install (most common)
+
+`./scripts/install.sh` symlinks the catalog into `~/.cursor/commands/` and `~/.cursor/skills/`. The user plugin loads the same catalog at account scope. Cursor shows both.
+
+**Fix:** keep the plugin; remove symlinks:
+
+```bash
+./scripts/install.sh --uninstall
+```
+
+Reload the window (**Developer: Reload Window**).
+
+### 2. Stale plugin cache (v1.4.0 and earlier)
+
+Release **v1.4.0** shipped skills without `user-invocable: false`, so paired skills (✨) appeared beside slash commands (⚡). **main** after v1.4.0 sets `user-invocable: false` on every paired skill.
+
+**Fix:** clear cache and reload so Cursor re-syncs from GitHub:
+
+```bash
+rm -rf ~/.cursor/plugins/cache/cursor-commands
+rm -rf ~/.cursor/plugins/cache/emaraschio-cursor-commands
+rm -rf ~/.cursor/plugins/marketplaces/github.com/emaraschio/cursor-commands
+rm -rf ~/.cursor/plugins/marketplaces/_/users/"$(whoami)"/*
+```
+
+In **Customize → Plugins**, confirm `cursor-commands` is installed from `https://github.com/emaraschio/cursor-commands`, then reload. Type `/seo` and expect a single `seo-audit` row (⚡ only).
+
+### 3. Developing inside this repository
+
+Opening the `cursor-commands` clone as the workspace root also loads project-scoped `.cursor/commands/` and `.cursor/skills/`. That can add workspace rows on top of user-plugin rows while you edit the catalog. For a clean palette, test `/` from a different workspace after plugin-only install.
 
 ## Manifest
 
