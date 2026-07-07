@@ -5,13 +5,13 @@ description: Sync git repos in a Cursor workspace to remote default branch (fetc
 scope: generic
 requires_skill: true
 eval:
-  path: .cursor/skills/git-sync-workspace/eval/cases.md
+  path: .cursor/skill-contracts/git-sync-workspace/eval/cases.md
   ship_gate: [A, S]
 ---
 
 ## Overview
 
-Discover git repos in a Cursor multi-root workspace, preflight each one, and sync clean repos to their remote default branch. Skips dirty or unsafe repos with a clear report. Full workflow: `.cursor/skills/git-sync-workspace/SKILL.md`.
+Discover git repos in a Cursor multi-root workspace, preflight each one, and sync clean repos to their remote default branch. Skips dirty or unsafe repos with a clear report. Full workflow: `.cursor/skill-contracts/git-sync-workspace/SKILL.md`.
 
 ## Defaults
 
@@ -24,7 +24,7 @@ Discover git repos in a Cursor multi-root workspace, preflight each one, and syn
 
 ## Steps
 
-1. **Read** `.cursor/skills/git-sync-workspace/SKILL.md` for the full agent contract.
+1. **Read** `.cursor/skill-contracts/git-sync-workspace/SKILL.md` for the full agent contract.
 2. **Execute** phases in order (Discover → Preflight → Sync → Report); do not skip preflight or modify dirty repos.
 3. **Report** the workspace summary (Synced / Skipped / Failed).
 
@@ -41,4 +41,4 @@ Discover git repos in a Cursor multi-root workspace, preflight each one, and syn
 
 ## Maintainers
 
-Behavioral eval: `.cursor/skills/git-sync-workspace/eval/cases.md`. Ship gate sections: **A, S** before changing `SKILL.md` or this command.
+Behavioral eval: `.cursor/skill-contracts/git-sync-workspace/eval/cases.md`. Ship gate sections: **A, S** before changing `SKILL.md` or this command.

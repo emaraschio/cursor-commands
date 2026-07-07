@@ -10,6 +10,7 @@ All notable changes to this project are documented here. Format based on [Keep a
 
 ### Changed
 
+- **Skill contracts**: move catalog workflow bodies from `.cursor/skills/` to `.cursor/skill-contracts/` so paired slash commands are the only `/` menu entries (⚡); `user-invocable: false` alone did not hide ✨ rows when bodies lived under `.cursor/skills/`. Plugin manifest uses `skillContracts` instead of `skills`.
 - **Skills**: set `user-invocable: false` on all 37 paired `SKILL.md` files so slash commands (⚡) are the only `/` menu entries; skills (✨) stay agent-loadable via commands. Validator enforces the field.
 - **`install.sh --uninstall`**: remove catalog symlinks from `~/.cursor` when using the user plugin instead of symlink install. Warns when both are detected.
 - **docs/PLUGIN.md**: troubleshooting for duplicate `/` menu entries (plugin + symlink, stale v1.4.0 cache).

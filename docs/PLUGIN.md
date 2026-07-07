@@ -65,7 +65,7 @@ Restart Cursor or run **Developer: Reload Window**. Verify components under **Cu
 
 ## Symlink install (alternative)
 
-`./scripts/install.sh` still symlinks into `~/.cursor/commands/` and `~/.cursor/skills/` for merge-friendly local overlays. Use it when you vendor this repo as a submodule or need host-specific commands beside the generic catalog.
+`./scripts/install.sh` still symlinks into `~/.cursor/commands/` and `~/.cursor/skill-contracts/` for merge-friendly local overlays. Use it when you vendor this repo as a submodule or need host-specific commands beside the generic catalog.
 
 | Path | Best for |
 |------|----------|
@@ -80,7 +80,7 @@ Each catalog name should appear **once** (⚡ slash command). If you see **two**
 
 ### 1. Plugin + symlink install (most common)
 
-`./scripts/install.sh` symlinks the catalog into `~/.cursor/commands/` and `~/.cursor/skills/`. The user plugin loads the same catalog at account scope. Cursor shows both.
+`./scripts/install.sh` symlinks the catalog into `~/.cursor/commands/` and `~/.cursor/skill-contracts/`. The user plugin loads the same catalog at account scope. Cursor shows both.
 
 **Fix:** keep the plugin; remove symlinks:
 
@@ -90,11 +90,11 @@ Each catalog name should appear **once** (⚡ slash command). If you see **two**
 
 Reload the window (**Developer: Reload Window**).
 
-### 2. Stale plugin cache (v1.4.0 and earlier)
+### 2. Workflow bodies under `.cursor/skills/` (paired catalog)
 
-Release **v1.4.0** shipped skills without `user-invocable: false`, so paired skills (✨) appeared beside slash commands (⚡). **main** after v1.4.0 sets `user-invocable: false` on every paired skill.
+Cursor indexes **`.cursor/skills/`** for the `/` menu. When a paired workflow body lives there beside a slash command of the same name, you get **two rows** (⚡ + ✨) even with `user-invocable: false`.
 
-**Fix:** clear cache and reload so Cursor re-syncs from GitHub:
+**Fix:** use a current catalog build where bodies live in **`.cursor/skill-contracts/`** (not indexed for `/`). Clear stale plugin cache if you still see ✨ rows from an old package:
 
 ```bash
 rm -rf ~/.cursor/plugins/cache/cursor-commands
@@ -103,21 +103,21 @@ rm -rf ~/.cursor/plugins/marketplaces/github.com/emaraschio/cursor-commands
 rm -rf ~/.cursor/plugins/marketplaces/_/users/"$(whoami)"/*
 ```
 
-In **Customize → Plugins**, confirm `cursor-commands` is installed from `https://github.com/emaraschio/cursor-commands`, then reload. Type `/seo` and expect a single `seo-audit` row (⚡ only).
+Reload the window. Type `/defi` and expect a single `define-agent-goal` row (⚡ only).
 
 ### 3. Developing inside this repository
 
-Opening the `cursor-commands` clone as the workspace root also loads project-scoped `.cursor/commands/` and `.cursor/skills/`. That can add workspace rows on top of user-plugin rows while you edit the catalog. For a clean palette, test `/` from a different workspace after plugin-only install.
+Opening the `cursor-commands` clone as the workspace root loads project-scoped `.cursor/commands/`. If workflow bodies still live under `.cursor/skills/` (older checkout), you also get ✨ rows. Current catalog keeps bodies in `.cursor/skill-contracts/` only. User-plugin rows can still stack on workspace rows while you edit the catalog; test `/` from another workspace for a clean palette.
 
 ## Manifest
 
 Manifests live at:
 
-- [`.cursor-plugin/plugin.json`](../.cursor-plugin/plugin.json): commands and skills paths
+- [`.cursor-plugin/plugin.json`](../.cursor-plugin/plugin.json): `commands` and `skillContracts` paths (no `skills` field; avoids duplicate `/` menu rows)
 - [`.cursor-plugin/marketplace.json`](../.cursor-plugin/marketplace.json): required for **Add from folder** in Customize (`"source": "plugin"`)
 - [`plugin/`](../plugin/): materialized package copied by Cursor (no `.git`)
 
-CI validates manifests and runs `./scripts/sync-plugin-package.sh --check` so `plugin/` stays in sync with `.cursor/commands` and `.cursor/skills`.
+CI validates manifests and runs `./scripts/sync-plugin-package.sh --check` so `plugin/` stays in sync with `.cursor/commands` and `.cursor/skill-contracts/`.
 
 ## External dependency
 

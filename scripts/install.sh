@@ -74,10 +74,10 @@ link_catalog() {
     command_count=$((command_count + 1))
   done
 
-  for src in "$REPO_ROOT/.cursor/skills/"*/; do
+  for src in "$REPO_ROOT/.cursor/skill-contracts/"*/; do
     [[ -d "$src" ]] || continue
     name="$(basename "$src")"
-    ln -sfn "$(cd "$src" && pwd)" "$CURSOR_HOME/skills/$name"
+    ln -sfn "$(cd "$src" && pwd)" "$CURSOR_HOME/skill-contracts/$name"
     skill_count=$((skill_count + 1))
   done
 
@@ -91,7 +91,7 @@ catalog_has_command() {
 
 catalog_has_skill() {
   local name="$1"
-  [[ -d "$REPO_ROOT/.cursor/skills/$name" ]]
+  [[ -d "$REPO_ROOT/.cursor/skill-contracts/$name" ]]
 }
 
 is_repo_managed_symlink() {
@@ -126,11 +126,11 @@ prune_stale() {
     fi
   done
 
-  for link in "$CURSOR_HOME/skills/"*/; do
+  for link in "$CURSOR_HOME/skill-contracts/"*/; do
     link="${link%/}"
     [[ -e "$link" || -L "$link" ]] || continue
     name="$(basename "$link")"
-    if is_repo_managed_symlink "$link" skills && ! catalog_has_skill "$name"; then
+    if is_repo_managed_symlink "$link" skill-contracts && ! catalog_has_skill "$name"; then
       rm -f "$link"
       pruned=$((pruned + 1))
       if [[ "$VERBOSE" -eq 1 ]]; then
@@ -161,11 +161,11 @@ uninstall_catalog() {
     fi
   done
 
-  for link in "$CURSOR_HOME/skills/"*/; do
+  for link in "$CURSOR_HOME/skill-contracts/"*/; do
     link="${link%/}"
     [[ -e "$link" || -L "$link" ]] || continue
     name="$(basename "$link")"
-    if is_repo_managed_symlink "$link" skills; then
+    if is_repo_managed_symlink "$link" skill-contracts; then
       rm -f "$link"
       removed=$((removed + 1))
       if [[ "$VERBOSE" -eq 1 ]]; then
@@ -229,7 +229,7 @@ fi
 warn_if_plugin_installed
 
 prepare_target_dir "$CURSOR_HOME/commands" "$MODE_REPLACE"
-prepare_target_dir "$CURSOR_HOME/skills" "$MODE_REPLACE"
+prepare_target_dir "$CURSOR_HOME/skill-contracts" "$MODE_REPLACE"
 
 read -r command_count skill_count <<<"$(link_catalog)"
 
@@ -260,18 +260,18 @@ for src in "$REPO_ROOT/.cursor/commands/"*.md; do
   fi
 done
 
-for src in "$REPO_ROOT/.cursor/skills/"*/; do
+for src in "$REPO_ROOT/.cursor/skill-contracts/"*/; do
   [[ -d "$src" ]] || continue
   name="$(basename "$src")"
-  link="$CURSOR_HOME/skills/$name"
+  link="$CURSOR_HOME/skill-contracts/$name"
   if [[ -L "$link" ]] && ! test -e "$link"; then
     echo "ERROR: broken catalog skill symlink: $link" >&2
     errors=1
   fi
 done
 
-if ! test -f "$CURSOR_HOME/skills/merge-open-prs/SKILL.md"; then
-  echo "ERROR: merge-open-prs skill not reachable at $CURSOR_HOME/skills/merge-open-prs/SKILL.md" >&2
+if ! test -f "$CURSOR_HOME/skill-contracts/merge-open-prs/SKILL.md"; then
+  echo "ERROR: merge-open-prs skill not reachable at $CURSOR_HOME/skill-contracts/merge-open-prs/SKILL.md" >&2
   errors=1
 fi
 

@@ -5,13 +5,13 @@ description: Scoped, plan-first parallel audit of a large surface using capped s
 scope: generic
 requires_skill: true
 eval:
-  path: .cursor/skills/scoped-audit/eval/cases.md
+  path: .cursor/skill-contracts/scoped-audit/eval/cases.md
   ship_gate: [A, S]
 ---
 
 ## Overview
 
-Run a large "check-N-things" task (audit, inventory, or migration) as a scoped, plan-first workflow: decompose the surface, fan out capped parallel subagents, verify findings before reporting, and make changes only after explicit approval. Full workflow: `.cursor/skills/scoped-audit/SKILL.md`.
+Run a large "check-N-things" task (audit, inventory, or migration) as a scoped, plan-first workflow: decompose the surface, fan out capped parallel subagents, verify findings before reporting, and make changes only after explicit approval. Full workflow: `.cursor/skill-contracts/scoped-audit/SKILL.md`.
 
 ## Defaults
 
@@ -23,7 +23,7 @@ Run a large "check-N-things" task (audit, inventory, or migration) as a scoped, 
 
 ## Steps
 
-1. **Read** `.cursor/skills/scoped-audit/SKILL.md` for the full agent contract.
+1. **Read** `.cursor/skill-contracts/scoped-audit/SKILL.md` for the full agent contract.
 2. **Execute** phases in order (Scope → Plan → Approval gate → Scoped sample → Parallel fan-out → Verify → Report → optional gated changes); do not skip the approval gate or the verification step.
 3. **Report** the catalog of verified findings; propose changes separately and wait for approval before editing.
 
@@ -40,4 +40,4 @@ Run a large "check-N-things" task (audit, inventory, or migration) as a scoped, 
 
 ## Maintainers
 
-Behavioral eval: `.cursor/skills/scoped-audit/eval/cases.md`. Ship gate sections: **A, S** before changing `SKILL.md` or this command.
+Behavioral eval: `.cursor/skill-contracts/scoped-audit/eval/cases.md`. Ship gate sections: **A, S** before changing `SKILL.md` or this command.

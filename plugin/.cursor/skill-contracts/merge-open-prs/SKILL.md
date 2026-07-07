@@ -85,7 +85,7 @@ Checkout the PR branch: `gh pr checkout <n>`.
 
 ### 2b: Code review
 
-Apply the checklist in `~/.cursor/skills/code-review/SKILL.md` (or slash `/code-review`). Surface blockers in chat. Hard stops (entire batch):
+Apply the checklist in `~/.cursor/skill-contracts/code-review/SKILL.md` (or slash `/code-review`). Surface blockers in chat. Hard stops (entire batch):
 
 - `.env`, credentials, API keys in diff
 - DB migration without rollback note in PR description

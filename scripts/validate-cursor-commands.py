@@ -19,7 +19,8 @@ from eval_lib import (
 
 ROOT = Path(__file__).resolve().parents[1]
 COMMANDS_DIR = ROOT / ".cursor" / "commands"
-SKILLS_DIR = ROOT / ".cursor" / "skills"
+SKILLS_DIR = ROOT / ".cursor" / "skill-contracts"
+SKILLS_STUB_DIR = ROOT / ".cursor" / "skills"
 INDEX_PATH = ROOT / ".cursor" / "docs" / "COMMANDS_INDEX.md"
 PLUGIN_MANIFEST = ROOT / ".cursor-plugin" / "plugin.json"
 MARKETPLACE_MANIFEST = ROOT / ".cursor-plugin" / "marketplace.json"
@@ -117,20 +118,34 @@ def validate_plugin_manifest() -> list[str]:
         if not isinstance(version, str) or not SEMVER_RE.match(version):
             errors.append(f"{PLUGIN_MANIFEST}: version must be semver, got '{version}'")
 
-    for field in ("commands", "skills"):
-        rel = data.get(field)
-        if rel is None:
-            errors.append(f"{PLUGIN_MANIFEST}: missing required field '{field}'")
-            continue
-        if not isinstance(rel, str):
-            errors.append(f"{PLUGIN_MANIFEST}: '{field}' must be a string path")
-            continue
-        if rel.startswith("/") or ".." in Path(rel).parts:
-            errors.append(f"{PLUGIN_MANIFEST}: '{field}' path must be relative: {rel}")
-            continue
-        target = ROOT / rel
-        if not target.is_dir():
-            errors.append(f"{PLUGIN_MANIFEST}: '{field}' path missing: {rel}")
+    commands_rel = data.get("commands")
+    if commands_rel is None:
+        errors.append(f"{PLUGIN_MANIFEST}: missing required field 'commands'")
+    elif not isinstance(commands_rel, str):
+        errors.append(f"{PLUGIN_MANIFEST}: 'commands' must be a string path")
+    elif commands_rel.startswith("/") or ".." in Path(commands_rel).parts:
+        errors.append(f"{PLUGIN_MANIFEST}: 'commands' path must be relative: {commands_rel}")
+    elif not (ROOT / commands_rel).is_dir():
+        errors.append(f"{PLUGIN_MANIFEST}: 'commands' path missing: {commands_rel}")
+
+    skills_rel = data.get("skills")
+    if skills_rel is not None:
+        errors.append(
+            f"{PLUGIN_MANIFEST}: remove 'skills' (catalog bodies live in skillContracts; "
+            "indexing .cursor/skills duplicates slash commands in the / menu)"
+        )
+
+    contracts_rel = data.get("skillContracts")
+    if contracts_rel is None:
+        errors.append(f"{PLUGIN_MANIFEST}: missing required field 'skillContracts'")
+    elif not isinstance(contracts_rel, str):
+        errors.append(f"{PLUGIN_MANIFEST}: 'skillContracts' must be a string path")
+    elif contracts_rel.startswith("/") or ".." in Path(contracts_rel).parts:
+        errors.append(
+            f"{PLUGIN_MANIFEST}: 'skillContracts' path must be relative: {contracts_rel}"
+        )
+    elif not (ROOT / contracts_rel).is_dir():
+        errors.append(f"{PLUGIN_MANIFEST}: 'skillContracts' path missing: {contracts_rel}")
 
     description = data.get("description")
     if not isinstance(description, str) or not description.strip():
@@ -259,7 +274,15 @@ def main() -> int:
 
     skill_dirs = sorted(d for d in SKILLS_DIR.iterdir() if d.is_dir())
     if len(skill_dirs) != EXPECTED_SKILLS:
-        errors.append(f"expected {EXPECTED_SKILLS} skill dirs, found {len(skill_dirs)}")
+        errors.append(f"expected {EXPECTED_SKILLS} skill-contract dirs, found {len(skill_dirs)}")
+
+    if SKILLS_STUB_DIR.is_dir():
+        for child in SKILLS_STUB_DIR.iterdir():
+            if child.is_dir() and (child / "SKILL.md").is_file():
+                errors.append(
+                    f"{child}: catalog SKILL.md must live under .cursor/skill-contracts/, "
+                    "not .cursor/skills/ (duplicates slash commands in the / menu)"
+                )
 
     names: list[str] = []
     for path in command_files:

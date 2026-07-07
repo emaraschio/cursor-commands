@@ -28,7 +28,7 @@ Deliverables before writing the runner or workflow:
 
 - [x] **Inventory** ([docs/EVAL_INVENTORY.md](EVAL_INVENTORY.md)): 28 commands, 98 ship-gate rows (S1 to S5 vs H, `fixture_ready`). Regenerate via `scripts/inventory-eval-cases.py`.
 - [x] **Fixture model**: Full-structural v1 in [docs/EVAL_CI.md](EVAL_CI.md) (`fixtures.yaml`, S5 algorithm, global checks).
-- [x] **CI scope**: `eval-fixtures.yml` on PR/push when `.cursor/commands/**` or `.cursor/skills/**` change; `workflow_dispatch` for full catalog.
+- [x] **CI scope**: `eval-fixtures.yml` on PR/push when `.cursor/commands/**` or `.cursor/skill-contracts/**` change; `workflow_dispatch` for full catalog.
 - [x] **Failure contract**: `FAIL <command> <case_id> <check_id> <message>`; stable `check_id` enum in EVAL_CI.md.
 - [x] **Non-goals (v1)**: No LLM judge; non-gate sections manual; no org-overlay commands here.
 - [x] **v1.0 gate**: **Eval CI Phase 2 is a hard blocker** for public launch (soft exception for private submodule pins documented in EVAL_CI.md).
@@ -113,7 +113,7 @@ Shipped in `v0.3.1`.
 | Item | Where it lives |
 |------|----------------|
 | Org-scoped slash commands | Host workspace overlay (`.cursor/commands/` in the repo you open in Cursor) |
-| Org-scoped skills (benchmarks, domain security review, etc.) | Host workspace `.cursor/skills/` |
+| Org-scoped skills (benchmarks, domain security review, etc.) | Host workspace `.cursor/skill-contracts/` |
 | Cursor **rules**, **agents**, **memory-bank** | Host workspace (IDE root repo) |
 | Custom rule files (`*.mdc`) | Consumer rules repos |
 

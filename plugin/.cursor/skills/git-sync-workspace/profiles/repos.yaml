@@ -1,7 +1,0 @@
-# Optional host overlay — used when no *.code-workspace file is found.
-# Copy or symlink into your host workspace, or edit paths here after install.
-# Paths are relative to this file unless absolute.
-
-repos:
-  - path: ../repo1
-  - path: ../repo2

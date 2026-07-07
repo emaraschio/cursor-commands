@@ -16,7 +16,7 @@ You act as a **prompt debugger** for an arbitrary prompt the user is iterating o
 
 ## When to use
 
-Use when a prompt or skill underperforms and the user might otherwise rewrite it on vibes. For shipped commands in this catalog, stable cases eventually belong in `skills/<name>/eval/cases.md` per [EVAL_GUIDE.md](../docs/EVAL_GUIDE.md). For delegation design before autonomous work, use `define-agent-goal`. For code/runtime bugs, use `debug-issue`.
+Use when a prompt or skill underperforms and the user might otherwise rewrite it on vibes. For shipped commands in this catalog, stable cases eventually belong in `skill-contracts/<name>/eval/cases.md` per [EVAL_GUIDE.md](../docs/EVAL_GUIDE.md). For delegation design before autonomous work, use `define-agent-goal`. For code/runtime bugs, use `debug-issue`.
 
 ## Workflow
 

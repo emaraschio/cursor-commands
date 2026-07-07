@@ -12,7 +12,7 @@ Inspired by install ergonomics from [hamzafer/cursor-commands](https://github.co
 ## What you get
 
 - **39** generic slash commands (git, review, TDD, structure-prompt, blind spot pass, agent work receipt, security audits, agent goals, prompt eval debug, agent risk review, scoped parallel audits, workspace git sync, PR workflows, requirement-to-implementation, thermo-nuclear code quality review, pathfinder, etc.)
-- **39** skill directories (one per command)
+- **39** skill-contract directories (one per command; not under `.cursor/skills/`)
 - **User plugin package** (`.cursor-plugin/` manifests + materialized `plugin/` tree) for **Customize → Plugins** install and account sync (desktop, web, CLI, iOS)
 - **Behavioral evals** (`PASS` / `PARTIAL` / `FAIL`) per command: regression guardrails when editing prompts
 
@@ -38,7 +38,7 @@ chmod +x scripts/install.sh
 ./scripts/install.sh          # merge mode (default)
 ```
 
-Commands and skills from this catalog are symlinked into `~/.cursor/commands/` and `~/.cursor/skills/`. Use this path for submodule/dotfiles workflows or host overlays after the generic catalog. **Merge mode (default)** keeps your own files and org-specific commands installed afterward. Use `./scripts/install.sh --replace` only if you want to wipe those directories first. Use `--prune` to remove stale symlinks that still point into this repo after a catalog rename.
+Commands and skills from this catalog are symlinked into `~/.cursor/commands/` and `~/.cursor/skill-contracts/`. Use this path for submodule/dotfiles workflows or host overlays after the generic catalog. **Merge mode (default)** keeps your own files and org-specific commands installed afterward. Use `./scripts/install.sh --replace` only if you want to wipe those directories first. Use `--prune` to remove stale symlinks that still point into this repo after a catalog rename.
 
 Plugin install and symlink install can coexist but **should not**: you get duplicate `/` menu entries (⚡ command + ✨ skill per catalog name). Use the **user plugin** alone, or run `./scripts/install.sh --uninstall` before relying on the plugin. See [docs/PLUGIN.md](docs/PLUGIN.md#duplicate-entries-in-the--menu).
 
@@ -68,7 +68,7 @@ Catalog source of truth:
 
 ```text
 .cursor/commands/<name>.md   # thin slash entry (YAML frontmatter)
-.cursor/skills/<name>/
+.cursor/skill-contracts/<name>/
   SKILL.md                   # full agent contract
   eval/
     cases.md                 # behavioral rubric
@@ -82,7 +82,7 @@ Details: [COMMAND_SCHEMA.md](.cursor/docs/COMMAND_SCHEMA.md)
 ```mermaid
 flowchart LR
   slash["/command"] --> cmd["commands/name.md"]
-  cmd --> skill["skills/name/SKILL.md"]
+  cmd --> skill["skill-contracts/name/SKILL.md"]
   skill --> eval["eval/cases.md"]
 ```
 
@@ -111,7 +111,7 @@ How to run: [EVAL_GUIDE.md](.cursor/docs/EVAL_GUIDE.md)
 
 Example flow:
 
-1. Read only `skills/<name>/SKILL.md`.
+1. Read only `skill-contracts/<name>/SKILL.md`.
 2. For each case in `eval/cases.md`, draft the agent response.
 3. Mark `PASS` / `PARTIAL` / `FAIL`.
 4. Fix skill/command before push if any ship-gate case fails.

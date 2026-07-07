@@ -7,7 +7,7 @@ on:
     branches: [main]
     paths:
       - ".cursor/commands/**"
-      - ".cursor/skills/**"
+      - ".cursor/skill-contracts/**"
       - "scripts/run-eval-fixtures.py"
       - "scripts/validate-cursor-commands.py"
       - "scripts/eval_lib.py"

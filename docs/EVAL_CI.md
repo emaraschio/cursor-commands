@@ -30,7 +30,7 @@ Inventory column `fixture_ready`: **y** only when S4+S5 can block bad `SKILL.md`
 Per command with a slash entry and eval:
 
 ```text
-.cursor/skills/<name>/eval/fixtures.yaml
+.cursor/skill-contracts/<name>/eval/fixtures.yaml
 ```
 
 Only ship-gate cases (`eval.ship_gate` in command frontmatter). Non-gate sections (e.g. `merge-open-prs` B/C/F) stay manual.
@@ -112,7 +112,7 @@ Workflow name: **`eval-fixtures.yml`**.
 
 | Event | Paths |
 |-------|--------|
-| `pull_request` → `main` | `.cursor/commands/**`, `.cursor/skills/**`, `scripts/run-eval-fixtures.py`, `scripts/validate-cursor-commands.py`, `scripts/inventory-eval-cases.py` |
+| `pull_request` → `main` | `.cursor/commands/**`, `.cursor/skill-contracts/**`, `scripts/run-eval-fixtures.py`, `scripts/validate-cursor-commands.py`, `scripts/inventory-eval-cases.py` |
 | `push` → `main` | same |
 | `workflow_dispatch` | full catalog |
 

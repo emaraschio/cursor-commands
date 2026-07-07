@@ -10,5 +10,5 @@
   "license": "MIT",
   "keywords": ["cursor", "commands", "skills", "agent", "workflow", "developer-tools"],
   "commands": ".cursor/commands",
-  "skills": ".cursor/skills"
+  "skillContracts": ".cursor/skill-contracts"
 }

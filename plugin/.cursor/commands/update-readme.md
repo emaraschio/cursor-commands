@@ -5,13 +5,13 @@ description: Update project README for current state
 scope: generic
 requires_skill: true
 eval:
-  path: .cursor/skills/update-readme/eval/cases.md
+  path: .cursor/skill-contracts/update-readme/eval/cases.md
   ship_gate: [A]
 ---
 
 ## Overview
 
-Update project README for current state. Full workflow: `.cursor/skills/update-readme/SKILL.md`.
+Update project README for current state. Full workflow: `.cursor/skill-contracts/update-readme/SKILL.md`.
 
 ## Defaults
 
@@ -19,7 +19,7 @@ _None. See skill for workflow defaults._
 
 ## Steps
 
-1. **Read** `.cursor/skills/update-readme/SKILL.md` for the full agent contract.
+1. **Read** `.cursor/skill-contracts/update-readme/SKILL.md` for the full agent contract.
 2. **Execute** the workflow in order; do not skip safety steps.
 3. **Report** outcomes per skill (summary, tables, or checklist as specified).
 
@@ -34,4 +34,4 @@ _None. See skill for workflow defaults._
 
 ## Maintainers
 
-Behavioral eval: `.cursor/skills/update-readme/eval/cases.md`. Ship gate sections: **A** before changing `SKILL.md` or this command.
+Behavioral eval: `.cursor/skill-contracts/update-readme/eval/cases.md`. Ship gate sections: **A** before changing `SKILL.md` or this command.
