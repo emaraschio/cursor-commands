@@ -22,7 +22,7 @@ eval:
 
 1. `## Overview`
 2. `## Defaults`: table or `_None._`
-3. `## Steps`: numbered; step 1 must reference `SKILL.md`
+3. `## Steps`: numbered; step 1 must resolve the skill contract (workspace path first, then user install fallback; see below)
 4. `## Anti-patterns`
 5. `## Examples`
 6. `## Maintainers`: link to eval path and ship gate
@@ -66,6 +66,21 @@ user-invocable: false
 ```
 
 Optional: `disable-model-invocation: true` when the contract must not auto-apply from description alone (slash command is the only entry point).
+
+### Step 1: skill contract resolution
+
+Slash commands run in **any** workspace. Step 1 must resolve the contract in this order:
+
+1. `.cursor/skill-contracts/<name>/SKILL.md` (catalog repo or host overlay)
+2. `~/.cursor/skill-contracts/<name>/SKILL.md` (user install via `./scripts/install.sh` or plugin)
+
+Template:
+
+```text
+1. **Read** `.cursor/skill-contracts/<name>/SKILL.md` for the full agent contract; if that file is missing, read `~/.cursor/skill-contracts/<name>/SKILL.md`.
+```
+
+Overview may add: `(user install: ~/.cursor/skill-contracts/<name>/SKILL.md)`.
 
 ## Migration checklist
 

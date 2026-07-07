@@ -11,7 +11,7 @@ eval:
 
 ## Overview
 
-Produce a one-page agent permission brief before granting an AI agent access to a system, tool, or account. Full workflow: `.cursor/skill-contracts/agent-risk-review/SKILL.md`.
+Produce a one-page agent permission brief before granting an AI agent access to a system, tool, or account. Full workflow: `.cursor/skill-contracts/agent-risk-review/SKILL.md` (user install: `~/.cursor/skill-contracts/agent-risk-review/SKILL.md`).
 
 ## Defaults
 
@@ -19,7 +19,7 @@ _None. See skill for workflow defaults._
 
 ## Steps
 
-1. **Read** `.cursor/skill-contracts/agent-risk-review/SKILL.md` for the full agent contract.
+1. **Read** `.cursor/skill-contracts/agent-risk-review/SKILL.md` for the full agent contract; if that file is missing, read `~/.cursor/skill-contracts/agent-risk-review/SKILL.md`.
 2. **Execute** phases in order (Intake → Discovery → Draft → Clarify gate → Deliver); do not skip the clarify-before-finalize gate.
 3. **Report** the final seven-section brief in chat; offer optional save under `docs/agent-permissions/<slug>.md` when the host has `docs/`.
 

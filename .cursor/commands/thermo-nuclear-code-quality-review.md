@@ -11,7 +11,7 @@ eval:
 
 ## Overview
 
-Extremely strict maintainability review that hunts for code-judo simplifications, giant files, and spaghetti-condition growth without changing behavior. Full workflow: `.cursor/skill-contracts/thermo-nuclear-code-quality-review/SKILL.md`.
+Extremely strict maintainability review that hunts for code-judo simplifications, giant files, and spaghetti-condition growth without changing behavior. Full workflow: `.cursor/skill-contracts/thermo-nuclear-code-quality-review/SKILL.md` (user install: `~/.cursor/skill-contracts/thermo-nuclear-code-quality-review/SKILL.md`).
 
 ## Defaults
 
@@ -25,7 +25,7 @@ Extremely strict maintainability review that hunts for code-judo simplifications
 
 ## Steps
 
-1. **Read** `.cursor/skill-contracts/thermo-nuclear-code-quality-review/SKILL.md` for the full agent contract.
+1. **Read** `.cursor/skill-contracts/thermo-nuclear-code-quality-review/SKILL.md` for the full agent contract; if that file is missing, read `~/.cursor/skill-contracts/thermo-nuclear-code-quality-review/SKILL.md`.
 2. **Execute** the workflow in order; do not skip safety steps.
 3. **Report** outcomes per skill (summary, tables, or checklist as specified).
 

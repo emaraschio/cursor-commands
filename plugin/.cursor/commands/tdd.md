@@ -11,7 +11,7 @@ eval:
 
 ## Overview
 
-Guide a specify-encode-fulfill TDD session on the host project's test framework: clarify specs, one failing test per cycle, minimal code to green, user approval before continuing. Full workflow: `.cursor/skill-contracts/tdd/SKILL.md`.
+Guide a specify-encode-fulfill TDD session on the host project's test framework: clarify specs, one failing test per cycle, minimal code to green, user approval before continuing. Full workflow: `.cursor/skill-contracts/tdd/SKILL.md` (user install: `~/.cursor/skill-contracts/tdd/SKILL.md`).
 
 ## Defaults
 
@@ -21,11 +21,11 @@ Guide a specify-encode-fulfill TDD session on the host project's test framework:
 | Tests per cycle | One |
 | Specification form | Under scenario A, X happens; under scenario B, Y happens |
 | Pre-existing failures | Pause; fix or stash before continuing |
-| RSpec examples | `.cursor/skill-contracts/tdd/appendix-rspec-examples.md` |
+| RSpec examples | `.cursor/skill-contracts/tdd/appendix-rspec-examples.md` (fallback: `~/.cursor/skill-contracts/tdd/appendix-rspec-examples.md`) |
 
 ## Steps
 
-1. **Read** `.cursor/skill-contracts/tdd/SKILL.md` for the full agent contract.
+1. **Read** `.cursor/skill-contracts/tdd/SKILL.md` for the full agent contract; if that file is missing, read `~/.cursor/skill-contracts/tdd/SKILL.md`.
 2. **Execute** clarify → specification list → kitchen check → one-test cycles with approvals.
 3. **Report** progress per cycle; do not batch tests or skip approval gates.
 

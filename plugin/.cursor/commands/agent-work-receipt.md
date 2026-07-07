@@ -11,7 +11,7 @@ eval:
 
 ## Overview
 
-Produce a conservative agent work receipt after completed work: finished output, time estimates, review burden, risks, and value judgment. Retrospective only; no new implementation in the same turn. Full workflow: `.cursor/skill-contracts/agent-work-receipt/SKILL.md`.
+Produce a conservative agent work receipt after completed work: finished output, time estimates, review burden, risks, and value judgment. Retrospective only; no new implementation in the same turn. Full workflow: `.cursor/skill-contracts/agent-work-receipt/SKILL.md` (user install: `~/.cursor/skill-contracts/agent-work-receipt/SKILL.md`).
 
 ## Defaults
 
@@ -25,7 +25,7 @@ Produce a conservative agent work receipt after completed work: finished output,
 
 ## Steps
 
-1. **Read** `.cursor/skill-contracts/agent-work-receipt/SKILL.md` for the full agent contract.
+1. **Read** `.cursor/skill-contracts/agent-work-receipt/SKILL.md` for the full agent contract; if that file is missing, read `~/.cursor/skill-contracts/agent-work-receipt/SKILL.md`.
 2. **Execute** phases in order (Intake → Evidence → Inventory → Estimates → Review & risk → Value → Deliver).
 3. **Report** the six-section receipt in chat using the skill template.
 

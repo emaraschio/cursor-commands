@@ -320,6 +320,9 @@ def main() -> int:
 
         if "SKILL.md" not in text:
             errors.append(f"{path}: Steps must reference SKILL.md")
+        user_contract = f"~/.cursor/skill-contracts/{name}/SKILL.md"
+        if user_contract not in text:
+            errors.append(f"{path}: Steps must include user install fallback {user_contract}")
 
         eval_cases = SKILLS_DIR / name / "eval" / "cases.md"
         eval_readme = SKILLS_DIR / name / "eval" / "README.md"

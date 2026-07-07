@@ -11,7 +11,7 @@ eval:
 
 ## Overview
 
-Commit on the current branch with conventional message. Full workflow: `.cursor/skill-contracts/commit-same-branch/SKILL.md`.
+Commit on the current branch with conventional message. Full workflow: `.cursor/skill-contracts/commit-same-branch/SKILL.md` (user install: `~/.cursor/skill-contracts/commit-same-branch/SKILL.md`).
 
 ## Defaults
 
@@ -19,7 +19,7 @@ _None. See skill for workflow defaults._
 
 ## Steps
 
-1. **Read** `.cursor/skill-contracts/commit-same-branch/SKILL.md` for the full agent contract.
+1. **Read** `.cursor/skill-contracts/commit-same-branch/SKILL.md` for the full agent contract; if that file is missing, read `~/.cursor/skill-contracts/commit-same-branch/SKILL.md`.
 2. **Execute** the workflow in order; do not skip safety steps.
 3. **Report** outcomes per skill (summary, tables, or checklist as specified).
 

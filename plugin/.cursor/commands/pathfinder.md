@@ -11,7 +11,7 @@ eval:
 
 ## Overview
 
-Map a project's uncertainty before building. Given a goal and known context, produce a six-section fog map: decisions already fixed, decision frontiers, fog-of-war questions, a next move per unknown, a parallel work plan, and the next three actions. Plan-only. Does not execute the project in the same turn. Full workflow: `.cursor/skill-contracts/pathfinder/SKILL.md`.
+Map a project's uncertainty before building. Given a goal and known context, produce a six-section fog map: decisions already fixed, decision frontiers, fog-of-war questions, a next move per unknown, a parallel work plan, and the next three actions. Plan-only. Does not execute the project in the same turn. Full workflow: `.cursor/skill-contracts/pathfinder/SKILL.md` (user install: `~/.cursor/skill-contracts/pathfinder/SKILL.md`).
 
 ## Defaults
 
@@ -25,7 +25,7 @@ Map a project's uncertainty before building. Given a goal and known context, pro
 
 ## Steps
 
-1. **Read** `.cursor/skill-contracts/pathfinder/SKILL.md` for the full agent contract.
+1. **Read** `.cursor/skill-contracts/pathfinder/SKILL.md` for the full agent contract; if that file is missing, read `~/.cursor/skill-contracts/pathfinder/SKILL.md`.
 2. **Execute** phases in order (Intake -> Discovery -> Draft the map -> Deliver); do not skip discovery or start building the project.
 3. **Report** the fog map (sections 1 to 6); offer optional save under `docs/decision-maps/` when the host has `docs/`.
 

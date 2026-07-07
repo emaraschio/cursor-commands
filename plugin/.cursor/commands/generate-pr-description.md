@@ -11,7 +11,7 @@ eval:
 
 ## Overview
 
-Generate PR title and description from branch diff. Full workflow: `.cursor/skill-contracts/generate-pr-description/SKILL.md`.
+Generate PR title and description from branch diff. Full workflow: `.cursor/skill-contracts/generate-pr-description/SKILL.md` (user install: `~/.cursor/skill-contracts/generate-pr-description/SKILL.md`).
 
 ## Defaults
 
@@ -19,7 +19,7 @@ _None. See skill for workflow defaults._
 
 ## Steps
 
-1. **Read** `.cursor/skill-contracts/generate-pr-description/SKILL.md` for the full agent contract.
+1. **Read** `.cursor/skill-contracts/generate-pr-description/SKILL.md` for the full agent contract; if that file is missing, read `~/.cursor/skill-contracts/generate-pr-description/SKILL.md`.
 2. **Execute** the workflow in order; do not skip safety steps.
 3. **Report** outcomes per skill (summary, tables, or checklist as specified).
 
