@@ -11,7 +11,7 @@ eval:
 
 ## Overview
 
-Before building, run a blind spot pass on the user's rough plan. Treat the prompt as the map and the real project as the territory: classify gaps across four knowledge quadrants, ask 5 to 10 high-leverage interview questions, and stop before building. Plan-only. Does not execute the task in the same turn. Full workflow: `.cursor/skill-contracts/blind-spot-pass/SKILL.md`.
+Before building, run a blind spot pass on the user's rough plan. Treat the prompt as the map and the real project as the territory: classify gaps across four knowledge quadrants, ask 5 to 10 high-leverage interview questions, and stop before building. Plan-only. Does not execute the task in the same turn. Full workflow: `.cursor/skill-contracts/blind-spot-pass/SKILL.md` (user install: `~/.cursor/skill-contracts/blind-spot-pass/SKILL.md`).
 
 ## Defaults
 
@@ -25,7 +25,7 @@ Before building, run a blind spot pass on the user's rough plan. Treat the promp
 
 ## Steps
 
-1. **Read** `.cursor/skill-contracts/blind-spot-pass/SKILL.md` for the full agent contract.
+1. **Read** `.cursor/skill-contracts/blind-spot-pass/SKILL.md` for the full agent contract; if that file is missing, read `~/.cursor/skill-contracts/blind-spot-pass/SKILL.md`.
 2. **Execute** phases in order (Intake → Discovery → Draft the pass → Deliver); do not skip discovery or start building.
 3. **Report** the blind spot pass (sections 1 to 5); offer optional save under `docs/blind-spot-passes/` when the host has `docs/`.
 

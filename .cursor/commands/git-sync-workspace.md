@@ -11,7 +11,7 @@ eval:
 
 ## Overview
 
-Discover git repos in a Cursor multi-root workspace, preflight each one, and sync clean repos to their remote default branch. Skips dirty or unsafe repos with a clear report. Full workflow: `.cursor/skill-contracts/git-sync-workspace/SKILL.md`.
+Discover git repos in a Cursor multi-root workspace, preflight each one, and sync clean repos to their remote default branch. Skips dirty or unsafe repos with a clear report. Full workflow: `.cursor/skill-contracts/git-sync-workspace/SKILL.md` (user install: `~/.cursor/skill-contracts/git-sync-workspace/SKILL.md`).
 
 ## Defaults
 
@@ -24,7 +24,7 @@ Discover git repos in a Cursor multi-root workspace, preflight each one, and syn
 
 ## Steps
 
-1. **Read** `.cursor/skill-contracts/git-sync-workspace/SKILL.md` for the full agent contract.
+1. **Read** `.cursor/skill-contracts/git-sync-workspace/SKILL.md` for the full agent contract; if that file is missing, read `~/.cursor/skill-contracts/git-sync-workspace/SKILL.md`.
 2. **Execute** phases in order (Discover → Preflight → Sync → Report); do not skip preflight or modify dirty repos.
 3. **Report** the workspace summary (Synced / Skipped / Failed).
 

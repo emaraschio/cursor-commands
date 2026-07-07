@@ -11,7 +11,7 @@ eval:
 
 ## Overview
 
-Improve a pasted prompt by designing a tiny eval suite, diagnosing failures, and proposing the smallest next change, without rewriting blindly. Full workflow: `.cursor/skill-contracts/prompt-eval-debug/SKILL.md`.
+Improve a pasted prompt by designing a tiny eval suite, diagnosing failures, and proposing the smallest next change, without rewriting blindly. Full workflow: `.cursor/skill-contracts/prompt-eval-debug/SKILL.md` (user install: `~/.cursor/skill-contracts/prompt-eval-debug/SKILL.md`).
 
 ## Defaults
 
@@ -24,7 +24,7 @@ Improve a pasted prompt by designing a tiny eval suite, diagnosing failures, and
 
 ## Steps
 
-1. **Read** `.cursor/skill-contracts/prompt-eval-debug/SKILL.md` for the full agent contract.
+1. **Read** `.cursor/skill-contracts/prompt-eval-debug/SKILL.md` for the full agent contract; if that file is missing, read `~/.cursor/skill-contracts/prompt-eval-debug/SKILL.md`.
 2. **Execute** phases in order (Intake → Tiny eval suite → Run guidance → Diagnosis → Smallest next change → Deliver).
 3. **Report** suite table, diagnoses, and one smallest next change in chat.
 

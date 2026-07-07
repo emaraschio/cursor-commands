@@ -11,7 +11,7 @@ eval:
 
 ## Overview
 
-Compose a copyable, structured prompt from a rough ask by applying only the prompting dimensions that fit, then report what was applied or omitted. Produces a prompt; does not run the task. Full workflow: `.cursor/skill-contracts/structure-prompt/SKILL.md`.
+Compose a copyable, structured prompt from a rough ask by applying only the prompting dimensions that fit, then report what was applied or omitted. Produces a prompt; does not run the task. Full workflow: `.cursor/skill-contracts/structure-prompt/SKILL.md` (user install: `~/.cursor/skill-contracts/structure-prompt/SKILL.md`).
 
 ## Defaults
 
@@ -25,7 +25,7 @@ Compose a copyable, structured prompt from a rough ask by applying only the prom
 
 ## Steps
 
-1. **Read** `.cursor/skill-contracts/structure-prompt/SKILL.md` for the full agent contract.
+1. **Read** `.cursor/skill-contracts/structure-prompt/SKILL.md` for the full agent contract; if that file is missing, read `~/.cursor/skill-contracts/structure-prompt/SKILL.md`.
 2. **Execute** phases in order (Intake -> Classify -> Fill template -> Deliver).
 3. **Report** the structured prompt and the applied/omitted dimension note in chat.
 

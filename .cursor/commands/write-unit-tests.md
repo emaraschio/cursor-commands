@@ -11,7 +11,7 @@ eval:
 
 ## Overview
 
-Write meaningful unit tests for target code. Full workflow: `.cursor/skill-contracts/write-unit-tests/SKILL.md`.
+Write meaningful unit tests for target code. Full workflow: `.cursor/skill-contracts/write-unit-tests/SKILL.md` (user install: `~/.cursor/skill-contracts/write-unit-tests/SKILL.md`).
 
 ## Defaults
 
@@ -19,7 +19,7 @@ _None. See skill for workflow defaults._
 
 ## Steps
 
-1. **Read** `.cursor/skill-contracts/write-unit-tests/SKILL.md` for the full agent contract.
+1. **Read** `.cursor/skill-contracts/write-unit-tests/SKILL.md` for the full agent contract; if that file is missing, read `~/.cursor/skill-contracts/write-unit-tests/SKILL.md`.
 2. **Execute** the workflow in order; do not skip safety steps.
 3. **Report** outcomes per skill (summary, tables, or checklist as specified).
 

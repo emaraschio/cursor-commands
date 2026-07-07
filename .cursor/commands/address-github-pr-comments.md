@@ -11,7 +11,7 @@ eval:
 
 ## Overview
 
-Address review comments on the current GitHub PR. Full workflow: `.cursor/skill-contracts/address-github-pr-comments/SKILL.md`.
+Address review comments on the current GitHub PR. Full workflow: `.cursor/skill-contracts/address-github-pr-comments/SKILL.md` (user install: `~/.cursor/skill-contracts/address-github-pr-comments/SKILL.md`).
 
 ## Defaults
 
@@ -19,7 +19,7 @@ _None. See skill for workflow defaults._
 
 ## Steps
 
-1. **Read** `.cursor/skill-contracts/address-github-pr-comments/SKILL.md` for the full agent contract.
+1. **Read** `.cursor/skill-contracts/address-github-pr-comments/SKILL.md` for the full agent contract; if that file is missing, read `~/.cursor/skill-contracts/address-github-pr-comments/SKILL.md`.
 2. **Execute** the workflow in order; do not skip safety steps.
 3. **Report** outcomes per skill (summary, tables, or checklist as specified).
 

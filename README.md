@@ -38,7 +38,7 @@ chmod +x scripts/install.sh
 ./scripts/install.sh          # merge mode (default)
 ```
 
-Commands and skills from this catalog are symlinked into `~/.cursor/commands/` and `~/.cursor/skill-contracts/`. Use this path for submodule/dotfiles workflows or host overlays after the generic catalog. **Merge mode (default)** keeps your own files and org-specific commands installed afterward. Use `./scripts/install.sh --replace` only if you want to wipe those directories first. Use `--prune` to remove stale symlinks that still point into this repo after a catalog rename.
+Commands and skill contracts from this catalog are symlinked into `~/.cursor/commands/` and `~/.cursor/skill-contracts/`. Other workspaces resolve contracts from `~/.cursor/skill-contracts/<name>/SKILL.md` when the workspace path is missing. Use this path for submodule/dotfiles workflows or host overlays after the generic catalog. **Merge mode (default)** keeps your own files and org-specific commands installed afterward. Use `./scripts/install.sh --replace` only if you want to wipe those directories first. Use `--prune` to remove stale symlinks that still point into this repo after a catalog rename.
 
 Plugin install and symlink install can coexist but **should not**: you get duplicate `/` menu entries (⚡ command + ✨ skill per catalog name). Use the **user plugin** alone, or run `./scripts/install.sh --uninstall` before relying on the plugin. See [docs/PLUGIN.md](docs/PLUGIN.md#duplicate-entries-in-the--menu).
 

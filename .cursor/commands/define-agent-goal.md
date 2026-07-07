@@ -11,7 +11,7 @@ eval:
 
 ## Overview
 
-Define a six-part agent Goal so an agent can run a task with minimal babysitting. Plan-only. Does not execute the task in the same turn. Full workflow: `.cursor/skill-contracts/define-agent-goal/SKILL.md`.
+Define a six-part agent Goal so an agent can run a task with minimal babysitting. Plan-only. Does not execute the task in the same turn. Full workflow: `.cursor/skill-contracts/define-agent-goal/SKILL.md` (user install: `~/.cursor/skill-contracts/define-agent-goal/SKILL.md`).
 
 ## Defaults
 
@@ -24,7 +24,7 @@ Define a six-part agent Goal so an agent can run a task with minimal babysitting
 
 ## Steps
 
-1. **Read** `.cursor/skill-contracts/define-agent-goal/SKILL.md` for the full agent contract.
+1. **Read** `.cursor/skill-contracts/define-agent-goal/SKILL.md` for the full agent contract; if that file is missing, read `~/.cursor/skill-contracts/define-agent-goal/SKILL.md`.
 2. **Execute** phases in order (Intake → Discovery → Draft → Clarify gate → Deliver); do not skip the clarify gate or start executing the task.
 3. **Report** the final Goal (sections 1 to 6); offer optional save under `docs/agent-goals/` when the host has `docs/`.
 

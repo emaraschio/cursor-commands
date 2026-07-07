@@ -11,7 +11,7 @@ eval:
 
 ## Overview
 
-Run a large "check-N-things" task (audit, inventory, or migration) as a scoped, plan-first workflow: decompose the surface, fan out capped parallel subagents, verify findings before reporting, and make changes only after explicit approval. Full workflow: `.cursor/skill-contracts/scoped-audit/SKILL.md`.
+Run a large "check-N-things" task (audit, inventory, or migration) as a scoped, plan-first workflow: decompose the surface, fan out capped parallel subagents, verify findings before reporting, and make changes only after explicit approval. Full workflow: `.cursor/skill-contracts/scoped-audit/SKILL.md` (user install: `~/.cursor/skill-contracts/scoped-audit/SKILL.md`).
 
 ## Defaults
 
@@ -23,7 +23,7 @@ Run a large "check-N-things" task (audit, inventory, or migration) as a scoped, 
 
 ## Steps
 
-1. **Read** `.cursor/skill-contracts/scoped-audit/SKILL.md` for the full agent contract.
+1. **Read** `.cursor/skill-contracts/scoped-audit/SKILL.md` for the full agent contract; if that file is missing, read `~/.cursor/skill-contracts/scoped-audit/SKILL.md`.
 2. **Execute** phases in order (Scope → Plan → Approval gate → Scoped sample → Parallel fan-out → Verify → Report → optional gated changes); do not skip the approval gate or the verification step.
 3. **Report** the catalog of verified findings; propose changes separately and wait for approval before editing.
 

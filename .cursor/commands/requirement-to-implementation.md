@@ -11,7 +11,7 @@ eval:
 
 ## Overview
 
-Take a requirement (feature, bug, refactor, chore, or performance task) from any source through intake, exploration, an approved plan, implementation, and documentation. Full workflow: `.cursor/skill-contracts/requirement-to-implementation/SKILL.md`.
+Take a requirement (feature, bug, refactor, chore, or performance task) from any source through intake, exploration, an approved plan, implementation, and documentation. Full workflow: `.cursor/skill-contracts/requirement-to-implementation/SKILL.md` (user install: `~/.cursor/skill-contracts/requirement-to-implementation/SKILL.md`).
 
 ## Defaults
 
@@ -19,7 +19,7 @@ _None. See skill for workflow defaults._
 
 ## Steps
 
-1. **Read** `.cursor/skill-contracts/requirement-to-implementation/SKILL.md` for the full agent contract.
+1. **Read** `.cursor/skill-contracts/requirement-to-implementation/SKILL.md` for the full agent contract; if that file is missing, read `~/.cursor/skill-contracts/requirement-to-implementation/SKILL.md`.
 2. **Execute** phases in order (Intake → Context → Explore → Plan → [Approve] → Implement → Document); do not skip the approval gate.
 3. **Report** outcomes per skill (requirement summary, plan, verification, memory-bank updates as specified).
 
