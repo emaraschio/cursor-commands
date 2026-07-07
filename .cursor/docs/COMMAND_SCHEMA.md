@@ -1,6 +1,6 @@
 # Cursor command schema
 
-All slash commands in `.cursor/commands/` follow this contract. The workflow body lives in `.cursor/skills/<name>/SKILL.md`; the command file is the thin entry point.
+All slash commands in `.cursor/commands/` follow this contract. The workflow body lives in `.cursor/skill-contracts/<name>/SKILL.md`; the command file is the thin entry point.
 
 ## Frontmatter (required)
 
@@ -13,7 +13,7 @@ scope: generic
 requires_skill: true
 deprecated: false               # optional; true for legacy commands
 eval:
-  path: .cursor/skills/<name>/eval/cases.md
+  path: .cursor/skill-contracts/<name>/eval/cases.md
   ship_gate: [A, S]             # section IDs in cases.md
 ---
 ```
@@ -44,7 +44,7 @@ Each `## Anti-patterns` entry is one bullet that captures negative knowledge in 
 ## Skill layout
 
 ```
-.cursor/skills/<name>/
+.cursor/skill-contracts/<name>/
   SKILL.md          # full agent contract
   eval/
     README.md       # how to run manual eval
@@ -53,7 +53,9 @@ Each `## Anti-patterns` entry is one bullet that captures negative knowledge in 
 
 ### Skill frontmatter (required)
 
-Every catalog skill pairs with a slash command. Set `user-invocable: false` so only the command appears in the `/` menu; the agent still loads `SKILL.md` when the command or description routes to it.
+Every catalog workflow pairs with a slash command. Workflow bodies live under **`.cursor/skill-contracts/`**, not `.cursor/skills/`. Cursor indexes `.cursor/skills/` for the `/` menu; colocating paired bodies there lists every name twice (⚡ command + ✨ skill) even with `user-invocable: false`.
+
+Set `user-invocable: false` on each `SKILL.md` anyway (portability if a host copies a contract into `.cursor/skills/`). The slash command owns the `/` menu entry; the agent loads the contract when the command runs.
 
 ```yaml
 ---
@@ -63,7 +65,7 @@ user-invocable: false
 ---
 ```
 
-Optional: `disable-model-invocation: true` when the skill must not auto-apply from description alone (slash command is the only entry point).
+Optional: `disable-model-invocation: true` when the contract must not auto-apply from description alone (slash command is the only entry point).
 
 ## Migration checklist
 

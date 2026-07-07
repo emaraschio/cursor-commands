@@ -45,7 +45,10 @@ if [[ "$CHECK_ONLY" -eq 1 ]]; then
     --include 'profiles/_template.yaml' \
     --include 'profiles/README.md' \
     --include 'profiles/' \
-    "$REPO_ROOT/.cursor/skills/" "$PLUGIN_ROOT/.cursor/skills/" | grep -q '^[<>ch]'; then
+    "$REPO_ROOT/.cursor/skill-contracts/" "$PLUGIN_ROOT/.cursor/skill-contracts/" | grep -q '^[<>ch]'; then
+    failed=1
+  fi
+  if [[ -d "$PLUGIN_ROOT/.cursor/skills" ]]; then
     failed=1
   fi
   if ! cmp -s "$REPO_ROOT/.cursor-plugin/plugin.json" "$PLUGIN_ROOT/.cursor-plugin/plugin.json" 2>/dev/null; then
@@ -65,6 +68,7 @@ rsync -a --delete \
   --include 'profiles/_template.yaml' \
   --include 'profiles/README.md' \
   --include 'profiles/' \
-  "$REPO_ROOT/.cursor/skills/" "$PLUGIN_ROOT/.cursor/skills/"
+  "$REPO_ROOT/.cursor/skill-contracts/" "$PLUGIN_ROOT/.cursor/skill-contracts/"
+rm -rf "$PLUGIN_ROOT/.cursor/skills"
 cp "$REPO_ROOT/.cursor-plugin/plugin.json" "$PLUGIN_ROOT/.cursor-plugin/plugin.json"
 echo "Synced plugin package to $PLUGIN_ROOT"

@@ -8,6 +8,6 @@ __pycache__/
 .cursor/plans/
 
 # Host-specific merge-open-prs profiles (keep _template.yaml + README in repo)
-.cursor/skills/merge-open-prs/profiles/*
-!.cursor/skills/merge-open-prs/profiles/_template.yaml
-!.cursor/skills/merge-open-prs/profiles/README.md
+.cursor/skill-contracts/merge-open-prs/profiles/*
+!.cursor/skill-contracts/merge-open-prs/profiles/_template.yaml
+!.cursor/skill-contracts/merge-open-prs/profiles/README.md

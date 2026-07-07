@@ -88,7 +88,7 @@ cases:
 class TestRunFixtures(unittest.TestCase):
     def test_commit_pilot_passes_when_fixtures_present(self) -> None:
         root = Path(__file__).resolve().parents[1]
-        commit_fixtures = root / ".cursor/skills/commit/eval/fixtures.yaml"
+        commit_fixtures = root / ".cursor/skill-contracts/commit/eval/fixtures.yaml"
         if not commit_fixtures.is_file():
             self.skipTest("commit fixtures not backfilled yet")
         failures, _, _ = run(strict=True, command_filter="commit")

@@ -7,7 +7,7 @@ on:
     branches: [main]
     paths:
       - ".cursor/commands/**"
-      - ".cursor/skills/**"
+      - ".cursor/skill-contracts/**"
       - "scripts/install.sh"
       - "scripts/test_install.sh"
       - "scripts/validate-cursor-commands.py"
@@ -41,7 +41,7 @@ jobs:
         run: |
           set -euo pipefail
           test -f "$CURSOR_HOME/commands/code-review.md"
-          test -f "$CURSOR_HOME/skills/merge-open-prs/SKILL.md"
+          test -f "$CURSOR_HOME/skill-contracts/merge-open-prs/SKILL.md"
 
       - name: Install merge mode tests
         run: |

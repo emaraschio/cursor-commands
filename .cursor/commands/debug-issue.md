@@ -5,13 +5,13 @@ description: Systematically debug a reported issue
 scope: generic
 requires_skill: true
 eval:
-  path: .cursor/skills/debug-issue/eval/cases.md
+  path: .cursor/skill-contracts/debug-issue/eval/cases.md
   ship_gate: [A]
 ---
 
 ## Overview
 
-Systematically debug a reported issue. Full workflow: `.cursor/skills/debug-issue/SKILL.md`.
+Systematically debug a reported issue. Full workflow: `.cursor/skill-contracts/debug-issue/SKILL.md`.
 
 ## Defaults
 
@@ -19,7 +19,7 @@ _None. See skill for workflow defaults._
 
 ## Steps
 
-1. **Read** `.cursor/skills/debug-issue/SKILL.md` for the full agent contract.
+1. **Read** `.cursor/skill-contracts/debug-issue/SKILL.md` for the full agent contract.
 2. **Execute** the workflow in order; do not skip safety steps.
 3. **Report** outcomes per skill (summary, tables, or checklist as specified).
 
@@ -34,4 +34,4 @@ _None. See skill for workflow defaults._
 
 ## Maintainers
 
-Behavioral eval: `.cursor/skills/debug-issue/eval/cases.md`. Ship gate sections: **A** before changing `SKILL.md` or this command.
+Behavioral eval: `.cursor/skill-contracts/debug-issue/eval/cases.md`. Ship gate sections: **A** before changing `SKILL.md` or this command.

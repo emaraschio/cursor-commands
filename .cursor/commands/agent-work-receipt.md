@@ -5,13 +5,13 @@ description: Conservative six-section receipt of completed agent-assisted work (
 scope: generic
 requires_skill: true
 eval:
-  path: .cursor/skills/agent-work-receipt/eval/cases.md
+  path: .cursor/skill-contracts/agent-work-receipt/eval/cases.md
   ship_gate: [A, S]
 ---
 
 ## Overview
 
-Produce a conservative agent work receipt after completed work: finished output, time estimates, review burden, risks, and value judgment. Retrospective only; no new implementation in the same turn. Full workflow: `.cursor/skills/agent-work-receipt/SKILL.md`.
+Produce a conservative agent work receipt after completed work: finished output, time estimates, review burden, risks, and value judgment. Retrospective only; no new implementation in the same turn. Full workflow: `.cursor/skill-contracts/agent-work-receipt/SKILL.md`.
 
 ## Defaults
 
@@ -25,7 +25,7 @@ Produce a conservative agent work receipt after completed work: finished output,
 
 ## Steps
 
-1. **Read** `.cursor/skills/agent-work-receipt/SKILL.md` for the full agent contract.
+1. **Read** `.cursor/skill-contracts/agent-work-receipt/SKILL.md` for the full agent contract.
 2. **Execute** phases in order (Intake → Evidence → Inventory → Estimates → Review & risk → Value → Deliver).
 3. **Report** the six-section receipt in chat using the skill template.
 
@@ -42,4 +42,4 @@ Produce a conservative agent work receipt after completed work: finished output,
 
 ## Maintainers
 
-Behavioral eval: `.cursor/skills/agent-work-receipt/eval/cases.md`. Ship gate sections: **A, S** before changing `SKILL.md` or this command.
+Behavioral eval: `.cursor/skill-contracts/agent-work-receipt/eval/cases.md`. Ship gate sections: **A, S** before changing `SKILL.md` or this command.

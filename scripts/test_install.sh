@@ -28,7 +28,7 @@ test_merge_preserves_foreign() {
   assert test -d "$home/skills/foreign-skill"
   assert test -L "$home/commands/cm-overlay.md"
   assert test -f "$home/commands/code-review.md"
-  assert test -f "$home/skills/merge-open-prs/SKILL.md"
+  assert test -f "$home/skill-contracts/merge-open-prs/SKILL.md"
 
   rm -rf "$home"
   echo "OK: merge preserves foreign and overlay symlinks"
@@ -95,7 +95,7 @@ test_uninstall_removes_catalog_keeps_foreign() {
   CURSOR_HOME="$home" "$INSTALL" --uninstall
 
   assert test ! -e "$home/commands/code-review.md"
-  assert test ! -e "$home/skills/code-review"
+  assert test ! -e "$home/skill-contracts/code-review"
   assert test -f "$home/commands/foreign-command.md"
   assert test -d "$home/skills/foreign-skill"
   assert test -L "$home/commands/cm-overlay.md"

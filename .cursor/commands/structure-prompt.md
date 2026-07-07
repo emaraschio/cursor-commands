@@ -5,13 +5,13 @@ description: Turn a rough request into a structured, production-grade prompt usi
 scope: generic
 requires_skill: true
 eval:
-  path: .cursor/skills/structure-prompt/eval/cases.md
+  path: .cursor/skill-contracts/structure-prompt/eval/cases.md
   ship_gate: [A, S]
 ---
 
 ## Overview
 
-Compose a copyable, structured prompt from a rough ask by applying only the prompting dimensions that fit, then report what was applied or omitted. Produces a prompt; does not run the task. Full workflow: `.cursor/skills/structure-prompt/SKILL.md`.
+Compose a copyable, structured prompt from a rough ask by applying only the prompting dimensions that fit, then report what was applied or omitted. Produces a prompt; does not run the task. Full workflow: `.cursor/skill-contracts/structure-prompt/SKILL.md`.
 
 ## Defaults
 
@@ -25,7 +25,7 @@ Compose a copyable, structured prompt from a rough ask by applying only the prom
 
 ## Steps
 
-1. **Read** `.cursor/skills/structure-prompt/SKILL.md` for the full agent contract.
+1. **Read** `.cursor/skill-contracts/structure-prompt/SKILL.md` for the full agent contract.
 2. **Execute** phases in order (Intake -> Classify -> Fill template -> Deliver).
 3. **Report** the structured prompt and the applied/omitted dimension note in chat.
 
@@ -42,4 +42,4 @@ Compose a copyable, structured prompt from a rough ask by applying only the prom
 
 ## Maintainers
 
-Behavioral eval: `.cursor/skills/structure-prompt/eval/cases.md`. Ship gate sections: **A, S** before changing `SKILL.md` or this command.
+Behavioral eval: `.cursor/skill-contracts/structure-prompt/eval/cases.md`. Ship gate sections: **A, S** before changing `SKILL.md` or this command.

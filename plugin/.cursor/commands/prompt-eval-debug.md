@@ -5,13 +5,13 @@ description: Debug any prompt with a tiny eval suite (control, edge, boundary), 
 scope: generic
 requires_skill: true
 eval:
-  path: .cursor/skills/prompt-eval-debug/eval/cases.md
+  path: .cursor/skill-contracts/prompt-eval-debug/eval/cases.md
   ship_gate: [A, S]
 ---
 
 ## Overview
 
-Improve a pasted prompt by designing a tiny eval suite, diagnosing failures, and proposing the smallest next change, without rewriting blindly. Full workflow: `.cursor/skills/prompt-eval-debug/SKILL.md`.
+Improve a pasted prompt by designing a tiny eval suite, diagnosing failures, and proposing the smallest next change, without rewriting blindly. Full workflow: `.cursor/skill-contracts/prompt-eval-debug/SKILL.md`.
 
 ## Defaults
 
@@ -24,7 +24,7 @@ Improve a pasted prompt by designing a tiny eval suite, diagnosing failures, and
 
 ## Steps
 
-1. **Read** `.cursor/skills/prompt-eval-debug/SKILL.md` for the full agent contract.
+1. **Read** `.cursor/skill-contracts/prompt-eval-debug/SKILL.md` for the full agent contract.
 2. **Execute** phases in order (Intake → Tiny eval suite → Run guidance → Diagnosis → Smallest next change → Deliver).
 3. **Report** suite table, diagnoses, and one smallest next change in chat.
 
@@ -41,4 +41,4 @@ Improve a pasted prompt by designing a tiny eval suite, diagnosing failures, and
 
 ## Maintainers
 
-Behavioral eval: `.cursor/skills/prompt-eval-debug/eval/cases.md`. Ship gate sections: **A, S** before changing `SKILL.md` or this command.
+Behavioral eval: `.cursor/skill-contracts/prompt-eval-debug/eval/cases.md`. Ship gate sections: **A, S** before changing `SKILL.md` or this command.

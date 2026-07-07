@@ -5,13 +5,13 @@ description: Security audit of codebase or change
 scope: generic
 requires_skill: true
 eval:
-  path: .cursor/skills/security-audit/eval/cases.md
+  path: .cursor/skill-contracts/security-audit/eval/cases.md
   ship_gate: [A, S]
 ---
 
 ## Overview
 
-Security audit of codebase or change. Full workflow: `.cursor/skills/security-audit/SKILL.md`.
+Security audit of codebase or change. Full workflow: `.cursor/skill-contracts/security-audit/SKILL.md`.
 
 ## Defaults
 
@@ -19,7 +19,7 @@ _None. See skill for workflow defaults._
 
 ## Steps
 
-1. **Read** `.cursor/skills/security-audit/SKILL.md` for the full agent contract.
+1. **Read** `.cursor/skill-contracts/security-audit/SKILL.md` for the full agent contract.
 2. **Execute** the workflow in order; do not skip safety steps.
 3. **Report** outcomes per skill (summary, tables, or checklist as specified).
 
@@ -35,4 +35,4 @@ _None. See skill for workflow defaults._
 
 ## Maintainers
 
-Behavioral eval: `.cursor/skills/security-audit/eval/cases.md`. Ship gate sections: **A, S** before changing `SKILL.md` or this command.
+Behavioral eval: `.cursor/skill-contracts/security-audit/eval/cases.md`. Ship gate sections: **A, S** before changing `SKILL.md` or this command.

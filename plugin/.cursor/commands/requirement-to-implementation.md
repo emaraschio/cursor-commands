@@ -5,13 +5,13 @@ description: Structured workflow from requirement through plan approval, impleme
 scope: generic
 requires_skill: true
 eval:
-  path: .cursor/skills/requirement-to-implementation/eval/cases.md
+  path: .cursor/skill-contracts/requirement-to-implementation/eval/cases.md
   ship_gate: [A, S]
 ---
 
 ## Overview
 
-Take a requirement (feature, bug, refactor, chore, or performance task) from any source through intake, exploration, an approved plan, implementation, and documentation. Full workflow: `.cursor/skills/requirement-to-implementation/SKILL.md`.
+Take a requirement (feature, bug, refactor, chore, or performance task) from any source through intake, exploration, an approved plan, implementation, and documentation. Full workflow: `.cursor/skill-contracts/requirement-to-implementation/SKILL.md`.
 
 ## Defaults
 
@@ -19,7 +19,7 @@ _None. See skill for workflow defaults._
 
 ## Steps
 
-1. **Read** `.cursor/skills/requirement-to-implementation/SKILL.md` for the full agent contract.
+1. **Read** `.cursor/skill-contracts/requirement-to-implementation/SKILL.md` for the full agent contract.
 2. **Execute** phases in order (Intake → Context → Explore → Plan → [Approve] → Implement → Document); do not skip the approval gate.
 3. **Report** outcomes per skill (requirement summary, plan, verification, memory-bank updates as specified).
 
@@ -36,4 +36,4 @@ _None. See skill for workflow defaults._
 
 ## Maintainers
 
-Behavioral eval: `.cursor/skills/requirement-to-implementation/eval/cases.md`. Ship gate sections: **A, S** before changing `SKILL.md` or this command.
+Behavioral eval: `.cursor/skill-contracts/requirement-to-implementation/eval/cases.md`. Ship gate sections: **A, S** before changing `SKILL.md` or this command.

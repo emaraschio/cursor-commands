@@ -9,7 +9,7 @@ Everything in this repository ships to strangers who install from GitHub. Write 
 | Do | Don't |
 |----|--------|
 | Use `scope: generic` and portable examples (`repo1`, `project-a`, `example-org/service`) | Real employer, product, or internal repo names in commands, skills, evals, or docs |
-| Keep optional `skills/<name>/profiles/` templates generic (e.g. `../repo1`, `../repo2`) | Org workflows, ticket IDs, or stack-specific runbooks in this repo |
+| Keep optional `skill-contracts/<name>/profiles/` templates generic (e.g. `../repo1`, `../repo2`) | Org workflows, ticket IDs, or stack-specific runbooks in this repo |
 | Put org-only commands and skills in the **host workspace** overlay after `./scripts/install.sh` | Assume the reader's monorepo layout or private tooling |
 
 **Portable references:** no `file://` URLs, home-directory paths, or private repository URLs in `.cursor/`, `docs/`, `README.md`, or this file. CI runs `validate-cursor-commands.py` and `scripts/check_forbidden_org_strings.py` to catch many violations. History and publication policy: [docs/PUBLISHING.md](docs/PUBLISHING.md).
@@ -30,13 +30,13 @@ Everything in this repository ships to strangers who install from GitHub. Write 
 
 4. **Dependabot** may open grouped PRs for `github-actions` (see [.github/dependabot.yml](.github/dependabot.yml)); merge when CI is green.
 
-5. If you changed behavior, update `skills/<name>/eval/fixtures.yaml` when `SKILL.md` or ship-gate `cases.md` change, walk ship gate sections, and note results in the PR. Regenerate [docs/EVAL_INVENTORY.md](docs/EVAL_INVENTORY.md) when `ship_gate` or case inventory changes: `python3 scripts/inventory-eval-cases.py --write docs/EVAL_INVENTORY.md`. Draft fixtures: `python3 scripts/bootstrap-fixtures.py <command>`. For releases, record manual IDE smoke per [docs/VERIFICATION.md](docs/VERIFICATION.md).
+5. If you changed behavior, update `skill-contracts/<name>/eval/fixtures.yaml` when `SKILL.md` or ship-gate `cases.md` change, walk ship gate sections, and note results in the PR. Regenerate [docs/EVAL_INVENTORY.md](docs/EVAL_INVENTORY.md) when `ship_gate` or case inventory changes: `python3 scripts/inventory-eval-cases.py --write docs/EVAL_INVENTORY.md`. Draft fixtures: `python3 scripts/bootstrap-fixtures.py <command>`. For releases, record manual IDE smoke per [docs/VERIFICATION.md](docs/VERIFICATION.md).
 
 ## Adding or changing a command
 
 - Thin entry: `.cursor/commands/<name>.md` (frontmatter + standard sections)
-- Workflow: `.cursor/skills/<name>/SKILL.md`
-- Eval: `.cursor/skills/<name>/eval/cases.md` and `eval/README.md` (≥3 cases)
+- Workflow: `.cursor/skill-contracts/<name>/SKILL.md`
+- Eval: `.cursor/skill-contracts/<name>/eval/cases.md` and `eval/README.md` (≥3 cases)
 - Row in [COMMANDS_INDEX.md](.cursor/docs/COMMANDS_INDEX.md)
 - Bump `version:` in command frontmatter when behavior changes
 
@@ -45,8 +45,8 @@ Everything in this repository ships to strangers who install from GitHub. Write 
 When the agent makes a mistake you correct, record it so it cannot regress. Do not start a separate append-only pitfalls file; route the correction into the existing contract:
 
 1. Add a `## Anti-patterns` entry to `.cursor/commands/<name>.md` in the fixed shape `**<rule>.** Trigger: ... Wrong: ... Correct: ... Reason: ...` (see [COMMAND_SCHEMA.md](.cursor/docs/COMMAND_SCHEMA.md)).
-2. State the Correct behavior as a positive guard in `.cursor/skills/<name>/SKILL.md` (a `## Guardrails` bullet or an existing step).
-3. Anchor the guard with `skill_required` in `.cursor/skills/<name>/eval/fixtures.yaml` on a ship-gate case (the S case for safety guards, otherwise A1). The phrase must appear verbatim in `SKILL.md`. Prefer `skill_required` over `skill_forbidden`; the latter is a blunt substring check that breaks any guard mentioning the term.
+2. State the Correct behavior as a positive guard in `.cursor/skill-contracts/<name>/SKILL.md` (a `## Guardrails` bullet or an existing step).
+3. Anchor the guard with `skill_required` in `.cursor/skill-contracts/<name>/eval/fixtures.yaml` on a ship-gate case (the S case for safety guards, otherwise A1). The phrase must appear verbatim in `SKILL.md`. Prefer `skill_required` over `skill_forbidden`; the latter is a blunt substring check that breaks any guard mentioning the term.
 4. Add a behavioral case to `eval/cases.md` only when a PASS/FAIL rubric can judge the failure; otherwise the anchor is enough.
 5. Bump the command `version`, then run `python3 scripts/validate-cursor-commands.py` and `python3 scripts/run-eval-fixtures.py --strict`.
 

@@ -8,7 +8,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 COMMANDS_DIR = ROOT / ".cursor" / "commands"
-SKILLS_DIR = ROOT / ".cursor" / "skills"
+SKILLS_DIR = ROOT / ".cursor" / "skill-contracts"
 INDEX_PATH = ROOT / ".cursor" / "docs" / "COMMANDS_INDEX.md"
 
 FRONTMATTER_RE = re.compile(r"^---\s*\n(.*?)\n---\s*\n", re.DOTALL)

@@ -5,13 +5,13 @@ description: Extremely strict maintainability review hunting for code-judo simpl
 scope: generic
 requires_skill: true
 eval:
-  path: .cursor/skills/thermo-nuclear-code-quality-review/eval/cases.md
+  path: .cursor/skill-contracts/thermo-nuclear-code-quality-review/eval/cases.md
   ship_gate: [A, S]
 ---
 
 ## Overview
 
-Extremely strict maintainability review that hunts for code-judo simplifications, giant files, and spaghetti-condition growth without changing behavior. Full workflow: `.cursor/skills/thermo-nuclear-code-quality-review/SKILL.md`.
+Extremely strict maintainability review that hunts for code-judo simplifications, giant files, and spaghetti-condition growth without changing behavior. Full workflow: `.cursor/skill-contracts/thermo-nuclear-code-quality-review/SKILL.md`.
 
 ## Defaults
 
@@ -25,7 +25,7 @@ Extremely strict maintainability review that hunts for code-judo simplifications
 
 ## Steps
 
-1. **Read** `.cursor/skills/thermo-nuclear-code-quality-review/SKILL.md` for the full agent contract.
+1. **Read** `.cursor/skill-contracts/thermo-nuclear-code-quality-review/SKILL.md` for the full agent contract.
 2. **Execute** the workflow in order; do not skip safety steps.
 3. **Report** outcomes per skill (summary, tables, or checklist as specified).
 
@@ -41,4 +41,4 @@ Extremely strict maintainability review that hunts for code-judo simplifications
 
 ## Maintainers
 
-Behavioral eval: `.cursor/skills/thermo-nuclear-code-quality-review/eval/cases.md`. Ship gate sections: **A, S** before changing `SKILL.md` or this command.
+Behavioral eval: `.cursor/skill-contracts/thermo-nuclear-code-quality-review/eval/cases.md`. Ship gate sections: **A, S** before changing `SKILL.md` or this command.

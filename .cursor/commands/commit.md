@@ -5,13 +5,13 @@ description: Commit on a new branch with conventional message
 scope: generic
 requires_skill: true
 eval:
-  path: .cursor/skills/commit/eval/cases.md
+  path: .cursor/skill-contracts/commit/eval/cases.md
   ship_gate: [A, S]
 ---
 
 ## Overview
 
-Commit on a new branch with conventional message. Full workflow: `.cursor/skills/commit/SKILL.md`.
+Commit on a new branch with conventional message. Full workflow: `.cursor/skill-contracts/commit/SKILL.md`.
 
 ## Defaults
 
@@ -19,7 +19,7 @@ _None. See skill for workflow defaults._
 
 ## Steps
 
-1. **Read** `.cursor/skills/commit/SKILL.md` for the full agent contract.
+1. **Read** `.cursor/skill-contracts/commit/SKILL.md` for the full agent contract.
 2. **Execute** the workflow in order; do not skip safety steps.
 3. **Report** outcomes per skill (summary, tables, or checklist as specified).
 
@@ -35,4 +35,4 @@ _None. See skill for workflow defaults._
 
 ## Maintainers
 
-Behavioral eval: `.cursor/skills/commit/eval/cases.md`. Ship gate sections: **A, S** before changing `SKILL.md` or this command.
+Behavioral eval: `.cursor/skill-contracts/commit/eval/cases.md`. Ship gate sections: **A, S** before changing `SKILL.md` or this command.
