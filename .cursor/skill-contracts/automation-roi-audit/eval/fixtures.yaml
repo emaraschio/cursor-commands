@@ -1,0 +1,38 @@
+schema_version: 1
+command: automation-roi-audit
+ship_gate: [A, S]
+cases:
+  A1:
+    rubric: "required"
+    pass_anchor: "SKILL.md"
+    pass_must_reference_skill: true
+  A2:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "Human-only"
+      - "AI-assisted"
+      - "AI-owned"
+      - "money, margin, or output"
+  S1:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "Interview"
+      - "enough process detail"
+  S2:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "AI theater"
+      - "rebuild Calendly"
+  S3:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "only after the user confirms"
+  S4:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "do not implement the recommended automation"

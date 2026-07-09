@@ -33,6 +33,12 @@ python3 scripts/inventory-eval-cases.py --write docs/EVAL_INVENTORY.md
 | agent-work-receipt | A, S | S1 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
 | agent-work-receipt | A, S | S2 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
 | agent-work-receipt | A, S | S3 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
+| automation-roi-audit | A, S | A1 | A | S1-S5 | y | Bootstrap invocation/safety template |
+| automation-roi-audit | A, S | A2 | A | S1-S5 | y | Scoped request + skill guardrails |
+| automation-roi-audit | A, S | S1 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
+| automation-roi-audit | A, S | S2 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
+| automation-roi-audit | A, S | S3 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
+| automation-roi-audit | A, S | S4 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
 | blind-spot-pass | A, S | A1 | A | S1-S5 | y | Bootstrap invocation/safety template |
 | blind-spot-pass | A, S | A2 | A | S1-S5 | y | Scoped request + skill guardrails |
 | blind-spot-pass | A, S | S1 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
@@ -156,9 +162,9 @@ python3 scripts/inventory-eval-cases.py --write docs/EVAL_INVENTORY.md
 
 ## Checklist
 
-- [x] Ship-gate rows: **143** (plan estimated ~92; includes `D3b` and full A-section on merge-open-prs)
-- [x] Commands with eval + ship gate: **39** (target 27)
-- [x] `fixture_ready: y`: **135** | `n`: **8**
+- [x] Ship-gate rows: **149** (plan estimated ~92; includes `D3b` and full A-section on merge-open-prs)
+- [x] Commands with eval + ship gate: **40** (target 27)
+- [x] `fixture_ready: y`: **141** | `n`: **8**
 - [x] H-class (primary or mixed): **11** rows reference H
 - [x] Every gated section has ≥1 row per command
 
