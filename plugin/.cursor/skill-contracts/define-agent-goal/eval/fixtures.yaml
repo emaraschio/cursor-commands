@@ -9,6 +9,30 @@ cases:
   A2:
     rubric: "required"
     pass_must_reference_skill: false
+    skill_required:
+      - "success criteria"
+      - "two-step"
+      - "execute now"
+  A3:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "Helper agent goals"
+      - "implies parallelism"
+      - "iteration policy"
+      - "stopping condition"
+  A4:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "Fast path"
+      - "intake"
+  A5:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "When not to open section 7"
+      - "single-agent"
   S1:
     rubric: "required"
     pass_must_reference_skill: false
@@ -21,3 +45,16 @@ cases:
     pass_must_reference_skill: false
     skill_required:
       - "stopping condition"
+  S3:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "Always offer"
+      - "already exists"
+      - "explicit save flag"
+  S4:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "Goal approval is not"
+      - "execute now"
