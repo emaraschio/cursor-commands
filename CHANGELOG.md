@@ -4,27 +4,27 @@ All notable changes to this project are documented here. Format based on [Keep a
 
 ## [Unreleased]
 
-### Fixed
-
-- **Plugin sync / install smoke**: copy merge-open-prs profile templates and git-sync `profiles/repos.yaml` into `plugin/` (rsync include-before-exclude); bump `install.sh` expected counts to 40 so CI matches the catalog.
-
-### Changed
-
-- **`/define-agent-goal`**: harden with intake template, fast path, 3 to 5 success criteria, rich helper goals (section 7) when parallel, two-step handshake (approve Goal then execute now), and save offer with auto-write only when `docs/agent-goals/` exists or flagged; bump command version to 3.
-- **README**: lead with production-grade catalog value (skills + evals + ship-gate CI + plugin), not "generic" as the identity; clearer highlights and contributor path for OSS growth.
+## [1.5.0] - 2026-07-09
 
 ### Added
 
-- **`/automation-roi-audit`**: slash command and skill for an AI operations consultant workflow (interview workflows, label Human-only / AI-assisted / AI-owned, highest-ROI tied to money/margin/output, warn on AI theater, one-week test); optional docs save after confirm; eval ship gate **A, S**; catalog 39 → 40 commands/skills.
+- **`/pathfinder`**: fog-of-war planning skill and command for unfamiliar codebases; eval ship gate **A, S**; catalog 37 → 38 commands/skills.
 - **`/blind-spot-pass`**: slash command and skill for a pre-build blind spot pass (four knowledge quadrants, 5 to 10 high-leverage interview questions, implementation-notes log on follow-up builds); plan-only; eval ship gate **A, S**; catalog 38 → 39 commands/skills.
+- **`/automation-roi-audit`**: slash command and skill for an AI operations consultant workflow (interview workflows, label Human-only / AI-assisted / AI-owned, highest-ROI tied to money/margin/output, warn on AI theater, one-week test); optional docs save after confirm; eval ship gate **A, S**; catalog 39 → 40 commands/skills.
 
 ### Changed
 
 - **Skill contracts**: move catalog workflow bodies from `.cursor/skills/` to `.cursor/skill-contracts/` so paired slash commands are the only `/` menu entries (⚡); `user-invocable: false` alone did not hide ✨ rows when bodies lived under `.cursor/skills/`. Plugin manifest uses `skillContracts` instead of `skills`.
 - **Command Step 1**: resolve skill contracts from `~/.cursor/skill-contracts/<name>/SKILL.md` when the workspace `.cursor/skill-contracts/` path is missing so `/commands` work in host repos after `install.sh`.
-- **Skills**: set `user-invocable: false` on all 37 paired `SKILL.md` files so slash commands (⚡) are the only `/` menu entries; skills (✨) stay agent-loadable via commands. Validator enforces the field.
+- **Skills**: set `user-invocable: false` on paired `SKILL.md` files so slash commands (⚡) are the only `/` menu entries; skills stay agent-loadable via commands. Validator enforces the field.
+- **`/define-agent-goal`**: harden with intake template, fast path, 3 to 5 success criteria, rich helper goals (section 7) when parallel, two-step handshake (approve Goal then execute now), and save offer with auto-write only when `docs/agent-goals/` exists or flagged; bump command version to 3 ([#28](https://github.com/emaraschio/cursor-commands/pull/28)).
 - **`install.sh --uninstall`**: remove catalog symlinks from `~/.cursor` when using the user plugin instead of symlink install. Warns when both are detected.
-- **docs/PLUGIN.md**: troubleshooting for duplicate `/` menu entries (plugin + symlink, stale v1.4.0 cache).
+- **README**: lead with production-grade catalog value (skills + evals + ship-gate CI + plugin), not "generic" as the identity; clearer highlights and contributor path for OSS growth.
+- **docs/PLUGIN.md**: troubleshooting for duplicate `/` menu entries (plugin + symlink, stale cache).
+
+### Fixed
+
+- **Plugin sync / install smoke**: copy merge-open-prs profile templates and git-sync `profiles/repos.yaml` into `plugin/` (rsync include-before-exclude); bump `install.sh` expected counts to 40 so CI matches the catalog.
 
 ## [1.4.0] - 2026-06-30
 

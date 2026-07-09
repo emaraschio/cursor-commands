@@ -14,7 +14,7 @@ Run after plugin install ([docs/PLUGIN.md](PLUGIN.md)) or `./scripts/install.sh`
 
 The install script already verifies:
 
-- 37 command symlinks and 37 skill symlinks
+- 40 command symlinks and 40 skill-contract symlinks
 - Each symlink target resolves
 - `validate-cursor-commands.py` passes
 - `merge-open-prs` skill is reachable under `$CURSOR_HOME`
@@ -33,6 +33,7 @@ Record pass/fail in release notes when cutting a tag.
 
 | Tag | Date | Verifier | Result | Notes |
 |-----|------|----------|--------|-------|
+| v1.5.0 | 2026-07-09 | @emaraschio | PASS | Validator + eval fixtures + install smoke green on `main` before tag; plugin package synced at 1.5.0; 40/40 commands/skills. Palette: `/pathfinder`, `/blind-spot-pass`, `/automation-roi-audit`, hardened `/define-agent-goal` (v3 two-step handshake) after plugin or symlink install + reload. Manual IDE smoke: reload and confirm `/` lists new commands. |
 | v1.4.0 | 2026-06-30 | @emaraschio | PASS | Validator + eval fixtures + install smoke green; plugin package synced at 1.4.0. Palette: `/thermo-nuclear-code-quality-review`, `/define-agent-goal` expected after plugin or symlink install + reload. |
 | v1.3.0 | 2026-06-21 | @emaraschio | PASS | Validator + eval fixtures green; 36/36 commands/skills. Palette: `/tdd`, `/structure-prompt`, `/agent-work-receipt` expected after Cursor reload. Manual IDE smoke not re-run. |
 | v1.0.0 | 2026-05-25 | @emaraschio | PASS | Merge install: 28/28 symlinks; validator + eval fixtures green. Palette: `/code-review`, `/requirement-to-implementation` expected after Cursor reload. `/merge-open-prs --dry-run` not re-run (optional). |

@@ -4,13 +4,13 @@
     "name": "Ezequiel Maraschio"
   },
   "metadata": {
-    "description": "Generic Cursor slash commands, agent skills, and behavioral eval rubrics"
+    "description": "Production-grade Cursor slash commands with paired skill contracts, behavioral evals, and ship-gate CI"
   },
   "plugins": [
     {
       "name": "cursor-commands",
       "source": "plugin",
-      "description": "Generic Cursor slash commands, agent skills, and behavioral eval rubrics"
+      "description": "Production-grade Cursor slash commands with paired skill contracts, behavioral evals, and ship-gate CI"
     }
   ]
 }

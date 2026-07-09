@@ -7,7 +7,7 @@
 
 **Production-grade Cursor slash commands:** each `/command` ships with a full agent skill contract, a behavioral eval rubric, and CI that fails if safety guards regress. Install as a [user plugin](docs/PLUGIN.md) and get the same workflows on desktop, web, CLI, and mobile.
 
-Stable release: [`v1.4.0`](CHANGELOG.md#140---2026-06-30). Track `main` for the latest catalog (40 commands). Not an official Cursor product.
+Stable release: [`v1.5.0`](CHANGELOG.md#150---2026-07-09). Catalog: **40** commands. Not an official Cursor product.
 
 Inspired by install ergonomics from [hamzafer/cursor-commands](https://github.com/hamzafer/cursor-commands). This repo goes further: **paired skills**, **eval rubrics**, and **structural ship-gate CI** (`run-eval-fixtures.py --strict`).
 
