@@ -37,15 +37,24 @@ sync_tree() {
 
 mkdir -p "$PLUGIN_ROOT/.cursor-plugin"
 
+# Include before exclude: rsync uses first-match. Keep merge-open-prs profile
+# templates in the package; drop host overlays (e.g. maraschio.com.yaml).
+# git-sync-workspace/profiles/repos.yaml is a generic template and must sync.
+skill_contracts_rsync() {
+  local mode="$1" # --dry-run --itemize-changes | (empty for real sync)
+  # shellcheck disable=SC2086
+  rsync -a --delete $mode \
+    --include 'merge-open-prs/profiles/' \
+    --include 'merge-open-prs/profiles/_template.yaml' \
+    --include 'merge-open-prs/profiles/README.md' \
+    --exclude 'merge-open-prs/profiles/*' \
+    "$REPO_ROOT/.cursor/skill-contracts/" "$PLUGIN_ROOT/.cursor/skill-contracts/"
+}
+
 if [[ "$CHECK_ONLY" -eq 1 ]]; then
   failed=0
   sync_tree "$REPO_ROOT/.cursor/commands/" "$PLUGIN_ROOT/.cursor/commands/" || failed=1
-  if rsync -a --delete --dry-run --itemize-changes \
-    --exclude 'profiles/*' \
-    --include 'profiles/_template.yaml' \
-    --include 'profiles/README.md' \
-    --include 'profiles/' \
-    "$REPO_ROOT/.cursor/skill-contracts/" "$PLUGIN_ROOT/.cursor/skill-contracts/" | grep -q '^[<>ch]'; then
+  if skill_contracts_rsync "--dry-run --itemize-changes" | grep -q '^[<>ch]'; then
     failed=1
   fi
   if [[ -d "$PLUGIN_ROOT/.cursor/skills" ]]; then
@@ -63,12 +72,7 @@ if [[ "$CHECK_ONLY" -eq 1 ]]; then
 fi
 
 sync_tree "$REPO_ROOT/.cursor/commands/" "$PLUGIN_ROOT/.cursor/commands/"
-rsync -a --delete \
-  --exclude 'profiles/*' \
-  --include 'profiles/_template.yaml' \
-  --include 'profiles/README.md' \
-  --include 'profiles/' \
-  "$REPO_ROOT/.cursor/skill-contracts/" "$PLUGIN_ROOT/.cursor/skill-contracts/"
+skill_contracts_rsync ""
 rm -rf "$PLUGIN_ROOT/.cursor/skills"
 cp "$REPO_ROOT/.cursor-plugin/plugin.json" "$PLUGIN_ROOT/.cursor-plugin/plugin.json"
 echo "Synced plugin package to $PLUGIN_ROOT"
