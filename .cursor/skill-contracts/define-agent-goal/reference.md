@@ -1,6 +1,6 @@
 # define-agent-goal (end-user notes)
 
-Turn a rough task into an agent **Goal** before autonomous or long-running work. The agent drafts; you approve; execution waits.
+Turn a rough task into an agent **Goal** before autonomous or long-running work. The agent drafts; you approve the Goal; execution waits for a later **execute now**.
 
 ## When to use
 
@@ -23,18 +23,28 @@ When all four fields are clear, the agent should skip redundant questions and dr
 
 ## What you get back
 
-1. **Sections 1 to 6 Goal** :  outcome, verification (with **3 to 5 checkbox success criteria**), constraints, boundaries, iteration policy, stopping condition
-2. **Section 7 Helper agent goals** :  only when the task implies parallelism (cross-repo, audits, explore+implement, etc.)
-3. **Approval handshake** :  agent will not execute until you confirm
-4. **Copyable intake template** :  prefilled for similar future tasks
+1. **Sections 1 to 6 Goal**: outcome, verification (with **3 to 5 checkbox success criteria**), constraints, boundaries, iteration policy, stopping condition
+2. **Section 7 Helper agent goals**: only when the task implies parallelism (cross-repo, audits, explore+implement, etc.); each helper includes iteration and stopping
+3. **Two-step handshake**: approve the Goal first; say **execute now** later to run
+4. **Copyable intake template**: prefilled for similar future tasks
 
-## Saving goals (opt-in)
+## Two-step handshake
 
-The Goal in chat is authoritative. Saving to disk is **optional**:
+| You say | Agent should |
+|---------|----------------|
+| (nothing yet / edits) | Keep refining the Goal; do not start the task |
+| "approved" / "LGTM" on the Goal | Acknowledge; **do not** start the task |
+| "execute now" (later message) | Begin the underlying work under the approved Goal |
+| "skip the Goal, just do it" | Only then may skip Goal definition and execute (explicit) |
 
-- The agent may **offer** `docs/agent-goals/<kebab-slug>.md` if your project has a `docs/` folder
-- The file is written **only after you explicitly say yes** to save (approving the Goal is not enough)
-- If you never confirm, nothing is written
+## Saving goals
+
+The Goal in chat is authoritative.
+
+- The agent should **always offer** `docs/agent-goals/<kebab-slug>.md` when your project has a `docs/` folder
+- **Auto-write** happens only if `docs/agent-goals/` **already exists**, or you give an **explicit save** ask ("save it", "write the file")
+- Approving the Goal alone must **not** create `docs/agent-goals/` or write a file
+- If you never confirm and the directory does not exist, nothing is written
 
 Example slug: goal title "Reduce flaky tests in service-a" → `docs/agent-goals/reduce-flaky-tests-service-a.md`
 
@@ -42,11 +52,12 @@ Example slug: goal title "Reduce flaky tests in service-a" → `docs/agent-goals
 
 | Gotcha | What to do |
 |--------|------------|
-| Agent starts working in the same turn | Remind it: plan-only until Goal is approved |
+| Agent starts working after "approved" | Remind it: wait for **execute now** |
 | Vague "make it better" tasks | Expect clarifying questions; do not accept unbounded boundaries |
-| Parallel work without section 7 | Task likely needs helpers; ask for section 7 mini-goals per repo/slice/role |
-| Auto-saved file under `docs/` | Should not happen; save requires explicit confirm |
-| Software implementation | Approve Goal first, then `/requirement-to-implementation` or a new turn |
+| Parallel work without section 7 | Ask for section 7 mini-goals (with iteration and stopping) |
+| Section 7 on a simple single-file fix | Ask to omit helpers; single-agent is fine |
+| Auto-created `docs/agent-goals/` | Should not happen from Goal approval alone |
+| Software implementation | Approve Goal, then **execute now** or `/requirement-to-implementation` |
 | IAM / tool permissions | Use `agent-risk-review` for access design; Goal covers task outcome, not IAM |
 | Large read-only audits | Use `scoped-audit` to run; use `define-agent-goal` to design delegation first if needed |
 

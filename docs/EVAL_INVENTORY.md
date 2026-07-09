@@ -70,9 +70,11 @@ python3 scripts/inventory-eval-cases.py --write docs/EVAL_INVENTORY.md
 | define-agent-goal | A, S | A2 | A | S1-S5 | y | Scoped request + skill guardrails |
 | define-agent-goal | A, S | A3 | A | S1-S5+H | y | Prompt-only; PASS ties to SKILL phrases |
 | define-agent-goal | A, S | A4 | A | S1-S5+H | y | Prompt-only; PASS ties to SKILL phrases |
+| define-agent-goal | A, S | A5 | A | S1-S5+H | y | Prompt-only; PASS ties to SKILL phrases |
 | define-agent-goal | A, S | S1 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
 | define-agent-goal | A, S | S2 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
 | define-agent-goal | A, S | S3 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
+| define-agent-goal | A, S | S4 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
 | fix-compile-errors | A | A1 | A | S1-S5 | y | Bootstrap invocation/safety template |
 | fix-compile-errors | A | A2 | A | S1-S5 | y | Scoped request + skill guardrails |
 | fix-git-issues | A, S | A1 | A | S1-S5 | y | Bootstrap invocation/safety template |
@@ -165,10 +167,10 @@ python3 scripts/inventory-eval-cases.py --write docs/EVAL_INVENTORY.md
 
 ## Checklist
 
-- [x] Ship-gate rows: **152** (plan estimated ~92; includes `D3b` and full A-section on merge-open-prs)
+- [x] Ship-gate rows: **154** (plan estimated ~92; includes `D3b` and full A-section on merge-open-prs)
 - [x] Commands with eval + ship gate: **40** (target 27)
-- [x] `fixture_ready: y`: **144** | `n`: **8**
-- [x] H-class (primary or mixed): **13** rows reference H
+- [x] `fixture_ready: y`: **146** | `n`: **8**
+- [x] H-class (primary or mixed): **14** rows reference H
 - [x] Every gated section has ≥1 row per command
 
 ## Non-gate cases (manual only)

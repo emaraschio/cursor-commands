@@ -1,7 +1,7 @@
 ---
 name: define-agent-goal
 version: 3
-description: Turn a rough task into an agent Goal (six core sections, 3 to 5 success criteria, helper goals when parallel, approval gate); plan-only, no execution in the same turn
+description: Turn a rough task into an agent Goal (six core sections, 3 to 5 success criteria, helper goals when parallel, two-step approval); plan-only, no execution in the same turn
 scope: generic
 requires_skill: true
 eval:
@@ -11,7 +11,7 @@ eval:
 
 ## Overview
 
-Define an agent Goal using **human-reviewed autonomy**: the agent drafts what done means, how to verify it, boundaries, and (when parallelism is implied) per-helper mini-goals; you approve or edit before any execution. Plan-only. Does not execute the task in the same turn. Full workflow: `.cursor/skill-contracts/define-agent-goal/SKILL.md` (user install: `~/.cursor/skill-contracts/define-agent-goal/SKILL.md`). End-user notes: `.cursor/skill-contracts/define-agent-goal/reference.md`.
+Define an agent Goal using **human-reviewed autonomy** and a **two-step handshake**: draft the Goal and wait for Goal approval; execute only after a later explicit **execute now**. Plan-only on delivery and on Goal approval. Full workflow: `.cursor/skill-contracts/define-agent-goal/SKILL.md` (user install: `~/.cursor/skill-contracts/define-agent-goal/SKILL.md`). End-user notes: `.cursor/skill-contracts/define-agent-goal/reference.md`.
 
 ## Defaults
 
@@ -19,24 +19,25 @@ Define an agent Goal using **human-reviewed autonomy**: the agent drafts what do
 |---------|---------|
 | Deliverable | Goal in chat (sections 1 to 6; section 7 when parallel work is implied) |
 | Success criteria | 3 to 5 checkboxes under Verification |
-| Execution | None in same turn (follow-up or `requirement-to-implementation`) |
+| Handshake | Approve Goal, then later **execute now**; Goal approval is not execute |
 | Discovery | Fast path when full intake template is provided and unambiguous |
-| Persistence | Opt-in save to `docs/agent-goals/<slug>.md` only after explicit user confirm |
+| Persistence | Always offer save when `docs/` exists; auto-write only if `docs/agent-goals/` already exists or user gives an explicit save flag |
 | Examples | Generic names only (`service-a`, `repo1`) |
 
 ## Steps
 
 1. **Read** `.cursor/skill-contracts/define-agent-goal/SKILL.md` for the full agent contract; if that file is missing, read `~/.cursor/skill-contracts/define-agent-goal/SKILL.md`.
 2. **Execute** phases in order (Intake → Discovery [or fast path] → Draft → Clarify gate → Deliver); do not skip the clarify gate or start executing the task.
-3. **Report** the final Goal with 3 to 5 success criteria, approval handshake, copyable intake template for reuse, and section 7 helper goals when parallelism applies.
-4. **Offer** optional save under `docs/agent-goals/` only when the host has `docs/` and the user explicitly confirms write.
+3. **Report** the final Goal with 3 to 5 success criteria, two-step approval handshake, copyable intake template, and section 7 helper goals when parallelism applies (each with iteration and stopping).
+4. **Offer** save under `docs/agent-goals/`; auto-write only when that directory already exists or the user explicitly asks to save.
 
 ## Anti-patterns
 
 - **Complete every Goal section with bounded autonomy.** Trigger: drafting the final Goal from a vague task. Wrong: publishing with missing sections or vague autonomy like "fix everything". Correct: clarify first, fill all six sections (plus section 7 when parallel), and keep boundaries narrow. Reason: an under-specified Goal lets the agent act far beyond what the user intended.
-- **Require helper goals when work is parallel.** Trigger: cross-repo, audit fan-out, explore-then-implement, or explicit subagents. Wrong: a single-agent Goal with no section 7. Correct: add one mini-goal per helper (outcome, verification, boundaries). Reason: parallel work without named helpers collapses into vague autonomy.
-- **Define the Goal without executing it.** Trigger: delivering the Goal. Wrong: editing code or running destructive commands in the same turn. Correct: stop at the Goal unless the user explicitly says to skip Goal definition and execute now. Reason: this skill is plan-only, so acting without that explicit consent risks unwanted or irreversible changes.
-- **Write docs only after confirmation.** Trigger: host has a `docs/` directory. Wrong: writing `docs/agent-goals/` on Goal delivery alone. Correct: offer the path and write only after the user confirms save. Reason: approving the Goal is not consent to create files.
+- **Require helper goals when work is parallel.** Trigger: cross-repo, audit fan-out, explore-then-implement, or explicit subagents. Wrong: a single-agent Goal with no section 7, or mini-goals missing iteration/stopping. Correct: add one mini-goal per helper with outcome, verification, boundaries, iteration policy, and stopping condition. Reason: parallel work without named helpers collapses into vague autonomy.
+- **Do not invent section 7 for single-agent work.** Trigger: one repo, one surface, no fan-out. Wrong: padding the Goal with unused helpers. Correct: omit section 7. Reason: false-positive parallelism wastes tokens and muddies ownership.
+- **Two-step handshake: Goal approval is not execute.** Trigger: user says "approved" or "LGTM" on the Goal. Wrong: starting the underlying task in that turn. Correct: acknowledge approval and wait for a later **execute now** (unless they explicitly skip Goal definition and order execution). Reason: conflating review with run causes unwanted changes.
+- **Save: offer always; auto-write only when the directory exists or flagged.** Trigger: host has `docs/` but not `docs/agent-goals/`. Wrong: creating the directory or file from Goal approval alone. Correct: offer the path; auto-write only if `docs/agent-goals/` already exists or the user gives an explicit save flag. Reason: approving the Goal is not consent to create files.
 - **Do not claim a native Goals product feature.** Reason: this is a portable Goal document for Cursor agents, and implying a built-in Goals API would mislead the user.
 
 ## Examples
@@ -52,7 +53,8 @@ Define an agent Goal using **human-reviewed autonomy**: the agent drafts what do
 **Definition of done:** Flake rate under 1% over 10 CI runs; no deleted coverage without replacement
 ```
 
-- `/define-agent-goal` with a parallel task (e.g. "audit feature flags across repo1, repo2, and repo3"); expect section 7 with one mini-goal per repo/helper
+- `/define-agent-goal` with a parallel task (e.g. "audit feature flags across repo1, repo2, and repo3"); expect section 7 with rich mini-goals per repo/helper
+- After Goal delivery, user says "approved" → acknowledge and wait; user later says "execute now" → begin the task
 
 ## Maintainers
 

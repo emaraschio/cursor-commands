@@ -10,7 +10,7 @@ All notable changes to this project are documented here. Format based on [Keep a
 
 ### Changed
 
-- **`/define-agent-goal`**: harden with intake template, fast path, 3 to 5 success criteria, helper goals (section 7) when parallel, approval handshake, and opt-in docs save; bump command version to 3 (ported from unmerged 825f412 onto skill-contracts paths).
+- **`/define-agent-goal`**: harden with intake template, fast path, 3 to 5 success criteria, rich helper goals (section 7) when parallel, two-step handshake (approve Goal then execute now), and save offer with auto-write only when `docs/agent-goals/` exists or flagged; bump command version to 3.
 - **README**: lead with production-grade catalog value (skills + evals + ship-gate CI + plugin), not "generic" as the identity; clearer highlights and contributor path for OSS growth.
 
 ### Added
