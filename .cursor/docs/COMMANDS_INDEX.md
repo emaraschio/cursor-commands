@@ -35,6 +35,7 @@ Commands with extra sections in `cases.md` (e.g. **B**, **C**, **F** on `merge-o
 | `address-github-pr-comments` | generic | yes | [cases](../skill-contracts/address-github-pr-comments/eval/cases.md) | A, S | 2026-06-24 PASS |
 | `agent-risk-review` | generic | yes | [cases](../skill-contracts/agent-risk-review/eval/cases.md) | A, S | 2026-06-24 PASS |
 | `agent-work-receipt` | generic | yes | [cases](../skill-contracts/agent-work-receipt/eval/cases.md) | A, S | 2026-06-24 PASS |
+| `automation-roi-audit` | generic | yes | [cases](../skill-contracts/automation-roi-audit/eval/cases.md) | A, S | 2026-07-09 PASS |
 | `blind-spot-pass` | generic | yes | [cases](../skill-contracts/blind-spot-pass/eval/cases.md) | A, S | 2026-07-07 PASS |
 | `code-review` | generic | yes | [cases](../skill-contracts/code-review/eval/cases.md) | A, S | 2026-06-24 PASS |
 | `commit` | generic | yes | [cases](../skill-contracts/commit/eval/cases.md) | A, S | 2026-06-24 PASS |

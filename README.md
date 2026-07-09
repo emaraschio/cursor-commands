@@ -11,8 +11,8 @@ Inspired by install ergonomics from [hamzafer/cursor-commands](https://github.co
 
 ## What you get
 
-- **39** generic slash commands (git, review, TDD, structure-prompt, blind spot pass, agent work receipt, security audits, agent goals, prompt eval debug, agent risk review, scoped parallel audits, workspace git sync, PR workflows, requirement-to-implementation, thermo-nuclear code quality review, pathfinder, etc.)
-- **39** skill-contract directories (one per command; not under `.cursor/skills/`)
+- **40** generic slash commands (git, review, TDD, structure-prompt, blind spot pass, automation ROI audit, agent work receipt, security audits, agent goals, prompt eval debug, agent risk review, scoped parallel audits, workspace git sync, PR workflows, requirement-to-implementation, thermo-nuclear code quality review, pathfinder, etc.)
+- **40** skill-contract directories (one per command; not under `.cursor/skills/`)
 - **User plugin package** (`.cursor-plugin/` manifests + materialized `plugin/` tree) for **Customize → Plugins** install and account sync (desktop, web, CLI, iOS)
 - **Behavioral evals** (`PASS` / `PARTIAL` / `FAIL`) per command: regression guardrails when editing prompts
 

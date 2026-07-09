@@ -7,6 +7,9 @@ __pycache__/
 # Local Cursor plans (not part of the catalog)
 .cursor/plans/
 
+# Local agent Goals (not part of the catalog)
+docs/agent-goals/
+
 # Host-specific merge-open-prs profiles (keep _template.yaml + README in repo)
 .cursor/skill-contracts/merge-open-prs/profiles/*
 !.cursor/skill-contracts/merge-open-prs/profiles/_template.yaml
