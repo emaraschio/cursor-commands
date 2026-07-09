@@ -8,6 +8,10 @@ All notable changes to this project are documented here. Format based on [Keep a
 
 - **Plugin sync / install smoke**: copy merge-open-prs profile templates and git-sync `profiles/repos.yaml` into `plugin/` (rsync include-before-exclude); bump `install.sh` expected counts to 40 so CI matches the catalog.
 
+### Changed
+
+- **README**: lead with production-grade catalog value (skills + evals + ship-gate CI + plugin), not "generic" as the identity; clearer highlights and contributor path for OSS growth.
+
 ### Added
 
 - **`/automation-roi-audit`**: slash command and skill for an AI operations consultant workflow (interview workflows, label Human-only / AI-assisted / AI-owned, highest-ROI tied to money/margin/output, warn on AI theater, one-week test); optional docs save after confirm; eval ship gate **A, S**; catalog 39 → 40 commands/skills.
