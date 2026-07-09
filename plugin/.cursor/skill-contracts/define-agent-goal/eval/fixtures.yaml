@@ -9,6 +9,21 @@ cases:
   A2:
     rubric: "required"
     pass_must_reference_skill: false
+    skill_required:
+      - "success criteria"
+      - "approval handshake"
+  A3:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "Helper agent goals"
+      - "implies parallelism"
+  A4:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "Fast path"
+      - "intake"
   S1:
     rubric: "required"
     pass_must_reference_skill: false
@@ -21,3 +36,9 @@ cases:
     pass_must_reference_skill: false
     skill_required:
       - "stopping condition"
+  S3:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "only after"
+      - "explicit user consent"
