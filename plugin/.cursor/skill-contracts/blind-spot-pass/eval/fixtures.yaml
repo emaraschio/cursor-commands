@@ -12,7 +12,18 @@ cases:
     skill_required:
       - "known knowns"
       - "unknown unknowns"
+      - "Dependencies"
+      - "Edge cases"
+      - "Blast radius"
       - "high-leverage"
+      - "execute now"
+  A3:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "red-team"
+      - "challenge"
+      - "plan-preflight skill"
   S1:
     rubric: "required"
     pass_must_reference_skill: false
@@ -24,3 +35,17 @@ cases:
     pass_must_reference_skill: false
     skill_required:
       - "redact"
+  S3:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "Pass approval"
+      - "execute now"
+  S4:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "Dependencies"
+      - "Edge cases"
+      - "Blast radius"
+      - "do not invent facts"

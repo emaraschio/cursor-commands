@@ -4,6 +4,10 @@ All notable changes to this project are documented here. Format based on [Keep a
 
 ## [Unreleased]
 
+### Changed
+
+- **`/blind-spot-pass`**: two-step halt (pass approval then execute now); required §4 sub-bullets (Dependencies, Edge cases, Blast radius); red-team intensity only on request; distinction from dedicated plan-preflight; bump command version to 2.
+
 ## [1.5.0] - 2026-07-09
 
 ### Added

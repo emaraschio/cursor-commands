@@ -1,7 +1,7 @@
 ---
 name: blind-spot-pass
-version: 1
-description: Run a pre-build blind spot pass; classify knowns and unknowns across four quadrants, ask high-leverage interview questions; plan-only, no execution in the same turn
+version: 2
+description: Run a pre-build blind spot pass; four quadrants with deps/edge/blast under unknown unknowns, high-leverage questions, two-step halt; red-team only on request; plan-only
 scope: generic
 requires_skill: true
 eval:
@@ -11,35 +11,43 @@ eval:
 
 ## Overview
 
-Before building, run a blind spot pass on the user's rough plan. Treat the prompt as the map and the real project as the territory: classify gaps across four knowledge quadrants, ask 5 to 10 high-leverage interview questions, and stop before building. Plan-only. Does not execute the task in the same turn. Full workflow: `.cursor/skill-contracts/blind-spot-pass/SKILL.md` (user install: `~/.cursor/skill-contracts/blind-spot-pass/SKILL.md`).
+Before building, run a blind spot pass on the user's rough plan. Treat the prompt as the map and the real project as the territory: classify gaps across four knowledge quadrants (with Dependencies, Edge cases, and Blast radius under unknown unknowns), ask 5 to 10 high-leverage interview questions, and halt with a two-step handshake before building. Default intensity is **standard**; **red-team** only when the user asks to challenge or break the plan. Plan-only on delivery and on pass approval. Full workflow: `.cursor/skill-contracts/blind-spot-pass/SKILL.md` (user install: `~/.cursor/skill-contracts/blind-spot-pass/SKILL.md`).
 
 ## Defaults
 
 | Setting | Default |
 |---------|---------|
-| Deliverable | Five-section pass in chat (four quadrants + interview questions) |
-| Execution | None in same turn (follow-up build, `define-agent-goal`, or `requirement-to-implementation`) |
+| Deliverable | Five-section pass in chat (four quadrants + interview questions; §4 has required sub-bullets) |
+| Intensity | **standard** always; **red-team** only if user asks to challenge / break / red-team |
+| Handshake | Approve or edit the pass, then later **execute now**; pass approval is not build |
+| Execution | None in same turn unless explicit skip-the-pass-and-build |
 | Question count | 5 to 10, ranked by leverage on structure, architecture, audience, scope, workflow, quality |
-| Ambiguity | Clarify the plan before classifying quadrants |
+| Persistence | Offer save under `docs/blind-spot-passes/`; write only after user confirms |
 | Examples | Generic names only (`product-a`, `service-a`, `repo1`) |
 
 ## Steps
 
 1. **Read** `.cursor/skill-contracts/blind-spot-pass/SKILL.md` for the full agent contract; if that file is missing, read `~/.cursor/skill-contracts/blind-spot-pass/SKILL.md`.
 2. **Execute** phases in order (Intake → Discovery → Draft the pass → Deliver); do not skip discovery or start building.
-3. **Report** the blind spot pass (sections 1 to 5); offer optional save under `docs/blind-spot-passes/` when the host has `docs/`.
+3. **Report** the blind spot pass (sections 1 to 5) with §4 sub-bullets and the two-step approval handshake.
+4. **Offer** optional save under `docs/blind-spot-passes/` when the host has `docs/`; write only after the user confirms.
 
 ## Anti-patterns
 
 - **Classify all four quadrants.** Trigger: drafting the pass from a rough plan. Wrong: skipping unknown knowns or unknown unknowns, or collapsing quadrants into a single list. Correct: populate every quadrant explicitly, marking thin quadrants when the context is sparse. Reason: the pass exists to surface what the prompt omitted, and skipped quadrants hide unstated assumptions.
+- **Require §4 Dependencies, Edge cases, and Blast radius.** Trigger: writing unknown unknowns. Wrong: a mushy risk paragraph with no sub-bullets. Correct: include all three sub-bullets, or mark **N/A** when genuinely empty; do not invent facts. Reason: vague §4 lets the model skip failure modes the pass is meant to surface.
 - **Ask high-leverage questions, not trivia.** Trigger: producing the interview questions. Wrong: listing shallow yes/no questions that would not change the output. Correct: ask 5 to 10 questions ranked by how much the answer would change structure, architecture, audience, scope, workflow, or quality. Reason: low-leverage questions waste the interview gate before building.
-- **Pass before build.** Trigger: finishing the pass on a plan whose next step looks obvious. Wrong: editing code, scaffolding, or running destructive commands in the same turn. Correct: stop at the interview questions unless the user explicitly says to skip the pass and build now. Reason: building on unexamined assumptions defeats the technique.
+- **Red-team only on request.** Trigger: user did not ask to challenge or break the plan. Wrong: defaulting to a hostile free-form risk report. Correct: use **standard** unless they ask for red-team / challenge / break; keep four quadrants either way. Reason: unsolicited red-team morphs this into plan-preflight and burns tokens.
+- **Two-step handshake: pass approval is not build.** Trigger: user says "approved" or "LGTM" on the pass. Wrong: scaffolding or coding in that turn. Correct: acknowledge and wait for a later **execute now** (unless they explicitly skip the pass and build now). Reason: conflating review with build defeats the gate.
 - **Do not claim a native product feature.** Reason: this is a portable planning document for Cursor agents, and implying a built-in feature would mislead the user.
+- **Do not morph into plan-preflight.** Trigger: user pastes a step-by-step implementation plan for technical audit. Wrong: replacing the four quadrants with a principal-engineer plan audit. Correct: stay map/territory; point them at a dedicated plan-preflight skill, not this one. Reason: this skill audits the ask, not a finished build plan.
 
 ## Examples
 
 - `/blind-spot-pass` with a rough plan to build a landing page for product-a
 - `/blind-spot-pass` before `/requirement-to-implementation` on a feature sketch
+- `/blind-spot-pass` with "red-team this plan" or "challenge why this ask might fail"
+- After pass delivery, user says "approved" → acknowledge and wait; user later says "execute now" → begin the build
 
 ## Maintainers
 
