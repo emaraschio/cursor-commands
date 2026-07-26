@@ -1,0 +1,45 @@
+schema_version: 1
+command: decision-audit
+ship_gate: [A, S]
+cases:
+  A1:
+    rubric: "required"
+    pass_anchor: "SKILL.md"
+    pass_must_reference_skill: true
+  A2:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "Decision ledger"
+      - "none recorded"
+      - "pride gate"
+      - "revise now"
+  A3:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "no finished work"
+      - "hallucinate"
+  S1:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "audit-only"
+      - "revise now"
+  S2:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "redact"
+  S3:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "Ledger approval"
+      - "revise now"
+  R1:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "line-by-line"
+      - "meaningful"

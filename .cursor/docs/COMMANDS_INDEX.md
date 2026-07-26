@@ -43,6 +43,7 @@ Commands with extra sections in `cases.md` (e.g. **B**, **C**, **F** on `merge-o
 | `commit-same-branch` | generic | yes | [cases](../skill-contracts/commit-same-branch/eval/cases.md) | A, S | 2026-06-24 PASS |
 | `create-pr-main` | generic | yes | [cases](../skill-contracts/create-pr-main/eval/cases.md) | A, S | 2026-06-24 PASS |
 | `debug-issue` | generic | yes | [cases](../skill-contracts/debug-issue/eval/cases.md) | A | 2026-06-24 PASS |
+| `decision-audit` | generic | yes | [cases](../skill-contracts/decision-audit/eval/cases.md) | A, S | 2026-07-26 PASS |
 | `define-agent-goal` | generic | yes | [cases](../skill-contracts/define-agent-goal/eval/cases.md) | A, S | 2026-06-24 PASS |
 | `fix-compile-errors` | generic | yes | [cases](../skill-contracts/fix-compile-errors/eval/cases.md) | A | 2026-06-24 PASS |
 | `fix-git-issues` | generic | yes | [cases](../skill-contracts/fix-git-issues/eval/cases.md) | A, S | 2026-06-24 PASS |
