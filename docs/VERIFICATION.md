@@ -14,7 +14,7 @@ Run after plugin install ([docs/PLUGIN.md](PLUGIN.md)) or `./scripts/install.sh`
 
 The install script already verifies:
 
-- 40 command symlinks and 40 skill-contract symlinks
+- 41 command symlinks and 41 skill-contract symlinks
 - Each symlink target resolves
 - `validate-cursor-commands.py` passes
 - `merge-open-prs` skill is reachable under `$CURSOR_HOME`

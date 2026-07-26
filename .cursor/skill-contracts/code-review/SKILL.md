@@ -60,6 +60,10 @@ performance implications, and provide actionable suggestions for improvement.
 Provide constructive feedback with concrete examples and actionable guidance for
 the author.
 
+## Distinction from other commands
+
+- **`decision-audit`**: post-build choice autopsy (meaningful decisions, confidence, pride gate) without mutating code until revise. This skill is **diff quality** before approve, not a judgment ledger.
+
 ## Guardrails
 
 - Verify security-sensitive paths and test coverage before approving a change.
