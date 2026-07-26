@@ -69,6 +69,12 @@ python3 scripts/inventory-eval-cases.py --write docs/EVAL_INVENTORY.md
 | create-pr-main | A, S | S2 | S | S1-S5 | y | S4: secrets handling |
 | debug-issue | A | A1 | A | S1-S5 | y | Bootstrap invocation/safety template |
 | debug-issue | A | A2 | A | S1-S5 | y | Scoped request + skill guardrails |
+| decision-audit | A, S | A1 | A | S1-S5 | y | Bootstrap invocation/safety template |
+| decision-audit | A, S | A2 | A | S1-S5 | y | Scoped request + skill guardrails |
+| decision-audit | A, S | A3 | A | S1-S5+H | y | Prompt-only; PASS ties to SKILL phrases |
+| decision-audit | A, S | S1 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
+| decision-audit | A, S | S2 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
+| decision-audit | A, S | S3 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
 | define-agent-goal | A, S | A1 | A | S1-S5 | y | Bootstrap invocation/safety template |
 | define-agent-goal | A, S | A2 | A | S1-S5 | y | Scoped request + skill guardrails |
 | define-agent-goal | A, S | A3 | A | S1-S5+H | y | Prompt-only; PASS ties to SKILL phrases |
@@ -170,10 +176,10 @@ python3 scripts/inventory-eval-cases.py --write docs/EVAL_INVENTORY.md
 
 ## Checklist
 
-- [x] Ship-gate rows: **157** (plan estimated ~92; includes `D3b` and full A-section on merge-open-prs)
-- [x] Commands with eval + ship gate: **40** (target 27)
-- [x] `fixture_ready: y`: **149** | `n`: **8**
-- [x] H-class (primary or mixed): **15** rows reference H
+- [x] Ship-gate rows: **163** (plan estimated ~92; includes `D3b` and full A-section on merge-open-prs)
+- [x] Commands with eval + ship gate: **41** (target 27)
+- [x] `fixture_ready: y`: **155** | `n`: **8**
+- [x] H-class (primary or mixed): **16** rows reference H
 - [x] Every gated section has ≥1 row per command
 
 ## Non-gate cases (manual only)

@@ -4,6 +4,10 @@ All notable changes to this project are documented here. Format based on [Keep a
 
 ## [Unreleased]
 
+### Added
+
+- **`/decision-audit`**: slash command and skill for a post-build decision ledger and pride gate (meaningful choices with why / alternatives / confidence; debt and edge notes; audit-only until revise now); eval ship gate **A, S**; catalog 40 → 41 commands/skills.
+
 ### Changed
 
 - **`/blind-spot-pass`**: two-step halt (pass approval then execute now); required §4 sub-bullets (Dependencies, Edge cases, Blast radius); red-team intensity only on request; distinction from dedicated plan-preflight; bump command version to 2.

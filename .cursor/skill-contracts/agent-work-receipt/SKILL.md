@@ -113,6 +113,7 @@ Populate every section. Prefer bullets and short paragraphs over vague prose.
 ## Distinction from other commands
 
 - **`define-agent-goal`**: forward planning before autonomous work. This skill is **backward** accountability after work.
+- **`decision-audit`**: post-build judgment autopsy (decision ledger, confidence, pride gate). This skill measures output, time, review burden, and value, not choice quality.
 - **`light-review-existing-diffs`**: code quality pass on diffs. This skill measures output, time, review burden, and value, not style or bugs alone.
 - **`generate-pr-description`**: writes a PR artifact. This skill produces an honest session receipt, not marketing copy.
 
