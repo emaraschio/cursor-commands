@@ -12,6 +12,7 @@ on:
       - "docs/**"
       - "CHANGELOG.md"
       - ".markdown-link-check.json"
+      - ".github/workflows/**"
   workflow_dispatch:
 
 permissions:

@@ -11,6 +11,7 @@ on:
       - "plugin/**"
       - "scripts/validate-cursor-commands.py"
       - "scripts/sync-plugin-package.sh"
+      - ".github/workflows/**"
   workflow_dispatch:
 
 permissions:
