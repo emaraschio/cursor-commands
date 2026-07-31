@@ -1,0 +1,44 @@
+schema_version: 1
+command: instruction-ablation
+ship_gate: [A, S]
+cases:
+  A1:
+    rubric: "required"
+    pass_anchor: "SKILL.md"
+    pass_must_reference_skill: true
+  A2:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "Baseline gate"
+      - "contamination"
+      - "Struggle log"
+      - "apply now"
+  A3:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "one-off"
+      - "repeated failure"
+  S1:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "apply now"
+  S2:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "Redact"
+  S3:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "production-destructive"
+      - "GUARDRAILS"
+  R1:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "bare baseline"
+      - "prompt-eval-debug"

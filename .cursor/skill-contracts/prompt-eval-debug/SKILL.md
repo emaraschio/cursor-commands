@@ -85,6 +85,7 @@ Note optional follow-up: re-run the suite after the change; for catalog commands
 ## Distinction from other commands
 
 - **`define-agent-goal`**: six-part delegation Goal before autonomous work, not prompt rubric design.
+- **`instruction-ablation`**: strips toward a bare baseline and rebuilds instructions from repeated in-session failures. This skill edits an **existing** pasted prompt via a tiny eval suite.
 - **`debug-issue`**: application/runtime debugging, not prompt evaluation.
 - **Catalog `eval/` trees**: regression contract for **shipped** commands; this skill designs **ad-hoc** cases for any prompt.
 

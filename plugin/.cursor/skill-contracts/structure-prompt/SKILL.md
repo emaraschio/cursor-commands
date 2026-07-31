@@ -109,6 +109,7 @@ Negative example (what to avoid): ...
 ## Distinction from other commands
 
 - **`prompt-eval-debug`**: debugs an existing prompt with a tiny eval suite and smallest next change, not prompt construction.
+- **`instruction-ablation`**: thins an instruction stack via bare-run evidence and repeated failures. This skill **composes** a new structured prompt from a rough ask.
 - **`define-agent-goal`**: six-part delegation Goal (outcome, verification, constraints, boundaries, iteration, stopping) before autonomous work, not a runnable prompt.
 
 ## Guardrails
