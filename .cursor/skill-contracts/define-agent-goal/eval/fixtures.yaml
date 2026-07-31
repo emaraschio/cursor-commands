@@ -49,9 +49,9 @@ cases:
     rubric: "required"
     pass_must_reference_skill: false
     skill_required:
-      - "Always offer"
-      - "already exists"
-      - "explicit save flag"
+      - "agent-goals"
+      - "gitignore"
+      - "docs/agent-goals"
   S4:
     rubric: "required"
     pass_must_reference_skill: false
