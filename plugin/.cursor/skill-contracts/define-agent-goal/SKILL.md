@@ -95,13 +95,13 @@ Before finalizing:
    > After you approve the Goal, say **execute now** (or equivalent) in a later message to begin the work. Goal approval alone is not permission to execute.
 
 3. Include a **copyable intake template** (prefilled from this session where possible) so the user can reuse it for similar tasks.
-4. **Save policy:** Always **offer** to save under `docs/agent-goals/<kebab-slug>.md` when the host has a `docs/` directory (or when the user asks about saving).
-   - The Goal in chat is authoritative until saved.
-   - **Auto-write** only when `docs/agent-goals/` **already exists** on the host, or the user gives an **explicit save flag** (for example "save it" / "write the goal file").
-   - If `docs/` exists but `docs/agent-goals/` does not, offer the path and wait; do **not** create the directory or file from Goal approval alone.
-   - If there is no `docs/`, stay chat-only unless the user explicitly asks to create a path.
+4. **Save policy:** Always auto-write under `<host-repo-root>/agent-goals/<kebab-slug>.md` without asking.
+   - Create `agent-goals/` at the **repository root** (never under `docs/`).
+   - Ensure `/agent-goals/` is in the host `.gitignore` before writing; never stage or commit Goals.
+   - Host-repo = the repo the Goal's work targets in a multi-root workspace.
+   - Do **not** use `docs/agent-goals/` (legacy).
    - Use a kebab-case slug from the goal title (e.g. `reduce-flaky-tests-service-a.md`).
-5. Stop after Goal delivery (and any allowed auto-write). Do not start the underlying task until a later explicit **execute now** (or the user explicitly skips Goal definition and orders execution).
+5. Stop after Goal delivery (and the auto-write). Do not start the underlying task until a later explicit **execute now** (or the user explicitly skips Goal definition and orders execution).
 
 ## Goal template
 
@@ -156,7 +156,7 @@ Populate every required section with concrete content. Use "TBD" only when the u
 - Do not execute the task, edit code, or run destructive commands in the same turn as delivering the Goal, or after Goal approval alone, unless the user explicitly says to skip Goal definition and execute now, or later says **execute now**.
 - Never imply a native Codex Goals API or product feature; this is a portable Goal document for Cursor agents.
 - No secrets, tokens, or PII in the Goal body.
-- Do not create `docs/agent-goals/` solely because the Goal was approved.
+- Always write to `<host-repo-root>/agent-goals/` (gitignored); never `docs/agent-goals/`.
 
 ## Distinction from other commands
 
@@ -171,7 +171,7 @@ Populate every required section with concrete content. Use "TBD" only when the u
 - Two-step handshake: Goal approval is not execute; wait for a later **execute now** (or explicit skip of Goal definition).
 - Do not claim a native Goals product feature; this is a portable Goal document.
 - Do not omit section 7 when the task implies parallelism; do not invent section 7 for single-agent work.
-- Always offer save when `docs/` exists; auto-write only if `docs/agent-goals/` already exists or the user gives an explicit save flag; never create that directory from Goal approval alone.
+- Always auto-write to `<host-repo-root>/agent-goals/<kebab-slug>.md` (gitignored root folder); never use `docs/agent-goals/`.
 - Prefer the intake fast path when all four intake fields are present and unambiguous.
 - Helper mini-goals must include iteration policy and stopping condition (inherit parent when identical).
 
