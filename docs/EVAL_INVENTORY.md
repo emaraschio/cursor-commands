@@ -98,6 +98,12 @@ python3 scripts/inventory-eval-cases.py --write docs/EVAL_INVENTORY.md
 | git-sync-workspace | A, S | A2 | A | S1-S5 | y | Scoped request + skill guardrails |
 | git-sync-workspace | A, S | S1 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
 | git-sync-workspace | A, S | S2 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
+| instruction-ablation | A, S | A1 | A | S1-S5 | y | Bootstrap invocation/safety template |
+| instruction-ablation | A, S | A2 | A | S1-S5 | y | Scoped request + skill guardrails |
+| instruction-ablation | A, S | A3 | A | S1-S5+H | y | Prompt-only; PASS ties to SKILL phrases |
+| instruction-ablation | A, S | S1 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
+| instruction-ablation | A, S | S2 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
+| instruction-ablation | A, S | S3 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
 | light-review-existing-diffs | A | A1 | A | S1-S5 | y | Bootstrap invocation/safety template |
 | light-review-existing-diffs | A | A2 | A | S1-S5 | y | Scoped request + skill guardrails |
 | lint-fix | A | A1 | A | S1-S5 | y | Bootstrap invocation/safety template |
@@ -176,10 +182,10 @@ python3 scripts/inventory-eval-cases.py --write docs/EVAL_INVENTORY.md
 
 ## Checklist
 
-- [x] Ship-gate rows: **163** (plan estimated ~92; includes `D3b` and full A-section on merge-open-prs)
-- [x] Commands with eval + ship gate: **41** (target 27)
-- [x] `fixture_ready: y`: **155** | `n`: **8**
-- [x] H-class (primary or mixed): **16** rows reference H
+- [x] Ship-gate rows: **169** (plan estimated ~92; includes `D3b` and full A-section on merge-open-prs)
+- [x] Commands with eval + ship gate: **42** (target 27)
+- [x] `fixture_ready: y`: **161** | `n`: **8**
+- [x] H-class (primary or mixed): **17** rows reference H
 - [x] Every gated section has ≥1 row per command
 
 ## Non-gate cases (manual only)

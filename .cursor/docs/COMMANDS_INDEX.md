@@ -50,6 +50,7 @@ Commands with extra sections in `cases.md` (e.g. **B**, **C**, **F** on `merge-o
 | `generate-api-docs` | generic | yes | [cases](../skill-contracts/generate-api-docs/eval/cases.md) | A | 2026-06-24 PASS |
 | `generate-pr-description` | generic | yes | [cases](../skill-contracts/generate-pr-description/eval/cases.md) | A | 2026-06-24 PASS |
 | `git-sync-workspace` | generic | yes | [cases](../skill-contracts/git-sync-workspace/eval/cases.md) | A, S | 2026-06-24 PASS |
+| `instruction-ablation` | generic | yes | [cases](../skill-contracts/instruction-ablation/eval/cases.md) | A, S | 2026-07-31 PASS |
 | `light-review-existing-diffs` | generic | yes | [cases](../skill-contracts/light-review-existing-diffs/eval/cases.md) | A | 2026-06-24 PASS |
 | `lint-fix` | generic | yes | [cases](../skill-contracts/lint-fix/eval/cases.md) | A | 2026-06-24 PASS |
 | `lint-suite` | generic | yes | [cases](../skill-contracts/lint-suite/eval/cases.md) | A | 2026-06-24 PASS |

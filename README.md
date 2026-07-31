@@ -7,7 +7,7 @@
 
 **Production-grade Cursor slash commands:** each `/command` ships with a full agent skill contract, a behavioral eval rubric, and CI that fails if safety guards regress. Install as a [user plugin](docs/PLUGIN.md) and get the same workflows on desktop, web, CLI, and mobile.
 
-Stable release: [`v1.5.0`](CHANGELOG.md#150---2026-07-09). Catalog: **41** commands. Not an official Cursor product.
+Stable release: [`v1.5.0`](CHANGELOG.md#150---2026-07-09). Catalog: **42** commands. Not an official Cursor product.
 
 Inspired by install ergonomics from [hamzafer/cursor-commands](https://github.com/hamzafer/cursor-commands). This repo goes further: **paired skills**, **eval rubrics**, and **structural ship-gate CI** (`run-eval-fixtures.py --strict`).
 
@@ -17,7 +17,7 @@ Most Cursor command packs are markdown snippets. This one treats prompts like co
 
 | You get | Why it matters |
 |---------|----------------|
-| **41 slash commands** | Review, TDD, PRs, audits, planning, git sync, and more, ready in `/` |
+| **42 slash commands** | Review, TDD, PRs, audits, planning, git sync, and more, ready in `/` |
 | **Paired skill contracts** | The real workflow lives in `SKILL.md`, not a one-line prompt |
 | **Ship-gate evals in CI** | Fixtures lock anti-pattern guards so regressions fail the build |
 | **User plugin package** | One install follows your Cursor account (desktop, web, CLI, iOS) |
@@ -38,6 +38,7 @@ Full table: [COMMANDS_INDEX.md](.cursor/docs/COMMANDS_INDEX.md).
 | `/pathfinder` | Fog-of-war planning when the codebase is unfamiliar |
 | `/automation-roi-audit` | Interview real workflows; label Human / AI-assisted / AI-owned; pick a one-week ROI test |
 | `/decision-audit` | Post-build decision ledger and pride gate; no code changes until revise |
+| `/instruction-ablation` | Bare-baseline rebuild of instructions; add only after repeated failures |
 | `/merge-open-prs` | Batch review, verify, merge when green (limit 10) |
 | `/thermo-nuclear-code-quality-review` | Extremely strict maintainability pass without changing behavior |
 
@@ -45,7 +46,7 @@ Full table: [COMMANDS_INDEX.md](.cursor/docs/COMMANDS_INDEX.md).
 
 ## What you get
 
-- **41** slash commands and **41** skill-contract directories (one pair per command; bodies live under `.cursor/skill-contracts/`, not `.cursor/skills/`)
+- **42** slash commands and **42** skill-contract directories (one pair per command; bodies live under `.cursor/skill-contracts/`, not `.cursor/skills/`)
 - **User plugin package** (`.cursor-plugin/` + materialized `plugin/` tree) for **Customize → Plugins**
 - **Behavioral evals** (`PASS` / `PARTIAL` / `FAIL`) per command, with ship-gate sections enforced in CI
 
