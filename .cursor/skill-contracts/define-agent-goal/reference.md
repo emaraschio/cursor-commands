@@ -39,14 +39,16 @@ When all four fields are clear, the agent should skip redundant questions and dr
 
 ## Saving goals
 
-The Goal in chat is authoritative.
+After Goal delivery, the agent **always** writes:
 
-- The agent should **always offer** `docs/agent-goals/<kebab-slug>.md` when your project has a `docs/` folder
-- **Auto-write** happens only if `docs/agent-goals/` **already exists**, or you give an **explicit save** ask ("save it", "write the file")
-- Approving the Goal alone must **not** create `docs/agent-goals/` or write a file
-- If you never confirm and the directory does not exist, nothing is written
+`<host-repo-root>/agent-goals/<kebab-slug>.md`
 
-Example slug: goal title "Reduce flaky tests in service-a" → `docs/agent-goals/reduce-flaky-tests-service-a.md`
+- Folder is at the **repository root**, never under `docs/`
+- Ensure `/agent-goals/` is in `.gitignore`; never commit Goals
+- Host-repo = the repo the Goal's work targets (multi-root: do not pick an arbitrary first folder)
+- Legacy `docs/agent-goals/` is wrong; do not use it
+
+Example slug: goal title "Reduce flaky tests in service-a" → `agent-goals/reduce-flaky-tests-service-a.md`
 
 ## Gotchas
 
@@ -56,7 +58,7 @@ Example slug: goal title "Reduce flaky tests in service-a" → `docs/agent-goals
 | Vague "make it better" tasks | Expect clarifying questions; do not accept unbounded boundaries |
 | Parallel work without section 7 | Ask for section 7 mini-goals (with iteration and stopping) |
 | Section 7 on a simple single-file fix | Ask to omit helpers; single-agent is fine |
-| Auto-created `docs/agent-goals/` | Should not happen from Goal approval alone |
+| Wrote under `docs/agent-goals/` | Move to root `agent-goals/` and gitignore it |
 | Software implementation | Approve Goal, then **execute now** or `/requirement-to-implementation` |
 | IAM / tool permissions | Use `agent-risk-review` for access design; Goal covers task outcome, not IAM |
 | Large read-only audits | Use `scoped-audit` to run; use `define-agent-goal` to design delegation first if needed |

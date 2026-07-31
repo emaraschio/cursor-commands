@@ -1,6 +1,6 @@
 ---
 name: define-agent-goal
-version: 3
+version: 4
 description: Turn a rough task into an agent Goal (six core sections, 3 to 5 success criteria, helper goals when parallel, two-step approval); plan-only, no execution in the same turn
 scope: generic
 requires_skill: true
@@ -21,7 +21,7 @@ Define an agent Goal using **human-reviewed autonomy** and a **two-step handshak
 | Success criteria | 3 to 5 checkboxes under Verification |
 | Handshake | Approve Goal, then later **execute now**; Goal approval is not execute |
 | Discovery | Fast path when full intake template is provided and unambiguous |
-| Persistence | Always offer save when `docs/` exists; auto-write only if `docs/agent-goals/` already exists or user gives an explicit save flag |
+| Persistence | Always auto-write to `<host-repo-root>/agent-goals/<kebab-slug>.md` (gitignored); never `docs/agent-goals/` |
 | Examples | Generic names only (`service-a`, `repo1`) |
 
 ## Steps
@@ -29,7 +29,7 @@ Define an agent Goal using **human-reviewed autonomy** and a **two-step handshak
 1. **Read** `.cursor/skill-contracts/define-agent-goal/SKILL.md` for the full agent contract; if that file is missing, read `~/.cursor/skill-contracts/define-agent-goal/SKILL.md`.
 2. **Execute** phases in order (Intake → Discovery [or fast path] → Draft → Clarify gate → Deliver); do not skip the clarify gate or start executing the task.
 3. **Report** the final Goal with 3 to 5 success criteria, two-step approval handshake, copyable intake template, and section 7 helper goals when parallelism applies (each with iteration and stopping).
-4. **Offer** save under `docs/agent-goals/`; auto-write only when that directory already exists or the user explicitly asks to save.
+4. **Auto-write** under `<host-repo-root>/agent-goals/<kebab-slug>.md` (ensure `/agent-goals/` is gitignored); never use `docs/agent-goals/`.
 
 ## Anti-patterns
 
@@ -37,7 +37,7 @@ Define an agent Goal using **human-reviewed autonomy** and a **two-step handshak
 - **Require helper goals when work is parallel.** Trigger: cross-repo, audit fan-out, explore-then-implement, or explicit subagents. Wrong: a single-agent Goal with no section 7, or mini-goals missing iteration/stopping. Correct: add one mini-goal per helper with outcome, verification, boundaries, iteration policy, and stopping condition. Reason: parallel work without named helpers collapses into vague autonomy.
 - **Do not invent section 7 for single-agent work.** Trigger: one repo, one surface, no fan-out. Wrong: padding the Goal with unused helpers. Correct: omit section 7. Reason: false-positive parallelism wastes tokens and muddies ownership.
 - **Two-step handshake: Goal approval is not execute.** Trigger: user says "approved" or "LGTM" on the Goal. Wrong: starting the underlying task in that turn. Correct: acknowledge approval and wait for a later **execute now** (unless they explicitly skip Goal definition and order execution). Reason: conflating review with run causes unwanted changes.
-- **Save: offer always; auto-write only when the directory exists or flagged.** Trigger: host has `docs/` but not `docs/agent-goals/`. Wrong: creating the directory or file from Goal approval alone. Correct: offer the path; auto-write only if `docs/agent-goals/` already exists or the user gives an explicit save flag. Reason: approving the Goal is not consent to create files.
+- **Save: always auto-write to root `agent-goals/` (gitignored).** Trigger: Goal delivery. Wrong: writing under `docs/agent-goals/` or committing Goals. Correct: `<host-repo-root>/agent-goals/<kebab-slug>.md` with `/agent-goals/` in `.gitignore`. Reason: Goals are local working notes; `docs/` paths get tracked and fight that intent.
 - **Do not claim a native Goals product feature.** Reason: this is a portable Goal document for Cursor agents, and implying a built-in Goals API would mislead the user.
 
 ## Examples
