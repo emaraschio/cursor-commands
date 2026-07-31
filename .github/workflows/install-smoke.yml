@@ -11,7 +11,7 @@ on:
       - "scripts/install.sh"
       - "scripts/test_install.sh"
       - "scripts/validate-cursor-commands.py"
-      - ".github/workflows/install-smoke.yml"
+      - ".github/workflows/**"
   workflow_dispatch:
 
 permissions:

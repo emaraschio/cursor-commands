@@ -112,8 +112,8 @@ Workflow name: **`eval-fixtures.yml`**.
 
 | Event | Paths |
 |-------|--------|
-| `pull_request` → `main` | `.cursor/commands/**`, `.cursor/skill-contracts/**`, `scripts/run-eval-fixtures.py`, `scripts/validate-cursor-commands.py`, `scripts/inventory-eval-cases.py` |
-| `push` → `main` | same |
+| `pull_request` → `main` | `.cursor/commands/**`, `.cursor/skill-contracts/**`, eval/validate scripts, `.github/workflows/**` (so workflow-only PRs still report required checks) |
+| `push` → `main` | all paths (no filter) |
 | `workflow_dispatch` | full catalog |
 
 **Job layout (recommended):** single job, ordered steps:
