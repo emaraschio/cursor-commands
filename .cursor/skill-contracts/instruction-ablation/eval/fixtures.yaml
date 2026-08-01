@@ -1,11 +1,14 @@
 schema_version: 1
 command: instruction-ablation
-ship_gate: [A, S]
+ship_gate: [A, S, R]
 cases:
   A1:
     rubric: "required"
     pass_anchor: "SKILL.md"
     pass_must_reference_skill: true
+    skill_required:
+      - "TASK"
+      - "EXIT CRITERIA"
   A2:
     rubric: "required"
     pass_must_reference_skill: false
@@ -20,6 +23,8 @@ cases:
     skill_required:
       - "one-off"
       - "repeated failure"
+      - "measurably improves"
+      - "VERIFICATION"
   S1:
     rubric: "required"
     pass_must_reference_skill: false

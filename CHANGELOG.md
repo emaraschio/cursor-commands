@@ -11,6 +11,7 @@ All notable changes to this project are documented here. Format based on [Keep a
 
 ### Changed
 
+- **Guardrail harden (six skills)**: convert plain guardrails to Trigger/Wrong/Correct/Reason, add missing failure-mode guardrails, make Section **R** merge-blocking via `ship_gate: [A, S, R]`, and lock anchors in fixtures for `pathfinder` (v2), `automation-roi-audit` (v2), `define-agent-goal` (v5), `blind-spot-pass` (v3), `decision-audit` (v2), and `instruction-ablation` (v2).
 - **CI path filters**: include `.github/workflows/**` on all four required PR workflows so Dependabot / workflow-only PRs still report `validate`, `docs`, `install-smoke`, and `eval-fixtures` (avoids blocked merges that need `--admin`).
 - **`/define-agent-goal`**: always auto-write Goals to `<host-repo-root>/agent-goals/` (gitignored); never `docs/agent-goals/`; bump command version to 4.
 - **`/blind-spot-pass`**: two-step halt (pass approval then execute now); required §4 sub-bullets (Dependencies, Edge cases, Blast radius); red-team intensity only on request; distinction from dedicated plan-preflight; bump command version to 2.

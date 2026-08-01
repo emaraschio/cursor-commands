@@ -167,13 +167,17 @@ Populate every required section with concrete content. Use "TBD" only when the u
 
 ## Guardrails
 
-- Clarify a vague task before finalizing, fill all six Goal sections (plus section 7 when parallelism applies), and keep boundaries narrow instead of granting vague autonomy.
-- Two-step handshake: Goal approval is not execute; wait for a later **execute now** (or explicit skip of Goal definition).
-- Do not claim a native Goals product feature; this is a portable Goal document.
-- Do not omit section 7 when the task implies parallelism; do not invent section 7 for single-agent work.
-- Always auto-write to `<host-repo-root>/agent-goals/<kebab-slug>.md` (gitignored root folder); never use `docs/agent-goals/`.
-- Prefer the intake fast path when all four intake fields are present and unambiguous.
-- Helper mini-goals must include iteration policy and stopping condition (inherit parent when identical).
+- **Clarify gate before publish.** Trigger: outcome, verification, stopping condition, or boundaries are ambiguous. Wrong: publishing a Goal with guessed or TBD outcome/verification/stopping/boundaries. Correct: stop at the Clarify gate and ask before finalizing. Reason: a Goal shipped on assumptions authorizes work no one reviewed.
+- **3 to 5 success criteria.** Trigger: drafting section 2 Verification. Wrong: fewer than 3 or more than 5 checkboxes. Correct: include 3 to 5 success criteria as scannable, testable checkboxes. Reason: too few criteria leave done-ness vague; too many bury the signal.
+- **Complete every Goal section with bounded autonomy.** Trigger: drafting the final Goal from a vague task. Wrong: publishing with missing sections or vague autonomy like "fix everything". Correct: clarify first, fill all six sections (plus section 7 when parallel), and keep boundaries narrow. Reason: an under-specified Goal lets the agent act far beyond what the user intended.
+- **Require helper goals when work is parallel.** Trigger: cross-repo, audit fan-out, explore-then-implement, or explicit subagents. Wrong: a single-agent Goal with no section 7, or mini-goals missing iteration/stopping. Correct: add one mini-goal per helper with outcome, verification, boundaries, iteration policy, and stopping condition. Reason: parallel work without named helpers collapses into vague autonomy.
+- **Do not invent section 7 for single-agent work.** Trigger: one repo, one surface, no fan-out. Wrong: padding the Goal with unused helpers. Correct: omit section 7. Reason: false-positive parallelism wastes tokens and muddies ownership.
+- **Two-step handshake: Goal approval is not execute.** Trigger: user says "approved" or "LGTM" on the Goal. Wrong: starting the underlying task in that turn. Correct: acknowledge approval and wait for a later **execute now** (unless they explicitly skip Goal definition and order execution). Reason: conflating review with run causes unwanted changes.
+- **Plan-only on delivery.** Trigger: finishing Goal delivery. Wrong: editing code or running destructive commands in the delivery turn. Correct: Do not execute the task, edit code, or run destructive commands until a later **execute now** or an explicit skip Goal definition. Reason: this skill defines the Goal; it does not run it.
+- **Save: always auto-write to root `agent-goals/` (gitignored).** Trigger: Goal delivery. Wrong: writing under `docs/agent-goals/` or committing Goals. Correct: `<host-repo-root>/agent-goals/<kebab-slug>.md` with `/agent-goals/` in `.gitignore`. Reason: Goals are local working notes; `docs/` paths get tracked and fight that intent.
+- **Do not claim a native Goals product feature.** Trigger: describing what this deliverable is. Wrong: implying a built-in Goals API or product feature. Correct: present this as a portable Goal document for Cursor agents. Reason: a native-product claim misleads the user about what shipped.
+- **Prefer the intake fast path.** Trigger: all four intake fields are present and unambiguous. Wrong: re-asking obvious duplicate questions. Correct: skip redundant discovery and draft the Goal. Reason: redundant interviews burn tokens when the user already supplied the inputs.
+- **Helper mini-goals must include iteration and stopping.** Trigger: drafting section 7. Wrong: mini-goals that omit iteration policy or stopping condition. Correct: include both (inherit parent when identical). Reason: helpers without stop/retry rules become unbounded.
 
 ## Additional resources
 

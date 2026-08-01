@@ -117,8 +117,9 @@ For each workflow:
 
 ## Guardrails
 
-- Interview until each workflow has enough detail; do not analyze thin lists as if they were complete.
-- Recommend only automations that improve money, margin, or output; dismiss AI theater as the primary bet.
-- Warn on distraction, meeting-summary traps, and rebuild-cheap-SaaS mistakes when they apply.
-- Offer optional docs save only when `docs/` exists; write only after the user confirms.
-- Audit and recommend; do not implement the automation in the same turn.
+- **Interview before analyzing.** Trigger: user pastes a thin workflow list (names or one-liners only). Wrong: labeling steps and picking ROI immediately. Correct: interview until each workflow has enough process detail, then analyze. Reason: labels and ROI from thin lists invent process and ship bad bets.
+- **Reject AI theater as the primary bet.** Trigger: a suggested automation that does not improve money, margin, or output. Wrong: ranking it as the highest-ROI opportunity. Correct: call it AI theater and pick a bet tied to money, margin, or output. Reason: theater burns time without changing the business.
+- **Warn on rebuild-cheap-SaaS and distraction traps.** Trigger: the idea is a meeting-summary toy, a distraction, or rebuilding something like Calendly for pocket change. Wrong: recommending it as the one-week test. Correct: warn explicitly and steer to a narrower proprietary or high-leverage test. Reason: those traps look like progress and displace real ROI work.
+- **Prefer proprietary edge.** Trigger: ranking automation opportunities. Wrong: generic wrapper automations ranked over process-specific leverage. Correct: tie the bet to proprietary data or domain workflow when available. Reason: proprietary edge is harder to copy and more likely to move money, margin, or output.
+- **Write docs only after confirmation.** Trigger: host has a `docs/` directory. Wrong: writing `docs/automation-roi-audits/...` unprompted. Correct: offer the path and write only after the user confirms. Reason: unsolicited docs clutter the host workspace.
+- **Do not implement the automation in the same turn.** Trigger: finishing the audit with a clear one-week test. Wrong: scaffolding code, PRs, or a follow-on skill without a new ask. Correct: deliver the report (and optional confirmed docs save) and stop. Reason: this skill audits; building skips review of the recommendation.

@@ -1,12 +1,12 @@
 ---
 name: decision-audit
-version: 1
+version: 2
 description: Post-build decision ledger and pride gate; audit meaningful choices without changing code until revise
 scope: generic
 requires_skill: true
 eval:
   path: .cursor/skill-contracts/decision-audit/eval/cases.md
-  ship_gate: [A, S]
+  ship_gate: [A, S, R]
 ---
 
 ## Overview
@@ -35,6 +35,7 @@ After work has landed (or a scoped branch/session), list meaningful agent decisi
 - **Stay audit-only until revise now.** Trigger: finishing the ledger or pride gate. Wrong: editing code, committing, or opening a PR in the same turn. Correct: deliver the audit and wait for an explicit **revise now** (with targets). Reason: ledger approval is not permission to mutate the branch.
 - **Ground decisions in evidence.** Trigger: filling the ledger. Wrong: inventing choices that have no support in conversation or diff. Correct: cite session or git evidence, or mark confidence low / none recorded. Reason: invented decisions fake accountability.
 - **Always ask the pride gate.** Trigger: closing the audit. Wrong: soft-selling ship readiness or skipping the two yes/no questions. Correct: ask whether the human is proud of the branch and would stand behind it in production. Reason: the pride gate is the cheap, high-signal filter this skill exists to force.
+- **Stop when nothing has landed.** Trigger: mid-task invocation with no finished work. Wrong: fabricating a ledger of completed decisions. Correct: state nothing finished, stop or ask whether to wait. Reason: auditing choices never made is theater.
 
 ## Examples
 
@@ -44,4 +45,4 @@ After work has landed (or a scoped branch/session), list meaningful agent decisi
 
 ## Maintainers
 
-Behavioral eval: `.cursor/skill-contracts/decision-audit/eval/cases.md`. Ship gate sections: **A, S** before changing `SKILL.md` or this command.
+Behavioral eval: `.cursor/skill-contracts/decision-audit/eval/cases.md`. Ship gate sections: **A, S, R** before changing `SKILL.md` or this command.
