@@ -1,6 +1,6 @@
 schema_version: 1
 command: define-agent-goal
-ship_gate: [A, S]
+ship_gate: [A, S, R]
 cases:
   A1:
     rubric: "required"
@@ -37,14 +37,15 @@ cases:
     rubric: "required"
     pass_must_reference_skill: false
     skill_required:
-      - "stopping condition"
-      - "keep boundaries narrow"
+      - "Clarify gate"
+      - "3 to 5 success criteria"
       - "vague autonomy"
+      - "keep boundaries narrow"
   S2:
     rubric: "required"
     pass_must_reference_skill: false
     skill_required:
-      - "stopping condition"
+      - "skip Goal definition"
   S3:
     rubric: "required"
     pass_must_reference_skill: false
@@ -58,3 +59,18 @@ cases:
     skill_required:
       - "Goal approval is not"
       - "execute now"
+  R1:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "vague autonomy"
+  R2:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "Do not execute the task"
+  R3:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "portable Goal document"

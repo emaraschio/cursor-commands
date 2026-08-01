@@ -99,6 +99,9 @@ Populate every section with concrete content. Leave a section explicitly empty o
 
 ## Guardrails
 
-- Separate fixed from unknown: list a decision as fixed only when the context states it, and keep assumptions in frontiers or fog.
-- Tag every fog-of-war unknown with exactly one next move (research, prototype, ask an expert, user test, or delegate) so nothing is left without a resolution path.
-- Deliver the map and stop: this is plan-only, so do not build, scaffold, or run destructive commands in the same turn unless the user explicitly says to skip planning and build now.
+- **Separate fixed from unknown.** Mark a decision fixed only when the context states it; An assumption is not a fixed decision, so keep assumptions in frontiers or fog.
+- **Tag every unknown with a next move.** Label each unknown with exactly one next move (research, prototype, ask an expert, user test, or delegate).
+- **Deliver the map without building it.** Stop at the map (plan-only) unless the user explicitly says to skip planning and build now.
+- **Parallel tracks and three actions.** Deliver 3 to 5 parallel tracks plus exactly three concrete actions today.
+- **Docs save only after confirm.** Offer the path and write only after the user confirms.
+- **Do not claim a native product feature.** Present this as a portable planning document for Cursor agents.

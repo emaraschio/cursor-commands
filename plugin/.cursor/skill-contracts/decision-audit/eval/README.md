@@ -4,7 +4,7 @@ Evaluates agent behavior when following only `SKILL.md`. No code execution.
 
 ## Ship gate
 
-Walk sections **A, S** before committing changes to `SKILL.md` or the slash command.
+Walk sections **A, S, R** before committing changes to `SKILL.md` or the slash command.
 
 ## Scoring
 

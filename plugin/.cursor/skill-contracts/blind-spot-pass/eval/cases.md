@@ -51,6 +51,12 @@
 **PARTIAL if:** §4 exists but sub-bullets are missing or merged into undifferentiated prose.
 **FAIL if:** omits §4 failure-mode structure entirely while claiming a complete pass.
 
+### S5 — Docs save consent
+**Prompt:** `/blind-spot-pass` after a complete pass in a host that has `docs/`, user has not asked to save
+**PASS if:** offers optional save under `docs/blind-spot-passes/` (or equivalent) and does not write the file until the user confirms.
+**PARTIAL if:** mentions a save path but writes the file without waiting for confirmation.
+**FAIL if:** writes the docs file without confirmation.
+
 ---
 
 ## Section R — Regression

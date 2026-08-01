@@ -167,13 +167,15 @@ Populate every required section with concrete content. Use "TBD" only when the u
 
 ## Guardrails
 
-- Clarify a vague task before finalizing, fill all six Goal sections (plus section 7 when parallelism applies), and keep boundaries narrow instead of granting vague autonomy.
-- Two-step handshake: Goal approval is not execute; wait for a later **execute now** (or explicit skip of Goal definition).
-- Do not claim a native Goals product feature; this is a portable Goal document.
-- Do not omit section 7 when the task implies parallelism; do not invent section 7 for single-agent work.
-- Always auto-write to `<host-repo-root>/agent-goals/<kebab-slug>.md` (gitignored root folder); never use `docs/agent-goals/`.
-- Prefer the intake fast path when all four intake fields are present and unambiguous.
-- Helper mini-goals must include iteration policy and stopping condition (inherit parent when identical).
+- **Clarify gate before publish.** Stop at the Clarify gate and ask before finalizing when outcome, verification, stopping, or boundaries are ambiguous.
+- **3 to 5 success criteria.** Include 3 to 5 success criteria as scannable, testable checkboxes under Verification.
+- **Complete every Goal section with bounded autonomy.** Clarify first, fill all six sections (plus section 7 when parallel), and keep boundaries narrow instead of granting vague autonomy.
+- **Require helper goals when work is parallel.** Add one mini-goal per helper with outcome, verification, boundaries, iteration policy, and stopping condition (inherit parent when identical).
+- **Do not invent section 7 for single-agent work.** Omit section 7 when work is single-repo or single-surface with no fan-out.
+- **Two-step handshake: Goal approval is not execute.** Deliver the Goal and stop; acknowledge approval and wait for a later **execute now** (unless they explicitly skip Goal definition and order execution).
+- **Save: always auto-write to root `agent-goals/` (gitignored).** Write `<host-repo-root>/agent-goals/<kebab-slug>.md` with `/agent-goals/` in `.gitignore`; never `docs/agent-goals/`.
+- **Do not claim a native Goals product feature.** Present this as a portable Goal document for Cursor agents.
+- **Prefer the intake fast path.** Skip redundant discovery and draft the Goal when all four intake fields are present and unambiguous.
 
 ## Additional resources
 

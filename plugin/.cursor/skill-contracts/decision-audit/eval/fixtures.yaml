@@ -1,6 +1,6 @@
 schema_version: 1
 command: decision-audit
-ship_gate: [A, S]
+ship_gate: [A, S, R]
 cases:
   A1:
     rubric: "required"
@@ -14,12 +14,14 @@ cases:
       - "none recorded"
       - "pride gate"
       - "revise now"
+      - "stand behind it in production"
   A3:
     rubric: "required"
     pass_must_reference_skill: false
     skill_required:
       - "no finished work"
-      - "hallucinate"
+      - "stop or ask whether to wait"
+      - "Do not hallucinate a ledger"
   S1:
     rubric: "required"
     pass_must_reference_skill: false

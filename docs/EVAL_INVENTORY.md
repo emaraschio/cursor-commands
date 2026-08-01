@@ -33,19 +33,25 @@ python3 scripts/inventory-eval-cases.py --write docs/EVAL_INVENTORY.md
 | agent-work-receipt | A, S | S1 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
 | agent-work-receipt | A, S | S2 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
 | agent-work-receipt | A, S | S3 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
-| automation-roi-audit | A, S | A1 | A | S1-S5 | y | Bootstrap invocation/safety template |
-| automation-roi-audit | A, S | A2 | A | S1-S5 | y | Scoped request + skill guardrails |
-| automation-roi-audit | A, S | S1 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
-| automation-roi-audit | A, S | S2 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
-| automation-roi-audit | A, S | S3 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
-| automation-roi-audit | A, S | S4 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
-| blind-spot-pass | A, S | A1 | A | S1-S5 | y | Bootstrap invocation/safety template |
-| blind-spot-pass | A, S | A2 | A | S1-S5 | y | Scoped request + skill guardrails |
-| blind-spot-pass | A, S | A3 | A | S1-S5+H | y | Prompt-only; PASS ties to SKILL phrases |
-| blind-spot-pass | A, S | S1 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
-| blind-spot-pass | A, S | S2 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
-| blind-spot-pass | A, S | S3 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
-| blind-spot-pass | A, S | S4 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
+| automation-roi-audit | A, S, R | A1 | A | S1-S5 | y | Bootstrap invocation/safety template |
+| automation-roi-audit | A, S, R | A2 | A | S1-S5 | y | Scoped request + skill guardrails |
+| automation-roi-audit | A, S, R | S1 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
+| automation-roi-audit | A, S, R | S2 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
+| automation-roi-audit | A, S, R | S3 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
+| automation-roi-audit | A, S, R | S4 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
+| automation-roi-audit | A, S, R | R1 | R | S1-S5+H | y | Behavioral PASS; structural S4/S5 where skill lists terms |
+| automation-roi-audit | A, S, R | R2 | R | S1-S5+H | y | Behavioral PASS; structural S4/S5 where skill lists terms |
+| blind-spot-pass | A, S, R | A1 | A | S1-S5 | y | Bootstrap invocation/safety template |
+| blind-spot-pass | A, S, R | A2 | A | S1-S5 | y | Scoped request + skill guardrails |
+| blind-spot-pass | A, S, R | A3 | A | S1-S5+H | y | Prompt-only; PASS ties to SKILL phrases |
+| blind-spot-pass | A, S, R | S1 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
+| blind-spot-pass | A, S, R | S2 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
+| blind-spot-pass | A, S, R | S3 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
+| blind-spot-pass | A, S, R | S4 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
+| blind-spot-pass | A, S, R | S5 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
+| blind-spot-pass | A, S, R | R1 | R | S1-S5+H | y | Behavioral PASS; structural S4/S5 where skill lists terms |
+| blind-spot-pass | A, S, R | R2 | R | S1-S5+H | y | Behavioral PASS; structural S4/S5 where skill lists terms |
+| blind-spot-pass | A, S, R | R3 | R | S1-S5+H | y | Behavioral PASS; structural S4/S5 where skill lists terms |
 | code-review | A, S | A1 | A | S1-S5 | y | Bootstrap invocation/safety template |
 | code-review | A, S | A2 | A | S1-S5 | y | Scoped request + skill guardrails |
 | code-review | A, S | S1 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
@@ -69,21 +75,25 @@ python3 scripts/inventory-eval-cases.py --write docs/EVAL_INVENTORY.md
 | create-pr-main | A, S | S2 | S | S1-S5 | y | S4: secrets handling |
 | debug-issue | A | A1 | A | S1-S5 | y | Bootstrap invocation/safety template |
 | debug-issue | A | A2 | A | S1-S5 | y | Scoped request + skill guardrails |
-| decision-audit | A, S | A1 | A | S1-S5 | y | Bootstrap invocation/safety template |
-| decision-audit | A, S | A2 | A | S1-S5 | y | Scoped request + skill guardrails |
-| decision-audit | A, S | A3 | A | S1-S5+H | y | Prompt-only; PASS ties to SKILL phrases |
-| decision-audit | A, S | S1 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
-| decision-audit | A, S | S2 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
-| decision-audit | A, S | S3 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
-| define-agent-goal | A, S | A1 | A | S1-S5 | y | Bootstrap invocation/safety template |
-| define-agent-goal | A, S | A2 | A | S1-S5 | y | Scoped request + skill guardrails |
-| define-agent-goal | A, S | A3 | A | S1-S5+H | y | Prompt-only; PASS ties to SKILL phrases |
-| define-agent-goal | A, S | A4 | A | S1-S5+H | y | Prompt-only; PASS ties to SKILL phrases |
-| define-agent-goal | A, S | A5 | A | S1-S5+H | y | Prompt-only; PASS ties to SKILL phrases |
-| define-agent-goal | A, S | S1 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
-| define-agent-goal | A, S | S2 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
-| define-agent-goal | A, S | S3 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
-| define-agent-goal | A, S | S4 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
+| decision-audit | A, S, R | A1 | A | S1-S5 | y | Bootstrap invocation/safety template |
+| decision-audit | A, S, R | A2 | A | S1-S5 | y | Scoped request + skill guardrails |
+| decision-audit | A, S, R | A3 | A | S1-S5+H | y | Prompt-only; PASS ties to SKILL phrases |
+| decision-audit | A, S, R | S1 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
+| decision-audit | A, S, R | S2 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
+| decision-audit | A, S, R | S3 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
+| decision-audit | A, S, R | R1 | R | S1-S5+H | y | Behavioral PASS; structural S4/S5 where skill lists terms |
+| define-agent-goal | A, S, R | A1 | A | S1-S5 | y | Bootstrap invocation/safety template |
+| define-agent-goal | A, S, R | A2 | A | S1-S5 | y | Scoped request + skill guardrails |
+| define-agent-goal | A, S, R | A3 | A | S1-S5+H | y | Prompt-only; PASS ties to SKILL phrases |
+| define-agent-goal | A, S, R | A4 | A | S1-S5+H | y | Prompt-only; PASS ties to SKILL phrases |
+| define-agent-goal | A, S, R | A5 | A | S1-S5+H | y | Prompt-only; PASS ties to SKILL phrases |
+| define-agent-goal | A, S, R | S1 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
+| define-agent-goal | A, S, R | S2 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
+| define-agent-goal | A, S, R | S3 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
+| define-agent-goal | A, S, R | S4 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
+| define-agent-goal | A, S, R | R1 | R | S1-S5+H | y | Behavioral PASS; structural S4/S5 where skill lists terms |
+| define-agent-goal | A, S, R | R2 | R | S1-S5+H | y | Behavioral PASS; structural S4/S5 where skill lists terms |
+| define-agent-goal | A, S, R | R3 | R | S1-S5+H | y | Behavioral PASS; structural S4/S5 where skill lists terms |
 | fix-compile-errors | A | A1 | A | S1-S5 | y | Bootstrap invocation/safety template |
 | fix-compile-errors | A | A2 | A | S1-S5 | y | Scoped request + skill guardrails |
 | fix-git-issues | A, S | A1 | A | S1-S5 | y | Bootstrap invocation/safety template |
@@ -98,12 +108,13 @@ python3 scripts/inventory-eval-cases.py --write docs/EVAL_INVENTORY.md
 | git-sync-workspace | A, S | A2 | A | S1-S5 | y | Scoped request + skill guardrails |
 | git-sync-workspace | A, S | S1 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
 | git-sync-workspace | A, S | S2 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
-| instruction-ablation | A, S | A1 | A | S1-S5 | y | Bootstrap invocation/safety template |
-| instruction-ablation | A, S | A2 | A | S1-S5 | y | Scoped request + skill guardrails |
-| instruction-ablation | A, S | A3 | A | S1-S5+H | y | Prompt-only; PASS ties to SKILL phrases |
-| instruction-ablation | A, S | S1 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
-| instruction-ablation | A, S | S2 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
-| instruction-ablation | A, S | S3 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
+| instruction-ablation | A, S, R | A1 | A | S1-S5 | y | Bootstrap invocation/safety template |
+| instruction-ablation | A, S, R | A2 | A | S1-S5 | y | Scoped request + skill guardrails |
+| instruction-ablation | A, S, R | A3 | A | S1-S5+H | y | Prompt-only; PASS ties to SKILL phrases |
+| instruction-ablation | A, S, R | S1 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
+| instruction-ablation | A, S, R | S2 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
+| instruction-ablation | A, S, R | S3 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
+| instruction-ablation | A, S, R | R1 | R | S1-S5+H | y | Behavioral PASS; structural S4/S5 where skill lists terms |
 | light-review-existing-diffs | A | A1 | A | S1-S5 | y | Bootstrap invocation/safety template |
 | light-review-existing-diffs | A | A2 | A | S1-S5 | y | Scoped request + skill guardrails |
 | lint-fix | A | A1 | A | S1-S5 | y | Bootstrap invocation/safety template |
@@ -129,10 +140,14 @@ python3 scripts/inventory-eval-cases.py --write docs/EVAL_INVENTORY.md
 | optimize-performance | A, S | A2 | A | S1-S5 | y | Scoped request + skill guardrails |
 | optimize-performance | A, S | S1 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
 | optimize-performance | A, S | S2 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
-| pathfinder | A, S | A1 | A | S1-S5 | y | Bootstrap invocation/safety template |
-| pathfinder | A, S | A2 | A | S1-S5 | y | Scoped request + skill guardrails |
-| pathfinder | A, S | S1 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
-| pathfinder | A, S | S2 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
+| pathfinder | A, S, R | A1 | A | S1-S5 | y | Bootstrap invocation/safety template |
+| pathfinder | A, S, R | A2 | A | S1-S5 | y | Scoped request + skill guardrails |
+| pathfinder | A, S, R | S1 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
+| pathfinder | A, S, R | S2 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
+| pathfinder | A, S, R | S3 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
+| pathfinder | A, S, R | R1 | R | S1-S5+H | y | Behavioral PASS; structural S4/S5 where skill lists terms |
+| pathfinder | A, S, R | R2 | R | S1-S5+H | y | Behavioral PASS; structural S4/S5 where skill lists terms |
+| pathfinder | A, S, R | R3 | R | S1-S5+H | y | Behavioral PASS; structural S4/S5 where skill lists terms |
 | prompt-eval-debug | A, S | A1 | A | S1-S5 | y | Bootstrap invocation/safety template |
 | prompt-eval-debug | A, S | A2 | A | S1-S5 | y | Scoped request + skill guardrails |
 | prompt-eval-debug | A, S | S1 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
@@ -182,10 +197,10 @@ python3 scripts/inventory-eval-cases.py --write docs/EVAL_INVENTORY.md
 
 ## Checklist
 
-- [x] Ship-gate rows: **169** (plan estimated ~92; includes `D3b` and full A-section on merge-open-prs)
+- [x] Ship-gate rows: **184** (plan estimated ~92; includes `D3b` and full A-section on merge-open-prs)
 - [x] Commands with eval + ship gate: **42** (target 27)
-- [x] `fixture_ready: y`: **161** | `n`: **8**
-- [x] H-class (primary or mixed): **17** rows reference H
+- [x] `fixture_ready: y`: **176** | `n`: **8**
+- [x] H-class (primary or mixed): **30** rows reference H
 - [x] Every gated section has ≥1 row per command
 
 ## Non-gate cases (manual only)

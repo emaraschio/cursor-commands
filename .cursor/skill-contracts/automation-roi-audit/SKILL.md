@@ -117,8 +117,9 @@ For each workflow:
 
 ## Guardrails
 
-- Interview until each workflow has enough detail; do not analyze thin lists as if they were complete.
-- Recommend only automations that improve money, margin, or output; dismiss AI theater as the primary bet.
-- Warn on distraction, meeting-summary traps, and rebuild-cheap-SaaS mistakes when they apply.
-- Offer optional docs save only when `docs/` exists; write only after the user confirms.
-- Audit and recommend; do not implement the automation in the same turn.
+- **Interview before analyzing.** Interview until each workflow has enough process detail, then analyze.
+- **Reject AI theater as the primary bet.** Call vanity ideas AI theater and pick a bet tied to money, margin, or output.
+- **Warn on rebuild-cheap-SaaS and distraction traps.** Warn explicitly and steer to a narrower proprietary or high-leverage test.
+- **Prefer proprietary edge.** Tie the bet to proprietary data or domain workflow when available.
+- **Write docs only after confirmation.** Offer the path and write only after the user confirms.
+- **Do not implement the automation in the same turn.** Deliver the report (and optional confirmed docs save) and stop.
