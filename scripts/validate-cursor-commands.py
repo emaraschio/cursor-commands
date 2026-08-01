@@ -53,6 +53,21 @@ PORTABLE_DOC_SUFFIXES = {".md", ".mdc", ".yaml", ".yml"}
 PORTABLE_DOC_FILES = ("README.md", "CONTRIBUTING.md")
 PORTABLE_DOC_DIRS = (".cursor", "docs")
 
+SECTION_TITLE_BULLET_RE = re.compile(r"^- \*\*(.+?)\.\*\*", re.MULTILINE)
+
+
+def extract_markdown_section(text: str, heading: str) -> str | None:
+    """Return body under ``## heading`` until the next ``## `` heading, or None."""
+    m = re.search(rf"^## {re.escape(heading)}\n\n(.*?)(?=\n## |\Z)", text, re.M | re.S)
+    return m.group(1).strip() if m else None
+
+
+def titled_rule_titles(section_body: str | None) -> list[str]:
+    """Titles from ``- **Title.** ...`` bullets (Anti-patterns / titled Guardrails)."""
+    if not section_body:
+        return []
+    return SECTION_TITLE_BULLET_RE.findall(section_body)
+
 
 def parse_frontmatter(text: str) -> dict[str, str]:
     m = FRONTMATTER_RE.match(text)
@@ -317,6 +332,35 @@ def main() -> int:
         skill_md = SKILLS_DIR / name / "SKILL.md"
         if not skill_md.exists():
             errors.append(f"{path}: missing skill {skill_md}")
+        else:
+            skill_text = skill_md.read_text(encoding="utf-8")
+            anti_titles = titled_rule_titles(
+                extract_markdown_section(text, "Anti-patterns")
+            )
+            guard_titles = titled_rule_titles(
+                extract_markdown_section(skill_text, "Guardrails")
+            )
+            # Titled Guardrails must match Anti-pattern titles (single-source
+            # teaching form lives in the command). Untitled Guardrails
+            # (legacy short bullets) are grandfathered until a catalog-wide pass.
+            if guard_titles:
+                if set(guard_titles) != set(anti_titles):
+                    only_cmd = sorted(set(anti_titles) - set(guard_titles))
+                    only_skill = sorted(set(guard_titles) - set(anti_titles))
+                    detail = []
+                    if only_cmd:
+                        detail.append(f"only in Anti-patterns: {only_cmd}")
+                    if only_skill:
+                        detail.append(f"only in Guardrails: {only_skill}")
+                    errors.append(
+                        f"{path}: guardrail_title_mismatch — "
+                        + "; ".join(detail)
+                    )
+                elif guard_titles != anti_titles:
+                    errors.append(
+                        f"{path}: guardrail_title_order_mismatch — "
+                        "Guardrails titles must follow Anti-patterns order"
+                    )
 
         if "SKILL.md" not in text:
             errors.append(f"{path}: Steps must reference SKILL.md")

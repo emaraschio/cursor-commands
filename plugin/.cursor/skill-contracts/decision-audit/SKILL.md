@@ -130,8 +130,8 @@ Populate every section. Prefer a compact table or short bullets over vague prose
 
 ## Guardrails
 
-- **Ledger of choices, not a line-by-line review.** Trigger: auditing after a build. Wrong: dumping a file-by-file code review without naming decisions. Correct: list meaningful choices (architecture, API shape, libraries, deferred work) with why, alternatives, and confidence. Reason: the job is judgment autopsy, not another diff scavenger hunt.
-- **Stay audit-only until revise now.** Trigger: finishing the ledger or pride gate. Wrong: editing code, committing, or opening a PR in the same turn. Correct: deliver the audit and wait for an explicit **revise now** (with targets). Reason: ledger approval is not permission to mutate the branch.
-- **Ground decisions in evidence.** Trigger: filling the ledger. Wrong: inventing choices that have no support in conversation or diff. Correct: cite session or git evidence, or mark confidence low / none recorded. Reason: invented decisions fake accountability.
-- **Always ask the pride gate.** Trigger: closing the audit. Wrong: soft-selling ship readiness or skipping the two yes/no questions. Correct: ask whether the human is proud of the branch and would stand behind it in production. Reason: the pride gate is the cheap, high-signal filter this skill exists to force.
-- **Stop when nothing has landed.** Trigger: mid-task invocation with no finished work. Wrong: fabricating a ledger of completed decisions. Correct: state nothing finished, stop or ask whether to wait. Reason: auditing choices never made is theater.
+- **Ledger of choices, not a line-by-line review.** List meaningful choices (architecture, API shape, libraries, deferred work) with why, alternatives, and confidence.
+- **Stay audit-only until revise now.** Deliver the audit and wait for an explicit **revise now** (with targets).
+- **Ground decisions in evidence.** Cite session or git evidence, or mark confidence low / none recorded.
+- **Always ask the pride gate.** Ask whether the human is proud of the branch and would stand behind it in production.
+- **Stop when nothing has landed.** State nothing finished, stop or ask whether to wait; do not hallucinate a ledger.
