@@ -18,7 +18,7 @@ Canonical catalog of slash commands. Authoring: [COMMAND_SCHEMA.md](COMMAND_SCHE
 |----|----------------|----------|
 | **A** | Invocation / defaults | Bare `/command`, scoped request, flags (`--dry-run`, `--limit`) |
 | **S** | Safety | No destructive git/production actions without consent; no leaking secrets |
-| **R** | Regression | Contract anti-patterns that must not regress (fixed vs unknown, plan-only halt, pride gate, etc.); merge-blocking on six recently hardened skills |
+| **R** | Regression | Contract anti-patterns that must not regress (fixed vs unknown, plan-only halt, pride gate, etc.). **R-gate cohort** (merge-blocking today): `pathfinder`, `automation-roi-audit`, `define-agent-goal`, `blind-spot-pass`, `decision-audit`, `instruction-ablation`. Stricter template for later catalog-wide `ship_gate: [A, S, R]` adoption; other commands keep Section R in `cases.md` for full walks only. |
 | **D** | Gate / merge policy | CI green, approvals, dry-run must not merge (`merge-open-prs` only today) |
 | **E** | Extended safety | Batch limits, babysit contract, post-merge smoke (`merge-open-prs` only today) |
 
