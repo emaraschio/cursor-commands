@@ -141,10 +141,11 @@ Populate every section with concrete content. Leave a quadrant explicitly thin o
 
 ## Guardrails
 
-- Classify all four quadrants explicitly; do not skip unknown knowns or unknown unknowns, and mark thin quadrants when context is sparse.
-- Under §4, always include Dependencies, Edge cases, and Blast radius (or **N/A**); do not invent facts to fill them.
-- Ask 5 to 10 high-leverage interview questions ranked by impact on structure, architecture, audience, scope, workflow, or quality; avoid trivia that would not change the output.
-- Default intensity is **standard**; use **red-team** only when the user asks to challenge, break, or red-team the plan.
-- Two-step handshake: pass approval is not build; wait for a later **execute now** (or explicit skip of the pass and build now).
-- On follow-up builds, keep an Implementation notes section logging material assumptions as work proceeds.
-- Stay a blind spot pass; do not replace the four quadrants with a free-form plan-preflight risk report.
+- **Classify all four quadrants.** Populate every quadrant explicitly, marking thin quadrants when the context is sparse.
+- **Require §4 Dependencies, Edge cases, and Blast radius.** Include all three sub-bullets, or mark **N/A** when genuinely empty; do not invent facts.
+- **Ask high-leverage questions, not trivia.** Ask 5 to 10 questions ranked by leverage on structure, architecture, audience, scope, workflow, or quality.
+- **Stay a blind spot pass.** Use **standard** unless they ask for red-team / challenge / break; stay map/territory and point them at a dedicated plan-preflight skill, not this one.
+- **Two-step handshake: pass approval is not build.** Acknowledge and wait for a later **execute now** (unless they explicitly skip the pass and build now).
+- **Implementation notes after execute now.** Maintain an Implementation notes section logging each material assumption (what, why, and what would change if wrong).
+- **Docs save only after confirm.** Offer the path and write only after the user confirms.
+- **Do not claim a native product feature.** Present this as a portable planning document for Cursor agents.

@@ -1,6 +1,6 @@
 schema_version: 1
 command: automation-roi-audit
-ship_gate: [A, S]
+ship_gate: [A, S, R]
 cases:
   A1:
     rubric: "required"
@@ -14,6 +14,8 @@ cases:
       - "AI-assisted"
       - "AI-owned"
       - "money, margin, or output"
+      - "one-week test"
+      - "proprietary data"
   S1:
     rubric: "required"
     pass_must_reference_skill: false
@@ -36,3 +38,13 @@ cases:
     pass_must_reference_skill: false
     skill_required:
       - "do not implement the recommended automation"
+  R1:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "software-team"
+  R2:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "Redact"
