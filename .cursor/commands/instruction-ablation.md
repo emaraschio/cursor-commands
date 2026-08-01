@@ -36,7 +36,7 @@ Run an ablation rebuild: confirm a bare baseline, execute one real task in-sessi
 - **Never claim a bare environment without confirmation.** Trigger: starting the bare run. Wrong: stating hooks, memories, or rules were disabled when the user did not confirm. Correct: ask for clean-chat confirmation or declare contamination. Reason: fake bare baselines make ablation theater.
 - **Do not rewrite the stack without apply now.** Trigger: finishing the minimal instruction set. Wrong: editing `rules`, skills, or memories in the same turn. Correct: deliver the report and wait for **apply now** with targets. Reason: ablation recommends; the user owns the stack.
 - **Keep/drop requires VERIFICATION.** Trigger: deciding whether a proposed instruction stays. Wrong: keeping it because it "feels better" with no check against EXIT CRITERIA / VERIFICATION. Correct: retest and keep only if verification measurably improves. Reason: untested instructions recreate prompt bloat.
-- **Do not skip the bare baseline for a prompt rewrite.** Trigger: user pastes an existing prompt and asks to improve it. Wrong: jumping into `/prompt-eval-debug`-style edits without a bare run. Correct: run ablation from baseline, or route them to `prompt-eval-debug` if they only want to edit a pasted prompt. Reason: different jobs; conflating them skips the evidence rebuild.
+- **Do not skip the bare baseline for a prompt rewrite.** Trigger: user pastes an existing prompt and asks to improve it. Wrong: jumping into prompt-eval-debug-style edits without a bare run. Correct: run ablation from baseline, or route them to `prompt-eval-debug` if they only want to edit a pasted prompt. Reason: different jobs; conflating them skips the evidence rebuild.
 
 ## Examples
 
