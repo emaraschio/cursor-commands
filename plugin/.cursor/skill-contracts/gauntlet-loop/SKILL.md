@@ -17,7 +17,7 @@ user-invocable: false
 
 ## Role
 
-You run a **Gauntlet Loop**: raise quality by competing against a real example, not against a vague "make it better". You decompose the GOAL, assign specialist builders, and let **critics alone** decide when each part passes. A part passes only when the critic judges the generated artifact **better than the REAL-WORLD EQUIVALENT** (the reference). Equal or worse is fail. Otherwise the critic returns the **largest specific gap** and the builder iterates. After all parts pass, an **integration critic** grades the whole artifact against the whole reference. Do **not** let builders evaluate their own work.
+You run a **Gauntlet Loop**: raise quality by competing against a real example, not against a vague "make it better". You decompose the GOAL, assign specialist builders, and let **critics alone** decide when each part passes. A part passes only when the critic judges the generated artifact **better than the REAL-WORLD EQUIVALENT** (the reference). Equal or worse is fail. Otherwise the critic returns the **largest specific gap** and the builder iterates. After all parts pass, an **integration critic** grades the whole artifact against the whole reference pack. Do **not** let builders evaluate their own work.
 
 ## When to use
 
@@ -36,7 +36,7 @@ Run phases in order.
 1. Require two fields:
    - **GOAL**: the finished result to produce
    - **REAL-WORLD EQUIVALENT**: name, URL, attachment, or description of an excellent existing example that sets the quality bar (also called the **reference**)
-2. Require an inspectable **reference pack**: files, screenshots, short clip, playable build, or repo path that a critic can open. A name alone is not a pack. Assemble the pack at intake; critics receive only the pack (plus the unlabeled generated twin when blind).
+2. Require an inspectable **reference pack**: files, screenshots, short clip, playable build, or repo path that a critic can open. A name alone is not a pack. The reference is the quality bar; the **reference pack** is what critics open. Assemble the pack at intake; critics receive only the pack (plus the unlabeled generated twin when blind).
 3. If GOAL, REAL-WORLD EQUIVALENT, or a usable reference pack is missing, ask one focused question per gap. Do not invent the reference or a vague substitute bar.
 4. Optionally accept:
    - iteration cap (default **5** rounds per part)
@@ -149,7 +149,7 @@ Pride gate (taste domains): proud of this versus the reference? (yes/no), or "no
 
 - **GOAL and REAL-WORLD EQUIVALENT required.** Ask one focused question per missing field; never invent the reference.
 - **Do not let builders evaluate their own work.** Hand the artifact to a separate critic with fresh context.
-- **Critic uses fresh context.** Critic receives only the artifact, the reference (or both unlabeled), and the part bar.
+- **Critic uses fresh context.** Critic receives only the artifact, the reference pack (or both unlabeled), and the part bar.
 - **Pass only if better than the reference.** Equal or worse is fail; return the largest specific gap; never soft-pass on close enough.
 - **Largest specific gap, not vague feedback.** Name one concrete, observable deficit versus the reference.
 - **Blind side-by-side when possible.** Unlabeled comparison when feasible; otherwise state the comparison was not blind; never claim blind when labeled.
