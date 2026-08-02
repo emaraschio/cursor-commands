@@ -26,6 +26,7 @@ The install script already verifies:
 3. Run **`/code-review`** on a small diff; the agent should read `~/.cursor/skill-contracts/code-review/SKILL.md`.
 4. In a git repo with `gh` authenticated, run **`/merge-open-prs --dry-run`**; agent should follow the merge-open-prs skill and reference **babysit** at `~/.cursor/skills-cursor/babysit/SKILL.md` (install babysit separately if missing).
 5. Optional: open any workspace that has a `.cursor/memory-bank/` directory and run **`/update-memory-bank`**; command and skill should resolve via the install symlinks (memory-bank content lives in the host repo, not in cursor-commands).
+6. Optional after `/gauntlet-loop` behavior changes: live smoke with a tiny `project-a` reference pack. Prompt and checklist: [`.cursor/skill-contracts/gauntlet-loop/eval/README.md`](../.cursor/skill-contracts/gauntlet-loop/eval/README.md#live-smoke-manual-ide).
 
 Record pass/fail in release notes when cutting a tag.
 
