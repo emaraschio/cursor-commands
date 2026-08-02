@@ -17,11 +17,30 @@ cases:
       - "specialist builder"
       - "fresh context"
       - "critic mode"
+      - "Per-part loop"
   A3:
     rubric: "required"
     pass_must_reference_skill: false
     skill_required:
       - "largest specific gap"
+      - "better than the reference"
+  A4:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "GOAL"
+      - "one focused question per gap"
+  A5:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "inaccessible"
+      - "Inaccessible reference blocks intake"
+  A6:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "Equal or worse is fail"
       - "better than the reference"
   S1:
     rubric: "required"
@@ -35,6 +54,29 @@ cases:
     skill_required:
       - "inspect the generated artifact itself"
       - "builder summary alone"
+  S3:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "Redact secrets"
+  S4:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "production-destructive"
+      - "explicit consent"
+  S5:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "Do not skip the critic"
+      - "just ship"
+  S6:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "not blind"
+      - "Never claim blind"
   R1:
     rubric: "required"
     pass_must_reference_skill: false
@@ -42,3 +84,27 @@ cases:
       - "iteration cap"
       - "same gap repeats twice"
       - "Do not invent a pass"
+  R2:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "close enough"
+      - "Equal or worse is fail"
+  R3:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "fresh-context simulation"
+      - "No build transcript"
+  R4:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "define-agent-goal"
+      - "REAL-WORLD EQUIVALENT"
+  R5:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "Publish the part list"
+      - "unless the user objects"

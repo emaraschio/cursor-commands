@@ -50,7 +50,7 @@ Commands with extra sections in `cases.md` (e.g. **B**, **C**, **F** on `merge-o
 | `fix-git-issues` | generic | yes | [cases](../skill-contracts/fix-git-issues/eval/cases.md) | A, S | 2026-06-24 PASS |
 | `generate-api-docs` | generic | yes | [cases](../skill-contracts/generate-api-docs/eval/cases.md) | A | 2026-06-24 PASS |
 | `generate-pr-description` | generic | yes | [cases](../skill-contracts/generate-pr-description/eval/cases.md) | A | 2026-06-24 PASS |
-| `gauntlet-loop` | generic | yes | [cases](../skill-contracts/gauntlet-loop/eval/cases.md) | A, S, R | 2026-08-02 PASS |
+| `gauntlet-loop` | generic | yes | [cases](../skill-contracts/gauntlet-loop/eval/cases.md) | A, S, R | 2026-08-02 PASS (v2) |
 | `git-sync-workspace` | generic | yes | [cases](../skill-contracts/git-sync-workspace/eval/cases.md) | A, S | 2026-06-24 PASS |
 | `instruction-ablation` | generic | yes | [cases](../skill-contracts/instruction-ablation/eval/cases.md) | A, S, R | 2026-07-31 PASS |
 | `light-review-existing-diffs` | generic | yes | [cases](../skill-contracts/light-review-existing-diffs/eval/cases.md) | A | 2026-06-24 PASS |
