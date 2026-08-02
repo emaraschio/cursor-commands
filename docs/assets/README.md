@@ -1,26 +1,24 @@
 # Demo and social assets
 
-Place media here before uncommenting README embeds.
+## demo.gif
 
-## demo.gif (manual capture)
+Illustrative mock (not a live IDE screen recording): `/` autocomplete → `/define-agent-goal` → six-part Goal. ~126 KB, 960x540.
 
-1. Open Cursor agent chat in a clean window.
-2. Type `/` and show catalog autocomplete.
-3. Run `/define-agent-goal` with a tiny `service-a` task.
-4. Show the six-part Goal output (~20 seconds total).
-5. Compress under ~5 MB:
+Regenerate:
 
 ```bash
-# gifski (preferred)
-gifski -o docs/assets/demo.gif --width 1280 --quality 80 capture/*.png
-
-# or ffmpeg palette two-pass
-ffmpeg -i capture.mov -vf "fps=12,scale=1280:-1:flags=lanczos,palettegen" palette.png
-ffmpeg -i capture.mov -i palette.png -lavfi "fps=12,scale=1280:-1:flags=lanczos[x];[x][1:v]paletteuse" docs/assets/demo.gif
+# uses the same script pattern as the advertising rollout (Pillow in a venv)
+python3 -m venv /tmp/social-preview-venv
+/tmp/social-preview-venv/bin/pip install -q Pillow
+# then re-run the generator from the advertising session, or ask the agent to rebuild
 ```
 
-Then remove the HTML comment around the README embed.
+Optional: replace with a real Cursor capture later. Compress under ~5 MB:
+
+```bash
+gifski -o docs/assets/demo.gif --width 960 --quality 80 capture/*.png
+```
 
 ## social-preview.png
 
-1280x640 card for GitHub Settings → Social preview. Commit lives in-repo; upload is manual (no API).
+Exact 1280x640 card for GitHub Settings → Social preview (manual upload).

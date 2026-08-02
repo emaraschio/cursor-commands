@@ -5,10 +5,7 @@
 [![Docs](https://github.com/emaraschio/cursor-commands/actions/workflows/docs.yml/badge.svg)](https://github.com/emaraschio/cursor-commands/actions/workflows/docs.yml)
 [![Eval fixtures](https://github.com/emaraschio/cursor-commands/actions/workflows/eval-fixtures.yml/badge.svg)](https://github.com/emaraschio/cursor-commands/actions/workflows/eval-fixtures.yml)
 
-<!-- Demo GIF (uncomment after dropping docs/assets/demo.gif):
-![Demo: catalog autocomplete and a command run](docs/assets/demo.gif)
-Capture (~20s): open /, show autocomplete, run /define-agent-goal, show Goal output. See docs/assets/README.md.
--->
+![Illustrative demo: type /, pick /define-agent-goal, get a six-part Goal](docs/assets/demo.gif)
 
 **Production-grade Cursor slash commands:** each `/command` ships with a full agent skill contract, a behavioral eval rubric, and CI that fails if safety guards regress. Install as a [user plugin](docs/PLUGIN.md) and get the same workflows on desktop, web, CLI, and mobile.
 
