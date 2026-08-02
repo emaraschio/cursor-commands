@@ -6,8 +6,8 @@ All notable changes to this project are documented here. Format based on [Keep a
 
 ### Added
 
-- **README**: 60-second quickstart with a lightly trimmed `/define-agent-goal` transcript; docs table linking PLUGIN, EVAL_CI, VERIFICATION, ROADMAP, COMMAND_SCHEMA; commented demo GIF embed until `docs/assets/demo.gif` lands; Related link to the [dev.to write-up](https://dev.to/emaraschio/treat-prompts-like-code-skills-evals-and-ship-gate-ci-for-cursor-slash-commands-1o03).
-- **`docs/assets/`**: capture/compression notes and `social-preview.png` (1280x640) for GitHub Settings → Social preview (manual upload).
+- **README**: 60-second quickstart with a lightly trimmed `/define-agent-goal` transcript; docs table linking PLUGIN, EVAL_CI, VERIFICATION, ROADMAP, COMMAND_SCHEMA; illustrative `docs/assets/demo.gif` under the badges; Related link to the [dev.to write-up](https://dev.to/emaraschio/treat-prompts-like-code-skills-evals-and-ship-gate-ci-for-cursor-slash-commands-1o03).
+- **`docs/assets/`**: illustrative demo GIF, capture notes, and `social-preview.png` (1280x640) for GitHub Settings → Social preview (manual upload).
 
 ## [1.6.0] - 2026-08-02
 

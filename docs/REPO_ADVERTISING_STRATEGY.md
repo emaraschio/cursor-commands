@@ -30,7 +30,7 @@ Stranger verdict: the first viewport works for someone who already uses Cursor, 
 ### P0 (do first: highest visibility per hour)
 
 1. **Cut v1.6.0.** Three unreleased commands (`/decision-audit`, `/instruction-ablation`, `/gauntlet-loop`) plus guardrail hardening are invisible to visitors who check Releases. A fresh tag updates the "Stable release" line, produces release notes, and signals an active project. Effort: low.
-2. **Add a demo GIF at the top of the README.** 15 to 30 seconds: type `/`, show the catalog autocomplete, run one command, show the structured deliverable. A text-only README is the main conversion leak. Effort: medium (record once, compress, commit under `docs/assets/`).
+2. **Add a demo GIF at the top of the README.** **Done (illustrative mock):** `docs/assets/demo.gif` shows `/` → `/define-agent-goal` → Goal output. Replace with a live IDE capture later if desired. Effort: medium.
 3. **Add a 60-second quickstart with real output.** Install URL, then a short real transcript of one command (for example `/define-agent-goal` producing a six-part Goal). Readers star what they can picture using. Effort: low.
 
 ### P1 (next)
