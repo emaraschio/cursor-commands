@@ -5,11 +5,52 @@
 [![Docs](https://github.com/emaraschio/cursor-commands/actions/workflows/docs.yml/badge.svg)](https://github.com/emaraschio/cursor-commands/actions/workflows/docs.yml)
 [![Eval fixtures](https://github.com/emaraschio/cursor-commands/actions/workflows/eval-fixtures.yml/badge.svg)](https://github.com/emaraschio/cursor-commands/actions/workflows/eval-fixtures.yml)
 
+<!-- Demo GIF (uncomment after dropping docs/assets/demo.gif):
+![Demo: catalog autocomplete and a command run](docs/assets/demo.gif)
+Capture (~20s): open /, show autocomplete, run /define-agent-goal, show Goal output. See docs/assets/README.md.
+-->
+
 **Production-grade Cursor slash commands:** each `/command` ships with a full agent skill contract, a behavioral eval rubric, and CI that fails if safety guards regress. Install as a [user plugin](docs/PLUGIN.md) and get the same workflows on desktop, web, CLI, and mobile.
 
 Stable release: [`v1.6.0`](CHANGELOG.md#160---2026-08-02). Catalog: **43** commands. Not an official Cursor product.
 
 Inspired by install ergonomics from [hamzafer/cursor-commands](https://github.com/hamzafer/cursor-commands). This repo goes further: **paired skills**, **eval rubrics**, and **structural ship-gate CI** (`run-eval-fixtures.py --strict`).
+
+## 60-second quickstart
+
+1. **Customize → Plugins → + Add** → `https://github.com/emaraschio/cursor-commands` (user scope). Reload if `/` is empty.
+2. In agent chat, run `/define-agent-goal` with a tiny task. Expect a six-part Goal and a halt (no code edits until a later **execute now**).
+
+Lightly trimmed example (generic names only):
+
+```text
+# Agent goal: Reduce flaky tests in service-a
+
+## 1. Outcome
+Flake rate under 1% over 10 CI runs on service-a integration specs; no deleted coverage without replacement.
+
+## 2. Verification
+### Success criteria
+- [ ] Flake rate under 1% across 10 CI runs
+- [ ] Existing test intent preserved
+- [ ] No production deploys
+
+## 3. Constraints
+No production deploys; keep existing test intent.
+
+## 4. Boundaries
+service-a/spec/integration/, CI job integration.
+
+## 5. Iteration policy
+Max 2 passes: stabilize the top flake, then remeasure.
+
+## 6. Stopping condition
+Ask before deleting coverage or changing CI matrix.
+
+Approve or edit this Goal before I execute. Goal approval alone is not permission to execute.
+```
+
+Full install options and duplicate-menu troubleshooting: [docs/PLUGIN.md](docs/PLUGIN.md).
 
 ## Why this catalog
 
@@ -95,6 +136,14 @@ CURSOR_HOME="$HOME/.cursor" ./scripts/install.sh
 Org-specific packs install from the **host workspace** overlay after the catalog. See [docs/ROADMAP.md](docs/ROADMAP.md).
 
 ## Architecture
+
+| Doc | What it covers |
+|-----|----------------|
+| [PLUGIN.md](docs/PLUGIN.md) | User plugin install, mobile, duplicate `/` menu |
+| [EVAL_CI.md](docs/EVAL_CI.md) | Ship-gate fixtures and CI enforcement |
+| [VERIFICATION.md](docs/VERIFICATION.md) | Manual IDE smoke and release records |
+| [ROADMAP.md](docs/ROADMAP.md) | Launch criteria and next priorities |
+| [COMMAND_SCHEMA.md](.cursor/docs/COMMAND_SCHEMA.md) | Command + skill contract shape |
 
 ```text
 .cursor/commands/<name>.md   # thin slash entry (YAML frontmatter)
