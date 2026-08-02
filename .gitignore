@@ -8,6 +8,7 @@ __pycache__/
 .cursor/plans/
 
 # Local agent Goals (not part of the catalog)
+/agent-goals/
 docs/agent-goals/
 
 # Host-specific merge-open-prs profiles (keep _template.yaml + README in repo)
