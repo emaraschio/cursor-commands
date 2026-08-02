@@ -6,7 +6,7 @@ All notable changes to this project are documented here. Format based on [Keep a
 
 ### Added
 
-- **`/gauntlet-loop`**: slash command and skill for a Gauntlet Loop (GOAL plus REAL-WORLD EQUIVALENT; decompose; specialist builders; fresh-context critics; pass only if better than the reference; largest specific gap otherwise; cap and stall); eval ship gate **A, S, R**; catalog 42 → 43 commands/skills.
+- **`/gauntlet-loop`**: slash command and skill for a Gauntlet Loop (GOAL plus REAL-WORLD EQUIVALENT; decompose; specialist builders; fresh-context critics; pass only if better than the reference; largest specific gap otherwise; cap and stall); eval ship gate **A, S, R**; catalog 42 → 43 commands/skills. v2: per-part state machine, equal-or-worse fails, inaccessible-reference gate, expanded ship-gate evals (A1–A6, S1–S6, R1–R5).
 - **`/instruction-ablation`**: slash command and skill to rebuild a minimal instruction set from a bare baseline on one real task (in-chat run; propose instructions only after repeated failures; retest; apply to disk only on apply now); eval ship gate **A, S**; catalog 41 → 42 commands/skills.
 - **`/decision-audit`**: slash command and skill for a post-build decision ledger and pride gate (meaningful choices with why / alternatives / confidence; debt and edge notes; audit-only until revise now); eval ship gate **A, S**; catalog 40 → 41 commands/skills.
 
