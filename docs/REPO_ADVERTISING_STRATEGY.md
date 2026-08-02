@@ -36,7 +36,7 @@ Stranger verdict: the first viewport works for someone who already uses Cursor, 
 ### P1 (next)
 
 4. **Social preview image.** 1280x640 card: repo name, one-liner, three example commands. Uploaded in Settings → Social preview; this is what X/Slack/Reddit embeds show. Effort: low (generate + manual upload).
-5. **One deep-dive write-up + Cursor forum showcase.** A single honest post walking one command through its skill contract, eval rubric, and ship-gate fixture (the differentiator no snippet pack has). Post where Cursor users already are; no cross-posting spam. Effort: medium.
+5. **One deep-dive write-up + Cursor forum showcase.** **Done (dev.to):** [Treat prompts like code: skills, evals, and ship-gate CI for Cursor slash commands](https://dev.to/emaraschio/treat-prompts-like-code-skills-evals-and-ship-gate-ci-for-cursor-slash-commands-1o03). Forum showcase still optional. Effort: medium.
 
 ### P2 (later)
 
