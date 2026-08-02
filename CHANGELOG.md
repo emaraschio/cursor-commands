@@ -4,6 +4,11 @@ All notable changes to this project are documented here. Format based on [Keep a
 
 ## [Unreleased]
 
+### Added
+
+- **README**: 60-second quickstart with a lightly trimmed `/define-agent-goal` transcript; docs table linking PLUGIN, EVAL_CI, VERIFICATION, ROADMAP, COMMAND_SCHEMA; commented demo GIF embed until `docs/assets/demo.gif` lands.
+- **`docs/assets/`**: capture/compression notes and `social-preview.png` (1280x640) for GitHub Settings → Social preview (manual upload).
+
 ## [1.6.0] - 2026-08-02
 
 ### Added
