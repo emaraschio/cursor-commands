@@ -1,6 +1,6 @@
 {
   "name": "cursor-commands",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "Production-grade Cursor slash commands with paired skill contracts, behavioral evals, and ship-gate CI",
   "author": {
     "name": "Ezequiel Maraschio"

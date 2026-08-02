@@ -4,11 +4,14 @@ All notable changes to this project are documented here. Format based on [Keep a
 
 ## [Unreleased]
 
+## [1.6.0] - 2026-08-02
+
 ### Added
 
 - **`/gauntlet-loop`**: slash command and skill for a Gauntlet Loop (GOAL plus REAL-WORLD EQUIVALENT; decompose; specialist builders; fresh-context critics; pass only if better than the reference; largest specific gap otherwise; cap and stall); eval ship gate **A, S, R**; catalog 42 → 43 commands/skills. v2: per-part state machine, equal-or-worse fails, inaccessible-reference gate, expanded ship-gate evals (A1–A6, S1–S6, R1–R5). v3: reference pack, integration critic, BUDGET ceiling, taste-domain pride gate, gap ledger for resume; evals A7–A8, S7, R6–R7.
 - **`/instruction-ablation`**: slash command and skill to rebuild a minimal instruction set from a bare baseline on one real task (in-chat run; propose instructions only after repeated failures; retest; apply to disk only on apply now); eval ship gate **A, S**; catalog 41 → 42 commands/skills.
 - **`/decision-audit`**: slash command and skill for a post-build decision ledger and pride gate (meaningful choices with why / alternatives / confidence; debt and edge notes; audit-only until revise now); eval ship gate **A, S**; catalog 40 → 41 commands/skills.
+- **`docs/REPO_ADVERTISING_STRATEGY.md`**: prioritized public-surface audit (P0–P2) and reusable P0-only agent prompt for stars and developer visibility.
 
 ### Changed
 

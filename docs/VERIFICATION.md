@@ -34,6 +34,7 @@ Record pass/fail in release notes when cutting a tag.
 
 | Tag | Date | Verifier | Result | Notes |
 |-----|------|----------|--------|-------|
+| v1.6.0 | 2026-08-02 | @emaraschio | PASS | Validator + eval fixtures + install smoke green on `main` before tag; plugin package synced at 1.6.0; 43/43 commands/skills. Palette: `/decision-audit`, `/instruction-ablation`, `/gauntlet-loop` after plugin or symlink install + reload. Manual IDE smoke: reload and confirm `/` lists new commands. |
 | v1.5.0 | 2026-07-09 | @emaraschio | PASS | Validator + eval fixtures + install smoke green on `main` before tag; plugin package synced at 1.5.0; 40/40 commands/skills. Palette: `/pathfinder`, `/blind-spot-pass`, `/automation-roi-audit`, hardened `/define-agent-goal` (v3 two-step handshake) after plugin or symlink install + reload. Manual IDE smoke: reload and confirm `/` lists new commands. |
 | v1.4.0 | 2026-06-30 | @emaraschio | PASS | Validator + eval fixtures + install smoke green; plugin package synced at 1.4.0. Palette: `/thermo-nuclear-code-quality-review`, `/define-agent-goal` expected after plugin or symlink install + reload. |
 | v1.3.0 | 2026-06-21 | @emaraschio | PASS | Validator + eval fixtures green; 36/36 commands/skills. Palette: `/tdd`, `/structure-prompt`, `/agent-work-receipt` expected after Cursor reload. Manual IDE smoke not re-run. |
