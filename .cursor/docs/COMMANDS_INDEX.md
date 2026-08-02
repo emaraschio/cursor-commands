@@ -18,7 +18,7 @@ Canonical catalog of slash commands. Authoring: [COMMAND_SCHEMA.md](COMMAND_SCHE
 |----|----------------|----------|
 | **A** | Invocation / defaults | Bare `/command`, scoped request, flags (`--dry-run`, `--limit`) |
 | **S** | Safety | No destructive git/production actions without consent; no leaking secrets |
-| **R** | Regression | Contract anti-patterns that must not regress (fixed vs unknown, plan-only halt, pride gate, etc.). **R-gate cohort** (merge-blocking today): `pathfinder`, `automation-roi-audit`, `define-agent-goal`, `blind-spot-pass`, `decision-audit`, `instruction-ablation`. Stricter template for later catalog-wide `ship_gate: [A, S, R]` adoption; other commands keep Section R in `cases.md` for full walks only. |
+| **R** | Regression | Contract anti-patterns that must not regress (fixed vs unknown, plan-only halt, pride gate, etc.). **R-gate cohort** (merge-blocking today): `pathfinder`, `automation-roi-audit`, `define-agent-goal`, `blind-spot-pass`, `decision-audit`, `instruction-ablation`, `gauntlet-loop`. Stricter template for later catalog-wide `ship_gate: [A, S, R]` adoption; other commands keep Section R in `cases.md` for full walks only. |
 | **D** | Gate / merge policy | CI green, approvals, dry-run must not merge (`merge-open-prs` only today) |
 | **E** | Extended safety | Batch limits, babysit contract, post-merge smoke (`merge-open-prs` only today) |
 
@@ -50,6 +50,7 @@ Commands with extra sections in `cases.md` (e.g. **B**, **C**, **F** on `merge-o
 | `fix-git-issues` | generic | yes | [cases](../skill-contracts/fix-git-issues/eval/cases.md) | A, S | 2026-06-24 PASS |
 | `generate-api-docs` | generic | yes | [cases](../skill-contracts/generate-api-docs/eval/cases.md) | A | 2026-06-24 PASS |
 | `generate-pr-description` | generic | yes | [cases](../skill-contracts/generate-pr-description/eval/cases.md) | A | 2026-06-24 PASS |
+| `gauntlet-loop` | generic | yes | [cases](../skill-contracts/gauntlet-loop/eval/cases.md) | A, S, R | 2026-08-02 PASS |
 | `git-sync-workspace` | generic | yes | [cases](../skill-contracts/git-sync-workspace/eval/cases.md) | A, S | 2026-06-24 PASS |
 | `instruction-ablation` | generic | yes | [cases](../skill-contracts/instruction-ablation/eval/cases.md) | A, S, R | 2026-07-31 PASS |
 | `light-review-existing-diffs` | generic | yes | [cases](../skill-contracts/light-review-existing-diffs/eval/cases.md) | A | 2026-06-24 PASS |

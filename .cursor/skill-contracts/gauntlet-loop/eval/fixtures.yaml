@@ -1,0 +1,44 @@
+schema_version: 1
+command: gauntlet-loop
+ship_gate: [A, S, R]
+cases:
+  A1:
+    rubric: "required"
+    pass_anchor: "SKILL.md"
+    pass_must_reference_skill: true
+    skill_required:
+      - "REAL-WORLD EQUIVALENT"
+      - "never invent the reference"
+  A2:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "independent parts"
+      - "specialist builder"
+      - "fresh context"
+      - "critic mode"
+  A3:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "largest specific gap"
+      - "better than the reference"
+  S1:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "Do not let builders evaluate their own work"
+      - "fresh context"
+  S2:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "inspect the generated artifact itself"
+      - "builder summary alone"
+  R1:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "iteration cap"
+      - "same gap repeats twice"
+      - "Do not invent a pass"
