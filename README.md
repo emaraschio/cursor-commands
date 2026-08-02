@@ -207,6 +207,7 @@ Security reports: [SECURITY.md](SECURITY.md). Roadmap: [docs/ROADMAP.md](docs/RO
 
 ## Related
 
+- [Treat prompts like code](https://dev.to/emaraschio/treat-prompts-like-code-skills-evals-and-ship-gate-ci-for-cursor-slash-commands-1o03): skills, evals, and ship-gate CI (dev.to)
 - [Cursor slash commands docs](https://cursor.com/docs/agent/chat/commands)
 - [Cursor plugins docs](https://cursor.com/docs/plugins)
 - [hamzafer/cursor-commands](https://github.com/hamzafer/cursor-commands): minimal command-only collection
