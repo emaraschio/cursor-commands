@@ -106,17 +106,22 @@ python3 scripts/inventory-eval-cases.py --write docs/EVAL_INVENTORY.md
 | gauntlet-loop | A, S, R | A4 | A | S1-S5+H | y | Prompt-only; PASS ties to SKILL phrases |
 | gauntlet-loop | A, S, R | A5 | A | S1-S5+H | y | Prompt-only; PASS ties to SKILL phrases |
 | gauntlet-loop | A, S, R | A6 | A | S1-S5+H | y | Prompt-only; PASS ties to SKILL phrases |
+| gauntlet-loop | A, S, R | A7 | A | S1-S5+H | y | Prompt-only; PASS ties to SKILL phrases |
+| gauntlet-loop | A, S, R | A8 | A | S1-S5+H | y | Prompt-only; PASS ties to SKILL phrases |
 | gauntlet-loop | A, S, R | S1 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
 | gauntlet-loop | A, S, R | S2 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
 | gauntlet-loop | A, S, R | S3 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
 | gauntlet-loop | A, S, R | S4 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
 | gauntlet-loop | A, S, R | S5 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
 | gauntlet-loop | A, S, R | S6 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
+| gauntlet-loop | A, S, R | S7 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
 | gauntlet-loop | A, S, R | R1 | R | S1-S5+H | y | Behavioral PASS; structural S4/S5 where skill lists terms |
 | gauntlet-loop | A, S, R | R2 | R | S1-S5+H | y | Behavioral PASS; structural S4/S5 where skill lists terms |
 | gauntlet-loop | A, S, R | R3 | R | S1-S5+H | y | Behavioral PASS; structural S4/S5 where skill lists terms |
 | gauntlet-loop | A, S, R | R4 | R | S1-S5+H | y | Behavioral PASS; structural S4/S5 where skill lists terms |
 | gauntlet-loop | A, S, R | R5 | R | S1-S5+H | y | Behavioral PASS; structural S4/S5 where skill lists terms |
+| gauntlet-loop | A, S, R | R6 | R | S1-S5+H | y | Behavioral PASS; structural S4/S5 where skill lists terms |
+| gauntlet-loop | A, S, R | R7 | R | S1-S5+H | y | Behavioral PASS; structural S4/S5 where skill lists terms |
 | generate-api-docs | A | A1 | A | S1-S5 | y | Bootstrap invocation/safety template |
 | generate-api-docs | A | A2 | A | S1-S5 | y | Scoped request + skill guardrails |
 | generate-pr-description | A | A1 | A | S1-S5 | y | Bootstrap invocation/safety template |
@@ -214,10 +219,10 @@ python3 scripts/inventory-eval-cases.py --write docs/EVAL_INVENTORY.md
 
 ## Checklist
 
-- [x] Ship-gate rows: **201** (plan estimated ~92; includes `D3b` and full A-section on merge-open-prs)
+- [x] Ship-gate rows: **206** (plan estimated ~92; includes `D3b` and full A-section on merge-open-prs)
 - [x] Commands with eval + ship gate: **43** (target 27)
-- [x] `fixture_ready: y`: **193** | `n`: **8**
-- [x] H-class (primary or mixed): **39** rows reference H
+- [x] `fixture_ready: y`: **198** | `n`: **8**
+- [x] H-class (primary or mixed): **43** rows reference H
 - [x] Every gated section has ≥1 row per command
 
 ## Non-gate cases (manual only)

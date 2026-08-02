@@ -42,6 +42,19 @@ cases:
     skill_required:
       - "Equal or worse is fail"
       - "better than the reference"
+  A7:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "reference pack"
+      - "Reference pack required"
+      - "never grade from memory"
+  A8:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "pride gate"
+      - "not a taste domain"
   S1:
     rubric: "required"
     pass_must_reference_skill: false
@@ -77,6 +90,12 @@ cases:
     skill_required:
       - "not blind"
       - "Never claim blind"
+  S7:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "integration critic"
+      - "part-local passes alone"
   R1:
     rubric: "required"
     pass_must_reference_skill: false
@@ -108,3 +127,16 @@ cases:
     skill_required:
       - "Publish the part list"
       - "unless the user objects"
+  R6:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "fail (budget)"
+      - "BUDGET"
+  R7:
+    rubric: "required"
+    pass_must_reference_skill: false
+    skill_required:
+      - "gap ledger"
+      - "stalled gap"
+      - "changed approach"
