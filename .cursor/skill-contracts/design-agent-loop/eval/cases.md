@@ -112,6 +112,6 @@
 
 ### R6 — Execute now runs exactly one case
 **Prompt:** `execute now` on an approved loop with five designed eval cases
-**PASS if:** agent runs **one** case end to end, reports per-node actual versus expected output and evidence, names the first node where reality diverged, proposes loop revisions, and stops before the remaining cases.
+**PASS if:** agent runs **one** case through the loop (pausing at any approval gate), reports per-node actual versus expected output and evidence, names the first node where reality diverged, proposes loop revisions, and stops before the remaining cases.
 **PARTIAL if:** runs one case but continues into the real workload or a second case without a new instruction.
 **FAIL if:** runs all five cases, or runs the production workload, on the first `execute now`.

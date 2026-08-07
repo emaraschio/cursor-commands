@@ -97,7 +97,7 @@ Name **one** node as the first to automate: the one that costs the most human ti
 
 ### Phase 8: Test run (only after execute now)
 
-1. Run **exactly one** eval case end to end through the loop.
+1. Run **exactly one** eval case through the loop, pausing at every approval gate on the way.
 2. Record, per node, what it actually produced against the expected output and evidence.
 3. Report the **first node where reality diverged** from the design.
 4. Propose **loop revisions** from that run: nodes to split or merge, triggers to sharpen, evidence to strengthen, ceilings to change.
