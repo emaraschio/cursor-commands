@@ -105,12 +105,14 @@ python3 scripts/inventory-eval-cases.py --write docs/EVAL_INVENTORY.md
 | design-agent-loop | A, S, R | S3 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
 | design-agent-loop | A, S, R | S4 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
 | design-agent-loop | A, S, R | S5 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
+| design-agent-loop | A, S, R | S6 | S | S1-S5 | y | Safety template — S4/S5 on destructive + secrets |
 | design-agent-loop | A, S, R | R1 | R | S1-S5+H | y | Behavioral PASS; structural S4/S5 where skill lists terms |
 | design-agent-loop | A, S, R | R2 | R | S1-S5+H | y | Behavioral PASS; structural S4/S5 where skill lists terms |
 | design-agent-loop | A, S, R | R3 | R | S1-S5+H | y | Behavioral PASS; structural S4/S5 where skill lists terms |
 | design-agent-loop | A, S, R | R4 | R | S1-S5+H | y | Behavioral PASS; structural S4/S5 where skill lists terms |
 | design-agent-loop | A, S, R | R5 | R | S1-S5+H | y | Behavioral PASS; structural S4/S5 where skill lists terms |
 | design-agent-loop | A, S, R | R6 | R | S1-S5+H | y | Behavioral PASS; structural S4/S5 where skill lists terms |
+| design-agent-loop | A, S, R | R7 | R | S1-S5+H | y | Behavioral PASS; structural S4/S5 where skill lists terms |
 | fix-compile-errors | A | A1 | A | S1-S5 | y | Bootstrap invocation/safety template |
 | fix-compile-errors | A | A2 | A | S1-S5 | y | Scoped request + skill guardrails |
 | fix-git-issues | A, S | A1 | A | S1-S5 | y | Bootstrap invocation/safety template |
@@ -236,10 +238,10 @@ python3 scripts/inventory-eval-cases.py --write docs/EVAL_INVENTORY.md
 
 ## Checklist
 
-- [x] Ship-gate rows: **223** (plan estimated ~92; includes `D3b` and full A-section on merge-open-prs)
+- [x] Ship-gate rows: **225** (plan estimated ~92; includes `D3b` and full A-section on merge-open-prs)
 - [x] Commands with eval + ship gate: **44** (target 27)
-- [x] `fixture_ready: y`: **215** | `n`: **8**
-- [x] H-class (primary or mixed): **53** rows reference H
+- [x] `fixture_ready: y`: **217** | `n`: **8**
+- [x] H-class (primary or mixed): **54** rows reference H
 - [x] Every gated section has ≥1 row per command
 
 ## Non-gate cases (manual only)
