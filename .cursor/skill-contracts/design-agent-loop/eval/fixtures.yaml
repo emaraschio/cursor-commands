@@ -16,12 +16,14 @@ cases:
       - "Deliverable template"
       - "First bottleneck"
       - "Eval posture"
+      - "## 5. Controls"
+      - "## 8. Halt"
   A3:
     rubric: "required"
     pass_must_reference_skill: false
     skill_required:
       - "no evidence is not a node"
-      - "Expected output"
+      - "mark it a manual step"
   A4:
     rubric: "required"
     pass_must_reference_skill: false

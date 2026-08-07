@@ -89,9 +89,9 @@ Name **one** node as the first to automate: the one that costs the most human ti
 1. Post the report using the template below.
 2. End with the **two-step approval handshake** (use this wording):
 
-   > **Approve or edit this loop before I run anything.** I will not execute until you confirm.
+   > **Approve or edit this loop before I run anything.** I will not run the loop until you say **execute now**.
    >
-   > After you approve the graph, say **execute now** (or equivalent) in a later message and I will run **one** test case and report back. Graph approval alone is not permission to run the workload.
+   > Approving the graph is not that instruction. After you approve, say **execute now** (or equivalent) in a later message and I will run **one** test case and report back. Graph approval alone is not permission to run the workload.
 
 3. Stop. Do not run the loop, the test case, or the TASK in this turn.
 
@@ -122,8 +122,10 @@ Name **one** node as the first to automate: the one that costs the most human ti
 flowchart TD
   input --> plan --> act --> verify
   verify -->|criteria met| done
-  verify -->|retryable failure| retry --> act
+  verify -->|retryable failure, attempts < 3| retry --> act
   verify -->|non-retryable failure| escalate
+  retry -->|attempts = 3 or budget exhausted| escalate
+  escalate -->|human resolves or abandons| done
 ~~~
 
 ## 3. Nodes

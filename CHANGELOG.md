@@ -6,7 +6,7 @@ All notable changes to this project are documented here. Format based on [Keep a
 
 ### Added
 
-- **`/design-agent-loop`**: slash command and skill to design a reusable agent loop as a graph before running it (TASK plus COMPLETION CRITERIA; mermaid node graph; context / tools / expected output / evidence per node; labeled transition triggers; retry caps and budget ceilings; human approval gates on irreversible nodes; manual carve-outs for unverifiable steps; five eval cases sized to volume; one first bottleneck; two-step handshake, one test case on `execute now`); eval ship gate **A, S, R** (16 cases); catalog 43 → 44 commands/skills.
+- **`/design-agent-loop`**: slash command and skill to design a reusable agent loop as a graph before running it (TASK plus COMPLETION CRITERIA; mermaid node graph; context / tools / expected output / evidence per node; labeled transition triggers; retry caps and budget ceilings; human approval gates on irreversible nodes; manual carve-outs for unverifiable steps; five eval cases sized to volume; one first bottleneck; two-step handshake, one test case on `execute now`); eval ship gate **A, S, R** (17 cases); catalog 43 → 44 commands/skills.
 - **README**: 60-second quickstart with a lightly trimmed `/define-agent-goal` transcript; docs table linking PLUGIN, EVAL_CI, VERIFICATION, ROADMAP, COMMAND_SCHEMA; illustrative `docs/assets/demo.gif` under the badges; Related link to the [dev.to write-up](https://dev.to/emaraschio/treat-prompts-like-code-skills-evals-and-ship-gate-ci-for-cursor-slash-commands-1o03).
 - **`docs/assets/`**: illustrative demo GIF, capture notes, and `social-preview.png` (1280x640) for GitHub Settings → Social preview (manual upload).
 
