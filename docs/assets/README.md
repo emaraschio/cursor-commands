@@ -1,5 +1,9 @@
 # Demo and social assets
 
+## hero.png
+
+README banner, directly under the CI badges. Three commands pass one gate and come out as six contract lines; the last line ends in an orange square. Palette PNG. Generated once; replace the file rather than editing it.
+
 ## demo.gif
 
 Illustrative mock (not a live IDE screen recording): `/` autocomplete → `/define-agent-goal` → six-part Goal. ~126 KB, 960x540.
