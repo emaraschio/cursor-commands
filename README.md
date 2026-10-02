@@ -5,7 +5,7 @@
 [![Docs](https://github.com/emaraschio/cursor-commands/actions/workflows/docs.yml/badge.svg)](https://github.com/emaraschio/cursor-commands/actions/workflows/docs.yml)
 [![Eval fixtures](https://github.com/emaraschio/cursor-commands/actions/workflows/eval-fixtures.yml/badge.svg)](https://github.com/emaraschio/cursor-commands/actions/workflows/eval-fixtures.yml)
 
-![Three slash commands pass one gate and come out as six contract lines; the last line ends in an orange square. Caption: a contract behind every slash command.](docs/assets/hero.png)
+![A felt-lined case of identical steel dies beside a linen booklet closed with an unmarked wax seal. Caption: a contract behind every slash command.](docs/assets/hero.webp)
 
 **Production-grade Cursor slash commands:** each `/command` ships with a full agent skill contract, a behavioral eval rubric, and CI that fails if safety guards regress. Install as a [user plugin](docs/PLUGIN.md) and get the same workflows on desktop, web, CLI, and mobile.
 

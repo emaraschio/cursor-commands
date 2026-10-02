@@ -1,8 +1,8 @@
 # Demo and social assets
 
-## hero.png
+## hero.webp
 
-README banner, directly under the CI badges. Three commands pass one gate and come out as six contract lines; the last line ends in an orange square. Palette PNG. Generated once; replace the file rather than editing it.
+README banner, directly under the CI badges. A felt-lined case of identical steel dies beside a linen booklet closed with an unmarked wax seal. WebP. Generated once; replace the file rather than editing it.
 
 ## demo.gif
 
